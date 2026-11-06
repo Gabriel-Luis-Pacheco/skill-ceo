@@ -10,7 +10,7 @@ Checar nesta ordem: obrigação/risco, evidência de fricção do usuário, efei
 
 `valor = (impacto estimado 1–5 × confiança 0–1 × urgência 1–5) / (esforço estimado 1–5 × risco estimado 1–5)`
 
-Registre premissas e procure dados; não trate score como precisão matemática. Segurança, compliance e P0 passam na frente independentemente do score. Se os dados são insuficientes, priorize o experimento mais barato que resolve a incerteza central.
+Registre premissas, diferenças de probabilidade e fatores não modelados; não trate score como precisão matemática. Se duas oportunidades pontuarem parecido, prefira a que reduz a incerteza decisiva mais rapidamente, desde que a experiência do aluno e a margem permaneçam protegidas. Segurança, compliance e P0 passam na frente independentemente do score. Se os dados são insuficientes, priorize o experimento mais barato que resolve a incerteza central.
 
 ### Portfólio: explorar/executar
 
@@ -39,8 +39,8 @@ North Star provisória: **usuários que completam práticas de voz úteis e reto
 
 Indicadores mínimos em `ceo/METRICS.md`, com fonte, janela, denominador, observação e status `observado / estimado / ausente`:
 
-- Receita: MRR realizado, novos pagantes, cancelamentos, falhas de cobrança, reembolsos e receitas líquidas, se disponíveis.
-- Economia: custo variável por sessão/minuto, margem de contribuição, caixa/obrigações conhecidos.
+- Receita: **MRR contratual mensalizado** (não caixa realizado), receita efetivamente recebida, novos pagantes, cancelamentos, falhas de cobrança, reembolsos e receita líquida, quando disponível.
+- Economia: custo variável por sessão/minuto, contribuição por assinante e segmento, custo total de agentes de IA, caixa/obrigações verificados; evitar misturar custos fixos e variáveis.
 - Produto: visitante→cadastro; cadastro→1ª prática útil; 1ª prática→2ª; retorno D7/D30; erros; latência.
 - Marketing: sessões e origem; conversão orgânico→cadastro→pago; consultas relevantes, indexação, brand search; performance de landing e afiliados.
 - Educação: término de objetivos de fala, feedback correto, autonomia na conversação, progressão observável, satisfação pós-sessão.
@@ -52,7 +52,7 @@ Os valores iniciais devem ficar `DESCONHECIDO` até auditados. Nunca anunciar �
 
 `STATE.md`: situação atual, lista de prioridades, decisões abertas e próximos gatilhos. `DECISIONS.md`: decisão, alternativas, evidência, autonomia/autorizações, responsável, data de reavaliação. `AGENTS.md`: capacidade e tarefas dos agentes. `LEARNINGS.md`: experimentos fechados, resultados negativos e padrões replicáveis. `INCIDENTS.md`: gravidade, linha do tempo, mitigação e follow-up.
 
-Faça um pequeno fechamento após uma decisão importante: **o que achávamos, o que encontramos, que hipótese caiu, o que mudaremos**.
+Defina explicitamente se um achado é `OBSERVADO`, `RELATADO`, `HIPÓTESE`, `SEM ACESSO` ou `BLOQUEADO` para manter linguagem idêntica ao núcleo. Faça um pequeno fechamento após uma decisão importante: **o que achávamos, o que encontramos, que hipótese caiu, o que mudaremos**.
 
 ## Gestão de gargalos e capacidade
 
