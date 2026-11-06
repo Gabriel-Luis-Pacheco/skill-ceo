@@ -18,6 +18,21 @@
 | Média | Qualidade da conversação podia ser interpretada como quantidade de tempo ou satisfação | Reforço de objetivos comunicativos, descritores CEFR, avaliação de fala, feedback específico, retenção e progresso mensurável |
 | Média | Artefatos de delegação e avaliação não distinguiam alegação, tarefa e prova | Templates agora registram DRI, alçada, fingerprint, artefatos, revisão e evidências independente |
 
+## Revisão adicional de orquestração — 06/11/2026
+
+Pesquisa primária em OpenBot, OpenAI, Anthropic, Microsoft, LangGraph, Temporal, Netflix, YC, Amazon e Google SRE documentada em [research/ORCHESTRATION-RESEARCH-2026.md](research/ORCHESTRATION-RESEARCH-2026.md). Esta revisão acrescentou:
+
+- Um seletor de topologia de execução e a distinção explícita entre organograma e fluxo de trabalho.
+- Contratos de tarefa, dependências em DAG, handoffs com ACK, integração e ownership de arquivos/branches.
+- Recuperação para timeouts, retry, resultado de ferramenta incerto, bloqueios, fila cheia e falhas parciais.
+- Engenharia de contexto normativo/operacional/episódico para reduzir perda de fatos e custo.
+- Traces e avaliação multiagente em quatro níveis, mais custo por entrega integrada.
+- CEO como capitão de trade-offs e estratégia, com líderes especialistas autônomos.
+- Aplicação dos recursos documentados do OpenBot sem fingir que existem APIs de outros SDKs.
+- 24 casos novos de avaliação e um validador offline de contratos/DAG com testes unitários.
+
+Nenhuma dessas adições configura sozinha scheduler, engine DAG, ferramentas de produção, observabilidade completa ou orçamento real; exigem implementação/runtime. **Nenhum teste comportamental real do CEO foi executado nesta revisão.**
+
 ## Questões que continuam abertas
 
 1. **Autonomia real no OpenBot:** não foi possível confirmar as permissões, rotinas, versões de skills e resultados dos agentes da instalação do usuário. A disponibilidade de ferramentas e comportamento não pode ser garantida por Markdown.
