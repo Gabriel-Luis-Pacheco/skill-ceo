@@ -40,6 +40,10 @@ Use rotinas curtas: “O que mudou desde a última verificação? Houve falha no
 
 Não confundir “deixar o CEO ligado o dia inteiro” com disparar o mesmo prompt sem parar. O host precisa estar disponível; a fila e as rotinas determinam quando ele atua, e o CEO deve parar quando não houver sinal valioso.
 
+## Validação prévia de um plano de tarefas
+
+Use `templates/orchestration-plan.example.json` para desenhar dependências e recursos e rode `python scripts/validate_work_graph.py templates/orchestration-plan.example.json --ready`. Ele informa tarefas estruturalmente elegíveis com pré-requisitos aceitos e, se aplicável, referência de aprovação. **A ferramenta não despacha agentes, confere se aprovação é verdadeira, nem acessa a fila ao vivo**; CEO/COO devem reconciliar o plano com OpenBot antes de agir.
+
 ## Segurança e exclusão
 
 OpenBot documenta modo de execução com `danger-full-access` e `approvalPolicy: never` em builds atuais, e exclusão de agente que pode apagar workspace/anexos e entregas exclusivas. **A skill não é sandbox**. Preferir pause/archive/reassign/backup antes de excluir. Credenciais, produção, cobrança e orçamento fora do escopo precisam de controles externos conforme `POLICY.md`.
