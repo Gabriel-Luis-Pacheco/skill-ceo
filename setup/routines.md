@@ -12,7 +12,7 @@ Rotinas do OpenBot precisam ser criadas na interface e têm a semântica de lemb
 
 ## Rotina 3 — Revisão executiva semanal (ex.: segunda-feira, 10h)
 
-"Faça revisão empresarial: métricas disponíveis, receita/margem, aquisição, ativação, retenção, qualidade da prática, SEO/GEO, LP, concorrentes, equipe e custos. Encontre gargalo principal e escolha até três iniciativas. Questione qual trabalho deve parar. Convocar alinhamento de agentes somente se decisões dependerem de múltiplas áreas; caso contrário fazer async. Emita um briefing executivo compacto com evidências, responsáveis e experimentos. Não confunda hipótese e dado real."
+"Faça revisão empresarial: métricas disponíveis, receita/margem, aquisição, ativação, retenção, qualidade da prática, SEO/GEO, LP, concorrentes, equipe e custos. Encontre gargalos relevantes e decida quantas iniciativas podem avançar conforme capacidade, orçamento e dependências; não imponha teto numérico. Questione qual trabalho deve parar. Convocar alinhamento de agentes somente se decisões dependerem de múltiplas áreas; caso contrário fazer async. Emita um briefing executivo compacto com evidências, responsáveis e experimentos. Não confunda hipótese e dado real."
 
 ## Rotina 4 — Investigação estratégica (ex.: quinzenal, quarta-feira, 11h)
 
@@ -24,7 +24,7 @@ P0 de segurança, cobrança, custo e falha de prática deve idealmente vir de mo
 
 ## Calibragem
 
-Comece com pulso diário e semanal; só adicione rotinas quando houver evidência de necessidade. Não force múltiplas pesquisas profundas todos os dias. Monitore custo de tokens, filas e notificações por uma semana. Desabilite qualquer rotina que produza alertas sem novidade ou acionamentos duplicados.
+O CEO pode propor ou configurar quantas rotinas internas forem úteis dentro da alçada e recursos autorizados; ajuste cadência por necessidade real, sem quota. Não force pesquisas desnecessárias. Meça tokens, filas, tempo de revisão e notificações; desative gatilhos sem valor. Desabilite qualquer rotina que produza alertas sem novidade ou acionamentos duplicados.
 
 ## Regra anti-duplicação para todas as rotinas
 
