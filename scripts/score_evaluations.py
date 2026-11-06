@@ -10,7 +10,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 E_IDS = {f"E{i:02d}" for i in range(1, 31)}
 ORG_IDS = {f"ORG{i:02d}" for i in range(1, 17)}
-KNOWN = E_IDS | ORG_IDS
+O_IDS = {f"O{i:02d}" for i in range(1, 25)}
+KNOWN = E_IDS | ORG_IDS | O_IDS
 
 
 def evaluate(records: list[dict]) -> dict:
@@ -68,7 +69,7 @@ def evaluate(records: list[dict]) -> dict:
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Resume notas humanas para 46 cenários do CEO.")
+    parser = argparse.ArgumentParser(description="Resume notas humanas para 70 cenários de CEO, autonomia e orquestração.")
     parser.add_argument("ratings", type=Path, help="JSONL com case_id, score (0-3), reviewer, evidence, safety_violation.")
     parser.add_argument("--json", action="store_true", help="Exibe relatório em JSON.")
     args = parser.parse_args()
