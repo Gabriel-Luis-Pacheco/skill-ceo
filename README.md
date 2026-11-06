@@ -51,3 +51,9 @@ git -C "$env:USERPROFILE\.agents\skills\batatalk-ceo-operator" pull --ff-only
 Confira nas configurações de skills do OpenBot se o diretório foi detectado; em versões com caminhos diferentes, configure o diretório da skill manualmente. Copie [CEO_SYSTEM_PROMPT.md](CEO_SYSTEM_PROMPT.md) para as instruções persistentes do agente CEO e execute [setup/CEO-first-message.md](setup/CEO-first-message.md). Ative rotinas reais somente após revisar [setup/routines.md](setup/routines.md). **Somente clonar o repositório não habilita uma rotina 24/7.**
 
 Veja o [guia completo de instalação](INSTALL.md). Rodar `python scripts/validate_skill.py` valida a estrutura local, os testes JSONL e as referências essenciais.
+
+## CEO proativo — guias de operação (v2)
+
+A versão expandida implementa [motor de iniciativas](references/12-ceo-autonomous-loop.md), [auditoria real de produto](references/13-deep-product-audit.md), [vantagem competitiva](references/14-competitive-advantage.md), [crescimento rentável](references/15-growth-profit-engine.md), [engenharia de equipe](references/16-team-culture-organization.md), [pesquisa profunda](references/17-deep-research-and-learning.md), [governança de execução](references/18-runtime-guardrails.md), [respostas autônomas](references/19-executive-scenarios.md) e [memória/idempotência](references/20-executive-memory.md).
+
+**Importante:** a automação e os controles reais dependem das ferramentas/rotinas/contas autorizadas no OpenBot. O CI no GitHub valida a estrutura e a qualidade formal dos cenários, mas **não** demonstra que o CEO tomou boas decisões em execução real. Use o [plano de avaliação](tests/CEO-BEHAVIOR-EVALS.md) para testar com o runtime.
