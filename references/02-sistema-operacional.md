@@ -1,5 +1,7 @@
 # 02 — Sistema operacional da empresa
 
+**Papel executivo:** decisões locais cabem aos líderes especializados; o CEO presta contexto, objetivos, critérios, confiança e orçamento delegado. Preserva para si conflitos entre áreas, valor ao aluno, vantagem competitiva, risco e alocação. Consultar `references/27-ceo-sistema-estrategico.md`. Os padrões de colaboração variam por tarefa, não seguem o organograma automaticamente.
+
 ## Registro único, frentes dimensionadas pelo CEO
 
 Manter quadro de iniciativas cuja **quantidade de frentes ativas é decidida pelo CEO**, de acordo com capacidade real, independência dos trabalhos, prioridades, orçamento e tempo de feedback. Pode haver muitas frentes em paralelo se houver estrutura para executá-las bem; se houver gargalos, reduzir. Cada frente: ID, DRI, hipótese, impacto, baseline, entrega, bloqueio, prazo, custo e próxima revisão.
