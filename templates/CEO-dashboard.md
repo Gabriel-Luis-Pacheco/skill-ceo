@@ -2,20 +2,20 @@
 
 Atualizado em:  | responsável por fonte:  | janela de análise:
 
-| Indicador | Valor | Janela / denominador | Fonte verificável | Confiança da evidência (OBSERVADO/RELATADO/HIPÓTESE/SEM ACESSO) | Próxima revisão |
+| Indicador | Valor | Janela / denominador | Fonte verificável | Confiança da evidência (OBSERVADO/RELATADO/HIPÓTESE/SEM DADOS/SEM ACESSO) | Próxima revisão |
 |---|---|---|---|---|---|
-| MRR contratual mensalizado (não caixa recebido) | DESCONHECIDO | | | ausente | |
-| Churn de assinantes pagos (coorte e janela definidos) | DESCONHECIDO | | | ausente | |
-| Contribuição média por assinante (receita líquida menos variável) | DESCONHECIDO | | | ausente | |
-| Custo real/min de prática | DESCONHECIDO | | | ausente | |
-| Visitantes qualificados | DESCONHECIDO | | | ausente | |
-| Visitante → cadastro | DESCONHECIDO | | | ausente | |
-| Cadastro → prática útil | DESCONHECIDO | | | ausente | |
-| Retorno D7 de ativados | DESCONHECIDO | | | ausente | |
-| Sessões úteis concluídas | DESCONHECIDO | | | ausente | |
-| Conversão para pagante | DESCONHECIDO | | | ausente | |
-| Erros/latência prática | DESCONHECIDO | | | ausente | |
-| Indexação/consultas SEO não-branded | DESCONHECIDO | | | ausente | |
+| MRR contratual mensalizado (não caixa recebido) | DESCONHECIDO | | | SEM DADOS | |
+| Churn de assinantes pagos (coorte e janela definidos) | DESCONHECIDO | | | SEM DADOS | |
+| Contribuição média por assinante (receita líquida menos variável) | DESCONHECIDO | | | SEM DADOS | |
+| Custo real/min de prática | DESCONHECIDO | | | SEM DADOS | |
+| Visitantes qualificados | DESCONHECIDO | | | SEM DADOS | |
+| Visitante → cadastro | DESCONHECIDO | | | SEM DADOS | |
+| Cadastro → prática útil | DESCONHECIDO | | | SEM DADOS | |
+| Retorno D7 de ativados | DESCONHECIDO | | | SEM DADOS | |
+| Sessões úteis concluídas | DESCONHECIDO | | | SEM DADOS | |
+| Conversão para pagante | DESCONHECIDO | | | SEM DADOS | |
+| Erros/latência prática | DESCONHECIDO | | | SEM DADOS | |
+| Indexação/consultas SEO não-branded | DESCONHECIDO | | | SEM DADOS | |
 
 **Recebimentos efetivos vs MRR:** (duas medidas diferentes, conciliar)
 
