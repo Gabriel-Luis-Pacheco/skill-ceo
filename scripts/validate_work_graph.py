@@ -57,9 +57,9 @@ def validate_plan(plan: object) -> list[str]:
         if not isinstance(task["owned_resources"], list) or any(
                 not isinstance(x, str) or not x.strip() for x in task["owned_resources"]):
             errors.append(f"{task_id}: invalid owned_resources")
-        if task["status"] not in STATES:
+        if not isinstance(task["status"], str) or task["status"] not in STATES:
             errors.append(f"{task_id}: invalid status")
-        if task["risk"] not in RISK:
+        if not isinstance(task["risk"], str) or task["risk"] not in RISK:
             errors.append(f"{task_id}: invalid risk")
 
     deps: dict[str, set[str]] = {}
@@ -93,6 +93,17 @@ def validate_plan(plan: object) -> list[str]:
     for task_id in by_id:
         walk(task_id)
 
+    # Only dispatch tasks whose dependencies are actually verified.
+    for key, task in by_id.items():
+        if task.get("status") in {"RUNNING", "SUBMITTED", "VERIFIED"}:
+            for dep in deps.get(key, ()):
+                if dep in by_id and by_id[dep].get("status") != "VERIFIED":
+                    errors.append(f"{key}: active/finished task depends on unverified {dep}")
+        if (task.get("risk") in {"external_requires_approval", "sensitive_requires_approval"}
+                and task.get("status") in {"RUNNING", "SUBMITTED", "VERIFIED"}
+                and not isinstance(task.get("approval_reference"), str)):
+            errors.append(f"{key}: external/sensitive task needs approval_reference before execution")
+
     def ancestor(earlier: str, later: str) -> bool:
         seen: set[str] = set()
         stack = list(deps.get(later, ()))
@@ -121,9 +132,29 @@ def validate_plan(plan: object) -> list[str]:
     return errors
 
 
+def ready_tasks(plan: object) -> list[str]:
+    """IDs that may be considered for assignment; does not dispatch or authorize."""
+    if validate_plan(plan):
+        return []
+    if not isinstance(plan, dict):
+        return []
+    completed = {task["id"] for task in plan["tasks"] if task["status"] == "VERIFIED"}
+    return [
+        task["id"] for task in plan["tasks"]
+        if task["status"] == "PROPOSED"
+        and set(task["depends_on"]).issubset(completed)
+        and (
+            task["risk"] == "internal"
+            or bool(task.get("approval_reference"))
+        )
+    ]
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description="Validate a work plan JSON offline")
     parser.add_argument("plan", type=Path)
+    parser.add_argument("--ready", action="store_true",
+                        help="Print eligible task IDs; never dispatches agents")
     args = parser.parse_args()
     try:
         plan = json.loads(args.plan.read_text(encoding="utf-8"))
@@ -135,7 +166,9 @@ def main() -> int:
         for e in errors:
             print("ERROR:", e, file=sys.stderr)
         return 1
-    print("PASS: dependency graph, fields and resource ownership consistent.")
+    print("PASS: dependency graph, ownership, authorization references and state consistent.")
+    if args.ready:
+        print("READY_FOR_ASSIGNMENT:", ", ".join(ready_tasks(plan)) or "none")
     print("NOT A RUNTIME: no agent was assigned, executed or authorized.")
     return 0
 
