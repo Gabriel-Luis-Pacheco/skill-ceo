@@ -23,6 +23,8 @@ REQUIRED = (
     "tests/CEO-BEHAVIOR-EVALS.md", "tests/REVIEW-PROTOCOL.md",
     "tests/all-30-scenarios.jsonl", "tests/org-autonomy-cases.jsonl",
     "tests/test_cases.jsonl", "tests/orchestration-cases.jsonl",
+    "setup/CEO-orchestration-first-run.md",
+    "templates/orchestration-scorecard.md",
     "research/ORCHESTRATION-RESEARCH-2026.md",
     "scripts/validate_work_graph.py",
     "templates/orchestration-task.md", "templates/orchestration-plan.example.json",
