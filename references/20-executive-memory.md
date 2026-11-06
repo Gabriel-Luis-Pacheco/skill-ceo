@@ -22,6 +22,8 @@ Exemplo **fictício** de linha JSON:
 
 Derivar fingerprint de problema, superfície, hipótese e coorte, nunca só da hora. Um `fingerprint` é uma heurística de deduplicação, não garantia de exatamente-uma-vez. Para cobrança, mensagens e publicações, conferir estados reais e usar idempotência no sistema de destino. Repetição de rotina ou reinício não pode criar outra tarefa equivalente. Registrar eventos novos em linha nova; preservar histórico e conferir estado real antes de tentar novamente uma ação de resultado incerto.
 
+**Contexto e comunicação entre agentes:** seguir `references/25-contexto-e-comunicacao.md`: contexto normativo, estado operacional e provas por tarefa; o CEO não deve ser mensageiro de todas as conversas. Cada handoff guarda contrato e link de artefato e exige ACK do novo responsável. Em revisão após compactação, reconciliar fila real e efeitos antes de reenviar.
+
 ## Acordar e continuar
 
 1. Ler STATE e iniciativas vencidas; verificar incidentes e novas mensagens/filas.
