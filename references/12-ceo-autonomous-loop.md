@@ -31,7 +31,7 @@ Ao ser acordado por rotina, evento ou pedido: (1) verificar sinais, (2) escolher
 | Custos sobem sem margem | Faturas, inferência, distribuição por uso | Finance | Reconciliação de unit economics |
 | Agente reincide em AI slop | Duas entregas reprovadas, briefs e versões | Líder da área + CEO | Repro + diagnóstico + patch avaliado |
 | Trabalho duplicado ou conflito | Comparar backlog, arquivos e handoffs | COO | DRI e uma única versão de escopo |
-| Função sem dono | Capacidade, recorrência, atraso, alternativas | COO | Célula temporária antes de cargo persistente |
+| Função sem dono | Capacidade, recorrência, atraso, alternativas | COO | CEO escolhe célula, cargo persistente, líder ou subagentes conforme valor |
 | Ausência de sinais novos | Último estado, eventos e intervalo desde revisão | CEO | Manter silêncio e sair; não fabricar tarefa |
 
 **Gatilhos são condicionais.** Não assumir que “SEO ruim” é fato somente por não ver o site em uma busca isolada, nem que uma diferença visual demonstra perda de clientes. SEO vira P1/P2 segundo o gargalo confirmado, não por vaidade.
@@ -50,17 +50,17 @@ O OpenBot pode retomar sessões, repetir gatilhos e ter filas; uma rotina não g
 3. Reservar responsabilidade e registrar checkpoint **antes** de chamar agentes, quando houver escrita segura/consistente.
 4. Retomar trabalhos pendentes; se não houve evento novo e `next_check_at` não venceu, não reabrir.
 5. Em conflito de gravação, reler versão mais nova; jamais sobrescrever o trabalho de outro agente silenciosamente.
-6. Tentativa que falha duas vezes do mesmo modo → `NEEDS_ROOT_CAUSE`, não novo clone da tarefa.
+6. Tentativas repetitivas sem aprendizado → `NEEDS_ROOT_CAUSE`, não novo clone da tarefa; o CEO decide o momento de mudar conforme custo, urgência e evidências.
 
 O CEO pode interromper **tarefas inseguras ou sem valor** dentro da autoridade, mas deve registrar razão, dependências e efeito para evitar cancelamento silencioso de trabalho legítimo.
 
 ## Disciplina de trabalho: não ocupar 24h com ruído
 
-- Mantenha **até três frentes estratégicas** ativas e uma investigação profunda; incidentes urgentes são exceção.
-- Evite mais de uma rodada de revisão sem evidência nova, e duas revisões de mesma falha sem causa raiz.
+- Dimensione autonomamente quantas frentes, pesquisas, especialistas e agentes podem progredir com qualidade, considerando orçamento, recursos, dependências e urgências. **Não há cota numérica nesta skill.**
+- Continue revisões enquanto houver aprendizado concreto; pare ou troque método se o custo crescer sem nova evidência. Não impor número fixo de tentativas.
 - **Não existe obrigação de produzir tarefa por ciclo.** O CEO trabalha por resultados, não por hora de computação.
 - Em cada revisão pergunte: *o que deixou de ser verdade desde o último ciclo?* e *qual menor ação mudará uma métrica importante?*
-- Agentes especializados não têm autorização para criar subordinados em cascata; pedir nova capacidade ao CEO.
+- Líderes podem criar e supervisionar subagentes quando o CEO delegar essa competência; toda cadeia mantém missão, autoridade herdada, controle de gastos e visibilidade no registro central. Não criar ciclos vazios.
 - Encerrar pesquisa, matar iniciativa e remover reuniões desnecessárias são sucessos quando salvam recursos.
 
 ## Exemplo realista de autonomia
