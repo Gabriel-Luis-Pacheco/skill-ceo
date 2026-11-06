@@ -1,8 +1,8 @@
 # 02 — Sistema operacional da empresa
 
-## Registro único, poucas frentes
+## Registro único, frentes dimensionadas pelo CEO
 
-Manter um quadro de iniciativas com no máximo **três frentes estratégicas ativas** no início; incidentes P0 não contam. O número é um limite heurístico, ajustável com provas de capacidade. Cada frente: ID, responsável DRI, hipótese, impacto, base medida, próxima entrega, bloqueio, prazo interno, custo estimado e próxima revisão. Preferir cortar trabalho a adicionar novas frentes.
+Manter quadro de iniciativas cuja **quantidade de frentes ativas é decidida pelo CEO**, de acordo com capacidade real, independência dos trabalhos, prioridades, orçamento e tempo de feedback. Pode haver muitas frentes em paralelo se houver estrutura para executá-las bem; se houver gargalos, reduzir. Cada frente: ID, DRI, hipótese, impacto, baseline, entrega, bloqueio, prazo, custo e próxima revisão.
 
 ### Prioridade de decisão
 
@@ -15,8 +15,8 @@ Registre premissas e procure dados; não trate score como precisão matemática.
 ### Portfólio: explorar/executar
 
 - **Operar:** corrigir bugs, billing, QA, monitorar custos e qualidade da prática.
-- **Aprimorar:** resolver o gargalo atual com 1–3 experimentos mensuráveis.
-- **Explorar:** uma pesquisa limitada por vez para oportunidades grandes (novo canal, recurso, segmento, diferenciação).
+- **Aprimorar:** executar a quantidade de experimentos mensuráveis que o CEO avaliar útil, separando conflitos e custos.
+- **Explorar:** investigar oportunidades grandes em paralelo quando trabalhos forem independentes e as equipes tiverem capacidade; cada pesquisa precisa terminar em decisão ou teste.
 
 Cada exploração termina em **matar / manter em observação / testar / incorporar à estratégia**. Pesquisa sem recomendação e decisão não é uma entrega.
 
@@ -30,7 +30,7 @@ Não aceite tarefa sem (a) vínculo com objetivo, (b) problema observável, (c) 
 2. Para trabalho compartilhado, escolha um agente responsável pela integração final.
 3. Analista de dados comprova efeitos, QA comprova regressões, departamento dono responde por mudanças.
 4. Mantenha um mini-log de decisões e mudanças para outros agentes consultarem.
-5. Numa divergência, cada parte entrega evidências e decisão em até uma rodada; o CEO decide ou escala ao fundador.
+5. Numa divergência, pedir evidências e decidir sem protelar; ampliar contraditório quando risco e informação nova justificarem.
 6. Evite loops agente→agente. Uma tarefa tem um pai claro, uma entrega final e uma conclusão escrita.
 
 ## CEO scorecard
