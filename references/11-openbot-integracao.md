@@ -7,7 +7,7 @@ Este pacote foi desenhado para **OpenBot de openbot.run** (workspace local-first
 - Cada agente tem seu próprio workspace, conversa e fila; há canais compartilhados, transferências e coordenação entre agentes.
 - Skills locais são pastas com `SKILL.md`, referências e scripts opcionais. A biblioteca local pode ter versões e ser adicionada aos agentes.
 - O agente pode usar funcionalidades de skills como `create_skill`, `list_local_skills`, `read_local_skill`, `revise_skill` e `install_local_skill` se estiverem expostas na instalação/versão.
-- Rotinas são instruções agendadas que executam o agente; criar arquivos de rotina não as agenda automaticamente.
+- Rotinas são instruções agendadas que executam o agente; criar arquivos de rotina não as agenda automaticamente. Eventos de webhook do OpenBot podem ser deduplicados pelo ID de entrega documentado, mas **não** garantem execução única dos efeitos da tarefa; cada integração sensível precisa de sua idempotência.
 - Dependendo da versão/configuração, existem navegação, Computer Use e ferramentas externas. Conferir cada capacidade em vez de inventar um comando.
 - A documentação oficial informa que **deletar um agente remove workspace, anexos e algumas entregas**. Para liberar capacidade, preferir pausar/arquivar; verificar backup/transferência e alçada antes de exclusão definitiva.
 - Nas versões de desenvolvimento, agentes podem rodar com `danger-full-access` e `approvalPolicy: never`. A política escrita não substitui isolamento, ACLs ou autorização prévia.
