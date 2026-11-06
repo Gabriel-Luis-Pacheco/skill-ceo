@@ -1,71 +1,44 @@
-# BataTalk CEO Operator — skill para OpenBot
+# BataTalk CEO Operator
 
-Pacote de instruções criado para um CEO de IA que dirige os agentes do BataTalk. Foi desenhado para OpenBot (openbot.run), que usa agentes com workspaces persistentes, skills locais, canais, filas e rotinas. Não é um aplicativo de execução autônoma nem altera sua instalação sozinho.
+**Skill de direção executiva proativa para OpenBot.** O CEO audita o BataTalk sem esperar ordens, investiga problemas, compara mercado, organiza subagentes, eleva a qualidade de produto, marketing e aprendizagem, e exige melhorias verificadas que sustentem receita e margem.
 
-## Como usar
+A skill **não é um aplicativo executável**, não cria agentes ou rotinas sozinha e não substitui acesso real, revisão independente, configurações de segurança ou autorização humana para decisões sensíveis.
 
-1. Abra o OpenBot e selecione o **agente CEO**.
-2. Nas configurações do agente, abra **Skills** e adicione uma skill local com o conteúdo deste diretório (pasta com `SKILL.md` e `references/`). Alternativamente, peça ao agente para **criar uma skill local a partir desta pasta** e conferir a instalação. A interface exata pode variar conforme a versão. Confira em *Settings → Skills → Local skills*.
-3. Cole o texto de `CEO_SYSTEM_PROMPT.md` no campo de **instruções persistentes** do CEO. A skill não substitui um mandato curto nas instruções do agente.
-4. Envie ao CEO a mensagem de `setup/CEO-first-message.md`. Ela inicia uma auditoria real sem pressupor que o CEO já tenha acesso a todos os dados.
-5. Configure as rotinas indicadas em `setup/routines.md` usando a interface de **Routines** do OpenBot. O arquivo `SKILL.md` não agenda nada por si só.
-6. Comece com ferramentas/contas em modo mínimo e revise permissões de envio, deploy, cobrança, produção e edição de agentes. A aprovação precisa existir **fora do prompt** sempre que a ação for sensível.
-7. Compare as saídas do CEO com `tests/CEO-BEHAVIOR-EVALS.md` após o primeiro dia e a cada alteração relevante.
+## O diferencial
 
-## Conteúdo
+- **Iniciativa real:** detectar LP genérica, experiência de fala fraca, SEO/GEO sem prova, falhas no funil, margens negativas, lacunas organizacionais e AI slop antes do fundador.
+- **Autonomia estrutural:** o CEO decide quantidade de agentes, líderes, subequipes, profundidade da hierarquia e paralelismo conforme custo-benefício e recursos delegados; **nenhum teto numérico arbitrário**.
+- **Execução verificável:** decisão, DRI, artefato, revisão, custo, evidência, medição, aprendizado ou descarte. Nunca tomar “feito” como evidência.
+- **Empresa que aprende:** pesquisa profunda e contra-argumentos, versões testadas de prompts/skills, melhoria contínua dos especialistas e memória entre ciclos.
+- **Negócio sustentável:** trabalhar aquisição → primeira prática útil → retorno → assinatura → contribuição após voz, IA, taxas e parcerias, sem inventar métricas.
 
-- `SKILL.md`: regras executivas permanentes e seleção de playbooks.
-- `CEO_SYSTEM_PROMPT.md`: instruções curtas para o campo do CEO no OpenBot.
-- `references/`: playbooks completos por área, fontes e limites.
-- `templates/`: registros, handoffs, avaliação de agentes, decisão e reunião.
-- `tests/`: avaliação e testes de regressão de comportamento.
-- `setup/`: mensagem de estreia e exemplos de rotinas.
-- `config/policy.example.yaml`: orientação sobre alçadas e recursos, sem teto numérico de agentes; **não é uma configuração nativa do OpenBot**.
+## Onde começar
 
-## Regras de implantação importantes
+| Arquivo | Para que serve |
+|---|---|
+| [SKILL.md](SKILL.md) | Núcleo operacional que o CEO deve consultar |
+| [CEO_SYSTEM_PROMPT.md](CEO_SYSTEM_PROMPT.md) | Texto curto para instruções persistentes do CEO |
+| [POLICY.md](POLICY.md) | **Fonte única** de limites financeiros, segurança e autorização |
+| [INSTALL.md](INSTALL.md) | Instalação pelo repositório e verificação de versão no OpenBot |
+| [setup/CEO-first-message.md](setup/CEO-first-message.md) | Auditoria inicial com fatos e ações seguras |
+| [setup/routines.md](setup/routines.md) | Sugestões de gatilhos, eventos e cadência |
+| [references/21-organizacao-autonoma.md](references/21-organizacao-autonoma.md) | Delegação e gestão de agentes, líderes e departamentos sem cotas |
+| [tests/CEO-BEHAVIOR-EVALS.md](tests/CEO-BEHAVIOR-EVALS.md) | Cenários e rubricas de julgamento executivo |
 
-- Não despausar Reels Creator sem ordem do fundador.
-- Não aprovar conteúdo, checkout, integração ou migração só porque o agente disse "concluído".
-- Não permitir ferramentas sensíveis somente porque as instruções do CEO contêm uma frase de segurança: configurar permissões reais, backups e revisão de produção.
-- O CEO não consegue criar agentes, pesquisar fontes privadas ou rodar rotinas quando as ferramentas ou credenciais não estiverem disponíveis. Deve inspecionar capacidades e relatar a limitação.
-- **Licenciamento**: o repositório oficial do OpenBot descreve uma licença não comercial para as versões atuais e uma licença comercial para uso comercial. Antes de utilizar na operação comercial do BataTalk, verifique a licença que se aplica à sua instalação/versão e eventual contratação diretamente com o fornecedor: https://github.com/nightly-labs/openbot
+Há procedimentos temáticos em [references/](references/) e modelos reutilizáveis em [templates/](templates/). Carregue somente o guia relevante, em vez de anexar todos os documentos a cada turno.
 
-## Origem das práticas
+## Instalação
 
-Princípios adaptados de cartas de Jeff Bezos à Amazon, cultura Netflix, recomendações da Y Combinator, Jensen Huang, Steve Jobs, práticas de reliability do Google, documentação do Google Search Central, práticas da Stripe e documentação de agentes da OpenAI/Microsoft. **Nenhuma empresa/fundador endossa esta skill; não é uma reprodução de suas políticas**. Links em `references/10-fontes.md`.
+O repositório do GitHub é a **fonte**; a cópia instalada da skill na biblioteca do OpenBot pode ser independente. Veja [INSTALL.md](INSTALL.md) para registrar e ativar a skill no CEO, colar o prompt persistente e confirmar que a revisão correta está ativa. **Clonar a pasta não garante instalação no agente, e atualizar o GitHub não atualiza a skill já instalada.** Consulte o funcionamento de *Local skills* na [documentação oficial do OpenBot](https://github.com/nightly-labs/openbot).
 
-## Instalar diretamente do GitHub
+## Limites reais, não obstáculos inventados
 
-Este repositório **é a própria skill**. O arquivo de entrada está na raiz: [SKILL.md](SKILL.md). Para um CEO OpenBot em Windows com suporte a skills locais, execute no PowerShell:
+A responsabilidade de gerir quantos agentes de IA forem necessários pertence ao CEO; ele pode formar hierarquias e desativar recursos sem valor. A alçada não inclui gastos fora de orçamento, acesso novo a dados/segredos, publicação não autorizada, cobrança ou intervenções críticas em produção. O **Reels Creator permanece pausado**.
 
-```powershell
-git clone https://github.com/Gabriel-Luis-Pacheco/skill-ceo.git "$env:USERPROFILE\.agents\skills\batatalk-ceo-operator"
-```
+O OpenBot em determinadas versões de desenvolvimento pode operar com acesso amplo e sem confirmações individuais. Para operação comercial, use permissões mínimas, backups, monitoramento de custo, proteção de branch e aprovação técnica fora do prompt. Consulte também a [licença do OpenBot](https://github.com/nightly-labs/openbot), que diferencia versões antigas e uso comercial.
 
-Para atualizar uma instalação existente:
+## Qualidade e testes
 
-```powershell
-git -C "$env:USERPROFILE\.agents\skills\batatalk-ceo-operator" pull --ff-only
-```
+Execute `python scripts/validate_skill.py` e `python -m unittest discover -s tests -p 'test_*.py'` para verificações estruturais e testes do validador. Os cenários do CEO em `tests/` **precisam ser executados separadamente no OpenBot, em ambiente controlado**: CI aprovado não significa que o CEO executou uma tarefa real, nem demonstra aumento de receita.
 
-Confira nas configurações de skills do OpenBot se o diretório foi detectado; em versões com caminhos diferentes, configure o diretório da skill manualmente. Copie [CEO_SYSTEM_PROMPT.md](CEO_SYSTEM_PROMPT.md) para as instruções persistentes do agente CEO e execute [setup/CEO-first-message.md](setup/CEO-first-message.md). Ative rotinas reais somente após revisar [setup/routines.md](setup/routines.md). **Somente clonar o repositório não habilita uma rotina 24/7.**
-
-Veja o [guia completo de instalação](INSTALL.md). Rodar `python scripts/validate_skill.py` valida a estrutura local, os testes JSONL e as referências essenciais.
-
-## CEO proativo — guias de operação
-
-A versão expandida implementa [motor de iniciativas](references/12-ceo-autonomous-loop.md), [auditoria real de produto](references/13-deep-product-audit.md), [vantagem competitiva](references/14-competitive-advantage.md), [crescimento rentável](references/15-growth-profit-engine.md), [engenharia de equipe](references/16-team-culture-organization.md), [pesquisa profunda](references/17-deep-research-and-learning.md), [governança de execução](references/18-runtime-guardrails.md), [respostas autônomas](references/19-executive-scenarios.md) e [memória/idempotência](references/20-executive-memory.md). O [guia de organização autônoma](references/21-organizacao-autonoma.md) define que **o CEO escolhe o número de agentes, subagentes, departamentos, níveis hierárquicos e frentes** sem cotas arbitrárias.
-
-**Importante:** a automação e os controles reais dependem das ferramentas/rotinas/contas autorizadas no OpenBot. O CI no GitHub valida a estrutura e a qualidade formal dos cenários, mas **não** demonstra que o CEO tomou boas decisões em execução real. Use o [plano de avaliação](tests/CEO-BEHAVIOR-EVALS.md) para testar com o runtime.
-
-### Qualidade e revisão
-
-- [30 cenários executivos](tests/all-30-scenarios.jsonl) e [16 testes de autonomia organizacional](tests/org-autonomy-cases.jsonl)
-- [Protocolo de avaliação comportamental](tests/REVIEW-PROTOCOL.md)
-- [Validação automática estrutural](scripts/validate_skill.py)
-
-Antes de afirmar que o CEO está pronto para operar continuamente, execute cenários controlados no OpenBot, avalie decisões com evidências e confirme permissões reais. Uma validação de arquivos aprovada não prova que o agente resolverá problemas no produto ou produzirá receita.
-
-### Atenção: atualizar o GitHub não atualiza automaticamente a skill instalada
-
-Se você instalou a skill como **Local Skill** pela biblioteca do OpenBot, a instalação mantém uma cópia versionada. Após atualizar este repositório com `git pull`, **atualize também a skill no agente CEO pelo controle “Update” ou instale explicitamente a nova revisão**, conforme a interface da sua versão. Confirme que o CEO lê o `SKILL.md` atualizado e que seu prompt persistente foi atualizado. A documentação oficial do OpenBot informa que revisões da biblioteca não atualizam cópias instaladas automaticamente: https://github.com/nightly-labs/openbot
+Origens e limites dos princípios de gestão, plataformas, SEO e produto estão em [references/10-fontes.md](references/10-fontes.md). Nenhuma empresa ou fundador citado endossa a skill.
