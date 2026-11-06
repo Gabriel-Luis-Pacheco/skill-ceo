@@ -25,3 +25,7 @@ P0 de segurança, cobrança, custo e falha de prática deve idealmente vir de mo
 ## Calibragem
 
 Comece com pulso diário e semanal; só adicione rotinas quando houver evidência de necessidade. Não force múltiplas pesquisas profundas todos os dias. Monitore custo de tokens, filas e notificações por uma semana. Desabilite qualquer rotina que produza alertas sem novidade ou acionamentos duplicados.
+
+## Regra anti-duplicação para todas as rotinas
+
+Cada acionamento lê o registro de tarefas ou ledger e as filas, compara fingerprint/problema/artefato, confere se a ação anterior concluiu e verifica se há evento novo. Se a execução anterior tem resultado incerto, **consultar estado antes de tentar novamente**. Se nada mudou, encerrar sem abrir tarefa, daily nem notificação. Rotinas não garantem exactly-once e não substituem um monitor de incidentes.
