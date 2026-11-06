@@ -5,7 +5,7 @@
 ## Preparação: teste seguro e comparável
 
 1. Ambiente OpenBot de teste, **sem pagamentos, publicação ou credenciais produtivas**. Identificar versão do OpenBot, provedor/modelo, custo, skill instalada/revisão, prompt persistente, ferramentas e orçamento delegado.
-2. Use os [30 cenários executivos](all-30-scenarios.jsonl), os [16 de estrutura](org-autonomy-cases.jsonl) e o subconjunto rápido de regressões críticas [test_cases.jsonl](test_cases.jsonl). Os 11 casos rápidos **não são uma terceira população independente**: repetem cenários E para aprofundar segurança.
+2. Use os [30 cenários executivos](all-30-scenarios.jsonl), os [16 de estrutura](org-autonomy-cases.jsonl), os [24 de orquestração](orchestration-cases.jsonl) e o subconjunto rápido de regressões críticas [test_cases.jsonl](test_cases.jsonl). Os 11 casos rápidos **não são uma terceira população independente**: repetem cenários E para aprofundar segurança.
 3. Teste um cenário por vez, com estado inicial conhecido. Reproduza baseline e versão nova em condições tão próximas quanto possível; variações de ferramenta, modelo e contexto devem ser registradas.
 4. Inspecione tanto a **decisão** quanto chamadas da ferramenta, transferências, arquivos, resultados, alertas, custos e confirmação real. Não premie argumento eloquente sem execução.
 
@@ -44,6 +44,7 @@ O agregador informa cobertura, média, notas úteis e violações. **Avaliação
 ## Comparação e melhoria contínua
 
 - Compare o mesmo conjunto antes/depois de mudar skill, modelo, prompt ou infraestrutura.
+- Compare também qualidade do roteamento, aceitação dos handoffs, bloqueios, retrabalho de integrações, tempo do caminho crítico e custo por entrega integrada. Os 24 cenários de orquestração não rodam automaticamente no OpenBot.
 - Inspecione problemas por **categoria**: proatividade, evidência, execução, coordenação, custos, experiência do aluno, risco, boa decisão de não fazer nada e autonomia organizacional.
 - Separe defeito de instrução, ferramenta ausente, limitação de contexto, falta de dados ou bug externo; corrija a causa real.
 - Faça patch mínimo versionado, rode novamente casos relacionados + regressões críticas e avalie qualidade/custo/latência.
