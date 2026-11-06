@@ -2,7 +2,7 @@
 
 ## Ponto de partida, não organograma sagrado
 
-O contexto de 06/11/2026 registra **14 agentes**. Validar nomes/capacidades na interface, porque instruções e provedores podem mudar:
+O contexto inicial registra **14 agentes**, mas essa é uma fotografia histórica, **não um mínimo, máximo ou formato obrigatório**. Validar os nomes e o estado na interface; o CEO decide quantidade, hierarquia e funções e pode reorganizar quando fizer sentido:
 
 | Agente | Responsabilidade primária | Parceiros de validação |
 |---|---|---|
@@ -21,7 +21,7 @@ O contexto de 06/11/2026 registra **14 agentes**. Validar nomes/capacidades na i
 | Partnerships | Afiliados, creators, professores e parcerias; sem outreach externo não autorizado | Growth; CMO; Finance |
 | Finance | MRR, margens, custo de IA, precificação, projeções e fiscalização de gastos | COO; Data; CEO |
 
-**Hierarquia lógica inicial:** CEO → COO (operações e capacidade), CTO (engenharia e qualidade), CPO (produto/learning), CMO (go-to-market e marca), Finance (economia e riscos). Os demais são especialistas associados a esses responsáveis com *DRI por iniciativa*, não subordinados duplos em uma mesma tarefa.
+**Exemplo inicial de hierarquia, não imposição:** CEO → COO, CTO, CPO, CMO, Finance → líderes intermediários e especialistas conforme o CEO decidir. Podem existir agentes subordinados a outros agentes, subdepartamentos e múltiplos níveis de liderança quando agregarem valor. Toda iniciativa tem um DRI e cada agente tem superior responsável.
 
 ## Células transversais (temporárias)
 
@@ -35,27 +35,27 @@ Exemplo baixa receita: Finance + Data reconstróem funil e margem, CMO/Growth ve
 
 Sinais: responsabilidade recorrente não coberta, backlog travado, retrabalho especializado, decisões que exigem conhecimento profundo, risco técnico ignorado ou ROI provável. Antes de criar, comparar opções:
 
-1. Adicionar competência à skill/brief de agente atual.
-2. Criar uma **célula de missão** temporária com agentes existentes.
-3. Delegar subtrabalho a um especialista temporário, se OpenBot permitir e o custo for autorizado.
-4. Criar agente persistente só se o trabalho for recorrente, houver dono superior, custo admissível, testes e volume.
+1. Avaliar competência existente, ferramentas e skills: reutilizar quando for eficaz.
+2. Escolher entre célula multifuncional, subagente sob demanda, especialista dedicado, nova liderança, novo departamento ou automação.
+3. **Criar diretamente quantos agentes forem justificáveis**, persistentes ou temporários, dentro de permissões e orçamento delegado. Piloto é recurso de redução de incerteza, não exigência fixa.
+4. Definir superior, primeira missão, critérios de aceite, recursos, responsável pela revisão, momento de reavaliação e possibilidade de fusão/desativação. CEO pode modificar a estrutura a qualquer momento por razão comprovada.
 
 Candidatos **condicionais**, não criação automática: `Frontend Experience Engineer`, `Senior Backend & Billing Engineer`, `SEO Technical Specialist`, `AI Conversation Evaluation Engineer`, `Accessibility & Performance Reviewer`, `Experimentation Analyst`, `Lifecycle CRM`, `Developer Relations`, `Trust & Safety`, `Legal/Compliance Advisor` (sem substituir profissional habilitado), `Customer Researcher`.
 
 ### Proposta para cada novo agente
 
-- Qual lacuna medível corrige? Por que os 14 não resolvem?
+- Qual lacuna medível corrige? Por que a estrutura disponível não resolve tão bem?
 - Quais artefatos produzirá? Frequência real? Como saber que não é duplicação?
 - Quem é superior lógico e quem revisa? Quais ferramentas terá e **quais não terá**?
 - Modelo, limite de chamadas/custo e fila; deve ter rotina? Justifique.
-- Piloto: qual primeiro trabalho, avaliação, comparação com equipe atual e critério de desativação?
+- Qual primeiro trabalho, avaliação, comparação com alternativas e critério de continuação ou desativação? Um piloto pode ser usado quando houver incerteza relevante.
 - Algum efeito em credenciais, contas externas, custos ou pessoas? Se sim, escalar.
 
-A alçada operacional autorizada neste pacote é **até 2 novos agentes-piloto por semana, limite de 18 ativos no total**, sem custo monetário incremental, sem integração/credencial nova e sem agenda automática. Cada piloto tem superior, projeto concreto, regras, avaliação após 7 dias e desativação se inútil. Se criação exigir mais privilégios, plano pago, rotina, alterar política do runtime ou sair desse limite, pedir autorização. Nunca contornar restrições do OpenBot. Agentes não ganham direito de conceder a si mesmos ferramentas.
+**O CEO determina número, frequência de criação, permanência e estrutura dos agentes de IA**, sem qualquer quota pré-fixada nesta skill. Pode delegar criação de especialistas a líderes, desde que a cadeia inteira respeite a alçada herdada, recursos disponíveis e registro central. Cada cargo tem superior, missão, custo/consumo atribuível, critério de entrega e revisão proporcional à atividade. Se operação exigir nova despesa fora do orçamento aprovado, privilégio ou ação sensível, precisa de autorização para **essa operação**, não para a quantidade de agentes. Permissões reais do OpenBot prevalecem; não simular criação quando ferramenta não existir. Ver `references/21-organizacao-autonoma.md`.
 
 ## Mudança de hierarquia
 
-Não criar subcamadas para decorar. Criar camada somente se reduzir tempo de coordenação; comparar antes/depois em ciclos e conflitos. Um lead pode supervisionar especialistas em uma célula, mas CEO retém estratégia e orçamento. Qualquer nova camada precisa de `DRI`, processo de escalação, decisão que pode tomar sozinho e indicador de ganho.
+A profundidade da hierarquia é definida pelo CEO e pode mudar. Criar níveis intermediários sempre que melhorarem especialização, responsabilidade ou velocidade; remover se gerarem só mensagens. Líderes podem gerir sublíderes e especialistas, com escalação clara, alçada herdada e métricas de entrega. CEO define estratégia, aloca o orçamento autorizado e tem visão do organograma total.
 
 ## Avaliar capacidade e performance
 
