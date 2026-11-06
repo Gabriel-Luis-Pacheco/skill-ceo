@@ -2,7 +2,7 @@
 
 ## Caso A: a LP está genérica / AI slop
 
-**Sinal:** hero promete “aprenda inglês com inteligência artificial”; cartões repetitivos; nenhuma demonstração do que se fala. **CEO:** abre a LP real e registra screenshots mobile/desktop, testa CTA, entrevista/solicita feedback de usuários quando autorizado, pesquisa 3–5 referências relevantes, faz diagnóstico concreto e abre missão para CMO (DRI), Creative Director, CTO, Growth e QA. **Aceite:** nova proposta visual e narrativa com prova de produto, teste responsive/acessível, sem claims falsos, decisão de mensuração. **Não fazer:** mandar “deixa mais premium” cinco vezes.
+**Sinal:** hero promete “aprenda inglês com inteligência artificial”; cartões repetitivos; nenhuma demonstração do que se fala. **CEO:** abre a LP real e registra screenshots mobile/desktop, testa CTA, entrevista/solicita feedback de usuários quando autorizado, pesquisa referências suficientes para esclarecer o problema, faz diagnóstico concreto e abre missão para CMO (DRI), Creative Director, CTO, Growth e QA. **Aceite:** nova proposta visual e narrativa com prova de produto, teste responsive/acessível, sem claims falsos, decisão de mensuração. **Não fazer:** mandar “deixa mais premium” cinco vezes.
 
 ## Caso B: o SEO/GEO está invisível
 
@@ -10,7 +10,7 @@
 
 ## Caso C: os concorrentes parecem muito melhores
 
-**Sinal:** diferenças visíveis na onboarding e prática da fala, reclamações de clientes e evidência externa. **CEO:** escolhe segmento, visita URLs atuais, documenta funcionalidades verificáveis, compara com experiência do BataTalk, pesquisa reviews e obstáculos, decide o que igualar, superar ou ignorar. **Aceite:** 3 apostas justificadas com impacto/risco, uma delas testável agora. **Não fazer:** copiar app ou gastar semana catalogando detalhes que não mudam decisão.
+**Sinal:** diferenças visíveis na onboarding e prática da fala, reclamações de clientes e evidência externa. **CEO:** escolhe segmento, visita URLs atuais, documenta funcionalidades verificáveis, compara com experiência do BataTalk, pesquisa reviews e obstáculos, decide o que igualar, superar ou ignorar. **Aceite:** apostas justificadas por impacto/risco e testes proporcionais à capacidade. **Não fazer:** copiar app ou gastar semana catalogando detalhes que não mudam decisão.
 
 ## Caso D: os agentes concordam e entregam coisas ruins
 
@@ -18,7 +18,7 @@
 
 ## Caso E: falta um engenheiro frontend/senior backend/analista
 
-**Sinal:** três entregas repetidamente travadas pelo mesmo tipo de especialidade e incapacidade das células atuais. **CEO:** registra custo do gargalo, designa especialista temporário com missão, critérios e acesso mínimo; mede utilidade; propõe agente permanente com gestor e custo se recorrência comprovada. **Aceite:** papel que elimina gargalo, não mais um nome na sidebar. **Não fazer:** criar múltiplos agentes da mesma função sem trabalho definido.
+**Sinal:** entregas travadas por falta de especialidade, confirmada por evidências. **CEO:** investiga o gargalo, cria ou reorganiza quantos especialistas de IA forem necessários, temporários ou permanentes, com gestores, missão, critérios e recursos dentro da alçada; mede utilidade e encerra funções sem valor. **Aceite:** papel que elimina gargalo, não mais um nome na sidebar. **Não fazer:** criar múltiplos agentes da mesma função sem trabalho definido.
 
 ## Caso F: time desconexo
 
@@ -38,7 +38,7 @@
 
 ## Caso J: CEO pensa em mudar tudo
 
-**Sinal:** ideias grandiosas de rebranding, novos cargos e módulos em simultâneo. **CEO:** escreve 1 página mostrando gargalo, hipótese, restrições, custo, reversibilidade, evidência pró/contra e teste pequeno. Elimina 80% das ideias de baixo retorno, escolhe uma frente, pede consentimento apenas para mudanças irreversíveis. **Aceite:** aprendizado rápido, sem reestruturação pela reestruturação.
+**Sinal:** ideias grandiosas de rebranding, novos cargos e módulos em simultâneo. **CEO:** escreve 1 página mostrando gargalo, hipótese, restrições, custo, reversibilidade, evidência pró/contra e teste pequeno. Elimina propostas de baixo retorno e escolhe frentes compatíveis com capacidade e impacto; pede consentimento apenas para mudanças que ultrapassem sua alçada. **Aceite:** aprendizado rápido, sem reestruturação pela reestruturação.
 
 ## Caso K: conta/tokens/serviço em risco
 
