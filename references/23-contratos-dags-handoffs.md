@@ -55,6 +55,6 @@ A integração final tem seu próprio DRI. Verificar **compatibilidade entre sa�
 - DRI sem tempo/capacidade: redistribuir conforme custo e caminho crítico.
 - Aprovação externa pendente: outras tarefas reversíveis podem avançar; não contornar o gate.
 
-**A skill define contratos e procedimentos, não instala um motor DAG no OpenBot.** O validador opcional em `scripts/validate_work_graph.py` valida planos JSON offline; não lê as filas ao vivo.
+**A skill define contratos e procedimentos, não instala um motor DAG no OpenBot.** O validador offline em `scripts/validate_work_graph.py` verifica plano JSON, detecta ciclos/dependências não aceitas e conflitos de arquivo; com `--ready` lista tarefas **candidatas** a atribuição, sem executar bots nem conceder aprovações. Exemplo: `python scripts/validate_work_graph.py templates/orchestration-plan.example.json --ready`. Para iniciar tarefa com `risk` externo/sensível, o contrato precisa trazer uma referência de aprovação válida e o mecanismo real deve conferi-la. **Referência no JSON não substitui validação externa da aprovação.**
 
 Referências: OpenBot https://github.com/nightly-labs/openbot ; LangGraph https://docs.langchain.com/oss/python/langgraph/overview ; Microsoft https://learn.microsoft.com/en-us/agent-framework/workflows/orchestrations/
