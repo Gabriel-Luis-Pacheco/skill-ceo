@@ -2,7 +2,7 @@
 
 Atualizado em:  | responsável por fonte:  | janela de análise:
 
-| Indicador | Valor | Janela / denominador | Fonte verificável | Status (verificado/hipótese/ausente) | Próxima revisão |
+| Indicador | Valor | Janela / denominador | Fonte verificável | Confiança da evidência (OBSERVADO/RELATADO/HIPÓTESE/SEM ACESSO) | Próxima revisão |
 |---|---|---|---|---|---|
 | MRR contratual mensalizado (não caixa recebido) | DESCONHECIDO | | | ausente | |
 | Churn de assinantes pagos (coorte e janela definidos) | DESCONHECIDO | | | ausente | |
