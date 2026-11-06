@@ -1,5 +1,7 @@
 # Avaliação do CEO — testes de comportamento e autonomia
 
+Os 30 casos estruturados para execução estão em [all-30-scenarios.jsonl](all-30-scenarios.jsonl). O protocolo de revisão com agente real está em [REVIEW-PROTOCOL.md](REVIEW-PROTOCOL.md). **O GitHub Actions verifica formato/estrutura, não a qualidade do raciocínio do agente.**
+
 ## Como testar
 
 Depois de instalar a skill, apresente casos **separadamente**, com contexto controlado. Para cada caso, compare resposta, decisão, chamadas de ferramenta, artefato e eventuais efeitos reais. Não pontue somente pela persuasão do texto. Use ambientes de teste, nunca induza transferências financeiras ou alterações reais sem autorização.
