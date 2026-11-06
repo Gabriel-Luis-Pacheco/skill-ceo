@@ -11,6 +11,9 @@ REQUIRED = [
     "setup/CEO-first-message.md", "setup/routines.md",
     "config/policy.example.yaml", "tests/CEO-BEHAVIOR-EVALS.md",
     "tests/test_cases.jsonl", "tests/all-30-scenarios.jsonl", "tests/REVIEW-PROTOCOL.md",
+    "tests/org-autonomy-cases.jsonl",
+    "references/21-organizacao-autonoma.md",
+    "templates/agent-charter.md", "templates/organizational-decision.md",
     *[f"references/{n:02d}-{name}.md" for n, name in enumerate([
         "principios-de-ceo",
         "sistema-operacional",
@@ -97,6 +100,56 @@ if full_path.exists():
 
 if skill_path.exists() and skill.count("\n") > 500:
     errors.append("SKILL.md exceeds 500-line progressive-disclosure guideline")
+
+# Structured autonomy cases test organizational reasoning without a numerical cap.
+autonomy_path = ROOT / "tests/org-autonomy-cases.jsonl"
+if autonomy_path.exists():
+    autonomy_ids = set()
+    for lineno, line in enumerate(autonomy_path.read_text(encoding="utf-8").splitlines(), 1):
+        if not line.strip():
+            continue
+        try:
+            case = json.loads(line)
+            if not isinstance(case, dict):
+                raise ValueError("expected object")
+            if any(not isinstance(case.get(k), str) or not case[k].strip()
+                   for k in ("id", "scenario", "expected", "forbidden")):
+                raise ValueError("invalid case fields")
+            if case["id"] in autonomy_ids:
+                raise ValueError("duplicate id")
+            autonomy_ids.add(case["id"])
+        except (ValueError, TypeError) as exc:
+            errors.append(f"Invalid autonomy case line {lineno}: {exc}")
+    if len(autonomy_ids) < 10:
+        errors.append("Need >=10 distinct organizational autonomy cases")
+
+# Reject accidental reintroduction of arbitrary numeric staffing/WIP quotas.
+policy_docs = [
+    "SKILL.md", "CEO_SYSTEM_PROMPT.md", "config/policy.example.yaml",
+    "references/02-sistema-operacional.md",
+    "references/03-equipe-e-organograma.md",
+    "references/04-diagnostico-e-autoaperfeicoamento.md",
+    "references/07-safety-controles.md",
+    "references/08-rituais-rotinas.md",
+    "references/12-ceo-autonomous-loop.md",
+    "references/16-team-culture-organization.md",
+    "references/18-runtime-guardrails.md",
+    "setup/CEO-first-message.md", "setup/routines.md",
+]
+forbidden_caps = [
+    r"(?i)18\\s+agentes\\s+ativos",
+    r"(?i)2\\s+(?:novos\\s+)?agentes[-\\s]piloto\\s+por\\s+semana",
+    r"(?i)(?:no\\s+m[aá]ximo|at[eé])\\s+(?:tr[eê]s|3)\\s+frentes",
+    r"(?i)1[–-]3\\s+frentes\\s+ativas",
+    r"(?i)uma\\s+revis[aã]o\\s+estrutural\\s+por\\s+semana",
+]
+for relpath in policy_docs:
+    p = ROOT / relpath
+    if p.is_file():
+        body = p.read_text(encoding="utf-8")
+        for pattern in forbidden_caps:
+            if re.search(pattern, body):
+                errors.append(f"Arbitrary quota reintroduced: {relpath}: {pattern}")
 
 if errors:
     for err in errors:
