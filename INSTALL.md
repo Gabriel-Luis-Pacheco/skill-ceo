@@ -25,7 +25,7 @@ Confirme que o `SKILL.md` registrado é o da pasta correta e que as referências
 
 Copie o conteúdo completo de [CEO_SYSTEM_PROMPT.md](CEO_SYSTEM_PROMPT.md) para as instruções persistentes do CEO. Não distribua o mandato completo a outros agentes. A política de autoridade está em [POLICY.md](POLICY.md).
 
-Envie [setup/CEO-first-message.md](setup/CEO-first-message.md) para iniciar uma auditoria com acesso e evidências reais; use [setup/routines.md](setup/routines.md) para escolher cadência.
+Envie [setup/CEO-first-message.md](setup/CEO-first-message.md) para iniciar uma auditoria com acesso e evidências reais. Para validar especialmente o funcionamento como **orquestrador**, envie [setup/CEO-orchestration-first-run.md](setup/CEO-orchestration-first-run.md) em ambiente controlado. Use [setup/routines.md](setup/routines.md) para escolher cadência.
 
 ## 4. Verifique antes de deixar operar continuamente
 
