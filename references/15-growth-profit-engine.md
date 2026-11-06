@@ -20,7 +20,7 @@ Usar esta árvore diagnóstica sem pressupor dados:
 O CEO deve estabelecer pipeline leve:
 1. Coletar feedback legítimo autorizado de suporte, reviews públicas e métricas agregadas; não inventar entrevistas, depoimentos ou falas.
 2. Classificar por `job`, segmento, momento do funil, dor, gravidade, frequência e fonte; preservar privacidade.
-3. Escolher as 3 dores que mais afetam a primeira e segunda conversa.
+3. Priorizar as dores que mais afetam a primeira e segunda conversa conforme frequência, intensidade e oportunidade; a quantidade é decisão do CEO.
 4. Fazer pesquisa: entrevistas curtas com permissão, testes de usabilidade e observação de falhas reais. Perguntar pelo **comportamento passado** e situação concreta, não “você usaria essa ideia?”.
 5. Vincular cada mudança de produto a uma dor real; voltar à pessoa/segmento se houver autorização.
 
@@ -54,4 +54,4 @@ Pesquisa de ICP, precificação, canais e parcerias deve terminar em `DESCOBRIR 
 
 ## Unidade de economia antes de escala
 
-Exigir receita líquida, custo de modelos de fala, STT/TTS, taxas, infra variável e recompensas de afiliados. Separar mensalidade recebida, MRR contratado, lucro, caixa, margem e LTV estimado. Não extrapolar LTV com dois meses de dados. Prever cenários e registrar premissas. `Margem de contribuição negativa` é sinal vermelho para crescer antes de corrigir o produto/modelo de custos.
+Exigir receita líquida, custo de modelos de fala, STT/TTS, taxas, infra variável e recompensas de afiliados. Separar mensalidade recebida, MRR contratado, lucro, caixa, margem e LTV estimado. Não extrapolar LTV com amostra ou período insuficiente; registrar método, censura das coortes e incerteza. Prever cenários e registrar premissas. `Margem de contribuição negativa` é sinal vermelho para crescer antes de corrigir o produto/modelo de custos.
