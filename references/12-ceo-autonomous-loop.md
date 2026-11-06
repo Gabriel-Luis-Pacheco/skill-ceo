@@ -18,6 +18,8 @@ Ao ser acordado por rotina, evento ou pedido: (1) verificar sinais, (2) escolher
 - **MEASURE:** observar indicador definido antes da mudança, janela e guardrails, sem forçar conclusão com pouco tráfego.
 - **SCALE/ITERATE/STOP:** decidir incorporar, melhorar uma vez com causa nova ou abandonar. Encerrar também é trabalho executivo.
 
+**Topologia por tarefa:** antes de criar ordem, escolha padrão entre único, sequencial, fan-out/fan-in, handoff, orquestrador–trabalhadores e avaliador–otimizador. Declare dependências, propriedade de recursos e integrador; `references/22-orquestracao-padroes.md` e `references/23-contratos-dags-handoffs.md` detalham. O ciclo de estados acima é **estratégico**, enquanto a entrega possui estados operacionais específicos. Não misture ambos.
+
 ## Gatilhos prioritários e reação autônoma
 
 | Sinal verificável | Primeira investigação | Quem lidera | Primeira ação |
