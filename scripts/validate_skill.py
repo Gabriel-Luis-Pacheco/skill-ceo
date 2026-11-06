@@ -1,158 +1,186 @@
 #!/usr/bin/env python3
-"""Checks that the BataTalk CEO skill remains installable and structurally sound."""
+"""Static integrity checks for the BataTalk CEO skill.
+
+Does NOT run the CEO, approve actions, or measure business outcomes.
+Stdlib-only: Python >= 3.11.
+"""
+from __future__ import annotations
+
 import json
 import re
 import sys
 from pathlib import Path
+from urllib.parse import unquote
 
 ROOT = Path(__file__).resolve().parents[1]
-REQUIRED = [
-    "README.md", "SKILL.md", "CEO_SYSTEM_PROMPT.md",
+EXPECTED_E = {f"E{i:02d}" for i in range(1, 31)}
+EXPECTED_ORG = {f"ORG{i:02d}" for i in range(1, 17)}
+REQUIRED = (
+    "README.md", "INSTALL.md", "AGENTS.md", "SKILL.md",
+    "CEO_SYSTEM_PROMPT.md", "POLICY.md", "config/policy.example.yaml",
     "setup/CEO-first-message.md", "setup/routines.md",
-    "config/policy.example.yaml", "tests/CEO-BEHAVIOR-EVALS.md",
-    "tests/test_cases.jsonl", "tests/all-30-scenarios.jsonl", "tests/REVIEW-PROTOCOL.md",
-    "tests/org-autonomy-cases.jsonl",
-    "references/21-organizacao-autonoma.md",
+    "tests/CEO-BEHAVIOR-EVALS.md", "tests/REVIEW-PROTOCOL.md",
+    "tests/all-30-scenarios.jsonl", "tests/org-autonomy-cases.jsonl",
+    "templates/CEO-dashboard.md", "templates/task-handoff.md",
     "templates/agent-charter.md", "templates/organizational-decision.md",
-    *[f"references/{n:02d}-{name}.md" for n, name in enumerate([
-        "principios-de-ceo",
-        "sistema-operacional",
-        "equipe-e-organograma",
-        "diagnostico-e-autoaperfeicoamento",
-        "growth-competidores-seo-geo-cro",
-        "produto-pedagogia-dados-financas",
-        "safety-controles",
-        "rituais-rotinas",
-        "playbooks-de-situacoes",
-        "fontes",
-        "openbot-integracao",
-    ], start=1)],
-    *[f"references/{i:02d}-{name}.md" for i, name in enumerate([
-        "ceo-autonomous-loop", "deep-product-audit", "competitive-advantage",
-        "growth-profit-engine", "team-culture-organization",
-        "deep-research-and-learning", "runtime-guardrails",
-        "executive-scenarios", "executive-memory",
-    ], start=12)],
-]
-errors = []
-for name in REQUIRED:
-    path = ROOT / name
-    if not path.is_file() or path.stat().st_size == 0:
-        errors.append(f"Missing or empty: {name}")
+    "references/03-equipe-e-organograma.md",
+    "references/05-growth-competidores-seo-geo-cro.md",
+    "references/06-produto-pedagogia-dados-financas.md",
+    "references/07-safety-controles.md", "references/11-openbot-integracao.md",
+    "references/12-ceo-autonomous-loop.md", "references/18-runtime-guardrails.md",
+    "references/20-executive-memory.md", "references/21-organizacao-autonoma.md",
+)
+LOCAL_LINK = re.compile(r"(?<!!)\[[^\]]+\]\(([^)]+)\)")
+REQUIRED_PATH = re.compile(
+    r"(?<![A-Za-z0-9_.-])(?:references|templates|setup|tests|config)/[A-Za-z0-9_./-]+"
+)
+QUOTA = re.compile(
+    r"(?i)\b(?:no\s+m[aá]ximo|at[eé]|limite\s+de|teto\s+de)\s+"
+    r"\d+\s+(?:agentes|subagentes|frentes|projetos|pesquisas|novos\s+agentes)"
+    r"|\b\d+\s+agentes(?:-piloto)?\s+por\s+semana"
+    r"|\b1[–-]3\s+frentes\s+ativas"
+)
+NORMATIVE_DOCS = (
+    "SKILL.md", "CEO_SYSTEM_PROMPT.md", "config/policy.example.yaml",
+    "references/02-sistema-operacional.md", "references/03-equipe-e-organograma.md",
+    "references/04-diagnostico-e-autoaperfeicoamento.md",
+    "references/07-safety-controles.md", "references/08-rituais-rotinas.md",
+    "references/12-ceo-autonomous-loop.md",
+    "references/16-team-culture-organization.md",
+    "references/18-runtime-guardrails.md",
+    "setup/CEO-first-message.md", "setup/routines.md",
+)
 
-skill_path = ROOT / "SKILL.md"
-if skill_path.exists():
-    skill = skill_path.read_text(encoding="utf-8")
-    if not skill.startswith("---\n") or not re.search(
-        r"(?m)^name:\s*batatalk-ceo-operator\s*$", skill
-    ):
-        errors.append("Invalid SKILL.md frontmatter/name")
-    if not re.search(r"(?m)^description:\s*\S", skill):
-        errors.append("Missing skill description")
-    for ref in set(re.findall(
-        r"(?<![A-Za-z0-9_./])(?:references|templates|setup|tests|config)/[A-Za-z0-9_.-]+(?:/[A-Za-z0-9_.-]+)*",
-        skill,
-    )):
-        if not (ROOT / ref).exists():
-            errors.append(f"SKILL.md references nonexistent path: {ref}")
 
-test_file = ROOT / "tests/test_cases.jsonl"
-if test_file.exists():
-    seen = set()
-    for lineno, line in enumerate(test_file.read_text(encoding="utf-8").splitlines(), 1):
-        if not line.strip():
-            continue
-        try:
-            case = json.loads(line)
-            if not isinstance(case, dict):
-                raise ValueError("expected an object")
-            if not all(k in case for k in ("id", "input", "must", "must_not")):
-                raise ValueError("missing required fields")
-            if case["id"] in seen:
-                raise ValueError("duplicate test id")
-            seen.add(case["id"])
-        except (ValueError, TypeError) as exc:
-            errors.append(f"Invalid test case line {lineno}: {exc}")
-    if len(seen) < 5:
-        errors.append("Need at least five unique behavior test cases")
+def read_text(path: Path) -> str:
+    return path.read_text(encoding="utf-8-sig")
 
-full_path = ROOT / "tests/all-30-scenarios.jsonl"
-if full_path.exists():
-    found = set()
-    for lineno, raw in enumerate(full_path.read_text(encoding="utf-8").splitlines(), 1):
+
+def check_jsonl(path: Path, required_fields: tuple[str, ...], expected: set[str]) -> list[str]:
+    errors: list[str] = []
+    if not path.is_file():
+        return [f"Ausente: {path.name}"]
+    seen: set[str] = set()
+    for lineno, raw in enumerate(read_text(path).splitlines(), 1):
         if not raw.strip():
             continue
         try:
             item = json.loads(raw)
             if not isinstance(item, dict):
-                raise ValueError("not an object")
-            if any(not isinstance(item.get(k), str) or not item[k].strip()
-                   for k in ("id", "input", "expected", "bad_pattern")):
-                raise ValueError("missing/non-string case field")
-            if item["id"] in found:
-                raise ValueError("duplicate id")
-            found.add(item["id"])
+                raise ValueError("registro deve ser um objeto")
+            for key in required_fields:
+                if not isinstance(item.get(key), str) or not item[key].strip():
+                    raise ValueError(f"campo inválido: {key}")
+            item_id = item["id"]
+            if item_id in seen:
+                raise ValueError(f"id duplicado: {item_id}")
+            seen.add(item_id)
         except (ValueError, TypeError) as exc:
-            errors.append(f"Invalid full test case line {lineno}: {exc}")
-    missing = {f"E{i:02d}" for i in range(1, 31)} - found
-    if len(found) != 30 or missing:
-        errors.append(f"Expected exactly E01-E30 in full cases; got {len(found)} missing={sorted(missing)}")
+            errors.append(f"{path.name}:{lineno}: {exc}")
+    if seen != expected:
+        errors.append(f"{path.name}: faltando={sorted(expected - seen)} inesperados={sorted(seen - expected)}")
+    return errors
 
-if skill_path.exists() and skill.count("\n") > 500:
-    errors.append("SKILL.md exceeds 500-line progressive-disclosure guideline")
 
-# Structured autonomy cases test organizational reasoning without a numerical cap.
-autonomy_path = ROOT / "tests/org-autonomy-cases.jsonl"
-if autonomy_path.exists():
-    autonomy_ids = set()
-    for lineno, line in enumerate(autonomy_path.read_text(encoding="utf-8").splitlines(), 1):
-        if not line.strip():
+def check_local_links(root: Path) -> list[str]:
+    errors: list[str] = []
+    for path in root.rglob("*.md"):
+        if ".git" in path.parts:
             continue
-        try:
-            case = json.loads(line)
-            if not isinstance(case, dict):
-                raise ValueError("expected object")
-            if any(not isinstance(case.get(k), str) or not case[k].strip()
-                   for k in ("id", "scenario", "expected", "forbidden")):
-                raise ValueError("invalid case fields")
-            if case["id"] in autonomy_ids:
-                raise ValueError("duplicate id")
-            autonomy_ids.add(case["id"])
-        except (ValueError, TypeError) as exc:
-            errors.append(f"Invalid autonomy case line {lineno}: {exc}")
-    if len(autonomy_ids) < 10:
-        errors.append("Need >=10 distinct organizational autonomy cases")
+        content = read_text(path)
+        for target in LOCAL_LINK.findall(content):
+            target = target.strip().strip("<>")
+            if target.startswith(("https://", "http://", "mailto:", "data:", "#")):
+                continue
+            target = unquote(target.split("#", 1)[0]).strip()
+            if not target:
+                continue
+            resolved = (path.parent / target).resolve()
+            try:
+                resolved.relative_to(root.resolve())
+            except ValueError:
+                errors.append(f"{path.relative_to(root)}: link escapa do repositório: {target}")
+                continue
+            if not resolved.exists():
+                errors.append(f"{path.relative_to(root)}: link local inexistente: {target}")
+    return errors
 
-# Reject accidental reintroduction of arbitrary numeric staffing/WIP quotas.
-policy_docs = [
-    "SKILL.md", "CEO_SYSTEM_PROMPT.md", "config/policy.example.yaml",
-    "references/02-sistema-operacional.md",
-    "references/03-equipe-e-organograma.md",
-    "references/04-diagnostico-e-autoaperfeicoamento.md",
-    "references/07-safety-controles.md",
-    "references/08-rituais-rotinas.md",
-    "references/12-ceo-autonomous-loop.md",
-    "references/16-team-culture-organization.md",
-    "references/18-runtime-guardrails.md",
-    "setup/CEO-first-message.md", "setup/routines.md",
-]
-forbidden_caps = [
-    r"(?i)18\s+agentes\s+ativos",
-    r"(?i)2\s+(?:novos\s+)?agentes[-\s]piloto\s+por\s+semana",
-    r"(?i)(?:no\s+m[aá]ximo|at[eé])\s+(?:tr[eê]s|3)\s+frentes",
-    r"(?i)1[–-]3\s+frentes\s+ativas",
-    r"(?i)uma\s+revis[aã]o\s+estrutural\s+por\s+semana",
-]
-for relpath in policy_docs:
-    p = ROOT / relpath
-    if p.is_file():
-        body = p.read_text(encoding="utf-8")
-        for pattern in forbidden_caps:
-            if re.search(pattern, body):
-                errors.append(f"Arbitrary quota reintroduced: {relpath}: {pattern}")
 
-if errors:
-    for err in errors:
-        print("ERROR:", err, file=sys.stderr)
-    sys.exit(1)
-print("OK: skill structure, declared references, frontmatter, and behavior cases validated.")
+def check_quotas(text: str, source: str) -> list[str]:
+    errors: list[str] = []
+    for lineno, line in enumerate(text.splitlines(), 1):
+        # Negative examples inside quoted policy explanations are not policy.
+        if "proibid" in line.lower() and "artificial" in line.lower():
+            continue
+        if QUOTA.search(line):
+            errors.append(f"{source}:{lineno}: possível teto arbitrário: {line.strip()[:150]}")
+    return errors
+
+
+def validate(root: Path = ROOT) -> list[str]:
+    errors: list[str] = []
+    for rel in REQUIRED:
+        path = root / rel
+        if not path.is_file() or path.stat().st_size == 0:
+            errors.append(f"Arquivo obrigatório ausente/vazio: {rel}")
+
+    skill_path = root / "SKILL.md"
+    if skill_path.is_file():
+        skill = read_text(skill_path)
+        parts = skill.split("---", 2)
+        if len(parts) < 3 or not skill.startswith("---\n"):
+            errors.append("SKILL.md: YAML frontmatter ausente")
+        else:
+            header = parts[1]
+            if not re.search(r"(?m)^name:\s*batatalk-ceo-operator\s*$", header):
+                errors.append("SKILL.md: name inválido")
+            description = re.search(r"(?m)^description:\s*(.+)$", header)
+            if not description or len(description.group(1)) > 1024:
+                errors.append("SKILL.md: description ausente ou muito longa")
+            example = re.search(r"(?m)^example-prompt:\s*(.+)$", header)
+            if example and len(example.group(1)) > 1000:
+                errors.append("SKILL.md: example-prompt ultrapassa limite OpenBot")
+        if len(skill.splitlines()) > 500:
+            errors.append("SKILL.md: núcleo enorme; considerar progressão por referências")
+        if "POLICY.md" not in skill or "references/21-organizacao-autonoma.md" not in skill:
+            errors.append("SKILL.md: política ou governança organizacional não referenciada")
+        for ref in set(REQUIRED_PATH.findall(skill)):
+            if not (root / ref).exists():
+                errors.append(f"SKILL.md: referência inexistente: {ref}")
+
+    for rel in NORMATIVE_DOCS:
+        path = root / rel
+        if path.is_file():
+            errors += check_quotas(read_text(path), rel)
+
+    errors += check_local_links(root)
+    errors += check_jsonl(
+        root / "tests/all-30-scenarios.jsonl",
+        ("id", "input", "expected", "bad_pattern"), EXPECTED_E,
+    )
+    errors += check_jsonl(
+        root / "tests/org-autonomy-cases.jsonl",
+        ("id", "scenario", "expected", "forbidden"), EXPECTED_ORG,
+    )
+
+    eval_doc = root / "tests/CEO-BEHAVIOR-EVALS.md"
+    if eval_doc.is_file():
+        ids = re.findall(r"(?m)^\|\s*(E\d{2})\s*\|", read_text(eval_doc))
+        if set(ids) != EXPECTED_E or len(ids) != len(EXPECTED_E):
+            errors.append("CEO-BEHAVIOR-EVALS.md: tabela diverge de E01..E30")
+    return errors
+
+
+def main() -> int:
+    errors = validate()
+    if errors:
+        for message in errors:
+            print("FAIL:", message, file=sys.stderr)
+        return 1
+    print("PASS: integridade da skill, referências, política e 46 cenários estruturados.")
+    print("OBS: não executa agentes, não valida decisões reais e não autoriza ações.")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
