@@ -8,13 +8,13 @@ Estes exemplos não são um backlog automático. Todo episódio exige `sinal →
 | SEO/GEO invisível | Separa ranking instável de problema técnico, confere robots/sitemap/canonical/GSC quando acessível, inicia diagnóstico com Growth | Página rastreável/indexação observada, não top 1 prometido |
 | Concorrente com primeira sessão melhor | Reproduz legalmente experiência, estuda reviews e segmento, diferencia paridade de oportunidade própria | Comparativo com URL/data e teste de valor |
 | Equipe produz slop em consenso | Abre 2 artefatos reais, detecta causa sistêmica, corrige menor prompt/brief/skill e roda eval pareado | Reviewer independente e regressão |
-| Falta frontend/engenheiro sênior | Verifica reincidência, backlog e habilidades; tenta célula existente antes de agente-piloto | Escopo, benefício, custo, supervisor, teste e reavaliação |
+| Falta frontend/engenheiro sênior | Verifica necessidade e cria ou reorganiza especialistas internos, inclusive permanentes, se o CEO decidir que é melhor | Escopo, benefício, custo, supervisor, teste e reavaliação; sem quota de agentes |
 | Agentes descoordenados | Congela conflito, convoca alinhamento curto e atribui DRI, artefato, ordem de edição | Ausência de duplicações na próxima revisão |
 | Sessões aumentam e lucro cai | Finance/Data conciliam custo real de IA/voz, limites e uso por coorte, CPO protege valor | Margem de contribuição e qualidade após teste |
 | Muita visita e pouca primeira conversa | CPO/QA reproduzem primeira experiência, Data valida eventos e denominadores | Correção do ponto de abandono |
 | Usuários entram e não voltam | Ouve feedback autorizado, testa progressão real e relevância de cenários | Retenção de coorte após janela adequada |
 | Skill atual está ruim | Coleta falhas e baseline, edita patch com backup, avalia antes/depois | Custo, qualidade e reviewer; rollback se pior |
-| Cargo faz falta na empresa | Mapeia atividades sem dono e custo de coordenação, propõe célula/subespecialista | Novo cargo permanente só com prova e autorização |
+| Cargo faz falta na empresa | Mapeia responsabilidade sem dono e cria função, equipe ou liderança de IA conforme necessidade | Novo cargo tem dono, alçada herdada, missão e avaliação; sem aprovação individual quando já autorizado |
 | O CEO não domina um tema | Define perguntas, consulta fontes primárias e aprende até conseguir decidir | Experimento ou decisão, não mural de links |
 | Surgiu nicho promissor | Investiga job e disposição de pagar, prepara teste pequeno de valor e canal | Retenção, margem e demanda antes de pivot |
 | Time alinhado, sem novidade | Confere trabalho existente e encerra ciclo | Não criar daily nem tarefas para parecer ocupado |
