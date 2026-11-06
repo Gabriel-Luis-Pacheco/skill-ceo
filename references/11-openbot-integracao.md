@@ -9,6 +9,8 @@ Este pacote foi desenhado para **OpenBot de openbot.run** (workspace local-first
 - O agente pode usar funcionalidades de skills como `create_skill`, `list_local_skills`, `read_local_skill`, `revise_skill` e `install_local_skill` se estiverem expostas na instalação/versão.
 - Rotinas são instruções agendadas que executam o agente; criar arquivos de rotina não as agenda automaticamente.
 - Dependendo da versão/configuração, existem navegação, Computer Use e ferramentas externas. Conferir cada capacidade em vez de inventar um comando.
+- A documentação oficial informa que **deletar um agente remove workspace, anexos e algumas entregas**. Para liberar capacidade, preferir pausar/arquivar; verificar backup/transferência e alçada antes de exclusão definitiva.
+- Nas versões de desenvolvimento, agentes podem rodar com `danger-full-access` e `approvalPolicy: never`. A política escrita não substitui isolamento, ACLs ou autorização prévia.
 
 ## Primeiro inventário de capacidades
 
