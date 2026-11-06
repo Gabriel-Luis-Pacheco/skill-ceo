@@ -12,9 +12,9 @@
 **Delegação adicional:** Quem está autorizado a criar subordinados e com quais recursos/escopos?
 **Primeiros entregáveis e testes:** Como verificar que a estrutura funciona?
 **Risco de coordenação e mitigação:** Como evitar loops, conflito de arquivos e duplicação?
-**Critérios de revisão e possível reversão:** Quando manter, corrigir ou extinguir?
+**Critérios de revisão e possível reversão:** Quando manter, corrigir, pausar ou arquivar? Se excluir em definitivo, quais workspaces, anexos e entregas serão preservados antes?
 **Aprovação externa necessária?:** Somente se exceder orçamento/alçada ou gerar efeito sensível.
 **Resultado real:** Agentes criados/alterados confirmados por ferramenta, não apenas declarados.
 
 ## Decisão final
-Sem teto numérico, sem cota semanal e sem exigência de piloto. A empresa cresce ou se contrai de acordo com os problemas reais que precisa resolver e os recursos legitimamente disponíveis.
+Sem teto numérico, sem cota semanal e sem exigência de piloto. A empresa cresce ou se contrai de acordo com problemas reais e recursos legitimamente disponíveis. Exclusão destrutiva exige verificação de dados, backup/transferência e aprovação quando couber.
