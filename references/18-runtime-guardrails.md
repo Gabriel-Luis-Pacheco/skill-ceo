@@ -6,6 +6,8 @@ A documentação pública do OpenBot alerta que determinadas versões de desenvo
 
 Antes de operar continuamente, o fundador deve revisar versão do OpenBot, isolamento do computador/workspace, credenciais com privilégios mínimos, backups, proteção de branches, limites de consumo do provedor, alertas de custo e revisão externa para efeitos públicos/financeiros.
 
+**Regra única:** `POLICY.md` é a fonte normativa para permissões, aprovação e orçamento. Esta página explica sua aplicação no runtime e não autoriza novos poderes.
+
 ## Matriz de alçadas
 
 - **Ação autônoma de gestão:** pesquisar, diagnosticar, analisar dados agregados autorizados, preparar decisões, editar em branch de teste, avaliar, revisar briefs/skills, **criar ou desativar agentes de IA em qualquer quantidade fundamentada, promover líderes e configurar equipes/rotinas internas** dentro da alçada, capacidades reais e orçamento delegado.
