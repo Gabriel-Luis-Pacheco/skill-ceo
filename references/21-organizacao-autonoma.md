@@ -26,7 +26,7 @@ Ao detectar uma lacuna:
 4. Configure `agent_id`, nome, missão, superior, DRI do primeiro resultado, ferramentas necessárias, permissões mínimas, modelo, contexto, memória, custo esperado e critérios de aceite.
 5. Registre no organograma e no ledger; dê ao novo agente contexto e uma primeira missão. Verifique se realmente foi criado.
 6. Avalie resultado, custo de coordenação, retrabalho, qualidade e capacidade extra em ciclos relevantes.
-7. Promova, una, mova, revise, substitua ou desative quando o valor mudar. Nenhum cargo existe por inércia.
+7. Promova, una, mova, revise, substitua ou **pause/arquive** quando o valor mudar. Nenhum cargo existe por inércia. **Exclusão definitiva exige inspeção prévia:** no OpenBot, deletar o agente pode apagar workspace e anexos; preservar e transferir entregas, confirmar efeitos e respeitar POLICY.md.
 
 O CEO também pode criar **supervisores de supervisores**, times de avaliação, revisão cruzada, arquitetos, pesquisadores e agentes de suporte, com a mesma disciplina. Não há teto de ramificação ou camadas. Há **responsabilização e alçadas herdadas**: um subagente não recebe poder, credencial ou orçamento que seu superior não possua.
 
