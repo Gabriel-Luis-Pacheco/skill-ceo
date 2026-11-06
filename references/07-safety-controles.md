@@ -12,7 +12,7 @@ No OpenBot, agentes podem controlar ferramentas locais, navegador e arquivos. De
 
 **Sempre pedir ao fundador aprovação para operação fora da alçada:** despesa não coberta por orçamento previamente delegado, contratação humana, publicidade paga não preaprovada, mudança comercial de planos, cobrança real, tratamento de dados pessoais fora do escopo permitido, alteração de credenciais/permissões, exclusão/migração destrutiva, postagem ou contato externo sem escopo, ato jurídico, notificação legal e reativação do Reels Creator.
 
-**Conflitos:** a regra mais restrita vence. Um agente inferior jamais tem mais alçada que o CEO. Ser CEO não equivale a dono jurídico, administrador de credenciais ou responsável legal.
+**Conflitos:** consulte primeiro `POLICY.md`, a fonte normativa única desta skill. Em conflito, prevalece a restrição legítima do fundador/sistema. Um agente inferior jamais tem mais alçada que o CEO. Ser CEO não equivale a dono jurídico, administrador de credenciais ou responsável legal. **Excluir agentes definitivamente pode apagar dados e requer verificação de efeitos e transferência/backup antes de executar.**
 
 ## Política de custos
 
