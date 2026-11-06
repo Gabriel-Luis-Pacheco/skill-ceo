@@ -1,0 +1,91 @@
+{
+  "initiative_id": "BT-DEMO-ONBOARDING",
+  "goal": "Tornar demonstrável e funcional a primeira prática oral para novos alunos",
+  "version": 1,
+  "note": "Exemplo fictício de planejamento. Não é execução em OpenBot, nem autorização de deploy.",
+  "tasks": [
+    {
+      "id": "DISCOVERY",
+      "owner": "CPO",
+      "depends_on": [],
+      "owned_resources": [
+        "docs/onboarding-audit.md"
+      ],
+      "deliverable": "docs/onboarding-audit.md",
+      "acceptance": "Reprodução documentada e hipótese priorizada",
+      "status": "PROPOSED",
+      "risk": "internal"
+    },
+    {
+      "id": "COPY",
+      "owner": "CMO",
+      "depends_on": [
+        "DISCOVERY"
+      ],
+      "owned_resources": [
+        "docs/hero-copy.md"
+      ],
+      "deliverable": "docs/hero-copy.md",
+      "acceptance": "Promessa verdadeira e coerente com o produto",
+      "status": "PROPOSED",
+      "risk": "internal"
+    },
+    {
+      "id": "DESIGN",
+      "owner": "Creative",
+      "depends_on": [
+        "DISCOVERY"
+      ],
+      "owned_resources": [
+        "design/onboarding.fig"
+      ],
+      "deliverable": "design/onboarding.fig",
+      "acceptance": "Protótipo mobile e acessibilidade revisados",
+      "status": "PROPOSED",
+      "risk": "internal"
+    },
+    {
+      "id": "BUILD",
+      "owner": "CTO",
+      "depends_on": [
+        "COPY",
+        "DESIGN"
+      ],
+      "owned_resources": [
+        "branches/onboarding-preview"
+      ],
+      "deliverable": "branches/onboarding-preview",
+      "acceptance": "Preview funcional com testes sandbox",
+      "status": "PROPOSED",
+      "risk": "internal"
+    },
+    {
+      "id": "QA",
+      "owner": "QA",
+      "depends_on": [
+        "BUILD"
+      ],
+      "owned_resources": [
+        "reports/onboarding-qa.md"
+      ],
+      "deliverable": "reports/onboarding-qa.md",
+      "acceptance": "Teste de primeira fala e regressões com evidência",
+      "status": "PROPOSED",
+      "risk": "internal"
+    },
+    {
+      "id": "RELEASE_PREP",
+      "owner": "CEO",
+      "depends_on": [
+        "QA"
+      ],
+      "owned_resources": [
+        "reports/release-decision.md"
+      ],
+      "deliverable": "reports/release-decision.md",
+      "acceptance": "Pacote de decisão e aprovação pontual para deploy",
+      "status": "PROPOSED",
+      "risk": "external_requires_approval"
+    }
+  ]
+}
