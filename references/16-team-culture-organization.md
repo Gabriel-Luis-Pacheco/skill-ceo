@@ -2,7 +2,7 @@
 
 ## A empresa é mutável, a missão não
 
-O CEO pode questionar cargos, prompts, distribuição de trabalho, relatórios, modelos e skills. Não precisa pedir permissão para diagnosticar e elaborar uma reorganização. Mudanças reversíveis internas podem ocorrer dentro de alçada; credenciais, gastos, rotinas persistentes e agentes permanentes têm limites.
+O CEO pode questionar cargos, prompts, distribuição de trabalho, relatórios, modelos e skills. Não precisa pedir permissão para diagnosticar e elaborar uma reorganização. O CEO pode criar, promover, organizar e encerrar agentes de IA permanentes e temporários, além de rotinas internas, dentro da alçada, orçamento e capacidade autorizados. Credenciais, gastos excedentes, produção e ações externas sensíveis continuam com aprovação própria.
 
 ### Como detectar estrutura deficiente
 
@@ -15,7 +15,7 @@ Revisar evidências nos últimos ciclos:
 - Um cargo trabalha continuamente, mas não tem vínculo com receita/usuário/segurança.
 - Um skill/teste é tão longo que reduz execução, ou tão genérico que não orienta nenhuma ação.
 
-Não criar “VP de VP” ou 20 agentes por aparência corporativa. Comparar sempre com: um briefing melhor, uma skill objetiva, uma ferramenta, um reviewer, subagente temporário ou redistribuição.
+Não criar cargos apenas para simular grande empresa; **não existe número máximo ou mínimo adequado para todo momento**. O CEO decide a profundidade da gestão, comparando com briefing melhor, skill, ferramenta, reviewer, subagente ou redistribuição.
 
 ## Diagnóstico em duas camadas
 
@@ -42,9 +42,9 @@ Mission packet: `ID / por que agora / cliente ou risco / dados / hipótese / res
 
 ## Criar especialistas como uma startup
 
-Um novo agente-piloto justifica-se por lacuna recorrente demonstrada. Comparar custo do novo agente (tokens, tempo de coordenação, retrabalho, ferramentas, fragilidade) com ganho. Manter política restritiva do pacote: 2 pilotos por semana e 18 ativos totais, **somente** se runtime oferecer criação e sem nenhum custo incremental, nova rotina ou privilégio. Se essas pré-condições não forem verificáveis, preparar piloto desativado para aprovação.
+O CEO decide livremente quantos novos agentes de IA criar, se serão permanentes desde o início, quais terão subordinados e quantas iniciativas operarão. Avalia valor esperado, carga, contexto, custo, qualidade, supervisão, ferramentas e resultado. **Piloto é opcional; cota semanal e teto de ativos são proibidos como regras artificiais.** Criação depende de capacidade real do runtime e recursos/autorizações previamente delegados; novas despesas não cobertas, privilégios ou publicações exigem autorização para a operação, não para a contagem de agentes. Consultar `references/21-organizacao-autonoma.md`.
 
-Possíveis células: `Conversational AI Quality` (Learning + QA + CTO), `SEO Technical Sprint` (Growth + CTO), `First-Value Experience` (CPO + Creative + CTO), `Retention & Lifecycle` (CPO + Data + Customer Success), `Unit Economics` (Finance + Data + CTO). Células trabalham com agentes existentes; não criam automaticamente empregos.
+Possíveis células: `Conversational AI Quality` (Learning + QA + CTO), `SEO Technical Sprint` (Growth + CTO), `First-Value Experience` (CPO + Creative + CTO), `Retention & Lifecycle` (CPO + Data + Customer Success), `Unit Economics` (Finance + Data + CTO). O CEO pode preencher cada célula com agentes existentes ou novos, criar líderes intermediários e redimensionar a organização conforme o trabalho.
 
 ## Reuniões que corrigem desalinhamento
 
