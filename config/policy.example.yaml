@@ -43,7 +43,7 @@ finance:
   pause_on_cost_anomaly: true
 
 reporting:
-  status_labels: [OBSERVADO, RELATADO, HIPOTESE, SEM_ACESSO, BLOQUEADO]
+  status_labels: [OBSERVADO, RELATADO, HIPOTESE, SEM_DADOS, SEM_ACESSO, BLOQUEADO]
   founder_updates: business_results_risks_decisions_only
   no_change_cycle: log_internally
 
