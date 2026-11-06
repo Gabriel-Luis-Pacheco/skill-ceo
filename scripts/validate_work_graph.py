@@ -95,12 +95,14 @@ def validate_plan(plan: object) -> list[str]:
 
     # Only dispatch tasks whose dependencies are actually verified.
     for key, task in by_id.items():
-        if task.get("status") in {"RUNNING", "SUBMITTED", "VERIFIED"}:
+        if isinstance(task.get("status"), str) and task["status"] in {"RUNNING", "SUBMITTED", "VERIFIED"}:
             for dep in deps.get(key, ()):
                 if dep in by_id and by_id[dep].get("status") != "VERIFIED":
                     errors.append(f"{key}: active/finished task depends on unverified {dep}")
-        if (task.get("risk") in {"external_requires_approval", "sensitive_requires_approval"}
-                and task.get("status") in {"RUNNING", "SUBMITTED", "VERIFIED"}
+        if (isinstance(task.get("risk"), str)
+                and task["risk"] in {"external_requires_approval", "sensitive_requires_approval"}
+                and isinstance(task.get("status"), str)
+                and task["status"] in {"RUNNING", "SUBMITTED", "VERIFIED"}
                 and not isinstance(task.get("approval_reference"), str)):
             errors.append(f"{key}: external/sensitive task needs approval_reference before execution")
 
