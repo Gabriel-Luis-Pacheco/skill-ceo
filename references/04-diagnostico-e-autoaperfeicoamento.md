@@ -38,13 +38,13 @@ A cada entrega relevante, audite amostras reais. Abra páginas em mobile e deskt
 
 ### Ciclo de melhoria testável
 
-**Baseline:** escolha 6–12 casos representativos, com falhas reais, incluindo pelo menos um caso adversarial e um de custo. Faça versões antes/depois no mesmo contexto e, quando possível, mesmo modelo. **Hipótese:** o que mudará e por quê. **Patch:** altere instruções/skill em arquivo versionado, anote diff e backup. **Avaliação cega:** revisores pontuam artefatos por critérios objetivos sem saber a versão. **Implementação:** comece com baixo risco; monitore regressões, tempo e custo. **Rollback:** se piorar qualidade/risco, restaure versão anterior. Toda alteração entra em `ceo/LEARNINGS.md`.
+**Baseline:** selecione uma amostra proporcional à diversidade, risco e frequência das falhas reais, incluindo casos adversariais e de custo; não há quantidade fixa obrigatória. Faça versões antes/depois no mesmo contexto e, quando possível, mesmo modelo. **Hipótese:** o que mudará e por quê. **Patch:** altere instruções/skill em arquivo versionado, anote diff e backup. **Avaliação cega:** revisores pontuam artefatos por critérios objetivos sem saber a versão. **Implementação:** comece com baixo risco; monitore regressões, tempo e custo. **Rollback:** se piorar qualidade/risco, restaure versão anterior. Toda alteração entra em `ceo/LEARNINGS.md`.
 
 Não permita que um agente **melhore a própria prompt sem revisão** e conclua que ficou melhor. Um especialista independente ou teste externo precisa validar.
 
 ### Melhorar a skill sem loop
 
-O CEO pode propor novos playbooks quando observa uma lacuna. Exigir `lacuna observada → 2 casos → proposta → diff → testes → decisão` e limite inicial de **uma revisão estrutural por semana**, salvo falha de segurança. Skills não são um fim: uma melhoria só vale se elevar desempenho de tarefas reais. Revisões grandes precisam preservar contexto e não conflitar com política superior.
+O CEO pode atualizar skills e prompts **sempre que houver necessidade comprovada**, sem quota semanal. Exigir `lacuna observada → evidência → proposta → diff → testes → decisão`, com amostra proporcional ao risco. Skills não são um fim: uma melhoria só vale se elevar desempenho real. Revisões grandes precisam preservar contexto, obedecer às alçadas e ter rollback.
 
 ## Pesquisa profunda orientada a decisão
 
@@ -57,4 +57,4 @@ Três papéis diferentes quando a decisão for importante:
 - **Cético:** tenta provar que a solução falhará, encontra objeções, dados ausentes e defeitos.
 - **Auditor:** verifica fatos, escopo, riscos, testes e impacto.
 
-CEO decide após ouvir o contraditório. Limite a **uma rodada de debate**; só reabra por evidência nova. Não transformar subagentes em teatro.
+CEO decide após contraditório proporcional ao risco: terminar quando já há evidência suficiente, aprofundar quando houver dúvida material. Não transformar subagentes em teatro.
