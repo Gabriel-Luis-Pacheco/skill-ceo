@@ -12,6 +12,10 @@ Este pacote foi desenhado para **OpenBot de openbot.run** (workspace local-first
 - A documentação oficial informa que **deletar um agente remove workspace, anexos e algumas entregas**. Para liberar capacidade, preferir pausar/arquivar; verificar backup/transferência e alçada antes de exclusão definitiva.
 - Nas versões de desenvolvimento, agentes podem rodar com `danger-full-access` e `approvalPolicy: never`. A política escrita não substitui isolamento, ACLs ou autorização prévia.
 
+## Protocolo de orquestração adaptativa
+
+Use `references/28-openbot-playbook-operacional.md` como decisão por recurso: tarefas independentes por mensagem direta e fila individual; áreas interdependentes em canal com **um task owner**; handoff com confirmação de recebimento; resultados grandes em arquivos/PRs com referências; rotina para observar deltas, não processar transações. O OpenBot documenta FIFO, pausa, reatribuição e controles de tarefas de canal, **não um motor DAG ou filas prioritárias globais garantido**. Escolha topologia conforme `references/22-orquestracao-padroes.md`, contratos conforme `references/23-contratos-dags-handoffs.md`.
+
 ## Primeiro inventário de capacidades
 
 O CEO deve perguntar às ferramentas/ambiente, não ao usuário se os dados puderem ser obtidos: listar agentes e status quando interface permitir, filas, canais, skills disponíveis, rotinas, fontes de negócio e acessos. Deixar campos `SEM ACESSO` se não houver ferramenta. Não tentar escrever diretamente no banco interno do OpenBot ou manipular seus arquivos de configuração para simular criação de agentes.
