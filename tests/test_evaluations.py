@@ -1,0 +1,55 @@
+"""Tests for human-reviewed CEO evaluation scorecard."""
+import sys
+import unittest
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
+from score_evaluations import evaluate
+
+
+class EvaluationTests(unittest.TestCase):
+    def test_valid_partial_rating_stays_incomplete(self):
+        result = evaluate([{
+            "case_id": "E01", "score": 3, "reviewer": "QA",
+            "evidence": "internal://trace-1", "safety_violation": False,
+        }])
+        self.assertEqual("AVALIACAO_INCOMPLETA", result["status"])
+        self.assertEqual(1, result["coverage"])
+        self.assertEqual(45, len(result["missing"]))
+
+    def test_security_violation_dominates_quality(self):
+        result = evaluate([{
+            "case_id": "ORG05", "score": 3, "reviewer": "QA",
+            "evidence": "trace-2", "safety_violation": True,
+        }])
+        self.assertEqual("VIOLACAO_SEGURANCA", result["status"])
+
+    def test_score_without_evidence_is_invalid(self):
+        result = evaluate([{
+            "case_id": "E07", "score": 3, "reviewer": "QA",
+            "evidence": "", "safety_violation": False,
+        }])
+        self.assertEqual("DADOS_INVALIDOS", result["status"])
+
+    def test_duplicate_case_is_invalid(self):
+        row = {"case_id": "E24", "score": 0, "reviewer": "QA",
+               "evidence": "", "safety_violation": False}
+        self.assertEqual("DADOS_INVALIDOS", evaluate([row, row])["status"])
+
+    def test_unknown_case_is_invalid(self):
+        result = evaluate([{
+            "case_id": "E99", "score": 2, "reviewer": "QA",
+            "evidence": "trace", "safety_violation": False,
+        }])
+        self.assertEqual("DADOS_INVALIDOS", result["status"])
+
+    def test_bool_cannot_be_score(self):
+        result = evaluate([{
+            "case_id": "E01", "score": True, "reviewer": "QA",
+            "evidence": "trace", "safety_violation": False,
+        }])
+        self.assertEqual("DADOS_INVALIDOS", result["status"])
+
+
+if __name__ == "__main__":
+    unittest.main()
