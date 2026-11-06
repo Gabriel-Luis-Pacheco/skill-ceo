@@ -8,6 +8,7 @@ A skill **não é um aplicativo executável**, não cria agentes ou rotinas sozi
 
 - **Iniciativa real:** detectar LP genérica, experiência de fala fraca, SEO/GEO sem prova, falhas no funil, margens negativas, lacunas organizacionais e AI slop antes do fundador.
 - **Autonomia estrutural:** o CEO decide quantidade de agentes, líderes, subequipes, profundidade da hierarquia e paralelismo conforme custo-benefício e recursos delegados; **nenhum teto numérico arbitrário**.
+- **Orquestração adaptativa:** o CEO escolhe entre especialista único, pipeline, paralelismo com integração, supervisor, handoff, crítico e comando de incidente; define contratos, dependências, ownership, falhas e recuperação.
 - **Execução verificável:** decisão, DRI, artefato, revisão, custo, evidência, medição, aprendizado ou descarte. Nunca tomar “feito” como evidência.
 - **Empresa que aprende:** pesquisa profunda e contra-argumentos, versões testadas de prompts/skills, melhoria contínua dos especialistas e memória entre ciclos.
 - **Negócio sustentável:** trabalhar aquisição → primeira prática útil → retorno → assinatura → contribuição após voz, IA, taxas e parcerias, sem inventar métricas.
@@ -24,6 +25,15 @@ A skill **não é um aplicativo executável**, não cria agentes ou rotinas sozi
 | [setup/CEO-first-message.md](setup/CEO-first-message.md) | Auditoria inicial com fatos e ações seguras |
 | [setup/routines.md](setup/routines.md) | Sugestões de gatilhos, eventos e cadência |
 | [references/21-organizacao-autonoma.md](references/21-organizacao-autonoma.md) | Delegação e gestão de agentes, líderes e departamentos sem cotas |
+| [references/22-orquestracao-padroes.md](references/22-orquestracao-padroes.md) | Decidir quando usar um ou vários agentes e qual topologia |
+| [references/23-contratos-dags-handoffs.md](references/23-contratos-dags-handoffs.md) | Contratos de tarefas, dependências e integração |
+| [references/24-recuperacao-confiabilidade.md](references/24-recuperacao-confiabilidade.md) | Retry, fila travada, idempotência e falhas |
+| [references/25-contexto-e-comunicacao.md](references/25-contexto-e-comunicacao.md) | Context engineering e mensagens entre agentes |
+| [references/26-qualidade-e-observabilidade.md](references/26-qualidade-e-observabilidade.md) | Traces, scorecard, revisão independente |
+| [references/27-ceo-sistema-estrategico.md](references/27-ceo-sistema-estrategico.md) | Decisões estratégicas, mercado, margem e liderança |
+| [references/28-openbot-playbook-operacional.md](references/28-openbot-playbook-operacional.md) | Uso real das filas, canais e rotinas do OpenBot |
+| [references/29-modelos-custo-capacidade.md](references/29-modelos-custo-capacidade.md) | Escolha dinâmica de modelos, custo e paralelismo |
+| [research/ORCHESTRATION-RESEARCH-2026.md](research/ORCHESTRATION-RESEARCH-2026.md) | Pesquisa aprofundada e principais achados |
 | [tests/CEO-BEHAVIOR-EVALS.md](tests/CEO-BEHAVIOR-EVALS.md) | Cenários e rubricas de julgamento executivo |
 
 Há procedimentos temáticos em [references/](references/) e modelos reutilizáveis em [templates/](templates/). Carregue somente o guia relevante, em vez de anexar todos os documentos a cada turno.
@@ -40,6 +50,6 @@ O OpenBot em determinadas versões de desenvolvimento pode operar com acesso amp
 
 ## Qualidade e testes
 
-Execute `python scripts/validate_skill.py` e `python -m unittest discover -s tests -p 'test_*.py'` para integridade e testes dos utilitários. O conjunto inclui 30 cenários executivos, 16 de autonomia organizacional e 11 casos críticos de fumaça (subconjunto dos 30). Depois de **avaliar de verdade** o CEO no OpenBot, use `python scripts/score_evaluations.py caminho/avaliacoes.jsonl` para agregar notas humanas com evidências. Os cenários do CEO em `tests/` **precisam ser executados separadamente no OpenBot, em ambiente controlado**: CI aprovado não significa que o CEO executou uma tarefa real, nem demonstra aumento de receita.
+Execute `python scripts/validate_skill.py`, `python scripts/validate_work_graph.py templates/orchestration-plan.example.json` e `python -m unittest discover -s tests -p 'test_*.py'` para integridade, dependências, conflitos e testes dos utilitários. A avaliação comportamental contém **70 cenários** (30 de CEO, 16 organizacionais e 24 de orquestração), mais 11 casos críticos de fumaça (subconjunto dos 30). Depois de **avaliar de verdade** o CEO no OpenBot, use `python scripts/score_evaluations.py caminho/avaliacoes.jsonl` para agregar notas humanas com evidências. Os cenários do CEO em `tests/` **precisam ser executados separadamente no OpenBot, em ambiente controlado**: CI aprovado não significa que o CEO executou uma tarefa real, nem demonstra aumento de receita.
 
 Origens e limites dos princípios de gestão, plataformas, SEO e produto estão em [references/10-fontes.md](references/10-fontes.md). Nenhuma empresa ou fundador citado endossa a skill.
