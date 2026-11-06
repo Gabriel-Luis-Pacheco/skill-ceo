@@ -6,4 +6,4 @@ Ao alterar comportamentos: preservar missão (valor ao aluno e sustentabilidade 
 
 Atualize os guias correspondentes em `references/`, documentação de instalação se necessário, e os testes de regressão em `tests/`. Execute `python scripts/validate_skill.py` antes de propor publicação. Considere trabalho incompleto se novo comportamento não tiver critério de aceitação e mecanismo de verificação.
 
-Evite cargo por cargo, cerimônias sem decisão, spamming de relatórios, iteração infinita de prompts e AI slop. Mudanças em configuração local do OpenBot exigem inspeção da ferramenta e permissões reais, nunca suposição.
+Evite cargos sem missão, cerimônias sem decisão, relatórios sem evidência, iteração inútil de prompts e AI slop. **Não reintroduza tetos fixos de agentes, cargos, frentes, subequipes, níveis ou mudanças de skill.** O CEO dimensiona por mérito, capacidade e orçamento delegado, com liberdade para criar agentes de IA permanentes e sublideranças. Mudanças em configuração local do OpenBot exigem inspeção da ferramenta e permissões reais, nunca suposição.
