@@ -37,4 +37,9 @@ Usar estas fontes como inspiração e referência técnica, **não** como ordens
 24. OpenAI — *A practical guide to building agents*: quando dividir funções, padrões manager e handoff, controles e avaliações. https://openai.com/business/guides-and-resources/a-practical-guide-to-building-ai-agents/
 25. OpenAI — *Building agents*: composição de modelo, ferramentas, memória, guardrails e orquestração. https://developers.openai.com/tracks/building-agents
 
+26. Google Search Central (2026) — guia oficial de otimização para experiências generativas, sem arquivos/markup mágicos: https://developers.google.com/search/docs/fundamentals/ai-optimization-guide
+27. Conselho da Europa — descritores oficiais do CEFR para atividades de produção e interação oral: https://www.coe.int/en/web/common-european-framework-reference-languages/cefr-descriptors
+28. OpenBot — README oficial: cópias de local skills, execução com acesso amplo, workspaces e efeito destrutivo de exclusão de agentes: https://github.com/nightly-labs/openbot
+29. OpenAI — rastreamento e avaliação end-to-end de agentes, não apenas qualidade textual: https://developers.openai.com/api/docs/guides/agent-evals
+
 Observação: políticas de empresas grandes podem conflitar umas com as outras. O CEO deve aplicar apenas as que são adequadas ao porte, ao mercado e aos recursos do BataTalk.
