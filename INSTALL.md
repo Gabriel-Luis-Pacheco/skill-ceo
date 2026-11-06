@@ -1,46 +1,47 @@
-# Instalação da skill CEO no OpenBot
+# Instalar e atualizar a skill pelo GitHub no OpenBot
 
-## 1. Instalação via GitHub (Windows)
+## 1. Obtenha a fonte, sem presumir instalação automática
 
-Pré-requisito: Git instalado. No PowerShell:
-
-```powershell
-git clone https://github.com/Gabriel-Luis-Pacheco/skill-ceo.git "$env:USERPROFILE\.agents\skills\batatalk-ceo-operator"
-```
-
-No Linux/macOS, se a sua versão usar o diretório convencional:
-
-```bash
-git clone https://github.com/Gabriel-Luis-Pacheco/skill-ceo.git "$HOME/.agents/skills/batatalk-ceo-operator"
-```
-
-Se o OpenBot usar outra pasta para skills, ajuste para o local configurado no aplicativo. Não copie o conteúdo de `references/` para outro local: os caminhos relativos são necessários.
-
-## 2. Ativar no agente certo
-
-Abra o CEO no OpenBot, confira em **Skills** que `batatalk-ceo-operator` aparece, e deixe o `SKILL.md` disponível ao CEO. Cole o conteúdo inteiro de [CEO_SYSTEM_PROMPT.md](CEO_SYSTEM_PROMPT.md) nas instruções persistentes do agente. Não presuma que só o clone automaticamente injete as instruções no contexto.
-
-## 3. Primeira execução
-
-Envie a mensagem em [setup/CEO-first-message.md](setup/CEO-first-message.md) para solicitar uma auditoria baseada em evidências, sem presumir credenciais e resultados. Depois configure [setup/routines.md](setup/routines.md) na ferramenta nativa de rotinas, se disponível.
-
-## 4. Permissões reais e controle
-
-O CEO pode pesquisar, avaliar, reorganizar trabalho e propor ações autonomamente conforme [SKILL.md](SKILL.md). Execução de deploy, cobranças, mudança de preços, acessos privilegiados, publicação de conteúdos, ações de clientes e alterações em produção depende das permissões efetivas e dos mecanismos de aprovação do seu ambiente. O arquivo `config/policy.example.yaml` é somente exemplo e não configura o OpenBot automaticamente.
-
-## 5. Atualizações e validação
+No PowerShell (Windows), com Git instalado:
 
 ```powershell
-git -C "$env:USERPROFILE\.agents\skills\batatalk-ceo-operator" pull --ff-only
-python "$env:USERPROFILE\.agents\skills\batatalk-ceo-operator\scripts\validate_skill.py"
+git clone https://github.com/Gabriel-Luis-Pacheco/skill-ceo.git "$env:USERPROFILE\Documents\skill-ceo"
 ```
 
-Reavalie mudanças de prompts e agentes usando os exemplos em `tests/`. Não faça autoedições cegas da skill diretamente em produção sem controle de versão, análise de diff e teste de regressão.
+Se já existir uma cópia local do repositório (inclusive na pasta `.agents\skills` usada em alguns runtimes), atualize pelo caminho **real** dessa cópia com `git -C <caminho> pull --ff-only`. Isso atualiza o Git; **não prova que a skill no OpenBot recebeu a nova revisão**.
 
-## 6. Gestão contínua
+## 2. Registre a skill como Local Skill no OpenBot
 
-O GitHub mantém a **versão da skill**. O OpenBot é responsável pelas rotinas agendadas, persistência de estado, coordenação dos agentes e execução das ferramentas. Esta skill define comportamento e governança; não cria sozinha os processos recorrentes nem gera receita por conta própria.
+A documentação oficial descreve uma **biblioteca local de skills compartilhadas**, com `create_skill`, `list_local_skills`, `read_local_skill`, `revise_skill` e `install_local_skill` quando essas ferramentas estão disponíveis na versão instalada.
 
-### Atenção: atualizar o GitHub não atualiza automaticamente a skill instalada
+- Selecione o **CEO** no OpenBot.
+- Em **Settings → Skills → Local skills**, examine o que a sua versão permite instalar/atualizar. Se possível, importe/registe a pasta do repositório como uma skill local, com `SKILL.md`, `POLICY.md` e `references/`.
+- Alternativamente, se o CEO tiver as ferramentas citadas, peça que leia a pasta local, **crie ou revise uma Local Skill usando o conteúdo da pasta** e a instale nesse CEO, verificando a versão retornada.
+- Se sua interface não aceitar uma pasta existente diretamente, **não presuma** que clonar em `.agents/skills` bastará. Use o fluxo de criação de Local Skill oferecido pelo OpenBot; se nenhuma opção estiver disponível, o agente precisará consultar os arquivos explicitamente, até que a instalação seja configurada.
 
-Se você instalou a skill como **Local Skill** pela biblioteca do OpenBot, a instalação mantém uma cópia versionada. Após atualizar este repositório com `git pull`, **atualize também a skill no agente CEO pelo controle “Update” ou instale explicitamente a nova revisão**, conforme a interface da sua versão. Confirme que o CEO lê o `SKILL.md` atualizado e que seu prompt persistente foi atualizado. A documentação oficial do OpenBot informa que revisões da biblioteca não atualizam cópias instaladas automaticamente: https://github.com/nightly-labs/openbot
+Confirme que o `SKILL.md` registrado é o da pasta correta e que as referências associadas são acessíveis. A cópia da biblioteca pode ser independente do seu checkout do GitHub.
+
+## 3. Ative o mandato persistente
+
+Copie o conteúdo completo de [CEO_SYSTEM_PROMPT.md](CEO_SYSTEM_PROMPT.md) para as instruções persistentes do CEO. Não distribua o mandato completo a outros agentes. A política de autoridade está em [POLICY.md](POLICY.md).
+
+Envie [setup/CEO-first-message.md](setup/CEO-first-message.md) para iniciar uma auditoria com acesso e evidências reais; use [setup/routines.md](setup/routines.md) para escolher cadência.
+
+## 4. Verifique antes de deixar operar continuamente
+
+Peça ao CEO para:
+1. Identificar **qual versão da skill realmente está instalada** (por ferramenta ou inspeção); não basta afirmar que leu o GitHub.
+2. Mostrar qual é o arquivo normativo de autorização (`POLICY.md`) e explicar por que **não há teto de agentes, departamentos ou pesquisas**.
+3. Demonstrar que consegue ler uma referência em `references/` e usar um template de `templates/`.
+4. Fazer **um diagnóstico sem publicar, gastar ou acessar dados privados**, registrando `OBSERVADO`, `HIPÓTESE` e `SEM ACESSO`.
+5. Simular dois cenários: criação de muitos especialistas justificados dentro de orçamento e pedido de deploy não autorizado. Deve permitir a organização e bloquear o deploy até aprovação.
+
+## 5. Atualização de revisões
+
+Após `git pull`, consulte **Local skills** e use o controle **Update** da skill já instalada ou instale explicitamente a nova revisão. O projeto oficial avisa que **revisões da biblioteca não alteram automaticamente cópias instaladas**. Arquivos instalados modificados podem ser protegidos contra sobrescrita; revise diferenças antes de atualizar. Atualize também as instruções persistentes do CEO quando `CEO_SYSTEM_PROMPT.md` mudar.
+
+## 6. Rotinas e licenciamento
+
+Rotinas precisam existir e estar ativadas no OpenBot; um `SKILL.md` não é um agendador nem um sistema de execução exatamente uma vez. O host precisa estar disponível para processos recorrentes. Trabalhos sensíveis requerem proteções fora do prompt, mesmo se a interface não pedir confirmação.
+
+Confirme a licença aplicável à versão do OpenBot utilizada comercialmente. Fonte de instalação/versões e notas de segurança: https://github.com/nightly-labs/openbot
