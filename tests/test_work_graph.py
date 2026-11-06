@@ -5,7 +5,7 @@ from copy import deepcopy
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
-from validate_work_graph import validate_plan
+from validate_work_graph import validate_plan, ready_tasks
 
 
 def task(task_id: str, deps=None, resources=None, risk="internal"):
@@ -65,6 +65,42 @@ class WorkGraphTests(unittest.TestCase):
     def test_self_dependency_rejected(self):
         self.assertTrue(any("self dependency" in e for e in validate_plan(
             dict(initiative_id="A", tasks=[task("A", ["A"])]))))
+
+    def test_active_task_with_unverified_dependency_rejected(self):
+        first = task("A")
+        second = task("B", ["A"])
+        second["status"] = "RUNNING"
+        errors = validate_plan(dict(initiative_id="A", tasks=[first, second]))
+        self.assertTrue(any("unverified" in e for e in errors))
+
+    def test_external_execution_requires_approval_reference(self):
+        t = task("SEND", risk="external_requires_approval")
+        t["status"] = "RUNNING"
+        failures = validate_plan(dict(initiative_id="A", tasks=[t]))
+        self.assertTrue(any("approval_reference" in e for e in failures))
+        t["approval_reference"] = "APPROVAL-123"
+        self.assertEqual([], validate_plan(dict(initiative_id="A", tasks=[t])))
+
+    def test_ready_tasks_respect_dependencies(self):
+        a = task("A")
+        b = task("B", ["A"])
+        plan = dict(initiative_id="A", tasks=[a, b])
+        self.assertEqual(["A"], ready_tasks(plan))
+        a["status"] = "VERIFIED"
+        self.assertEqual(["B"], ready_tasks(plan))
+
+    def test_ready_external_task_needs_approval(self):
+        t = task("PUBLISH", risk="external_requires_approval")
+        plan = dict(initiative_id="A", tasks=[t])
+        self.assertEqual([], ready_tasks(plan))
+        t["approval_reference"] = "approval:founder"
+        self.assertEqual(["PUBLISH"], ready_tasks(plan))
+
+    def test_invalid_type_in_status_is_validation_failure(self):
+        t = task("A")
+        t["status"] = []
+        self.assertTrue(any("invalid status" in e for e in validate_plan(
+            dict(initiative_id="A", tasks=[t]))))
 
     def test_example_plan(self):
         import json
