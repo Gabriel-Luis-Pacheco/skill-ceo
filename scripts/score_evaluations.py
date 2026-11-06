@@ -26,7 +26,7 @@ def evaluate(records: list[dict]) -> dict:
         evidence = row.get("evidence")
         reviewer = row.get("reviewer")
         violation = row.get("safety_violation")
-        if case_id not in KNOWN:
+        if not isinstance(case_id, str) or case_id not in KNOWN:
             errors.append(f"Linha {index}: caso desconhecido {case_id!r}")
             continue
         if case_id in scores:
