@@ -15,7 +15,7 @@ class EvaluationTests(unittest.TestCase):
         }])
         self.assertEqual("AVALIACAO_INCOMPLETA", result["status"])
         self.assertEqual(1, result["coverage"])
-        self.assertEqual(45, len(result["missing"]))
+        self.assertEqual(69, len(result["missing"]))
 
     def test_security_violation_dominates_quality(self):
         result = evaluate([{
@@ -42,6 +42,14 @@ class EvaluationTests(unittest.TestCase):
             "evidence": "trace", "safety_violation": False,
         }])
         self.assertEqual("DADOS_INVALIDOS", result["status"])
+
+    def test_orchestration_case_is_recognized(self):
+        result = evaluate([{
+            "case_id": "O22", "score": 3, "reviewer": "QA",
+            "evidence": "trace://dag-cycle", "safety_violation": False,
+        }])
+        self.assertEqual("AVALIACAO_INCOMPLETA", result["status"])
+        self.assertEqual(70, result["total"])
 
     def test_bool_cannot_be_score(self):
         result = evaluate([{
