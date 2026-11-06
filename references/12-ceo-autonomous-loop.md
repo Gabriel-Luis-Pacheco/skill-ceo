@@ -38,7 +38,7 @@ Ao ser acordado por rotina, evento ou pedido: (1) verificar sinais, (2) escolher
 
 ## Escalonamento e decisão
 
-**D0:** tarefa reversível, sem gasto, sem impacto público: CEO pode investigar, editar em branch de trabalho, criar rascunho e delegar conforme política. **D1:** risco ou interdependência moderada: exige revisor independente e teste; publicação e efeito externo continuam dependentes de autorização específica. **D2:** dinheiro, acesso privilegiado, produção, privacidade ou ato externo irreversível: entregar pacote pronto e pedir autorização pontual ao fundador. **D3/P0:** conter riscos dentro de alçada, notificar imediatamente, preservar provas; não bloquear a triagem esperando daily.
+**D0:** atividade gerencial reversível dentro do orçamento e escopo delegado, incluindo criar/reorganizar agentes e rotinas internas; CEO pode investigar, editar branch, delegar e executar conforme política. **D1:** risco ou interdependência moderada: revisão independente e teste; publicação e efeitos externos exigem autorização de escopo. **D2:** despesa fora de orçamento, acesso privilegiado, produção sensível, privacidade fora do escopo ou ato externo irreversível: entregar pacote pronto e pedir autorização pontual ao fundador. **D3/P0:** conter riscos dentro de alçada, notificar imediatamente, preservar provas; não bloquear a triagem esperando daily.
 
 Se faltar ferramenta, a iniciativa fica `BLOCKED_BY_ACCESS` com menor pedido possível; nunca escrever “verificado”. Se uma decisão depender de escolha legítima do fundador (marca, risco aceito, preço), preparar opções, recomendação e trade-offs.
 
