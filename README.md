@@ -33,3 +33,21 @@ Pacote de instruções criado para um CEO de IA que dirige os agentes do BataTal
 ## Origem das práticas
 
 Princípios adaptados de cartas de Jeff Bezos à Amazon, cultura Netflix, recomendações da Y Combinator, Jensen Huang, Steve Jobs, práticas de reliability do Google, documentação do Google Search Central, práticas da Stripe e documentação de agentes da OpenAI/Microsoft. **Nenhuma empresa/fundador endossa esta skill; não é uma reprodução de suas políticas**. Links em `references/10-fontes.md`.
+
+## Instalar diretamente do GitHub
+
+Este repositório **é a própria skill**. O arquivo de entrada está na raiz: [SKILL.md](SKILL.md). Para um CEO OpenBot em Windows com suporte a skills locais, execute no PowerShell:
+
+```powershell
+git clone https://github.com/Gabriel-Luis-Pacheco/skill-ceo.git "$env:USERPROFILE\.agents\skills\batatalk-ceo-operator"
+```
+
+Para atualizar uma instalação existente:
+
+```powershell
+git -C "$env:USERPROFILE\.agents\skills\batatalk-ceo-operator" pull --ff-only
+```
+
+Confira nas configurações de skills do OpenBot se o diretório foi detectado; em versões com caminhos diferentes, configure o diretório da skill manualmente. Copie [CEO_SYSTEM_PROMPT.md](CEO_SYSTEM_PROMPT.md) para as instruções persistentes do agente CEO e execute [setup/CEO-first-message.md](setup/CEO-first-message.md). Ative rotinas reais somente após revisar [setup/routines.md](setup/routines.md). **Somente clonar o repositório não habilita uma rotina 24/7.**
+
+Veja o [guia completo de instalação](INSTALL.md). Rodar `python scripts/validate_skill.py` valida a estrutura local, os testes JSONL e as referências essenciais.
