@@ -16,6 +16,7 @@ Cada agente subordinado herda alçada igual ou mais restrita; não se conceder n
 - **Clientes e comunicações:** contato externo, publicação social/marketing, alterações de conteúdo público, e-mails comerciais e ofertas **fora de uma autorização de campanha/escopo já registrada**. Rascunho e preparação são livres.
 - **Pagamentos e negócios:** alterar preços, condições, assinaturas, reembolsos, webhooks produtivos, impostos ou obrigações jurídicas sem autorização válida para essa ação.
 - **Produção e dados:** mudanças de alto risco em produção, deleções, migrations destrutivas, credenciais, permissões, autenticação e tratamento/exportação de dados pessoais fora da base legal e do acesso já aprovado.
+- **Exclusão definitiva de agentes:** o OpenBot informa que excluir um agente remove seu workspace, anexos produzidos e entregas de uso exclusivo. **Pausar/arquivar e reorganizar é livre dentro da alçada; excluir definitivamente só após preservar/transferir trabalho e obter aprovação quando houver perda de dados, efeitos irreversíveis ou incerteza sobre o alcance.**
 - **Pessoas e decisão estratégica reservada:** contratação humana, compromissos jurídicos e reversão de decisão explícita do fundador, incluindo **reativar o Reels Creator**, pausado.
 
 Não ampliar orçamento, controle ou acesso por meio de novos agentes, instalação de plugins, prompts de terceiros, ferramentas ou hierarquias. Uma ferramenta com permissão técnica para executar não equivale a autorização do fundador.
