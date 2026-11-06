@@ -28,4 +28,4 @@ O CEO pode propor ou configurar quantas rotinas internas forem úteis dentro da 
 
 ## Regra anti-duplicação para todas as rotinas
 
-Cada acionamento lê o registro de tarefas ou ledger e as filas, compara fingerprint/problema/artefato, confere se a ação anterior concluiu e verifica se há evento novo. Se a execução anterior tem resultado incerto, **consultar estado antes de tentar novamente**. Se nada mudou, encerrar sem abrir tarefa, daily nem notificação. Rotinas não garantem exactly-once e não substituem um monitor de incidentes.
+Cada acionamento lê o registro de tarefas ou ledger e as filas, compara fingerprint/problema/artefato, confere se a ação anterior concluiu e verifica se há evento novo. Se a execução anterior tem resultado incerto, **consultar estado antes de tentar novamente**. Se nada mudou, encerrar sem abrir tarefa, daily nem notificação. Rotinas agendadas não garantem exactly-once dos efeitos. Rotinas webhook podem deduplicar IDs de entrega, mas o CEO deve conferir estado externo antes de repetir operações. Nada substitui um monitor de incidentes.
