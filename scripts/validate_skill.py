@@ -181,6 +181,22 @@ def validate(root: Path = ROOT) -> list[str]:
             if not (root / ref).exists():
                 errors.append(f"SKILL.md: referência inexistente: {ref}")
 
+    policy_path = root / "POLICY.md"
+    if policy_path.is_file():
+        policy = read_text(policy_path)
+        for phrase in ("Reels Creator", "orçamento", "autorização", "subagentes"):
+            if phrase not in policy:
+                errors.append(f"POLICY.md: proteções obrigatórias não mencionam {phrase!r}")
+        if "aprovação do fundador" not in policy:
+            errors.append("POLICY.md: mudança de alçada exige aprovação humana")
+
+    if skill_path.is_file():
+        skill = read_text(skill_path)
+        if "Reels Creator" not in skill or "PAUSADO" not in skill:
+            errors.append("SKILL.md: decisão de pausa do Reels Creator ausente")
+        if "não há teto" not in skill.lower() and "não existem cotas" not in skill.lower():
+            errors.append("SKILL.md: liberdade de dimensionamento não está explícita")
+
     for rel in NORMATIVE_DOCS:
         path = root / rel
         if path.is_file():
