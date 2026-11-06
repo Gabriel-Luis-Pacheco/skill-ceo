@@ -23,6 +23,8 @@ A skill **não é um aplicativo executável**, não cria agentes ou rotinas sozi
 | [POLICY.md](POLICY.md) | **Fonte única** de limites financeiros, segurança e autorização |
 | [INSTALL.md](INSTALL.md) | Instalação pelo repositório e verificação de versão no OpenBot |
 | [setup/CEO-first-message.md](setup/CEO-first-message.md) | Auditoria inicial com fatos e ações seguras |
+| [setup/CEO-orchestration-first-run.md](setup/CEO-orchestration-first-run.md) | Primeira missão de orquestração pronta para enviar ao CEO |
+| [templates/orchestration-scorecard.md](templates/orchestration-scorecard.md) | Scorecard de delegação, handoffs, custo e resultado integrado |
 | [setup/routines.md](setup/routines.md) | Sugestões de gatilhos, eventos e cadência |
 | [references/21-organizacao-autonoma.md](references/21-organizacao-autonoma.md) | Delegação e gestão de agentes, líderes e departamentos sem cotas |
 | [references/22-orquestracao-padroes.md](references/22-orquestracao-padroes.md) | Decidir quando usar um ou vários agentes e qual topologia |
