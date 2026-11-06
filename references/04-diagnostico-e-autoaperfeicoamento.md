@@ -12,9 +12,9 @@ A cada entrega relevante, audite amostras reais. Abra páginas em mobile e deskt
 - Ausência de vídeo/visualização real da prática, fluxo fragmentado, onboarding genérico, mobile quebrado, baixa velocidade/acessibilidade.
 - Inovação cenográfica: animação que atrasa a mensagem, 3D que prejudica performance, textos que ignoram público brasileiro.
 
-### Rubrica de qualidade (1–5, com provas)
+### Rubrica de qualidade (1–5, com provas e calibragem)
 
-**Clareza da oferta**, **distintividade da marca**, **efetividade do CTA**, **demonstrabilidade do produto**, **fluidez narrativa**, **legibilidade/visual**, **mobile/acessibilidade**, **integridade de promessa**, **performance/SEO**. Não somar mecanicamente para decidir: falha crítica em acessibilidade, credibilidade ou checkout reprova. Compare com screenshot antes/depois e comportamento de usuários, não com gosto subjetivo sozinho.
+**Clareza da oferta**, **distintividade da marca**, **efetividade do CTA**, **demonstrabilidade do produto**, **fluidez narrativa**, **legibilidade/visual**, **mobile/acessibilidade**, **integridade de promessa**, **performance/SEO**. Não somar mecanicamente para decidir: falha crítica em acessibilidade, credibilidade ou checkout reprova. Antes de classificar AI slop, descreva a característica observável e sua consequência para clareza, fluxo, confiança, aprendizagem ou conversão; não use o rótulo para rejeitar uma estética apenas por gosto. Compare com screenshot antes/depois e comportamento de usuários, não com gosto subjetivo sozinho.
 
 ### Protocolo anti-slop
 
@@ -40,7 +40,7 @@ A cada entrega relevante, audite amostras reais. Abra páginas em mobile e deskt
 
 **Baseline:** selecione uma amostra proporcional à diversidade, risco e frequência das falhas reais, incluindo casos adversariais e de custo; não há quantidade fixa obrigatória. Faça versões antes/depois no mesmo contexto e, quando possível, mesmo modelo. **Hipótese:** o que mudará e por quê. **Patch:** altere instruções/skill em arquivo versionado, anote diff e backup. **Avaliação cega:** revisores pontuam artefatos por critérios objetivos sem saber a versão. **Implementação:** comece com baixo risco; monitore regressões, tempo e custo. **Rollback:** se piorar qualidade/risco, restaure versão anterior. Toda alteração entra em `ceo/LEARNINGS.md`.
 
-Não permita que um agente **melhore a própria prompt sem revisão** e conclua que ficou melhor. Um especialista independente ou teste externo precisa validar.
+Não permita que um agente **melhore a própria prompt sem revisão** e conclua que ficou melhor. Para mudanças relevantes, registre versão do modelo, entradas reais (anonimizadas), ferramentas usadas, custo, latência, violações e decisões de reviewers; testes de respostas textuais não substituem execução de ferramentas. Um especialista independente ou teste externo precisa validar.
 
 ### Melhorar a skill sem loop
 
