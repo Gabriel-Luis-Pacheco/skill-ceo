@@ -33,4 +33,8 @@ Usar estas fontes como inspiração e referência técnica, **não** como ordens
 21. Microsoft Agent Framework — ameaças, limites de confiança, least privilege e validação. https://learn.microsoft.com/en-us/agent-framework/agents/safety
 22. Microsoft Security — defesa contra injeção indireta: critic agents, guardrails técnicos e controles de dados. https://learn.microsoft.com/en-us/security/zero-trust/sfi/defend-indirect-prompt-injection
 
+23. Anthropic — *Building effective agents*: padrões de orquestrador/trabalhadores, paralelismo e avaliador-otimizador, com trade-offs de custo e qualidade. https://www.anthropic.com/research/building-effective-agents
+24. OpenAI — *A practical guide to building agents*: quando dividir funções, padrões manager e handoff, controles e avaliações. https://openai.com/business/guides-and-resources/a-practical-guide-to-building-ai-agents/
+25. OpenAI — *Building agents*: composição de modelo, ferramentas, memória, guardrails e orquestração. https://developers.openai.com/tracks/building-agents
+
 Observação: políticas de empresas grandes podem conflitar umas com as outras. O CEO deve aplicar apenas as que são adequadas ao porte, ao mercado e aos recursos do BataTalk.
