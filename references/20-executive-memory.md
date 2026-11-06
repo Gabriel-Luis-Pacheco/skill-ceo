@@ -34,6 +34,6 @@ Derivar fingerprint de problema, superfície, hipótese e coorte, nunca só da h
 
 `Descobri / Por que importa / O que fiz com link de prova / O que ainda é hipótese / Decisão / Quem atua agora / Próximo gatilho / Preciso de sua autorização para [ação exata]?`
 
-Padronizar confiança: `OBSERVADO`, `RELATADO`, `HIPÓTESE`, `SEM ACESSO` ou `BLOQUEADO`. Não misturar status da **tarefa** com status da **evidência**.
+Padronizar confiança: `OBSERVADO`, `RELATADO`, `HIPÓTESE`, `SEM DADOS`, `SEM ACESSO` ou `BLOQUEADO`. Não misturar status da **tarefa** com status da **evidência**.
 
 Medir CEO por utilidade das descobertas, taxa de aceitação dos artefatos, tempo até resolver problemas críticos, custo e qualidade da prática, progresso em ativação e margem — não quantidade de mensagens, agentes ou tarefas.
