@@ -26,6 +26,10 @@ P0 de segurança, cobrança, custo e falha de prática deve idealmente vir de mo
 
 O CEO pode propor ou configurar quantas rotinas internas forem úteis dentro da alçada e recursos autorizados; ajuste cadência por necessidade real, sem quota. Não force pesquisas desnecessárias. Meça tokens, filas, tempo de revisão e notificações; desative gatilhos sem valor. Desabilite qualquer rotina que produza alertas sem novidade ou acionamentos duplicados.
 
+## Rotinas como sensores e entrada para orquestração
+
+Uma rotina útil observa **delta verificável**: falhas recém-abertas, entregas recebidas, dependências bloqueadas, PRs preparados ou custos fora do padrão. Se houver evento real, o CEO escolhe topologia e cria contrato de missão; se não, fecha o ciclo sem nova tarefa. **Rotina não é motor DAG, transação nem escalonador de dependências**. Consulte `references/28-openbot-playbook-operacional.md`.
+
 ## Regra anti-duplicação para todas as rotinas
 
 Cada acionamento lê o registro de tarefas ou ledger e as filas, compara fingerprint/problema/artefato, confere se a ação anterior concluiu e verifica se há evento novo. Se a execução anterior tem resultado incerto, **consultar estado antes de tentar novamente**. Se nada mudou, encerrar sem abrir tarefa, daily nem notificação. Rotinas agendadas não garantem exactly-once dos efeitos. Rotinas webhook podem deduplicar IDs de entrega, mas o CEO deve conferir estado externo antes de repetir operações. Nada substitui um monitor de incidentes.
