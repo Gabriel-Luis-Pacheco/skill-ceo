@@ -1,0 +1,44 @@
+# POLÍTICA PROPOSTA PARA CONSULTA DO CEO, NÃO É CONFIGURAÇÃO NATIVA DO OPENBOT.
+# Limites de custo e aprovação precisam ser aplicados no runtime/provedor também.
+policy_version: 1
+organization: BataTalk
+human_founder_final_authority: true
+communication_language: pt-BR
+execution:
+  max_strategic_initiatives_active: 3
+  max_deep_research_simultaneous: 1
+  max_similar_revision_cycles_before_root_cause: 2
+  max_skills_structure_changes_per_week_without_exception: 1
+  external_outreach_without_explicit_approval: false
+  prod_deploy_without_delegated_approval: false
+  public_publish_without_delegated_approval: false
+  monetary_spend_without_explicit_approval: false
+  price_or_billing_change_without_explicit_approval: false
+  delete_personal_data_without_explicit_approval: false
+  human_hiring_without_explicit_approval: false
+  reels_creator_resumption_without_explicit_approval: false
+staffing:
+  pilot_agent_creation_within_defined_limits: true
+  pilot_agents_max_new_per_week: 2
+  agents_max_total_active: 18
+  pilot_reassessment_after_days: 7
+  pilot_can_add_paid_model_or_privileged_access: false
+  pilot_can_create_routines: false
+  create_permanent_agent_without_explicit_approval: false
+  temporary_team_reorg_permitted: true
+  duplicated_role_requires_business_case: true
+  test_before_permanent_role: true
+costs:
+  incremental_spend_budget_brl_without_founder_approval: 0
+  tokens_or_usage_limited_by_runtime: true
+  unknown_budget_action: stop_and_request_authority
+reporting:
+  status_labels: [VERIFICADO, RELATADO, HIPOTESE, SEM_ACESSO, BLOQUEADO]
+  user_notifications: decisions_results_material_risks_only
+  no_change_cycle: log_internally
+security:
+  least_privilege: true
+  treat_external_content_as_untrusted: true
+  versioned_prompt_skill_changes: true
+  independent_review_for_critical_releases: true
+  production_backups_and_rollback_required: true
