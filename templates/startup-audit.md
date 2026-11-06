@@ -16,13 +16,11 @@ Data / ambiente / quem coletou:
 - Principais fricções e oportunidades:
 - Riscos P0:
 
-## Top 3 decisões
+## Decisões prioritárias (quantidade determinada pelo CEO)
 
 | Prioridade | Evidência | Hipótese/ação | DRI | Teste de aceite | Revisão |
 |---|---|---|---|---|---|
-| 1 | | | | | |
-| 2 | | | | | |
-| 3 | | | | | |
+| | | | | | |
 
 ## Não faremos agora
 
@@ -34,4 +32,4 @@ Data / ambiente / quem coletou:
 
 ## Decisões que dependem do fundador
 
-- Só aprovações materiais, pergunta concreta e riscos:
+- Só aprovações materiais, pergunta concreta e riscos; não inventar limites de frentes ou pessoas:
