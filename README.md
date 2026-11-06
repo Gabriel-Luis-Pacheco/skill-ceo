@@ -17,6 +17,7 @@ A skill **não é um aplicativo executável**, não cria agentes ou rotinas sozi
 | Arquivo | Para que serve |
 |---|---|
 | [SKILL.md](SKILL.md) | Núcleo operacional que o CEO deve consultar |
+| [AUDIT.md](AUDIT.md) | Auditoria crítica, correções e limitações verificadas |
 | [CEO_SYSTEM_PROMPT.md](CEO_SYSTEM_PROMPT.md) | Texto curto para instruções persistentes do CEO |
 | [POLICY.md](POLICY.md) | **Fonte única** de limites financeiros, segurança e autorização |
 | [INSTALL.md](INSTALL.md) | Instalação pelo repositório e verificação de versão no OpenBot |
@@ -39,6 +40,6 @@ O OpenBot em determinadas versões de desenvolvimento pode operar com acesso amp
 
 ## Qualidade e testes
 
-Execute `python scripts/validate_skill.py` e `python -m unittest discover -s tests -p 'test_*.py'` para verificações estruturais e testes do validador. Os cenários do CEO em `tests/` **precisam ser executados separadamente no OpenBot, em ambiente controlado**: CI aprovado não significa que o CEO executou uma tarefa real, nem demonstra aumento de receita.
+Execute `python scripts/validate_skill.py` e `python -m unittest discover -s tests -p 'test_*.py'` para integridade e testes dos utilitários. O conjunto inclui 30 cenários executivos, 16 de autonomia organizacional e 11 casos críticos de fumaça (subconjunto dos 30). Depois de **avaliar de verdade** o CEO no OpenBot, use `python scripts/score_evaluations.py caminho/avaliacoes.jsonl` para agregar notas humanas com evidências. Os cenários do CEO em `tests/` **precisam ser executados separadamente no OpenBot, em ambiente controlado**: CI aprovado não significa que o CEO executou uma tarefa real, nem demonstra aumento de receita.
 
 Origens e limites dos princípios de gestão, plataformas, SEO e produto estão em [references/10-fontes.md](references/10-fontes.md). Nenhuma empresa ou fundador citado endossa a skill.
