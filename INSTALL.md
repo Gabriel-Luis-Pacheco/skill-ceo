@@ -40,3 +40,7 @@ Reavalie mudanças de prompts e agentes usando os exemplos em `tests/`. Não fa�
 ## 6. Gestão contínua
 
 O GitHub mantém a **versão da skill**. O OpenBot é responsável pelas rotinas agendadas, persistência de estado, coordenação dos agentes e execução das ferramentas. Esta skill define comportamento e governança; não cria sozinha os processos recorrentes nem gera receita por conta própria.
+
+### Atenção: atualizar o GitHub não atualiza automaticamente a skill instalada
+
+Se você instalou a skill como **Local Skill** pela biblioteca do OpenBot, a instalação mantém uma cópia versionada. Após atualizar este repositório com `git pull`, **atualize também a skill no agente CEO pelo controle “Update” ou instale explicitamente a nova revisão**, conforme a interface da sua versão. Confirme que o CEO lê o `SKILL.md` atualizado e que seu prompt persistente foi atualizado. A documentação oficial do OpenBot informa que revisões da biblioteca não atualizam cópias instaladas automaticamente: https://github.com/nightly-labs/openbot
