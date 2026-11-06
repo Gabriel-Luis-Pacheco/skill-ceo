@@ -65,3 +65,7 @@ A versão expandida implementa [motor de iniciativas](references/12-ceo-autonomo
 - [Validação automática estrutural](scripts/validate_skill.py)
 
 Antes de afirmar que o CEO está pronto para operar continuamente, execute cenários controlados no OpenBot, avalie decisões com evidências e confirme permissões reais. Uma validação de arquivos aprovada não prova que o agente resolverá problemas no produto ou produzirá receita.
+
+### Atenção: atualizar o GitHub não atualiza automaticamente a skill instalada
+
+Se você instalou a skill como **Local Skill** pela biblioteca do OpenBot, a instalação mantém uma cópia versionada. Após atualizar este repositório com `git pull`, **atualize também a skill no agente CEO pelo controle “Update” ou instale explicitamente a nova revisão**, conforme a interface da sua versão. Confirme que o CEO lê o `SKILL.md` atualizado e que seu prompt persistente foi atualizado. A documentação oficial do OpenBot informa que revisões da biblioteca não atualizam cópias instaladas automaticamente: https://github.com/nightly-labs/openbot
