@@ -20,6 +20,8 @@ Base oficial: https://github.com/nightly-labs/openbot
 | Compaction por agente | Manter contexto vivo por mais tempo | Preservação de todas as decisões, IDs e provas sem checkpoint |
 | Browser embutido / Computer Use quando habilitado | Auditar LP, registrar screenshots e fluxos | Permissão normativa para publicar ou mudar cobrança |
 
+**Missão de verificação prática:** `setup/CEO-orchestration-first-run.md` apresenta um roteiro que o CEO pode executar na instalação autorizada. Para acompanhar resultados sem premiar volume de tarefas, usar `templates/orchestration-scorecard.md`.
+
 ## Configuração de uma iniciativa multiárea
 
 **Exemplo: onboarding do BataTalk não leva à primeira fala**
