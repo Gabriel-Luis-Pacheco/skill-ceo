@@ -14,7 +14,8 @@
 **Ferramentas, dados e alçada herdada:** 
 **Modelo, consumo esperado e fonte do orçamento delegado:** 
 **Revisão independente e testes:** 
-**Critérios para manter, promover, mesclar, alterar ou desativar:** 
+**Critérios para manter, promover, mesclar, pausar ou alterar:**
+**Antes de excluir definitivamente:** verificar se o OpenBot apagará workspace/anexos/entregas; documentar transferência, backup, riscos e aprovação aplicável: 
 **Quem pode criar subagentes dentro desta alçada:** 
 **Estado real no OpenBot / ID/URL de confirmação:** 
 
