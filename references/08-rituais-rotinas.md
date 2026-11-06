@@ -2,7 +2,7 @@
 
 ## Importante sobre OpenBot
 
-Uma **routine** é uma instrução ligada a horários; não é um job runner transacional, nem garante execução exatamente uma vez, nem substitui deploy CI/CD. O CEO só atua periodicamente se a rotina estiver configurada na interface e o host/agente puder executá-la. Evitar instruções como “revise toda a empresa a cada 5 min”, que multiplicam custo e ruído.
+Uma **routine** agendada dispara trabalho do agente, mas a lógica de negócio e os efeitos de ferramenta não ficam automaticamente transacionais/exatamente-uma-vez. O OpenBot também documenta deduplicação **de entregas de webhook por ID** nas rotinas de webhook, que não substitui idempotência nas cobranças, arquivos, emails ou demais efeitos. Não confundir esses mecanismos e não substituir monitoramento real/CI-CD com prompts. O CEO só atua periodicamente se a rotina estiver configurada na interface e o host/agente puder executá-la. Evitar instruções como “revise toda a empresa a cada 5 min”, que multiplicam custo e ruído.
 
 ## Cadência recomendada — adaptar depois de medir custos
 
