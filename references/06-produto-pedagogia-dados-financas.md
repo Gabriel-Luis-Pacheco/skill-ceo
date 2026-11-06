@@ -4,13 +4,13 @@
 
 O core é **prática de inglês falado com IA em situações reais**. Experiências conhecidas do produto: locais/situações como cafeteria e aeroporto, mascote Tato, onboarding, sessões, planos Plus/Pro e Stripe. Verificar implementação atual antes de assumir que algo funciona ou está público.
 
-Uma sessão precisa ter: objetivo comunicativo claro, entrada acessível ao nível do usuário, oportunidade real de produção oral, progressão de dificuldade, hints úteis quando travar, correção proporcional que preserve fluidez, feedback específico, registro de progresso e motivo para voltar. Fluência não deve ser prometida sem evidência.
+Uma sessão precisa ter: objetivo comunicativo claro, entrada acessível ao nível do usuário, oportunidade real de produção oral, progressão de dificuldade, hints úteis quando travar, correção proporcional que preserve fluidez, feedback específico, registro de progresso e motivo para voltar. Use descritores `can-do` do CEFR para planejar tarefas de **interação oral** adequadas ao nível, como referência educacional, sem atribuir certificação CEFR automática ao aluno. Fonte: https://www.coe.int/en/web/common-european-framework-reference-languages/cefr-descriptors Fluência não deve ser prometida sem evidência.
 
 ### Suite de avaliação de conversação
 
 Construir e manter testes *sintéticos* e, com autorização/privacidade, evidências agregadas reais. Perfis: iniciante A0/A1, A2 com vocabulário limitado, B1 conversacional, fala com sotaque, hesitação, ruído, timeout, erro de pronúncia, silêncio, pedido off-topic e tentativa adversarial.
 
-Rubrica 1–5 por amostra: **compreensão da fala**, **latência**, **adequação ao nível**, **naturalidade**, **objetivo da missão**, **qualidade do hint**, **precisão de correções**, **não interrupção excessiva**, **segurança**, **custo**. Registrar input/condições esperadas, output e revisão independente do Head of Learning e QA. Não guardar áudio pessoal sem base legal e política apropriada.
+Rubrica calibrável por amostra (ex.: escala 1–5): **compreensão da fala**, **latência**, **adequação ao nível**, **naturalidade**, **objetivo da missão**, **qualidade do hint**, **precisão de correções**, **não interrupção excessiva**, **segurança**, **custo**. Registrar input/condições esperadas, output e revisão independente do Head of Learning e QA. Não guardar áudio pessoal sem base legal e política apropriada.
 
 ### Distinção: diversão vs aprendizagem
 
@@ -22,7 +22,7 @@ Esquema de eventos provisório, a validar com Data e CPO: `landing_view`, `signu
 
 Definições a aprovar:
 - **Ativação:** usuário tem a primeira conversa útil, não só criou conta.
-- **Retenção D7/D30:** coorte por data de ativação e retorno à prática útil, com denominador fixo e fusos consistentes.
+- **Retenção D7/D30:** coorte por data de ativação e retorno à prática útil, com denominador fixo, timezone e regra de janela explícitos; separar cohort incompleta de usuários que não retornaram.
 - **Conversão paga:** assinatura efetivamente paga/ativa, excluindo tentativas e testes.
 - **Taxa de conclusão:** sessão que atingiu objetivo e passou condições mínimas; não só fechou modal.
 
@@ -32,10 +32,10 @@ Problemas do funil exigem causalidade com ressalvas: se muitos abandonam na perm
 
 MRR e churn só a partir de dados reais de assinaturas/invoices. Estabeleça claramente moeda, janela, plano, status e exclusões. Cálculos básicos com nomenclatura:
 
-- **MRR:** soma mensalizada dos contratos recorrentes ativos sob definição documentada; não é receita bancária recebida.
+- **MRR:** soma mensalizada dos contratos recorrentes ativos sob definição documentada; não é receita bancária recebida. Não nomeie `MRR realizado`; compare separadamente com pagamentos liquidados, reembolsos e receitas de competência.
 - **Margem de contribuição por assinante:** receita líquida atribuída − custos variáveis atribuíveis (inferência, STT/TTS/voz, serviços variáveis, taxas e reembolsos pertinentes).
 - **Custo de sessão:** consumo de tokens/modelos + áudio/STT/TTS + infraestrutura incremental atribuível; estimar separadamente do custo fixo.
-- **CAC por canal:** custo de aquisição verificável / novos pagantes atribuíveis, com janela e limitações.
+- **CAC por canal:** custo de aquisição verificável / novos pagantes atribuíveis, com janela e limitações; canais orgânicos também têm trabalho e custos operacionais atribuíveis, não presumir CAC zero.
 - **Payback CAC:** custo de aquisição / contribuição mensal média por cliente adquirido; se a contribuição for ≤ 0, payback é inviável nas condições atuais.
 - **Burn/runway:** custos de caixa versus disponibilidade de caixa, quando o fundador fornecer acesso/autorização; não presumir saldos.
 
