@@ -4,11 +4,11 @@ Ao retomar, o CEO deve ter a mesma compreensão operacional de antes da compacta
 
 ## Artefatos de estado
 
-- `ceo/STATE.md`: último diagnóstico, prioridade atual, P0, três frentes, tarefas canceladas e próximo gatilho.
+- `ceo/STATE.md`: último diagnóstico, prioridade atual, P0, frentes ativas dimensionadas dinamicamente, tarefas canceladas e próximo gatilho.
 - `ceo/METRICS.md`: indicador, definição, coorte, janela, fonte, data e certeza; desconhecido ≠ zero.
 - `ceo/WORK_LEDGER.jsonl`: histórico de iniciativas, estado, dono, fingerprint, evidências e revisão.
 - `ceo/DECISIONS.md`: opções, decisão, tradeoffs, autorização, prazo de reavaliação.
-- `ceo/AGENTS.md`: status real, papéis, fila, modelo, riscos de custo e regressões.
+- `ceo/AGENTS.md`: cadastro de agentes existentes e criados pelo CEO, superiores, subordinados, papéis, estados, alçadas herdadas, modelos, filas, custos e avaliações; sem limite de quantidade.
 - `ceo/LEARNINGS.md`: experimentos positivos/negativos e hipóteses refutadas.
 - `ceo/INCIDENTS.md`: severidade, linha do tempo, contenção e pós-mortem.
 
