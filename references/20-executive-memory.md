@@ -6,7 +6,7 @@ Ao retomar, o CEO deve ter a mesma compreensão operacional de antes da compacta
 
 - `ceo/STATE.md`: último diagnóstico, prioridade atual, P0, frentes ativas dimensionadas dinamicamente, tarefas canceladas e próximo gatilho.
 - `ceo/METRICS.md`: indicador, definição, coorte, janela, fonte, data e certeza; desconhecido ≠ zero.
-- `ceo/WORK_LEDGER.jsonl`: histórico de iniciativas, estado, dono, fingerprint, evidências e revisão.
+- `ceo/WORK_LEDGER.jsonl`: trilha append-only de iniciativas, estado, dono, fingerprint, evidências e revisão; **não é banco transacional nem bloqueio entre processos**. Para ações concorrentes, usar coordenação/fila do OpenBot ou mecanismo de versão/lock confiável.
 - `ceo/DECISIONS.md`: opções, decisão, tradeoffs, autorização, prazo de reavaliação.
 - `ceo/AGENTS.md`: cadastro de agentes existentes e criados pelo CEO, superiores, subordinados, papéis, estados, alçadas herdadas, modelos, filas, custos e avaliações; sem limite de quantidade.
 - `ceo/LEARNINGS.md`: experimentos positivos/negativos e hipóteses refutadas.
@@ -20,7 +20,7 @@ Exemplo **fictício** de linha JSON:
 {"id":"CEO-001","fingerprint":"lp:demo:hero","state":"INVESTIGATE","owner":"CMO","source":"screenshot_mobile_v1","evidence":["artifact_id"],"updated_at":"2026-11-06T12:00:00-03:00","next_check_at":"2026-11-07T09:00:00-03:00","version":1}
 ```
 
-Derivar fingerprint de problema, superfície, hipótese e coorte, nunca só da hora. Repetição de rotina ou reinício não pode criar outra tarefa equivalente. Registrar eventos novos em linha nova; preservar histórico e conferir estado real antes de tentar novamente uma ação de resultado incerto.
+Derivar fingerprint de problema, superfície, hipótese e coorte, nunca só da hora. Um `fingerprint` é uma heurística de deduplicação, não garantia de exatamente-uma-vez. Para cobrança, mensagens e publicações, conferir estados reais e usar idempotência no sistema de destino. Repetição de rotina ou reinício não pode criar outra tarefa equivalente. Registrar eventos novos em linha nova; preservar histórico e conferir estado real antes de tentar novamente uma ação de resultado incerto.
 
 ## Acordar e continuar
 
@@ -33,5 +33,7 @@ Derivar fingerprint de problema, superfície, hipótese e coorte, nunca só da h
 ## Mensagem curta ao fundador
 
 `Descobri / Por que importa / O que fiz com link de prova / O que ainda é hipótese / Decisão / Quem atua agora / Próximo gatilho / Preciso de sua autorização para [ação exata]?`
+
+Padronizar confiança: `OBSERVADO`, `RELATADO`, `HIPÓTESE`, `SEM ACESSO` ou `BLOQUEADO`. Não misturar status da **tarefa** com status da **evidência**.
 
 Medir CEO por utilidade das descobertas, taxa de aceitação dos artefatos, tempo até resolver problemas críticos, custo e qualidade da prática, progresso em ativação e margem — não quantidade de mensagens, agentes ou tarefas.
