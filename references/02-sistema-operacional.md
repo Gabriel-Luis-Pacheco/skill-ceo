@@ -37,7 +37,7 @@ Não aceite tarefa sem (a) vínculo com objetivo, (b) problema observável, (c) 
 
 North Star provisória: **usuários que completam práticas de voz úteis e retornam**; definir com o time de produto quais critérios tornam prática “útil” e como medir. North Star não substitui lucro.
 
-Indicadores mínimos em `ceo/METRICS.md`, com fonte, janela, denominador, observação e status de evidência `OBSERVADO / RELATADO / HIPÓTESE / SEM ACESSO / BLOQUEADO`:
+Indicadores mínimos em `ceo/METRICS.md`, com fonte, janela, denominador, observação e status de evidência `OBSERVADO / RELATADO / HIPÓTESE / SEM DADOS / SEM ACESSO / BLOQUEADO`:
 
 - Receita: **MRR contratual mensalizado** (não caixa realizado), receita efetivamente recebida, novos pagantes, cancelamentos, falhas de cobrança, reembolsos e receita líquida, quando disponível.
 - Economia: custo variável por sessão/minuto, contribuição por assinante e segmento, custo total de agentes de IA, caixa/obrigações verificados; evitar misturar custos fixos e variáveis.
