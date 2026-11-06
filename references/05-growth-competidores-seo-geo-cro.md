@@ -34,7 +34,7 @@ Para cada concorrente, registrar URL/data, fonte e nível de acesso:
 - Diferenciação visual/brand: mascote, consistência, não-cópia.
 - Reclamações reais: reviews e relatos com amostra, data e viés claro.
 
-Classificar `o que usuários esperam / onde superamos / onde perdemos / onde podemos ser únicos`. Não confundir marketing do concorrente com funcionalidades comprovadas. **Resultado obrigatório:** 3 decisões priorizadas: corrigir paridade necessária, aprofundar diferenciação, ignorar atração sem valor.
+Classificar `o que usuários esperam / onde superamos / onde perdemos / onde podemos ser únicos`. Não confundir marketing do concorrente com funcionalidades comprovadas. **Resultado obrigatório:** decisões priorizadas conforme relevância, normalmente sobre paridade crítica, diferenciação e coisas que não merecem investimento. O CEO decide quantas; não há cota de decisões.
 
 ## SEO: prioridade quando um gargalo for comprovado
 
@@ -48,15 +48,15 @@ Classificar `o que usuários esperam / onde superamos / onde perdemos / onde pod
 
 ## GEO / buscas assistidas por IA
 
-Não vender a ilusão de “garantir aparecer no ChatGPT/Google AI”. A documentação do Google afirma que **não há requisito técnico extra nem schema específico para AI Overviews/AI Mode** além de fundamentos de SEO, elegibilidade e conteúdo útil. Foque em crawleabilidade, informação textual clara, respostas confiáveis, entidade consistente, referências próprias, marca, menções legítimas e demonstração de experiência. Teste presença em consultas com data, região, sessão e variação; resultados gerativos são instáveis. SEO e GEO são parte do mesmo funil de descoberta, não duas fábricas de posts.
+Não vender a ilusão de “garantir aparecer no ChatGPT/Google AI”. A documentação atual do Google afirma que **não há requisito técnico extra, schema específico nem necessidade de `llms.txt` para AI Overviews/AI Mode** além de fundamentos de SEO, elegibilidade e conteúdo útil. O guia oficial de 2026 recomenda conteúdo próprio e não comoditizado e, onde disponível, a análise no relatório de desempenho de IA do Search Console. Essas regras do Google não autorizam inferir como cada assistente externo seleciona fontes. Fonte: https://developers.google.com/search/docs/fundamentals/ai-optimization-guide Foque em crawleabilidade, informação textual clara, respostas confiáveis, entidade consistente, referências próprias, marca, menções legítimas e demonstração de experiência. Teste presença em consultas com data, região, sessão e variação; resultados gerativos são instáveis. SEO e GEO são parte do mesmo funil de descoberta, não duas fábricas de posts.
 
 ## CRO e experimentação
 
-Hipótese por experimento: `Ao alterar [elemento] para [público], esperamos [comportamento], porque [evidência].` Predefina métrica primária, período, segmento, guardrails, tamanho viável e critério de parada. Não rodar testes simultâneos conflitantes no mesmo fluxo. Pouco tráfego? Use testes de usabilidade qualitativos e instrumentação; não proclame vencedor estatístico com amostra minúscula.
+Hipótese por experimento: `Ao alterar [elemento] para [público], esperamos [comportamento], porque [evidência].` Predefina métrica primária, período, segmento, guardrails, tamanho viável e critério de parada. Não rodar testes simultâneos que contaminem o mesmo fluxo sem desenho experimental válido; experimentos independentes podem ocorrer em paralelo conforme capacidade. Pouco tráfego? Use testes de usabilidade qualitativos e instrumentação; não proclame vencedor estatístico com amostra minúscula.
 
 ## Afiliados e parcerias
 
-Avaliar comissão frente à margem real de assinaturas, política de transparência de divulgação, reembolsos, fraude, qualidade do tráfego e experiência dos indicados. Criar mensagens personalizadas como **rascunhos**; somente enviar quando houver autorização externa explícita. Medir pagantes ativados e retidos, não só links distribuídos.
+Avaliar comissão frente à margem real de assinaturas, política de transparência de divulgação, reembolsos, fraude, qualidade do tráfego e experiência dos indicados. Criar mensagens personalizadas como **rascunhos**; enviar apenas com autorização externa específica ou dentro de uma campanha/preferências previamente autorizadas e documentadas em `POLICY.md`. Medir pagantes ativados e retidos, não só links distribuídos.
 
 ## Marca e Tato
 
