@@ -15,13 +15,17 @@ from urllib.parse import unquote
 ROOT = Path(__file__).resolve().parents[1]
 EXPECTED_E = {f"E{i:02d}" for i in range(1, 31)}
 EXPECTED_ORG = {f"ORG{i:02d}" for i in range(1, 17)}
+EXPECTED_O = {f"O{i:02d}" for i in range(1, 25)}
 REQUIRED = (
     "README.md", "INSTALL.md", "AGENTS.md", "SKILL.md",
     "CEO_SYSTEM_PROMPT.md", "POLICY.md", "config/policy.example.yaml",
     "setup/CEO-first-message.md", "setup/routines.md",
     "tests/CEO-BEHAVIOR-EVALS.md", "tests/REVIEW-PROTOCOL.md",
     "tests/all-30-scenarios.jsonl", "tests/org-autonomy-cases.jsonl",
-    "tests/test_cases.jsonl",
+    "tests/test_cases.jsonl", "tests/orchestration-cases.jsonl",
+    "research/ORCHESTRATION-RESEARCH-2026.md",
+    "scripts/validate_work_graph.py",
+    "templates/orchestration-task.md", "templates/orchestration-plan.example.json",
     "templates/CEO-dashboard.md", "templates/task-handoff.md",
     "templates/agent-charter.md", "templates/organizational-decision.md",
     "references/03-equipe-e-organograma.md",
@@ -30,6 +34,11 @@ REQUIRED = (
     "references/07-safety-controles.md", "references/11-openbot-integracao.md",
     "references/12-ceo-autonomous-loop.md", "references/18-runtime-guardrails.md",
     "references/20-executive-memory.md", "references/21-organizacao-autonoma.md",
+    *tuple(f"references/{i:02d}-{name}.md" for i, name in enumerate((
+        "orquestracao-padroes", "contratos-dags-handoffs", "recuperacao-confiabilidade",
+        "contexto-e-comunicacao", "qualidade-e-observabilidade", "ceo-sistema-estrategico",
+        "openbot-playbook-operacional", "modelos-custo-capacidade"
+    ), start=22)),
 )
 LOCAL_LINK = re.compile(r"(?<!!)\[[^\]]+\]\(([^)]+)\)")
 REQUIRED_PATH = re.compile(
@@ -213,6 +222,19 @@ def validate(root: Path = ROOT) -> list[str]:
         ("id", "scenario", "expected", "forbidden"), EXPECTED_ORG,
     )
 
+    errors += check_jsonl(
+        root / "tests/orchestration-cases.jsonl",
+        ("id", "scenario", "expected", "forbidden"), EXPECTED_O,
+    )
+
+    # Planning test checks the example with the same validator used by operators.
+    try:
+        from validate_work_graph import validate_plan
+        plan = json.loads(read_text(root / "templates/orchestration-plan.example.json"))
+        errors += [f"orchestration example: {err}" for err in validate_plan(plan)]
+    except (OSError, ValueError, ImportError) as exc:
+        errors.append(f"orchestration example invalid: {exc}")
+
     eval_doc = root / "tests/CEO-BEHAVIOR-EVALS.md"
     if eval_doc.is_file():
         ids = re.findall(r"(?m)^\|\s*(E\d{2})\s*\|", read_text(eval_doc))
@@ -227,7 +249,7 @@ def main() -> int:
         for message in errors:
             print("FAIL:", message, file=sys.stderr)
         return 1
-    print("PASS: integridade da skill, referências, política e 46 cenários estruturados.")
+    print("PASS: integridade da skill, contratos, DAG offline, política e 70 cenários estruturados.")
     print("OBS: não executa agentes, não valida decisões reais e não autoriza ações.")
     return 0
 
