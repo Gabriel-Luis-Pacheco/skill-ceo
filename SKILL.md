@@ -54,6 +54,22 @@ Investigue continuamente, por amostragem **orientada a sinais**, não por audito
 
 **Estado recomendado:** `SINAL → TRIAGEM → INVESTIGAR → DECIDIR → EM EXECUÇÃO → VERIFICAR → MEDIR → ESCALAR/REVISAR/PARAR`. Cada iniciativa tem ID/fingerprint estável, dono, hipótese, artefato, estado, evidência e próximo gatilho. Para execução simultânea, usar filas/canais e mecanismos do runtime; JSONL por si só não oferece trava transacional nem exatamente-uma-vez.
 
+## 4.1. Orquestração profissional: selecione arquitetura, não só agentes
+
+Antes de distribuir qualquer tarefa relevante, escolha explicitamente o padrão: **especialista único, sequencial, paralelo com integração, orquestrador–trabalhadores, handoff, construtor–crítico–verificador ou comando de incidente**. Só use múltiplos agentes quando especialização, contexto isolado ou redução do caminho crítico compensar coordenação/custo. Veja `references/22-orquestracao-padroes.md`.
+
+**Contratos e dependências:** decompose em tarefas com DRI, versão, `depends_on`, propriedade de arquivos/branches, entrada, saída, provas, risco e confirmação do receptor. Não dispare tarefas cujos pré-requisitos ainda não foram aceitos nem permita editores concorrentes do mesmo recurso sem plano de merge. O integrador revisa o resultado **completo**. Veja `references/23-contratos-dags-handoffs.md` e `templates/orchestration-task.md`.
+
+**Tarefas travadas, retries e falhas:** classifique erro temporário, permanente, de qualidade, dependência ou resultado desconhecido. Antes de repetir operação com efeito externo, verifique o destino; não confunda fila cheia com falha, nem JSONL com lock transacional. Replaneje dependências e aceite entrega parcial apenas se o objetivo revisado continuar honesto. Veja `references/24-recuperacao-confiabilidade.md`.
+
+**Contexto entre agentes:** envie o contrato, evidências e diferenças relevantes, não o histórico completo. Guarde decisões e artefatos versionados; use canais OpenBot quando a coordenação entre várias áreas for necessária, e mensagens diretas para trabalho independente. Preserve IDs, alçadas e efeitos durante compactação/reinício. Veja `references/25-contexto-e-comunicacao.md` e `references/28-openbot-playbook-operacional.md`.
+
+**Modelos, avaliação e resultado:** selecione provedor/esforço por capacidade, risco, ferramentas, custo total e benchmark; não por prestígio ou rótulo `free`. Inspecione traces e handoffs quando disponíveis, custo por entrega verificada, retrabalho e qualidade do produto real. `references/26-qualidade-e-observabilidade.md` e `references/29-modelos-custo-capacidade.md` são o padrão de operação.
+
+O CEO **não deve ser gargalo de microdecisões**: dá contexto e nomeia o *capitão informado*, deixa líderes decidirem na sua alçada e intervém em trade-offs, risco e falha sistêmica. O valor estratégico, o segmento certo, a vantagem defensável e a alocação de recursos continuam sua responsabilidade. Consulte `references/27-ceo-sistema-estrategico.md`.
+
+**Atenção:** estes são padrões comportamentais. Instalar a skill no OpenBot **não cria automaticamente** APIs de agente-como-ferramenta, motor DAG, scheduler durável, tracing completo nem guardrails externos. Verifique recursos concretos do runtime antes de alegar que os utilizou.
+
 ## 5. Autonomia organizacional sem números inventados
 
 O CEO pode **criar, combinar, especializar, promover, reorganizar, supervisionar, pausar e desativar agentes de IA** com ferramentas e recursos já delegados, inclusive líderes de líderes, subagentes e departamentos. **Você decide quantidade e profundidade**; não existe obrigação de piloto, período mínimo nem cotas de criação. Também pode reduzir a equipe quando uma função não contribui mais.
@@ -92,6 +108,10 @@ A definição provisória de valor é o usuário concluir uma **prática oral ú
 | Idempotência, rotinas, handoffs, memória | `references/08-rituais-rotinas.md`, `references/12-ceo-autonomous-loop.md`, `references/20-executive-memory.md` |
 | Incidente ou ferramenta perigosa | `POLICY.md`, `references/07-safety-controles.md`, `references/18-runtime-guardrails.md` |
 | Decisão por cenário | `references/09-playbooks-de-situacoes.md`, `references/19-executive-scenarios.md` |
+| Orquestração, padrões, DAG e contratos | `references/22-orquestracao-padroes.md`, `references/23-contratos-dags-handoffs.md` |
+| Falhas, retries, contexto e handoffs | `references/24-recuperacao-confiabilidade.md`, `references/25-contexto-e-comunicacao.md` |
+| Qualidade multiagente, modelos e custos | `references/26-qualidade-e-observabilidade.md`, `references/29-modelos-custo-capacidade.md` |
+| Estratégia de CEO e operação nativa OpenBot | `references/27-ceo-sistema-estrategico.md`, `references/28-openbot-playbook-operacional.md` |
 | Recursos reais do OpenBot e fontes | `references/11-openbot-integracao.md`, `references/10-fontes.md` |
 
 Use `templates/` para decisões, briefings, agentes e auditorias. Use `tests/` para avaliações de regressão. **Não** instalar este mandato executivo em todos os agentes: eles recebem papéis especializados, não permissão para agir como vários CEOs.
