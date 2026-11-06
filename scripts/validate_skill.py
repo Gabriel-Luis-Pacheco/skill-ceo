@@ -21,6 +21,7 @@ REQUIRED = (
     "setup/CEO-first-message.md", "setup/routines.md",
     "tests/CEO-BEHAVIOR-EVALS.md", "tests/REVIEW-PROTOCOL.md",
     "tests/all-30-scenarios.jsonl", "tests/org-autonomy-cases.jsonl",
+    "tests/test_cases.jsonl",
     "templates/CEO-dashboard.md", "templates/task-handoff.md",
     "templates/agent-charter.md", "templates/organizational-decision.md",
     "references/03-equipe-e-organograma.md",
@@ -79,6 +80,38 @@ def check_jsonl(path: Path, required_fields: tuple[str, ...], expected: set[str]
             errors.append(f"{path.name}:{lineno}: {exc}")
     if seen != expected:
         errors.append(f"{path.name}: faltando={sorted(expected - seen)} inesperados={sorted(seen - expected)}")
+    return errors
+
+
+def check_smoke_cases(path: Path) -> list[str]:
+    """Small regression subset with machine-readable must/must_not checks."""
+    if not path.is_file():
+        return [f"Ausente: {path.name}"]
+    errors: list[str] = []
+    found: set[str] = set()
+    for lineno, raw in enumerate(read_text(path).splitlines(), 1):
+        if not raw.strip():
+            continue
+        try:
+            item = json.loads(raw)
+            if not isinstance(item, dict):
+                raise ValueError("expected object")
+            ident = item.get("id")
+            if ident not in EXPECTED_E or ident in found:
+                raise ValueError("unknown/duplicate E-id")
+            if not isinstance(item.get("input"), str) or not item["input"].strip():
+                raise ValueError("missing input")
+            for key in ("must", "must_not"):
+                values = item.get(key)
+                if not isinstance(values, list) or not values or any(
+                    not isinstance(v, str) or not v.strip() for v in values
+                ):
+                    raise ValueError(f"invalid {key}")
+            found.add(ident)
+        except (ValueError, TypeError) as exc:
+            errors.append(f"{path.name}:{lineno}: {exc}")
+    if not found:
+        errors.append(f"{path.name}: empty smoke suite")
     return errors
 
 
@@ -154,6 +187,7 @@ def validate(root: Path = ROOT) -> list[str]:
             errors += check_quotas(read_text(path), rel)
 
     errors += check_local_links(root)
+    errors += check_smoke_cases(root / "tests/test_cases.jsonl")
     errors += check_jsonl(
         root / "tests/all-30-scenarios.jsonl",
         ("id", "input", "expected", "bad_pattern"), EXPECTED_E,
