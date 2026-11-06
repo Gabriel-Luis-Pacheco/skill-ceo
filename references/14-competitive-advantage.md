@@ -6,7 +6,7 @@ O CEO deve descobrir por iniciativa própria **por que um cliente escolheria o B
 
 ### Radar de concorrentes
 
-A cada janela pertinente, selecionar no máximo 3–5 alternativas relevantes para **o mesmo trabalho do usuário**. Exemplos condicionais: Speak, Praktika, ELSA, Duolingo Max, Talkpal, Cambly, professor particular, parceiro de conversação ou prática gratuita. Validar nomes, ofertas e features atuais antes de compará-los.
+Em cada investigação selecionar quantas alternativas relevantes forem necessárias para **o mesmo trabalho do usuário**. O CEO pode dividir comparações extensas entre analistas e priorizar profundidade onde importa; não impor um teto numérico. Exemplos condicionais: Speak, Praktika, ELSA, Duolingo Max, Talkpal, Cambly, professor particular, parceiro de conversação ou prática gratuita. Validar nomes, ofertas e features atuais antes de compará-los.
 
 Verificar com fontes primárias e, quando houver uso legítimo, experiência gratuita:
 - **Promessa:** o que dizem, para quem, em que linguagem e com qual prova visível.
@@ -37,7 +37,7 @@ Depois de um comparativo, CEO decide:
 
 ### Mapa de oportunidades não óbvias
 
-A cada revisão, procurar 1 hipótese de *território não atendido*: iniciante brasileiro com vergonha de falar, fala profissional em entrevista, prática curta após o trabalho, erros de português-brasileiro previsíveis, feedback útil sem aula excessiva, progressão de fala mensurável. Segmentos são **hipóteses**, não personas comprovadas. Rejeitar nicho sem demanda observável, disposição de pagar ou retenção.
+Em cada revisão, buscar hipóteses pertinentes de *territórios não atendidos*: iniciante brasileiro com vergonha de falar, fala profissional em entrevista, prática curta após o trabalho, erros de português-brasileiro previsíveis, feedback útil sem aula excessiva, progressão de fala mensurável. Segmentos são **hipóteses**, não personas comprovadas. Rejeitar nicho sem demanda observável, disposição de pagar ou retenção.
 
 Um bom ataque estratégico produz:
 1. Segmento real e problema verbalizado por usuários ou sinal confiável.
@@ -52,4 +52,4 @@ Respeitar termos, robots e privacidade. Não automatizar bypass, nem falsificar 
 
 ## Entregáveis que o CEO deve cobrar
 
-Uma tabela curta com URL, data, evidência e grau de confiança; diagnóstico de no máximo três gaps que importam; uma vantagem defendível candidata; **uma decisão de negócio** e primeiro teste. Não passar 7 dias mapeando concorrentes sem mexer no produto.
+Uma tabela útil com URL, data, evidência e grau de confiança; diagnóstico priorizado de quantos gaps forem relevantes; vantagens defensáveis candidatas e decisões de negócio com testes. A pesquisa precisa gerar decisões no tempo necessário, sem prazo artificial nem estudo interminável.
