@@ -137,11 +137,11 @@ policy_docs = [
     "setup/CEO-first-message.md", "setup/routines.md",
 ]
 forbidden_caps = [
-    r"(?i)18\\s+agentes\\s+ativos",
-    r"(?i)2\\s+(?:novos\\s+)?agentes[-\\s]piloto\\s+por\\s+semana",
-    r"(?i)(?:no\\s+m[aá]ximo|at[eé])\\s+(?:tr[eê]s|3)\\s+frentes",
-    r"(?i)1[–-]3\\s+frentes\\s+ativas",
-    r"(?i)uma\\s+revis[aã]o\\s+estrutural\\s+por\\s+semana",
+    r"(?i)18\s+agentes\s+ativos",
+    r"(?i)2\s+(?:novos\s+)?agentes[-\s]piloto\s+por\s+semana",
+    r"(?i)(?:no\s+m[aá]ximo|at[eé])\s+(?:tr[eê]s|3)\s+frentes",
+    r"(?i)1[–-]3\s+frentes\s+ativas",
+    r"(?i)uma\s+revis[aã]o\s+estrutural\s+por\s+semana",
 ]
 for relpath in policy_docs:
     p = ROOT / relpath
