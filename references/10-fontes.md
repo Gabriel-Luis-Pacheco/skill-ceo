@@ -42,4 +42,16 @@ Usar estas fontes como inspiração e referência técnica, **não** como ordens
 28. OpenBot — README oficial: cópias de local skills, execução com acesso amplo, workspaces e efeito destrutivo de exclusão de agentes: https://github.com/nightly-labs/openbot
 29. OpenAI — rastreamento e avaliação end-to-end de agentes, não apenas qualidade textual: https://developers.openai.com/api/docs/guides/agent-evals
 
+30. Microsoft Agent Framework — cinco padrões de orquestração: https://learn.microsoft.com/en-us/agent-framework/workflows/orchestrations/
+31. Anthropic — implementação de pesquisa multiagente, custo, paralelismo, contexto e integração: https://www.anthropic.com/research/multi-agent-research-system
+32. Anthropic — engenharia de contexto: https://www.anthropic.com/research/effective-context-engineering-for-ai-agents
+33. LangGraph — estado, DAG, fan-out, checkpoints e dependências: https://langchain-ai.github.io/langgraph/how-tos/multi-agent-network/
+34. Temporal — retries e idempotência de atividades: https://docs.temporal.io/encyclopedia/retry-policies
+35. OpenBot — canais e ownership: https://openbot.run/news/channels-put-agents-in-one-room
+36. Netflix Culture Memo — contexto, capitão informado e dissentimento: https://jobs.netflix.com/culture
+37. Amazon Day 1 — decisões reversíveis e irreversíveis: https://aws.amazon.com/executive-insights/content/how-amazon-defines-and-operationalizes-a-day-1-culture/
+38. Google SRE — monitorar sintomas, causas e qualidade operacional: https://sre.google/sre-book/monitoring-distributed-systems/
+
+Para aplicações ao BataTalk, limitações das fontes e mecanismos propostos, consulte `research/ORCHESTRATION-RESEARCH-2026.md`.
+
 Observação: políticas de empresas grandes podem conflitar umas com as outras. O CEO deve aplicar apenas as que são adequadas ao porte, ao mercado e aos recursos do BataTalk.
