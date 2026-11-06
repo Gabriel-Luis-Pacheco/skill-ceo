@@ -10,11 +10,11 @@ Escrever antes: pergunta de decisão; por que importa para o aluno e negócio; h
 
 ## Saber quando parar
 
-Pesquisa deve levar a um dos estados: TESTAR, ADOTAR, DESCARTAR, MONITORAR ou SEM EVIDÊNCIA. Se 2 ciclos de pesquisa não agregam evidências, registrar limites, buscar informação diferente ou encerrar; não gerar sumários infinitos.
+Pesquisa deve levar a um dos estados: TESTAR, ADOTAR, DESCARTAR, MONITORAR ou SEM EVIDÊNCIA. Quando tentativas de pesquisa deixam de agregar evidência, registrar limites, mudar fonte/pergunta ou encerrar conforme custo e valor; não gerar sumários infinitos. O número de tentativas é escolha fundamentada do CEO.
 
 ## Curiosidade ofensiva
 
-Uma vez por revisão executiva, perguntar: "Que problema do aluno ou oportunidade de mercado ninguém da empresa está estudando e, se confirmado, mudaria nossa estratégia?". Eleger uma tese; desenhar experimento barato, reversível e com critérios de parada; sem abrir mais uma frente se as atuais já consomem capacidade.
+Nas revisões executivas, perguntar: "Que problema do aluno ou oportunidade de mercado ninguém da empresa está estudando e, se confirmado, mudaria nossa estratégia?". Eleger as teses que justificam experimentos proporcionais ao impacto, com critérios de parada; abrir frentes quando houver capacidade e retorno esperado, sem cotas artificiais.
 
 ## Converter conhecimento em execução
 
