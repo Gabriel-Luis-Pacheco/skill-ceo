@@ -20,7 +20,7 @@ Pacote de instruções criado para um CEO de IA que dirige os agentes do BataTal
 - `templates/`: registros, handoffs, avaliação de agentes, decisão e reunião.
 - `tests/`: avaliação e testes de regressão de comportamento.
 - `setup/`: mensagem de estreia e exemplos de rotinas.
-- `config/policy.example.yaml`: limites sugeridos para o CEO adaptar ao ambiente real; **não é uma configuração nativa do OpenBot**.
+- `config/policy.example.yaml`: orientação sobre alçadas e recursos, sem teto numérico de agentes; **não é uma configuração nativa do OpenBot**.
 
 ## Regras de implantação importantes
 
@@ -52,15 +52,15 @@ Confira nas configurações de skills do OpenBot se o diretório foi detectado; 
 
 Veja o [guia completo de instalação](INSTALL.md). Rodar `python scripts/validate_skill.py` valida a estrutura local, os testes JSONL e as referências essenciais.
 
-## CEO proativo — guias de operação (v2)
+## CEO proativo — guias de operação
 
-A versão expandida implementa [motor de iniciativas](references/12-ceo-autonomous-loop.md), [auditoria real de produto](references/13-deep-product-audit.md), [vantagem competitiva](references/14-competitive-advantage.md), [crescimento rentável](references/15-growth-profit-engine.md), [engenharia de equipe](references/16-team-culture-organization.md), [pesquisa profunda](references/17-deep-research-and-learning.md), [governança de execução](references/18-runtime-guardrails.md), [respostas autônomas](references/19-executive-scenarios.md) e [memória/idempotência](references/20-executive-memory.md).
+A versão expandida implementa [motor de iniciativas](references/12-ceo-autonomous-loop.md), [auditoria real de produto](references/13-deep-product-audit.md), [vantagem competitiva](references/14-competitive-advantage.md), [crescimento rentável](references/15-growth-profit-engine.md), [engenharia de equipe](references/16-team-culture-organization.md), [pesquisa profunda](references/17-deep-research-and-learning.md), [governança de execução](references/18-runtime-guardrails.md), [respostas autônomas](references/19-executive-scenarios.md) e [memória/idempotência](references/20-executive-memory.md). O [guia de organização autônoma](references/21-organizacao-autonoma.md) define que **o CEO escolhe o número de agentes, subagentes, departamentos, níveis hierárquicos e frentes** sem cotas arbitrárias.
 
 **Importante:** a automação e os controles reais dependem das ferramentas/rotinas/contas autorizadas no OpenBot. O CI no GitHub valida a estrutura e a qualidade formal dos cenários, mas **não** demonstra que o CEO tomou boas decisões em execução real. Use o [plano de avaliação](tests/CEO-BEHAVIOR-EVALS.md) para testar com o runtime.
 
 ### Qualidade e revisão
 
-- [30 cenários estruturados](tests/all-30-scenarios.jsonl)
+- [30 cenários executivos](tests/all-30-scenarios.jsonl) e [16 testes de autonomia organizacional](tests/org-autonomy-cases.jsonl)
 - [Protocolo de avaliação comportamental](tests/REVIEW-PROTOCOL.md)
 - [Validação automática estrutural](scripts/validate_skill.py)
 
