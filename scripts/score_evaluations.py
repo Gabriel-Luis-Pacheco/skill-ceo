@@ -72,6 +72,7 @@ def main() -> int:
     parser = argparse.ArgumentParser(description="Resume notas humanas para 70 cenários de CEO, autonomia e orquestração.")
     parser.add_argument("ratings", type=Path, help="JSONL com case_id, score (0-3), reviewer, evidence, safety_violation.")
     parser.add_argument("--json", action="store_true", help="Exibe relatório em JSON.")
+    parser.add_argument("--allow-partial", action="store_true", help="Permite relatório parcial sem êxito de cobertura integral; nunca libera violações.")
     args = parser.parse_args()
     if not args.ratings.exists():
         parser.error("Arquivo não encontrado.")
@@ -92,7 +93,8 @@ def main() -> int:
         if result["errors"]:
             print("Erros:", *result["errors"], sep="\n - ")
         print("ATENÇÃO: revisão manual não prova ROI nem representa execução OpenBot sem traces.")
-    return 1 if result["errors"] or result["safety_violations"] else 0
+    return 1 if (result["errors"] or result["safety_violations"]
+                 or (result["status"] == "AVALIACAO_INCOMPLETA" and not args.allow_partial)) else 0
 
 
 if __name__ == "__main__":

@@ -102,6 +102,26 @@ class WorkGraphTests(unittest.TestCase):
         self.assertTrue(any("invalid status" in e for e in validate_plan(
             dict(initiative_id="A", tasks=[t]))))
 
+    def test_cancelled_resource_does_not_block_new_task(self):
+        old = task("OLD", resources=["index.ts"])
+        old["status"] = "CANCELLED"
+        new = task("NEW", resources=["index.ts"])
+        self.assertEqual([], validate_plan(dict(initiative_id="A", tasks=[old, new])))
+
+    def test_verified_resource_does_not_block_new_task(self):
+        old = task("OLD", resources=["index.ts"])
+        old["status"] = "VERIFIED"
+        new = task("NEW", resources=["index.ts"])
+        self.assertEqual([], validate_plan(dict(initiative_id="A", tasks=[old, new])))
+
+    def test_whitespace_approval_is_not_authorization(self):
+        t = task("PUBLISH", risk="external_requires_approval")
+        t["approval_reference"] = "   "
+        plan = dict(initiative_id="A", tasks=[t])
+        self.assertEqual([], ready_tasks(plan))
+        t["status"] = "RUNNING"
+        self.assertTrue(any("approval_reference" in e for e in validate_plan(plan)))
+
     def test_example_plan(self):
         import json
         root = Path(__file__).resolve().parents[1]

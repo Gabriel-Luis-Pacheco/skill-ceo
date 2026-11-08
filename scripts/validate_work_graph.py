@@ -103,7 +103,7 @@ def validate_plan(plan: object) -> list[str]:
                 and task["risk"] in {"external_requires_approval", "sensitive_requires_approval"}
                 and isinstance(task.get("status"), str)
                 and task["status"] in {"RUNNING", "SUBMITTED", "VERIFIED"}
-                and not isinstance(task.get("approval_reference"), str)):
+                and (not isinstance(task.get("approval_reference"), str) or not task["approval_reference"].strip())):
             errors.append(f"{key}: external/sensitive task needs approval_reference before execution")
 
     def ancestor(earlier: str, later: str) -> bool:
@@ -120,6 +120,9 @@ def validate_plan(plan: object) -> list[str]:
 
     by_resource: dict[str, list[str]] = defaultdict(list)
     for key, task in by_id.items():
+        # Completed or cancelled tasks no longer reserve exclusive resources.
+        if task.get("status") in {"VERIFIED", "CANCELLED"}:
+            continue
         if isinstance(task["owned_resources"], list):
             for resource in task["owned_resources"]:
                 if isinstance(resource, str) and resource.strip():
@@ -147,7 +150,7 @@ def ready_tasks(plan: object) -> list[str]:
         and set(task["depends_on"]).issubset(completed)
         and (
             task["risk"] == "internal"
-            or bool(task.get("approval_reference"))
+            or (isinstance(task.get("approval_reference"), str) and bool(task["approval_reference"].strip()))
         )
     ]
 

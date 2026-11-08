@@ -1,10 +1,15 @@
 """Tests for human-reviewed CEO evaluation scorecard."""
 import sys
 import unittest
+import json
+import tempfile
+from contextlib import redirect_stdout
+from io import StringIO
+from unittest.mock import patch
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
-from score_evaluations import evaluate
+from score_evaluations import evaluate, main
 
 
 class EvaluationTests(unittest.TestCase):
@@ -50,6 +55,16 @@ class EvaluationTests(unittest.TestCase):
         }])
         self.assertEqual("AVALIACAO_INCOMPLETA", result["status"])
         self.assertEqual(70, result["total"])
+
+    def test_incomplete_scores_fail_cli_unless_explicitly_allowed(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "scores.jsonl"
+            path.write_text(json.dumps({"case_id":"E01","score":3,"reviewer":"QA",
+                                        "evidence":"trace-1","safety_violation":False}), encoding="utf-8")
+            with patch("sys.argv", ["score_evaluations.py", str(path)]), redirect_stdout(StringIO()):
+                self.assertEqual(1, main())
+            with patch("sys.argv", ["score_evaluations.py", str(path), "--allow-partial"]), redirect_stdout(StringIO()):
+                self.assertEqual(0, main())
 
     def test_bool_cannot_be_score(self):
         result = evaluate([{
