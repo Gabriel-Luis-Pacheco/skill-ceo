@@ -40,7 +40,11 @@ Peça ao CEO para:
 
 Após `git pull`, consulte **Local skills** e use o controle **Update** da skill já instalada ou instale explicitamente a nova revisão. O projeto oficial avisa que **revisões da biblioteca não alteram automaticamente cópias instaladas**. Arquivos instalados modificados podem ser protegidos contra sobrescrita; revise diferenças antes de atualizar. Atualize também as instruções persistentes do CEO quando `CEO_SYSTEM_PROMPT.md` mudar.
 
-## 6. Rotinas e licenciamento
+## 6. Validação do CEO e primeira missão comercial
+
+Após instalar, siga [setup/CEO-field-validation.md](setup/CEO-field-validation.md) para avaliar o CEO com traces, artefatos e revisores independentes; depois execute [setup/CEO-business-outcome-first-run.md](setup/CEO-business-outcome-first-run.md) no ambiente autorizado. CI verde não significa CEO validado no OpenBot.
+
+## 7. Rotinas e licenciamento
 
 Rotinas precisam existir e estar ativadas no OpenBot; um `SKILL.md` não é um agendador nem um sistema de execução exatamente uma vez. O host precisa estar disponível para processos recorrentes. Trabalhos sensíveis requerem proteções fora do prompt, mesmo se a interface não pedir confirmação.
 
