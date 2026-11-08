@@ -59,7 +59,7 @@ def validate_bundle(bundle_path: Path) -> tuple[list[str], list[dict]]:
                 errors.append(f"{prefix}: missing {key}")
                 valid = False
         case_id = run.get("case_id")
-        if case_id not in KNOWN:
+        if not isinstance(case_id, str) or case_id not in KNOWN:
             errors.append(f"{prefix}: unknown case_id {case_id!r}")
             valid = False
         if isinstance(case_id, str):
