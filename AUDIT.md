@@ -53,3 +53,9 @@ Uma melhoria futura deve surgir de **falha real observada**, ter hipótese, diff
 - Anthropic — padrões de agentes: https://www.anthropic.com/research/building-effective-agents
 - Google Search Central 2026: https://developers.google.com/search/docs/fundamentals/ai-optimization-guide
 - Conselho da Europa — CEFR: https://www.coe.int/en/web/common-european-framework-reference-languages/cefr-descriptors
+
+## Revisão incremental — 08/11/2026
+
+A evolução atual acrescenta conferência de pacotes locais de evidências da instalação real (IDs, arquivos existentes e revisor distinto do agente), comparador de avaliações humanas baseline/candidata, bloqueio de cobertura incompleta por padrão e missão de negócio baseada no funil de aquisição até prática oral, assinatura e margem. O planejador não trata tarefas canceladas/concluídas como proprietárias de recursos ativos, rejeita referências de aprovação em branco e protege a validação contra tipos inválidos. Inconsistências de links e contagens foram corrigidas. Há regressões unitárias novas e CI para o grafo de exemplo.
+
+**Limitações:** checar caminhos de trace não autentica a origem dos arquivos. Não foi executado CEO de verdade no OpenBot nesta alteração, não houve coleta de avaliações reais nem acesso a métricas de clientes; a prova comportamental e comercial está pendente de execução em ambiente autorizado. Não confundir CI aprovado com melhora de negócio.
