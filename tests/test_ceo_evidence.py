@@ -71,6 +71,13 @@ class EvidenceBundleTests(unittest.TestCase):
         errors, _ = validate_bundle(self.bundle)
         self.assertTrue(any("duplicate" in e for e in errors))
 
+    def test_unhashable_case_id_is_validation_error_not_crash(self):
+        run = sample_run()
+        run["case_id"] = ["E01"]
+        self.save([run])
+        errors, _ = validate_bundle(self.bundle)
+        self.assertTrue(any("case_id" in e for e in errors))
+
     def test_invalid_score_and_safety_type_are_rejected(self):
         run = sample_run()
         run["score"] = True
