@@ -24,6 +24,9 @@ Para cada caso guarde (em ambiente seguro):
 
 ## Registro e scorecard
 
+Para associar avaliações a arquivos de execução locais, consulte [../setup/CEO-field-validation.md](../setup/CEO-field-validation.md). `scripts/validate_ceo_evidence.py` exige caminhos existentes e revisor diferente do agente; **não autentica os traces**. `scripts/compare_evaluations.py` compara as versões nos casos comuns. `--allow-partial` só permite diagnóstico com cobertura incompleta, nunca validação completa.
+
+
 Crie um JSONL **fora deste repositório público** com uma linha por caso avaliado, no formato:
 
 ```json

@@ -37,6 +37,8 @@ A skill **não é um aplicativo executável**, não cria agentes ou rotinas sozi
 | [references/29-modelos-custo-capacidade.md](references/29-modelos-custo-capacidade.md) | Escolha dinâmica de modelos, custo e paralelismo |
 | [research/ORCHESTRATION-RESEARCH-2026.md](research/ORCHESTRATION-RESEARCH-2026.md) | Pesquisa aprofundada e principais achados |
 | [tests/CEO-BEHAVIOR-EVALS.md](tests/CEO-BEHAVIOR-EVALS.md) | Cenários e rubricas de julgamento executivo |
+| [setup/CEO-field-validation.md](setup/CEO-field-validation.md) | Testes de campo com evidências reais do OpenBot e comparação entre versões |
+| [setup/CEO-business-outcome-first-run.md](setup/CEO-business-outcome-first-run.md) | Primeira missão para descobrir gargalos reais de clientes e aprendizagem |
 
 Há procedimentos temáticos em [references/](references/) e modelos reutilizáveis em [templates/](templates/). Carregue somente o guia relevante, em vez de anexar todos os documentos a cada turno.
 
@@ -52,6 +54,6 @@ O OpenBot em determinadas versões de desenvolvimento pode operar com acesso amp
 
 ## Qualidade e testes
 
-Execute `python scripts/validate_skill.py`, `python scripts/validate_work_graph.py templates/orchestration-plan.example.json --ready` e `python -m unittest discover -s tests -p 'test_*.py'` para integridade, dependências, conflitos e testes dos utilitários. A avaliação comportamental contém **70 cenários** (30 de CEO, 16 organizacionais e 24 de orquestração), mais 11 casos críticos de fumaça (subconjunto dos 30). Depois de **avaliar de verdade** o CEO no OpenBot, use `python scripts/score_evaluations.py caminho/avaliacoes.jsonl` para agregar notas humanas com evidências. Os cenários do CEO em `tests/` **precisam ser executados separadamente no OpenBot, em ambiente controlado**: CI aprovado não significa que o CEO executou uma tarefa real, nem demonstra aumento de receita.
+Execute `python scripts/validate_skill.py`, `python scripts/validate_work_graph.py templates/orchestration-plan.example.json --ready` e `python -m unittest discover -s tests -p 'test_*.py'` para integridade, dependências, conflitos e testes dos utilitários. A avaliação comportamental contém **70 cenários** (30 de CEO, 16 organizacionais e 24 de orquestração), mais 11 casos críticos de fumaça (subconjunto dos 30). Depois de **avaliar de verdade** o CEO no OpenBot, valide os traces/artefatos locais com `python scripts/validate_ceo_evidence.py caminho/manifesto.json --out caminho/notas.jsonl`, avalie com `python scripts/score_evaluations.py caminho/notas.jsonl` e compare versões com `python scripts/compare_evaluations.py caminho/baseline.jsonl caminho/candidata.jsonl`. Veja [o protocolo de campo](setup/CEO-field-validation.md). Os cenários do CEO em `tests/` **precisam ser executados separadamente no OpenBot, em ambiente controlado**: CI aprovado não significa que o CEO executou uma tarefa real, nem demonstra aumento de receita.
 
 Origens e limites dos princípios de gestão, plataformas, SEO e produto estão em [references/10-fontes.md](references/10-fontes.md). Nenhuma empresa ou fundador citado endossa a skill.

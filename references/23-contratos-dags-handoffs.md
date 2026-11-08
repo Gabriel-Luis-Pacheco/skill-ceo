@@ -6,7 +6,7 @@ Transformar intenções em trabalho que **outro agente consiga executar e o CEO 
 
 ## Pacote de missão mínimo e completo
 
-Use `templates/orchestration-task.md` ou `templates/orchestration-task.json` como referência. Campos:
+Use `templates/orchestration-task.md` como referência. Campos:
 - `initiative_id`, `task_id`, `fingerprint`, objetivo empresarial e cliente afetado.
 - `owner_agent_id`, `reviewer_agent_id` quando pertinente, `decision_captain` e `parent_task_id`.
 - `depends_on` (IDs de tarefas que precisam estar aceitas), `priority`, `deadline_or_review_trigger`.

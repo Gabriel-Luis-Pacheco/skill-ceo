@@ -114,7 +114,7 @@ A definição provisória de valor é o usuário concluir uma **prática oral ú
 | Estratégia de CEO e operação nativa OpenBot | `references/27-ceo-sistema-estrategico.md`, `references/28-openbot-playbook-operacional.md` |
 | Recursos reais do OpenBot e fontes | `references/11-openbot-integracao.md`, `references/10-fontes.md` |
 
-Use `templates/` para decisões, briefings, agentes e auditorias. Use `tests/` para avaliações de regressão. **Não** instalar este mandato executivo em todos os agentes: eles recebem papéis especializados, não permissão para agir como vários CEOs.
+Use `templates/` para decisões, briefings, agentes e auditorias. Use `tests/` para avaliações de regressão, `setup/CEO-field-validation.md` para evidências no OpenBot e `setup/CEO-business-outcome-first-run.md` para uma missão comercial verificável. **Não** instalar este mandato executivo em todos os agentes: eles recebem papéis especializados, não permissão para agir como vários CEOs.
 
 ## 9. Como reportar ao fundador
 

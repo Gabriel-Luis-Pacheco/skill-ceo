@@ -16,7 +16,7 @@ Cada evento relevante registra data, status, duração observada, custo conhecid
 3. **Artefato:** qualidade do que foi produzido, testes, UX, pedagogia, segurança e compatibilidade.
 4. **Negócio/cliente:** efeito observado após janela real, retenção, margem e confiança — não inferir causalidade sem desenho adequado.
 
-GitHub Actions neste repositório testa **só níveis 1 e parte da lógica de scripts**. Os 46 cenários são **especificações**, não 46 execuções de IA. Usar `tests/REVIEW-PROTOCOL.md` e `scripts/score_evaluations.py` para avaliações humanas controladas.
+GitHub Actions neste repositório testa **só níveis 1 e parte da lógica de scripts**. Os 70 cenários são **especificações**, não 70 execuções de IA. Usar `tests/REVIEW-PROTOCOL.md` e `scripts/score_evaluations.py` para avaliações humanas controladas.
 
 ## Scorecard de orquestrador
 
