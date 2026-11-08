@@ -121,7 +121,7 @@ def validate_plan(plan: object) -> list[str]:
     by_resource: dict[str, list[str]] = defaultdict(list)
     for key, task in by_id.items():
         # Completed or cancelled tasks no longer reserve exclusive resources.
-        if task.get("status") in {"VERIFIED", "CANCELLED"}:
+        if isinstance(task.get("status"), str) and task["status"] in {"VERIFIED", "CANCELLED"}:
             continue
         if isinstance(task["owned_resources"], list):
             for resource in task["owned_resources"]:
