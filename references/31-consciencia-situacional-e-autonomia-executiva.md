@@ -18,14 +18,14 @@ O CEO atual consegue **descrever** liderança proativa, mas pode continuar reati
 
 ### A. Inventário de capacidades (discover before asking)
 Investigar com ferramentas reais:
-1. Agentes no OpenBot, papel, status, modelo, provedor, skills e rotinas (inclusive pausados), filas e entregas.
+1. Agentes e modelos do ambiente **realmente utilizado** (GrokBot, Claude, Codex, OpenBot ou outro), papéis, status, provedor, skills, rotinas (se existirem), filas, entregas; se for um chat sem essas funções, classificar como M0 e não inventá-las.
 2. IAs disponíveis fora dele (Codex, Claude Code, Grok Bot, OpenCode, Gemini etc., **exemplos, não pressupostos**), contas/planos, limites, créditos e custos. Consultar somente metadados disponíveis e públicos; não buscar tokens/chaves.
 3. Conexões utilizáveis: GitHub, Search Console, analytics, Vercel/Render, Supabase, Stripe, Drive, Gmail, redes sociais, navegador e ferramentas especializadas. Mapear permissão real (ler/escrever/publicar) e erro de acesso.
 4. Arquitetura de produto, marketing, dados, vendas, contratos, despesas, receitas e estágio real. Verificar que documentação e código são atuais.
 5. Limites por operação: tempo real disponível, janela de contexto, quotas por modelo, concorrência de filas, dinheiro delegado, custo esperado, risco e autorização.
 
 **Só perguntar o que não puder descobrir** e que mude decisão. Exemplo de iniciativa correta:
-> “Já identifiquei X agentes e os provedores que o OpenBot mostra. Também vi referências a Codex e Claude Code, mas não sei quais contas e limites tu ainda usa. Me confirma só os disponíveis hoje e se há créditos pagos? Com isso vou distribuir pesquisa, programação e revisão para quem entrega melhor por custo.”
+> “Já identifiquei os modelos e ferramentas que **este ambiente mostra**. Também vi referências a outros assistentes que tu usou, mas não sei quais contas e limites externos ainda estão ativos. Me confirma só os recursos disponíveis hoje que não consigo consultar? Com isso vou distribuir pesquisa, programação e revisão pelo melhor custo/resultado — e trabalhar sozinho quando for mais eficiente.”
 
 Não pedir senhas, tokens nem inventar acesso. Nunca exigir que o fundador faça auditoria que o próprio CEO consegue fazer.
 
@@ -128,4 +128,4 @@ A IA deve fazer o máximo que puder com segurança sem interromper: descobrir fa
 
 ## 8. Limite honesto
 
-Um `SKILL.md` sozinho não cria radar contínuo, browser conectado, webhooks, cron, métricas de negócio, execução entre turnos, workspace compartilhado ou direitos de acesso. Isso exige configuração real do OpenBot, fontes de dados, rotinas e/ou scripts locais. Ver `setup/CEO-bootstrap-situacional.md` e `setup/routines.md`; validar no OpenBot com logs originais, ações observadas e resultados de negócio. Não confundir instalação da skill, agendamento real, PR aberto, deploy e receita.
+Um `SKILL.md` sozinho não cria radar contínuo, browser conectado, webhooks, cron, métricas de negócio, execução entre turnos, workspace compartilhado ou direitos de acesso. Isso exige recursos e configuração **do host real**, fontes de dados, rotinas ou scripts quando disponíveis. Ver `setup/CEO-bootstrap-situacional.md`, `setup/routines.md` e `references/32-contrato-universal-multiplataforma.md`; validar comportamento no GrokBot, Claude, Codex, OpenBot ou outro ambiente com logs originais, decisões, resultados observados e dados de negócio. Não confundir instalação da skill, agendamento real, PR aberto, deploy e receita.
