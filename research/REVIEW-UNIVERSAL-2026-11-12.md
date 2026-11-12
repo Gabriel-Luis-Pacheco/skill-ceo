@@ -47,7 +47,7 @@ Nenhum desses documentos prova que nossa skill gerou receita. Não alegar ter li
 - Criados `adapters/README.md`, `generic.md`, `grokbot.md`, `claude-code.md`, `codex.md`, `openbot.md`. Adaptadores não reescrevem identidade.
 - Atualizados `README.md`, `INSTALL.md`, `AGENTS.md`, `setup/CEO-bootstrap-situacional.md`, `setup/CEO-first-message.md`, `setup/routines.md`.
 - Atualizado `POLICY.md` somente para linguagem neutra de runtime, **sem ampliar alçadas**. A decisão do Reels Creator pausado permanece.
-- Criados `tests/portability-16-scenarios.jsonl` e `tests/PORTABILITY-TEST-PLAN.md`; expandido `scripts/validate_skill.py` para verificar presença e formato dos novos casos e ausência de frases de dependência de host no núcleo.
+- Criados `tests/portability-24-scenarios.jsonl` e `tests/PORTABILITY-TEST-PLAN.md`; expandido `scripts/validate_skill.py` para verificar presença e formato dos novos casos e ausência de frases de dependência de host no núcleo.
 - Preservados estudos e guias válidos anteriores; referências antigas específicas ao OpenBot foram enquadradas como **adaptador opcional**, não condição de uso.
 
 ## Estado de verificação e próximo movimento
