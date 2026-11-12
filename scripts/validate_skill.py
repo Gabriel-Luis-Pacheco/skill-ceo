@@ -15,7 +15,7 @@ from urllib.parse import unquote
 ROOT = Path(__file__).resolve().parents[1]
 EXPECTED_E = {f"E{i:02d}" for i in range(1, 31)}
 EXPECTED_P = {f"P{i:02d}" for i in range(1, 15)}
-EXPECTED_U = {f"U{i:02d}" for i in range(1, 17)}
+EXPECTED_U = {f"U{i:02d}" for i in range(1, 25)}
 EXPECTED_ORG = {f"ORG{i:02d}" for i in range(1, 17)}
 EXPECTED_O = {f"O{i:02d}" for i in range(1, 25)}
 REQUIRED = (
@@ -27,7 +27,7 @@ REQUIRED = (
     "tests/all-30-scenarios.jsonl", "tests/org-autonomy-cases.jsonl",
     "tests/test_cases.jsonl", "tests/orchestration-cases.jsonl",
     "tests/proactivity-14-scenarios.jsonl", "setup/CEO-bootstrap-situacional.md",
-    "tests/portability-16-scenarios.jsonl", "tests/PORTABILITY-TEST-PLAN.md",
+    "tests/portability-24-scenarios.jsonl", "tests/PORTABILITY-TEST-PLAN.md",
     "adapters/README.md", "adapters/generic.md", "adapters/grokbot.md",
     "adapters/claude-code.md", "adapters/codex.md", "adapters/openbot.md",
     "references/32-contrato-universal-multiplataforma.md",
@@ -239,7 +239,7 @@ def validate(root: Path = ROOT) -> list[str]:
         ("id", "input", "expected", "bad_pattern"), EXPECTED_P,
     )
     errors += check_jsonl(
-        root / "tests/portability-16-scenarios.jsonl",
+        root / "tests/portability-24-scenarios.jsonl",
         ("id", "environment", "scenario", "expected", "forbidden", "evidence_type"), EXPECTED_U,
     )
     errors += check_jsonl(
@@ -291,7 +291,7 @@ def main() -> int:
         for message in errors:
             print("FAIL:", message, file=sys.stderr)
         return 1
-    print("PASS: integridade da skill, contratos, DAG offline, política e 100 cenários estruturados.")
+    print("PASS: integridade da skill, contratos, DAG offline, política e 108 cenários estruturados.")
     print("OBS: não executa agentes, não valida decisões reais e não autoriza ações.")
     return 0
 
