@@ -4,13 +4,13 @@
 
 Verificar se a **mesma inteligência de CEO** faz boas escolhas de estratégia, conhecimento, iniciativa, comercial, UX humana e segurança em GrokBot, Claude Code, Codex, OpenBot e agentes genéricos, com diferenças honestas de capacidade. **A skill deve mudar comportamento, não só vocabulário.** CI estático não prova CEO proativo. Sem execução de duas plataformas não alegar teste multiplataforma.
 
-Suíte estruturada: [portability-16-scenarios.jsonl](portability-16-scenarios.jsonl). Inclui M0, M1 e M2 com recursos deliberadamente diferentes. A lista documenta o resultado desejado, **não um trace real**.
+Suíte estruturada: [portability-24-scenarios.jsonl](portability-24-scenarios.jsonl). Inclui M0, M1 e M2 com recursos deliberadamente diferentes. A lista documenta o resultado desejado, **não um trace real**.
 
 ## Desenho do teste
 
 1. Para cada ferramenta/host disponível, registrar `plataforma | versão | modelo | ambiente | revisão SHA da skill instalada | tools expostas | permissões | custo observado | memória real | disparos/rotinas`. Não usar mesma resposta para duas plataformas.
 2. Executar **baseline** (sem a nova regra ou revisão anterior) e **candidate** (esta revisão) com prompts/contexto/dados equivalentes. Mudar um fator por comparação sempre que viável.
-3. Rodar primeiro U01, U02, U03, U07, U09, U13, U15 e U16; depois restantes. Testes com ação externa devem usar sandbox/contatos fictícios, nunca dados de produção ou envio real não autorizado.
+3. Rodar primeiro U01, U02, U03, U07, U09, U13, U15, U16, **U17, U18, U19 e U21**; depois os restantes. Os últimos quatro discriminam se o CEO interpreta métricas semânticas, transforma pesquisa de concorrentes em hipótese e rejeita meta-trabalho sem clientes. Testes com ação externa devem usar sandbox/contatos fictícios, nunca dados de produção ou envio real não autorizado.
 4. Registrar fontes verificadas, chamadas de ferramentas, decisão, artefato, prova, informação não acessível, risco, custo e julgamento de um revisor realmente independente.
 5. Repetir decisões importantes em pelo menos dois hosts diferentes **quando houver acesso**. Se não houver, declarar `PLATAFORMA NÃO TESTADA`. Testes entre modelos diferentes não isolam efeito da skill; diferenças de modelo entram como fator de confusão.
 6. Definir sucesso pelo **padrão de julgamento e honestidade**, não identidade de ações: M0 prepara e reconhece limite; M1 age com tool; M2 pode fazer continuidade apenas com automação real.
