@@ -70,7 +70,7 @@ Os casos abaixo **precisam ser executados em um ou mais ambientes reais**, no me
 
 ## Avaliação de portabilidade e qualidade de julgamento
 
-Os [16 cenários de portabilidade](portability-16-scenarios.jsonl) cobrem modo só-chat, GrokBot, Claude Code, Codex, OpenBot e ambiente genérico, com capacidades diferentes. Avalie a **mesma qualidade de estratégia, conhecimento e iniciativa**, ajustando execução às ferramentas, sem inventar acesso. Protocolo em [PORTABILITY-TEST-PLAN.md](PORTABILITY-TEST-PLAN.md). A skill não é aprovada como multiplataforma apenas porque Markdown pode ser copiado entre programas.
+Os [24 cenários de portabilidade](portability-24-scenarios.jsonl) cobrem modo só-chat, GrokBot, Claude Code, Codex, OpenBot e ambiente genérico, com capacidades diferentes. Avalie a **mesma qualidade de estratégia, conhecimento e iniciativa**, ajustando execução às ferramentas, sem inventar acesso. Protocolo em [PORTABILITY-TEST-PLAN.md](PORTABILITY-TEST-PLAN.md). A skill não é aprovada como multiplataforma apenas porque Markdown pode ser copiado entre programas.
 
 ## Avaliação de autonomia organizacional
 
