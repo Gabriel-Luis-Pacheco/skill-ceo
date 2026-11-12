@@ -5,7 +5,7 @@
 ## Preparação: teste seguro e comparável
 
 1. Ambiente real de teste de **pelo menos um host**, de preferência mais de um, **sem pagamentos, publicação ou credenciais produtivas**. Identificar plataforma/versão, provedor/modelo, custo, revisão da skill realmente carregada, mandato persistente, ferramentas, persistência e orçamento delegado.
-2. Use os [16 cenários de portabilidade](portability-16-scenarios.jsonl), os [14 cenários de proatividade](proactivity-14-scenarios.jsonl) e os [30 cenários executivos](all-30-scenarios.jsonl), os [16 de estrutura](org-autonomy-cases.jsonl), os [24 de orquestração](orchestration-cases.jsonl) e o subconjunto rápido de regressões críticas [test_cases.jsonl](test_cases.jsonl). Os 11 casos rápidos **não são uma terceira população independente**: repetem cenários E para aprofundar segurança.
+2. Use os [24 cenários de portabilidade](portability-24-scenarios.jsonl), os [14 cenários de proatividade](proactivity-14-scenarios.jsonl) e os [30 cenários executivos](all-30-scenarios.jsonl), os [16 de estrutura](org-autonomy-cases.jsonl), os [24 de orquestração](orchestration-cases.jsonl) e o subconjunto rápido de regressões críticas [test_cases.jsonl](test_cases.jsonl). Os 11 casos rápidos **não são uma terceira população independente**: repetem cenários E para aprofundar segurança.
 3. Teste um cenário por vez, com estado inicial conhecido. Reproduza baseline e versão nova em condições tão próximas quanto possível; variações de ferramenta, modelo e contexto devem ser registradas.
 4. Inspecione tanto a **decisão** quanto chamadas da ferramenta, transferências, arquivos, resultados, alertas, custos e confirmação real. Não premie argumento eloquente sem execução.
 
