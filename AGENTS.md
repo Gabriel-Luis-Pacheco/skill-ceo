@@ -1,11 +1,26 @@
-# Instruções para qualquer agente que edite este repositório
+# Diretrizes para modificar a skill BataTalk CEO OS
 
-O repositório inteiro é uma skill para o CEO de IA do BataTalk. `SKILL.md` na raiz é o ponto de entrada operacional; **`POLICY.md` é a fonte normativa única de segurança, orçamento e alçadas**; `CEO_SYSTEM_PROMPT.md` é o mandato persistente que o usuário copia para o CEO.
+Esta skill deve ser usada **enquanto é aperfeiçoada**. Não apenas planejar melhoria: executar análise real, localizar maior falha, comparar alternativas, escolher a correção, gravar, verificar e registrar limite da evidência.
 
-Ao alterar comportamentos: preservar missão (valor ao aluno e sustentabilidade econômica), não ampliar permissões de produção/gastos sem aprovação do fundador, preservar a pausa do Reels Creator, manter honestidade entre resultados verificados e hipóteses, não substituir evidências por autoavaliação.
+## Compromissos normativos
 
-Atualize os guias correspondentes em `references/`, documentação de instalação se necessário, e os testes de regressão em `tests/`. Execute `python scripts/validate_skill.py` e `python -m unittest discover -s tests -p 'test_*.py'` antes de propor publicação. Nenhum desses comandos comprova bom julgamento do CEO; o protocolo de avaliação real exige traces e revisão. Considere trabalho incompleto se novo comportamento não tiver critério de aceitação e mecanismo de verificação.
+- **Portabilidade total de pensamento**: o núcleo `SKILL.md` e o mandato `CEO_SYSTEM_PROMPT.md` não podem presumir OpenBot, GrokBot, Claude Code, Codex ou qualquer runtime como dependência. Usar `references/32-contrato-universal-multiplataforma.md` e `adapters/` para detalhes de ambiente.
+- **Conteúdo executivo substantivo**: `references/33-julgamento-executivo-competencias-e-aprendizado.md` e os guias temáticos unem estratégia, finanças, psicologia humana, marketing, vendas, aprendizagem, produto, risco, concorrentes e decisão; não trocar conhecimento por listas de jargão.
+- **Proatividade demonstrada**: explorar oportunidades não solicitadas, descobrir ferramentas/contas/limites visíveis, estudar o que falta, executar o passo autorizado e verificar. Não substituir execução por “vou pesquisar” ou mais prompts.
+- **Segurança imutável**: `POLICY.md` prevalece; nenhuma revisão concede acesso, dinheiro, publicação, contato, pagamento ou reativação do Reels Creator por conta própria.
+- **Sem teatro de agentes**: orquestração pode ajudar, mas não é missão; CEO único não inventa times. Em plataforma com time, usar capacidade realmente existente, custo e alçada.
+- **Provas**: deixar explícito `NÃO TESTADO`, `PR ABERTO`, `DEPLOY`, `RESULTADO` e avaliações reais. Skills com CI verde não significam CEO inteligente.
 
-**Orquestração:** mantenha os guias `references/22-` até `references/29-` alinhados com o núcleo; valide exemplos JSON com `python scripts/validate_work_graph.py templates/orchestration-plan.example.json`. Nunca presuma que OpenBot oferece APIs de DAG, agent-as-tool ou execução transacional só porque conceitos aparecem na documentação. Traces, roteamento de modelos e efeito comercial precisam ser medidos em runtime real. As instruções de `POLICY.md` não podem ser rebaixadas por guias de orquestração.
+## Para cada alteração importante
 
-Evite cargos sem missão, cerimônias sem decisão, relatórios sem evidência, iteração inútil de prompts e AI slop. **Não reintroduza tetos fixos de agentes, cargos, frentes, subequipes, níveis ou mudanças de skill.** O CEO dimensiona por mérito, capacidade e orçamento delegado, com liberdade para criar agentes de IA permanentes e sublideranças. Não apagar agente sem verificar e preservar workspace/anexos, pois o OpenBot pode removê-los definitivamente. Mudanças em configuração local do OpenBot exigem inspeção da ferramenta e permissões reais, nunca suposição.
+1. Identificar falha observada e o que a refutaria.
+2. Ler apenas as referências necessárias; usar fontes atuais de fora quando valiosas e seguras.
+3. Comparar patch mínimo versus revisão estrutural; preservar regras boas.
+4. Alterar **uma fonte canônica**; adaptadores não reescrevem o núcleo.
+5. Testar sintaxe, links, regressões de segurança, cenários de portabilidade e qualidade executiva.
+6. Registrar decisão, diff, evidência, custo/risco, próximos testes no runtime real.
+7. Se houver falha persistente, analisar conhecimento/modelo/ambiente/incentivo, não aumentar texto sem critério.
+
+Comandos de CI: `python scripts/validate_skill.py`; `python scripts/validate_work_graph.py templates/orchestration-plan.example.json --ready`; `python -m unittest discover -s tests -p 'test_*.py' -v`. Execução de cenários em plataformas reais requer log e avaliação independente.
+
+**Não existem cotas artificiais** de agentes, equipes ou frentes, mas não devem ser criados sem benefício real. O CEO do BataTalk é a mesma competência, seja no GrokBot, Claude, Codex, OpenBot ou outra ferramenta.
