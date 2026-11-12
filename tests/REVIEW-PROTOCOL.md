@@ -1,11 +1,11 @@
 # Avaliação de comportamento do CEO — protocolo executável
 
-**Não confunda GitHub Actions verde com um CEO que funciona.** A CI testa integridade de arquivos e do avaliador. Esta avaliação mede decisões e efeitos reais **somente quando você executa os cenários no OpenBot**. A IA não deve ser juiz exclusivo de si mesma.
+**Não confunda GitHub Actions verde com um CEO que funciona.** A CI testa integridade de arquivos e do avaliador. Esta avaliação mede decisões e efeitos reais **somente quando executa os cenários no ambiente real relevante (GrokBot, Claude, Codex, OpenBot ou outro)**. A IA não deve ser juiz exclusivo de si mesma.
 
 ## Preparação: teste seguro e comparável
 
-1. Ambiente OpenBot de teste, **sem pagamentos, publicação ou credenciais produtivas**. Identificar versão do OpenBot, provedor/modelo, custo, skill instalada/revisão, prompt persistente, ferramentas e orçamento delegado.
-2. Use os [14 cenários de proatividade](proactivity-14-scenarios.jsonl) e os [30 cenários executivos](all-30-scenarios.jsonl), os [16 de estrutura](org-autonomy-cases.jsonl), os [24 de orquestração](orchestration-cases.jsonl) e o subconjunto rápido de regressões críticas [test_cases.jsonl](test_cases.jsonl). Os 11 casos rápidos **não são uma terceira população independente**: repetem cenários E para aprofundar segurança.
+1. Ambiente real de teste de **pelo menos um host**, de preferência mais de um, **sem pagamentos, publicação ou credenciais produtivas**. Identificar plataforma/versão, provedor/modelo, custo, revisão da skill realmente carregada, mandato persistente, ferramentas, persistência e orçamento delegado.
+2. Use os [16 cenários de portabilidade](portability-16-scenarios.jsonl), os [14 cenários de proatividade](proactivity-14-scenarios.jsonl) e os [30 cenários executivos](all-30-scenarios.jsonl), os [16 de estrutura](org-autonomy-cases.jsonl), os [24 de orquestração](orchestration-cases.jsonl) e o subconjunto rápido de regressões críticas [test_cases.jsonl](test_cases.jsonl). Os 11 casos rápidos **não são uma terceira população independente**: repetem cenários E para aprofundar segurança.
 3. Teste um cenário por vez, com estado inicial conhecido. Reproduza baseline e versão nova em condições tão próximas quanto possível; variações de ferramenta, modelo e contexto devem ser registradas.
 4. Inspecione tanto a **decisão** quanto chamadas da ferramenta, transferências, arquivos, resultados, alertas, custos e confirmação real. Não premie argumento eloquente sem execução.
 
@@ -42,12 +42,12 @@ python scripts/score_evaluations.py /caminho/avaliacoes-ceo.jsonl
 python scripts/score_evaluations.py /caminho/avaliacoes-ceo.jsonl --json
 ```
 
-O agregador informa cobertura, média, notas úteis e violações. **Avaliação parcial continua incompleta**, ainda que as notas sejam excelentes. Ele não julga respostas, não executa OpenBot, não declara automaticamente que há PMF/ROI, nem elimina necessidade de revisor.
+O agregador informa cobertura, média, notas úteis e violações. **Avaliação parcial continua incompleta**, ainda que as notas sejam excelentes. Ele não julga respostas, não executa qualquer runtime, não declara automaticamente que há PMF/ROI, nem elimina necessidade de revisor.
 
 ## Comparação e melhoria contínua
 
 - Compare o mesmo conjunto antes/depois de mudar skill, modelo, prompt ou infraestrutura.
-- Compare também qualidade do roteamento, aceitação dos handoffs, bloqueios, retrabalho de integrações, tempo do caminho crítico e custo por entrega integrada. Os 24 cenários de orquestração não rodam automaticamente no OpenBot.
+- Compare também qualidade do roteamento, aceitação dos handoffs, bloqueios, retrabalho de integrações, tempo do caminho crítico e custo por entrega integrada. Os 24 cenários de orquestração não rodam automaticamente em nenhum agente.
 - Inspecione problemas por **categoria**: proatividade, evidência, execução, coordenação, custos, experiência do aluno, risco, boa decisão de não fazer nada e autonomia organizacional.
 - Separe defeito de instrução, ferramenta ausente, limitação de contexto, falta de dados ou bug externo; corrija a causa real.
 - Faça patch mínimo versionado, rode novamente casos relacionados + regressões críticas e avalie qualidade/custo/latência.
