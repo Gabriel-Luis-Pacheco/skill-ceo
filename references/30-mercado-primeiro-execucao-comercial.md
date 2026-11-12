@@ -27,6 +27,51 @@ Três perguntas, com validação real, não slogans:
 
 **B2B2C e enterprise são trilha condicional**: entrevistar escolas, professores ou RH, desenhar benefício institucional e testar disposição de pagar. Só criar SDR/BDR/closer, demo institucional, procurement e outbound enterprise quando uma venda-piloto paga ou oportunidade objetiva sustentar custo/ciclo. Não vestir uma estrutura enterprise porque empresas grandes a têm.
 
+## 2.1. Não confunda PLG, self-service, inbound e outbound
+
+Os três critérios do Reel são uma **heurística inicial**, não um algoritmo universal. O erro comum é tratar cinco conceitos como alternativas mutuamente excludentes:
+
+| Dimensão | Pergunta | Possíveis escolhas |
+|---|---|---|
+| **Entrega do primeiro valor** | A pessoa consegue praticar e reconhecer o benefício sozinha? | self-service, experiência guiada ou serviço assistido |
+| **Descoberta da oferta** | Ela já procura solução/alternativa? | SEO/conteúdo de intenção, comunidade, criadores, referral, outbound pontual |
+| **Aquisição ativa** | Precisamos iniciar conversa com quem ainda não está buscando? | founder-led outreach, comunidades consentidas, eventos, parceiros, outbound consultivo |
+| **Expansão** | Usuário individual pode recomendar para equipe/escola? | PLG bottom-up, indicação, B2B2C ou vendas institucionais |
+| **Economia do movimento** | O custo de venda cabe na margem e prazo de recebimento? | B2C low-touch, vendas assistidas, demo B2B, SDR/BDR/closer se economicamente justificável |
+
+**Combinações são normais.** Um produto self-service pode depender de conteúdo inbound e founder-led outbound para descobrir primeiros usuários. Uma escola pode descobrir o produto via aluno e exigir demo comercial. Uma oferta enterprise pode ter trial self-service, mas procurement e contrato assistidos. O preço de R$500 mencionado no Reel **não é limiar universal**: custo comercial é justificado por ACV, taxa de fechamento, margem de contribuição, ciclo, churn, retenção e expansão, não por um único valor isolado.
+
+### Diagnóstico de movimento comercial — sequência executável
+
+1. **O que a pessoa faz hoje?** alternativa real (aula particular, Duolingo, IA genérica, falar com amigo), urgência, preço e fricção.
+2. **Consegue chegar ao primeiro valor sem ajuda?** observar em celular real: encontrou benefício, abriu microfone, respondeu ao personagem, recebeu feedback? Medir *sem treinar o usuário* e distinguir demo simulada de sessão real.
+3. **Existe demanda expressa?** busca qualificada no GSC e perguntas de alunos/professores; ausência de dados de busca não prova ausência de demanda.
+4. **Quem paga e por quê?** usuário, pai, professor, escola, RH? Preço mensal, contratos anuais, vagas e escopo econômico.
+5. **Quanto vale adquirir?** contribuição por cliente e risco de uso alto; deixar CAC e LTV como desconhecidos se não há coortes reais.
+6. **Qual ação reduz mais incerteza nesta semana?** convite humano personalizado para primeira fala; melhoria comprovável de ativação; conteúdo de intenção; piloto com comprador real.
+7. **Onde parar?** rejeição, pouca utilização, custo fora do orçamento, forte atrito ou ausência de conversa válida — revisar hipótese e canal, não dobrar disparos.
+
+### Portas de escolha conforme estágio
+
+- **Sem compradores externos confirmados:** entrevistas e teste real com pessoas identificáveis e consentidas, primeiro valor gratuito de baixo atrito e founder-led outreach segmentado; não desperdiçar semanas em funil enterprise, SEO em massa ou análise interminável.
+- **Pessoas chegam mas não falam:** auditar promessa, microfone, onboarding, latência e confiança; conteúdo adicional pode aumentar visitantes sem resolver ativação.
+- **Falam mas não voltam:** estudar efeito pedagógico, objetivo da sessão, frustração, progresso e motivo de retorno; não confundir diversão pontual com hábito.
+- **Voltam mas não compram:** oferta, limites gratuitos, percepção de diferença, momento do paywall, preço e intenção real; testar de forma ética.
+- **Segmento institucional pede prova:** definir comprador, problema institucional, piloto e ROI. Só então decidir se cabe inside sales, demo, BDR/SDR, implantação e suporte.
+
+**Observação essencial:** um fluxo `landing_view → onboarding_started` é feito de eventos, não necessariamente de pessoas únicas. Se `onboarding_voice_attempt` existe mas não há `voice_sessions`, testar semântica, instrumentação e jornada antes de afirmar “zero praticaram”.
+
+## 2.2. Competitive intelligence aplicada a BataTalk — inspeção pública em 12/11/2026
+
+Isto é **evidência pública sobre a oferta anunciada** dos concorrentes, não auditoria de seu backend ou prova de conversão real:
+
+- **Gliglish:** página em 12/11/2026 promete “Speak now for FREE”, “No signup required” e um plano gratuito de 10 minutos por dia; oferece feedback de gramática, sugestões de fala, escuta e páginas para escolas/negócios. **Hipótese testável:** criar primeiro valor antes do cadastro diminui risco percebido e facilita prova em vídeos; não copiar literalmente sem testar custo por sessão. Fonte: https://gliglish.com/
+- **Speak:** a página atual apresenta sequência de aprendizagem **Learn → Practice → Apply**, linguagem de situações concretas e CTA “Start Speaking for free”; FAQ explica trial gratuito de 7 dias e feedback em conversação. **Hipótese testável:** distinguir prática guiada e conversa livre ajuda usuários a entender o progresso; verificar se nossos cenários e custos suportam implementação. Fonte: https://www.speak.com/
+- **Praktika:** documentação datada de 01/09/2026 informa versão gratuita com 3 avatares, prática limitada e feedback básico; Premium amplia. **Hipótese testável:** benefício recorrente limitado pode permitir repetição/avaliação antes de pagar; unit economics de voz exigem limite e transparência. Fonte: https://intercom.help/praktika-ai/en/articles/12008580-is-there-a-free-version-of-the-app-available-or-do-i-need-a-subscription
+- **Duolingo:** relatório 2025 e declaração de 26/02/2026 situam uso gratuito, ensino e boca a boca como motores do crescimento e testes em escala; **não extrapolar seus números de experimentação** a uma base pequena. Fontes: https://www.sec.gov/Archives/edgar/data/1562088/000162828026012494/duol-20251231.htm e https://investors.duolingo.com/news-releases/news-release-details/duolingo-reports-fourth-quarter-and-full-year-2025-results
+
+**Decisão para o CEO do BataTalk:** verificar no produto o que “primeiro contato antes de cadastro” significa de fato (demo simulada, fala real ou ambos), sua conexão com retorno e custo; testar com pessoas externas o resultado que elas esperam, não mudar paywall por reflexo. O monitor concorrente deve revalidar fontes/datas antes de usar como fato novo.
+
 ## 3. Escolher o ICP por urgência, observabilidade e acesso
 
 Para cada segmento, testar, não declarar: `deseja falar inglês` é amplo demais. Exemplos candidatos: pessoa que fará entrevista em inglês em breve; brasileiro prestes a viajar; profissional que precisa participar de reunião. Não tratar exemplos como validação.
