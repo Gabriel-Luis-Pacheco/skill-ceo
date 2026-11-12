@@ -27,6 +27,12 @@ Copie o conteúdo completo de [CEO_SYSTEM_PROMPT.md](CEO_SYSTEM_PROMPT.md) para 
 
 Envie [setup/CEO-first-message.md](setup/CEO-first-message.md) para iniciar uma auditoria com acesso e evidências reais. Para validar especialmente o funcionamento como **orquestrador**, envie [setup/CEO-orchestration-first-run.md](setup/CEO-orchestration-first-run.md) em ambiente controlado. Use [setup/routines.md](setup/routines.md) para escolher cadência.
 
+## 3.1. Ativação da visão proativa
+
+Antes de começar rotinas repetidas, execute uma vez [setup/CEO-bootstrap-situacional.md](setup/CEO-bootstrap-situacional.md) no agente CEO. Ele deve inventariar automaticamente capacidades locais e saber perguntar só as lacunas externas importantes. Confira se tem acesso real a GitHub, browser, métricas, agentes e provedores; se não tiver, registre o bloqueio e não afirme monitoramento ativo. A API Local scripts do OpenBot tem ativação **manual por agente** em Permissions, desligada por padrão, e está documentada em https://github.com/nightly-labs/openbot/blob/main/docs/automation.md. Não habilite ou exponha endpoints automaticamente sem aprovação.
+
+A versão instalada do CEO deve carregar o novo `references/31-consciencia-situacional-e-autonomia-executiva.md`. A execução de rotinas e atualização de Local skills não ocorre só por merge no GitHub. Consulte `setup/routines.md` para exemplos pequenos de sensores e `tests/CEO-BEHAVIOR-EVALS.md` para P01–P14. Um “OK” dado pelo fundador permite iniciar outro turno, não permite gastar, publicar ou contactar clientes fora da alçada.
+
 ## 4. Verifique antes de deixar operar continuamente
 
 Peça ao CEO para:
