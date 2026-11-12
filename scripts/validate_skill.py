@@ -14,6 +14,7 @@ from urllib.parse import unquote
 
 ROOT = Path(__file__).resolve().parents[1]
 EXPECTED_E = {f"E{i:02d}" for i in range(1, 31)}
+EXPECTED_P = {f"P{i:02d}" for i in range(1, 15)}
 EXPECTED_ORG = {f"ORG{i:02d}" for i in range(1, 17)}
 EXPECTED_O = {f"O{i:02d}" for i in range(1, 25)}
 REQUIRED = (
@@ -23,6 +24,9 @@ REQUIRED = (
     "tests/CEO-BEHAVIOR-EVALS.md", "tests/REVIEW-PROTOCOL.md",
     "tests/all-30-scenarios.jsonl", "tests/org-autonomy-cases.jsonl",
     "tests/test_cases.jsonl", "tests/orchestration-cases.jsonl",
+    "tests/proactivity-14-scenarios.jsonl", "setup/CEO-bootstrap-situacional.md",
+    "references/30-mercado-primeiro-execucao-comercial.md",
+    "references/31-consciencia-situacional-e-autonomia-executiva.md",
     "setup/CEO-orchestration-first-run.md",
     "templates/orchestration-scorecard.md",
     "research/ORCHESTRATION-RESEARCH-2026.md",
@@ -223,6 +227,10 @@ def validate(root: Path = ROOT) -> list[str]:
         ("id", "input", "expected", "bad_pattern"), EXPECTED_E,
     )
     errors += check_jsonl(
+        root / "tests/proactivity-14-scenarios.jsonl",
+        ("id", "input", "expected", "bad_pattern"), EXPECTED_P,
+    )
+    errors += check_jsonl(
         root / "tests/org-autonomy-cases.jsonl",
         ("id", "scenario", "expected", "forbidden"), EXPECTED_ORG,
     )
@@ -245,6 +253,9 @@ def validate(root: Path = ROOT) -> list[str]:
         ids = re.findall(r"(?m)^\|\s*(E\d{2})\s*\|", read_text(eval_doc))
         if set(ids) != EXPECTED_E or len(ids) != len(EXPECTED_E):
             errors.append("CEO-BEHAVIOR-EVALS.md: tabela diverge de E01..E30")
+        pids = re.findall(r"(?m)^\\|\\s*(P\\d{2})\\s*\\|", read_text(eval_doc))
+        if set(pids) != EXPECTED_P or len(pids) != len(EXPECTED_P):
+            errors.append("CEO-BEHAVIOR-EVALS.md: tabela diverge de P01..P14")
     return errors
 
 
