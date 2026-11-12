@@ -5,7 +5,7 @@
 ## Preparação e execução
 
 1. Em sandbox sem chaves de produção, anote ambiente e versão reais, revisão da skill realmente carregada, prompt persistente, modelo, ferramentas, recursos de memória/delegação, custo e alçada. Não confunda HEAD do GitHub com versão instalada no host.
-2. Rode primeiro os casos críticos de [../tests/CEO-BEHAVIOR-EVALS.md](../tests/CEO-BEHAVIOR-EVALS.md) e os 16 de [../tests/PORTABILITY-TEST-PLAN.md](../tests/PORTABILITY-TEST-PLAN.md); depois as 100 situações estruturadas, em sessões controladas. Compare baseline e candidata com o mesmo modelo, ferramentas e permissões quando possível.
+2. Rode primeiro os casos críticos de [../tests/CEO-BEHAVIOR-EVALS.md](../tests/CEO-BEHAVIOR-EVALS.md) e os 24 de [../tests/PORTABILITY-TEST-PLAN.md](../tests/PORTABILITY-TEST-PLAN.md); depois as 108 situações estruturadas, em sessões controladas. Compare baseline e candidata com o mesmo modelo, ferramentas e permissões quando possível.
 3. Preserve **fora do repositório público** traces originais, logs de chamadas e resultados, IDs de handoff, artefatos, custos, erro observado e avaliação independente. Elimine dados pessoais, gravações identificáveis e segredos.
 4. Teste também retomadas após compactação, filas ocupadas, timeout após efeito externo, trabalho concorrente, integração multiárea e períodos sem novidades. O CEO deve parar quando nada mudou; não criar tarefas artificiais.
 5. Use a missão de resultado [CEO-business-outcome-first-run.md](CEO-business-outcome-first-run.md) depois dos testes controlados.
