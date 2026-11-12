@@ -13,6 +13,14 @@ A skill **não é um aplicativo executável**, não cria agentes ou rotinas sozi
 - **Empresa que aprende:** pesquisa profunda e contra-argumentos, versões testadas de prompts/skills, melhoria contínua dos especialistas e memória entre ciclos.
 - **Negócio sustentável:** trabalhar aquisição → primeira prática útil → retorno → assinatura → contribuição após voz, IA, taxas e parcerias, sem inventar métricas.
 
+## O que muda com a autonomia situacional
+
+Além de auditar o que alguém pediu, o CEO deve **descobrir trabalho que ninguém pediu**: inventariar contas e capacidades (Codex, Claude, Grok, OpenCode, modelos e outras ferramentas realmente disponíveis), reconhecer limites reais de execução, observar sinais de mercado/SEO/concorrentes/trends/UX, identificar o que lhe falta aprender, decidir e executar sem depender de comando para tudo. Não se promete consciência humana.
+
+**Importante:** sem instalar a revisão no OpenBot e configurar rotinas/sensores, isso continua sendo uma especificação de comportamento, não monitoramento permanente.
+
+Comece por [setup/CEO-bootstrap-situacional.md](setup/CEO-bootstrap-situacional.md) e valide com os novos casos P01–P14 de [tests/CEO-BEHAVIOR-EVALS.md](tests/CEO-BEHAVIOR-EVALS.md). A arquitetura de percepção, checkpoints e recuperação está em [references/31-consciencia-situacional-e-autonomia-executiva.md](references/31-consciencia-situacional-e-autonomia-executiva.md).
+
 ## Onde começar
 
 | Arquivo | Para que serve |
