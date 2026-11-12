@@ -18,6 +18,30 @@ Rotinas do OpenBot precisam ser criadas na interface e têm a semântica de lemb
 
 "Escolha uma oportunidade ou ameaça importante ainda pouco compreendida (ex.: concorrente, qualidade pedagógica, canal de aquisição, UX, custo de IA, retenção). Pesquise profundamente fontes atuais e primeira mão, contraste com dados BataTalk, monte evidências e faça uma recomendação: testar, manter em observação ou descartar. Se não justificar nova frente, não abra uma. Registre aprendizado de forma utilizável pelas áreas."
 
+## Rotinas adicionais de consciência situacional — configurar só se houver fontes
+
+**Não existem por estarem neste arquivo.** Instalar na versão real do OpenBot, informar ao usuário quais rotinas estão realmente ativas, provar primeira execução, verificar permissão e custo. A versão oficial documenta `routine_no_update` para execuções sem novidade; quando disponível, use-o em vez de alertar por obrigação. Fonte: https://github.com/nightly-labs/openbot/blob/main/docs/architecture/agents.md
+
+### Radar comercial (se houver acesso ao CRM e aos eventos)
+
+“Compare apenas o delta verificável de contatos efetivamente enviados, respostas, ensaios de primeira fala, retornos, compradores externos e custo. Distinga drafts, eventos e pessoas únicas. Identifique a ação autorizada mais próxima de dinheiro/usuários reais e execute; se a decisão exigir aprovação, prepare o material e uma pergunta pontual. Não invente leads.”
+
+### Radar competitivo e tendências (periodicidade semanal, custo controlado)
+
+“Inspecione fontes atuais de concorrentes relevantes ao mesmo job do usuário e tendências emergentes de aprendizagem, canais e comportamento do ICP. Apresente apenas mudanças novas, datadas, com mecanismo de impacto para o BataTalk e recomendação TESTAR / OBSERVAR / IGNORAR. Nada de listas de notícias ou copiar tendências sem encaixe.”
+
+### Radar da competência executiva (periodicidade vinculada a falhas reais)
+
+“Revise uma decisão importante recente e seu resultado: o que eu supus? o que aprendi? o que faltou estudar? que ferramenta, skill ou modelo falhou? Tome uma melhoria pequena e testável do sistema de execução se o desvio se repetir. Se nenhuma falha nova relevante, não gerar arquivo.”
+
+### Radar de ferramentas e quotas (após mudança de modelo/conta, ou revisão periódica)
+
+“Confirme pelos metadados do OpenBot quais agentes, modelos, skills, provedores e quotas realmente são visíveis; compare custo por entrega verificada e fila. Identifique capacidade nova ou gargalo. Nunca ler tokens/chaves, fingir quota que o runtime não mostra nem perguntar ao fundador uma informação já disponível.”
+
+### Condições de notificação
+
+Informe o fundador se houver P0, risco financeiro/material, decisão estratégica a aprovar, oportunidade com urgência genuína ou resultado externo importante **com evidência**. Para todo o resto, atualize estado e encerre silenciosamente. Sensores quebrados ou sem permissão não podem informar “tudo OK”; devem gerar registro privado `SEM_ACESSO` e pedido específico quando houver relevância.
+
 ## Alarme imediato por eventos reais
 
 P0 de segurança, cobrança, custo e falha de prática deve idealmente vir de monitoramento/alerta técnico ou webhook autorizado, **não** de routine que olha periodicamente uma página. A rotina pode ler/triagem do sinal, mas a ação crítica requer infraestrutura confiável e política de aprovação.
