@@ -253,7 +253,7 @@ def validate(root: Path = ROOT) -> list[str]:
         ids = re.findall(r"(?m)^\|\s*(E\d{2})\s*\|", read_text(eval_doc))
         if set(ids) != EXPECTED_E or len(ids) != len(EXPECTED_E):
             errors.append("CEO-BEHAVIOR-EVALS.md: tabela diverge de E01..E30")
-        pids = re.findall(r"(?m)^\\|\\s*(P\\d{2})\\s*\\|", read_text(eval_doc))
+        pids = re.findall(r"(?m)^\|\s*(P\d{2})\s*\|", read_text(eval_doc))
         if set(pids) != EXPECTED_P or len(pids) != len(EXPECTED_P):
             errors.append("CEO-BEHAVIOR-EVALS.md: tabela diverge de P01..P14")
     return errors
@@ -265,7 +265,7 @@ def main() -> int:
         for message in errors:
             print("FAIL:", message, file=sys.stderr)
         return 1
-    print("PASS: integridade da skill, contratos, DAG offline, política e 70 cenários estruturados.")
+    print("PASS: integridade da skill, contratos, DAG offline, política e 84 cenários estruturados.")
     print("OBS: não executa agentes, não valida decisões reais e não autoriza ações.")
     return 0
 
