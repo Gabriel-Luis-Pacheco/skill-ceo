@@ -58,3 +58,51 @@ Nenhum desses documentos prova que nossa skill gerou receita. Não alegar ter li
 - **Critério de sucesso posterior:** mesmo cenário empresarial com julgamento estratégico equivalente em pelo menos dois ambientes, ação proporcional a cada capacidade, nenhuma invenção de acesso/permissão, menos retrabalho e mais primeiros resultados com usuários reais.
 
 **Aprendizado acumulado:** autonomia executiva não é um número de agentes nem uma personalidade confiante. Ela resulta de percepção do mundo com fonte, conhecimento empresarial integrado, capacidade de decidir e agir, honestidade sobre ferramentas, validação e memória útil. **A portabilidade é um requisito de arquitetura, não só compatibilidade de Markdown.**
+
+---
+
+## Segunda revisão adversarial no mesmo dia — CEO usa a skill na própria empresa
+
+**Missão reafirmada:** o fundador pediu estudo profundo de conversas sobre PLG/self-service/inbound/outbound/enterprise, urgência de receita, conhecimento, personalidade executiva, design humano, concorrentes, antecipação, modelos e continuidade em GrokBot/Claude/Codex/OpenBot. O trabalho anterior estava tecnicamente bom, mas podia apenas gerar mais instruções sem clientes.
+
+### Ato de diagnóstico em produção, não ficção
+
+Consulta agregada e somente leitura ao Supabase produtivo em 12/11/2026. Janela desde **08/11/2026 00:00 UTC-03**:
+- 119 eventos `landing_view`; 14 `onboarding_started`;
+- 3 `onboarding_voice_attempt` e 3 `onboarding_feedback_shown`;
+- 0 novos registros em `voice_sessions.started_at` e 0 novas faturas em `paid_subscription_invoices.paid_at`;
+- último `voice_sessions.started_at` histórico observado: **08/11/2026 00:16 UTC** (07/11 no fuso de Brasília).
+- Não inferir 119 visitantes únicos, zero fala real, inexistência de procura, penalização SEO ou causalidade comercial sem verificar identidade, eventos e origem do dado.
+
+**Hipóteses rivais:** voz do onboarding/demo não persiste como sessão regular; fricção/erro de microfone ou produto; emissor/destino diferente; QA/bot/baixa qualificação. O agente deve investigar **significado do evento e fluxo real** antes de otimizar SEO ou declarar taxa. Foi criado issue de trabalho real, **não deploy**: https://github.com/Gabriel-Luis-Pacheco/BataTalk/issues/18 (reprodução em staging, emissores, semântica de primeira voz, provas e métricas).
+
+### Inteligência de mercado: encontrar mecanismo, não clonar layout
+
+Consulta pública datada de **12/11/2026**:
+- `gliglish.com` anuncia prática grátis sem cadastro, plano gratuito limitado em 10 minutos/dia e recursos de fala/feedback — hipótese: primeiro valor e uso recorrente de baixo atrito. **Isso não prova desempenho do concorrente**.
+- `speak.com` apresenta **Learn → Practice → Apply** com CTA gratuito e trial de 7 dias — hipótese: progressão de valor compreensível e demonstrável.
+- `Praktika` confirma em help center de 01/09/2026 versão gratuita com 3 avatares e prática limitada — hipótese: o usuário percebe valor antes de upgrade.
+- Duolingo (10-K 2025 e resultados 26/02/2026) enfatiza o modelo gratuito, ensino e recomendação; **não copiar estratégias de escala sem base de usuários**.
+
+**Decisão:** o CEO deve diferenciar self-service (experiência) de PLG (mecanismo), inbound/outbound (descoberta), e vendas enterprise (economia). Não existe limiar universal de R$500; não criar SDR/BDR/closer para ticket B2C sem ACV/margem/ciclo.
+
+### Falhas adicionais identificadas na skill e correções aplicadas
+
+| Falha | Correção | Prova de artefato |
+|---|---|---|
+| Ideias de CEO sem diagnóstico de causa e sem alternativa real | Núcleo `SKILL.md`, seções 4.1–4.2: hipótese, contraditório, sinal discriminatório, ação, evidência, limite de meta-trabalho | Diff no branch, leitura de volta |
+| Reel inbound vs outbound tratado como dicotomia | `SKILL.md` 7.1 e `references/30-mercado-primeiro-execucao-comercial.md`: matriz por comprador/usuário, primeiro valor, canal, CAC, ACV/margem e estágios | Diff e fontes públicas |
+| Sessão de demo/onboarding confundida com voz real | Caso de teste U17 e issue #18; exigir semântica e comparação de fontes | Suite de casos, issue criado |
+| 16 casos de portabilidade não cobriam decisões difíceis de negócio | Oito casos adicionais U17–U24, incluindo métricas contraditórias, free/PLG, urgência, jargão humano, meta-trabalho e priorização P0 | `tests/portability-24-scenarios.jsonl`, validator atualizado |
+| Prompt persistente redundante com skill | `CEO_SYSTEM_PROMPT.md` simplificado de 5.475 para 2.721 caracteres (**−50%**), núcleo e referências sob demanda | Diff, integridade e CI |
+| A própria melhoria da skill poderia virar loop que evita clientes | Núcleo exige separar ganho de método de resultado; próximo passo empresarial deve envolver usuários e valor, não mais documentação | Regra explícita + issue real |
+
+### Evidência de avaliação técnica e limites
+
+Após as modificações, o GitHub Actions passou para o commit `3324ecbdeace7fa078f5bb9494e9e671abdeb099` (https://github.com/Gabriel-Luis-Pacheco/skill-ceo/actions/runs/43290652775), incluindo integridade documental, contratos, testes Python e compilação. **A comparação real do mesmo CEO no GrokBot/Claude/Codex/OpenBot ainda não foi feita.** Um teste estático de casos JSONL **não julga** decisões/modelos.
+
+### Decisão estratégica de encerramento deste ciclo
+
+A próxima evidência valiosa não virá de acrescentar outra enciclopédia à skill. Virá de observar o CEO em contexto real e, no BataTalk, localizar a passagem de primeiro contato para primeira fala útil com pessoas externas. Antes de escalar campanhas, verificar se a experiência prometida efetivamente funciona para uma pessoa fria.
+
+**Estado real:** skill em branch de PR, CI aprovada, issue de ativação criado; **sem merge**, sem instalação comprovada nos runtimes, sem abordagem enviada nesta revisão, sem deploy e sem venda nova comprovada. O CEO deve dizer isso com precisão.
