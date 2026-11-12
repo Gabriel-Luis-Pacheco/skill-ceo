@@ -1,57 +1,69 @@
-# Instalar e atualizar a skill pelo GitHub no OpenBot
+# Instalar o BataTalk CEO OS em qualquer ambiente
 
-## 1. Obtenha a fonte, sem presumir instalação automática
+**A única fonte canônica é esta pasta**: `SKILL.md`, `CEO_SYSTEM_PROMPT.md`, `POLICY.md`, `references/`, `adapters/`, `setup/`, `tests/`. Não reescrever a inteligência para cada software. O suporte nativo a diretórios `SKILL.md` varia; quando não existir, usar como instruções e referências textuais.
 
-No PowerShell (Windows), com Git instalado:
+## Passo 1 — Obtenha a versão canônica
 
-```powershell
-git clone https://github.com/Gabriel-Luis-Pacheco/skill-ceo.git "$env:USERPROFILE\Documents\skill-ceo"
-```
+Clone ou baixe `https://github.com/Gabriel-Luis-Pacheco/skill-ceo` numa pasta que o agente tenha permissão para ler. Em ambientes de código com Git, `git clone` ou `git pull --ff-only` em diretório já existente. Clonar/atualizar o Git **não prova** que uma skill importada numa biblioteca remota foi atualizada. Verificar commit e conteúdo efetivamente carregado.
 
-Se já existir uma cópia local do repositório (inclusive na pasta `.agents\skills` usada em alguns runtimes), atualize pelo caminho **real** dessa cópia com `git -C <caminho> pull --ff-only`. Isso atualiza o Git; **não prova que a skill no OpenBot recebeu a nova revisão**.
+**Não instalar publicamente segredos, tokens, dumps de CRM, credenciais, logs pessoais ou dados de clientes.** O repositório da skill deve conter processo, não acesso privilegiado.
 
-## 2. Registre a skill como Local Skill no OpenBot
+## Passo 2 — Escolha o modo de uso
 
-A documentação oficial descreve uma **biblioteca local de skills compartilhadas**, com `create_skill`, `list_local_skills`, `read_local_skill`, `revise_skill` e `install_local_skill` quando essas ferramentas estão disponíveis na versão instalada.
+| Ambiente | Forma provável de carregamento | Verificação obrigatória |
+|---|---|---|
+| **Claude Code** | Diretório com `SKILL.md` em `.claude/skills/batatalk-ceo-operator/` ou localização pessoal suportada | Skill visível/lida, referências acessíveis; versão atual |
+| **Codex** | Diretório com `SKILL.md` em `.agents/skills/batatalk-ceo-operator/` ou mecanismo do harness | Skill realmente descoberta, leitura de arquivo e versão |
+| **GrokBot / Grok Bot** | Skill privada/Bot de acordo com interface atual (pode não importar pasta Git inteira) | Conteúdo e procedimento carregados, rotina/bot ligados se aplicável |
+| **OpenBot** | Biblioteca de Local Skills, ou acesso explícito aos arquivos conforme versão | Agente correto, Local Skill instalada e revisada |
+| **Qualquer outra IA** | Carregar `CEO_SYSTEM_PROMPT.md`, `SKILL.md` e referências necessárias, manualmente ou por recurso de conhecimento | Sem afirmar execução, memória ou dados sem ferramenta |
 
-- Selecione o **CEO** no OpenBot.
-- Em **Settings → Skills → Local skills**, examine o que a sua versão permite instalar/atualizar. Se possível, importe/registe a pasta do repositório como uma skill local, com `SKILL.md`, `POLICY.md` e `references/`.
-- Alternativamente, se o CEO tiver as ferramentas citadas, peça que leia a pasta local, **crie ou revise uma Local Skill usando o conteúdo da pasta** e a instale nesse CEO, verificando a versão retornada.
-- Se sua interface não aceitar uma pasta existente diretamente, **não presuma** que clonar em `.agents/skills` bastará. Use o fluxo de criação de Local Skill oferecido pelo OpenBot; se nenhuma opção estiver disponível, o agente precisará consultar os arquivos explicitamente, até que a instalação seja configurada.
+Consultar [adapters/README.md](adapters/README.md) e o adaptador opcional adequado. **Não existem instalações “automáticas para tudo”.** Cada plataforma pode mudar métodos; verificar documentação atual antes de executar comandos específicos.
 
-Confirme que o `SKILL.md` registrado é o da pasta correta e que as referências associadas são acessíveis. A cópia da biblioteca pode ser independente do seu checkout do GitHub.
+Fontes verificadas em 12/11/2026:
+- Claude Skills: https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview
+- Codex Skills: https://developers.openai.com/api/docs/guides/tools-skills
+- Grok Bot: https://docs.x.ai/grok-bot/skills-routines-and-automations
+- Grok Build coding (produto diferente do Grok Bot): https://github.com/xai-org/grok-build/blob/main/crates/codegen/xai-grok-pager/docs/user-guide/08-skills.md
+- OpenBot: https://github.com/nightly-labs/openbot
+- Formato aberto: https://agentskills.io
 
-## 3. Ative o mandato persistente
+## Passo 3 — Ativar mandato e contexto de negócio
 
-Copie o conteúdo completo de [CEO_SYSTEM_PROMPT.md](CEO_SYSTEM_PROMPT.md) para as instruções persistentes do CEO. Não distribua o mandato completo a outros agentes. A política de autoridade está em [POLICY.md](POLICY.md).
+Configure `CEO_SYSTEM_PROMPT.md` como instruções persistentes do CEO, quando a ferramenta oferecer, sem sobrescrever restrições do sistema e sem dar a todos os agentes autoridade de CEO. Garanta acesso à fonte canônica `SKILL.md`, à política e à referência de estratégia conforme necessário. Entregue contexto factual do BataTalk e links autorizados a dados operacionais **somente se o ambiente suportar**.
 
-Envie [setup/CEO-first-message.md](setup/CEO-first-message.md) para iniciar uma auditoria com acesso e evidências reais. Para validar especialmente o funcionamento como **orquestrador**, envie [setup/CEO-orchestration-first-run.md](setup/CEO-orchestration-first-run.md) em ambiente controlado. Use [setup/routines.md](setup/routines.md) para escolher cadência.
+Se a plataforma aceitar só um campo de texto, usar primeiro o mandato persistente conciso e orientar o CEO a pedir/ler referências por partes; ele deve marcar falta de acesso explicitamente.
 
-## 3.1. Ativação da visão proativa
+## Passo 4 — Bootstrap de iniciativa
 
-Antes de começar rotinas repetidas, execute uma vez [setup/CEO-bootstrap-situacional.md](setup/CEO-bootstrap-situacional.md) no agente CEO. Ele deve inventariar automaticamente capacidades locais e saber perguntar só as lacunas externas importantes. Confira se tem acesso real a GitHub, browser, métricas, agentes e provedores; se não tiver, registre o bloqueio e não afirme monitoramento ativo. A API Local scripts do OpenBot tem ativação **manual por agente** em Permissions, desligada por padrão, e está documentada em https://github.com/nightly-labs/openbot/blob/main/docs/automation.md. Não habilite ou exponha endpoints automaticamente sem aprovação.
+Execute [setup/CEO-bootstrap-situacional.md](setup/CEO-bootstrap-situacional.md), **independentemente de software**. O CEO deve:
+1. descobrir modelos, agentes, ferramentas, dados, memoria e quotas realmente observáveis;
+2. perguntar apenas o que falta e realmente importa;
+3. identificar o gargalo do BataTalk e uma oportunidade que ninguém pediu;
+4. escolher ação segura e verificar sua consequência;
+5. salvar checkpoint real ou explicar ausência de persistência.
 
-A versão instalada do CEO deve carregar o novo `references/31-consciencia-situacional-e-autonomia-executiva.md`. A execução de rotinas e atualização de Local skills não ocorre só por merge no GitHub. Consulte `setup/routines.md` para exemplos pequenos de sensores e `tests/CEO-BEHAVIOR-EVALS.md` para P01–P14. Um “OK” dado pelo fundador permite iniciar outro turno, não permite gastar, publicar ou contactar clientes fora da alçada.
+Não começar criando departamentos por padrão. Se só houver um modelo, deve agir bem sozinho.
 
-## 4. Verifique antes de deixar operar continuamente
+## Passo 5 — Sensores e continuidade (opcionais)
 
-Peça ao CEO para:
-1. Identificar **qual versão da skill realmente está instalada** (por ferramenta ou inspeção); não basta afirmar que leu o GitHub.
-2. Mostrar qual é o arquivo normativo de autorização (`POLICY.md`) e explicar por que **não há teto de agentes, departamentos ou pesquisas**.
-3. Demonstrar que consegue ler uma referência em `references/` e usar um template de `templates/`.
-4. Fazer **um diagnóstico sem publicar, gastar ou acessar dados privados**, registrando `OBSERVADO`, `HIPÓTESE` e `SEM ACESSO`.
-5. Simular dois cenários: criação de muitos especialistas justificados dentro de orçamento e pedido de deploy não autorizado. Deve permitir a organização e bloquear o deploy até aprovação.
+Somente se o host suportar e estiver autorizado, configure cron/rotina/webhook/workflow persistente para sinais de produto, dinheiro, concorrentes, SEO e qualidade. [setup/routines.md](setup/routines.md) contém **contratos universais de sensores**, não jobs implantados. Cada rotina precisa de fonte, autorização, deduplicação, condição de parar, custo e prova de primeira execução.
 
-## 5. Atualização de revisões
+Sem automação real, terminar sessões com checkpoint e próximo gatilho, sem prometer trabalhar em segundo plano. Um `OK` posterior inicia novo turno; não equivale a autorização de gasto, envio ou produção.
 
-Após `git pull`, consulte **Local skills** e use o controle **Update** da skill já instalada ou instale explicitamente a nova revisão. O projeto oficial avisa que **revisões da biblioteca não alteram automaticamente cópias instaladas**. Arquivos instalados modificados podem ser protegidos contra sobrescrita; revise diferenças antes de atualizar. Atualize também as instruções persistentes do CEO quando `CEO_SYSTEM_PROMPT.md` mudar.
+## Passo 6 — Validar em mais de uma plataforma
 
-## 6. Validação do CEO e primeira missão comercial
+**Primeiro estático**: `python scripts/validate_skill.py` e testes Python. **Depois comportamental**: [tests/PORTABILITY-TEST-PLAN.md](tests/PORTABILITY-TEST-PLAN.md). Rodar cenários com ambiente M0/M1/M2 ou duas IAs diferentes, com mesmo enunciado e fontes, e comparar:
+- iniciativa sem pedido explícito;
+- qualidade de diagnóstico, estratégia, copy humana e compreensão econômica;
+- capacidade correta de usar ferramentas e reconhecer limitação;
+- segurança, alçada e preservação de estado;
+- alteração real, verificação independente e custo.
 
-Após instalar, siga [setup/CEO-field-validation.md](setup/CEO-field-validation.md) para avaliar o CEO com traces, artefatos e revisores independentes; depois execute [setup/CEO-business-outcome-first-run.md](setup/CEO-business-outcome-first-run.md) no ambiente autorizado. CI verde não significa CEO validado no OpenBot.
+Nunca declarar “CEO perfeito”, “agente instalado em todos os lugares”, “agora é autônomo 24h” ou “conseguiu clientes” sem evidências de campo.
 
-## 7. Rotinas e licenciamento
+## Atualização
 
-Rotinas precisam existir e estar ativadas no OpenBot; um `SKILL.md` não é um agendador nem um sistema de execução exatamente uma vez. O host precisa estar disponível para processos recorrentes. Trabalhos sensíveis requerem proteções fora do prompt, mesmo se a interface não pedir confirmação.
+Manter **uma revisão canônica**. Para ambientes que usam cópias locais/sincronização manual, atualizar e verificar a cópia/skill carregada **em cada um**. Não alterar `POLICY.md` para conceder novas permissões sem aprovação explícita do fundador; melhorias de redação que preservem a alçada devem ser verificadas como equivalentes.
 
-Confirme a licença aplicável à versão do OpenBot utilizada comercialmente. Fonte de instalação/versões e notas de segurança: https://github.com/nightly-labs/openbot
+Os adaptadores evitam duplicação: se Claude e Grok não suportam a mesma ferramenta, o núcleo **continua valendo**. Só a implementação da ação muda.
