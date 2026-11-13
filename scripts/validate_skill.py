@@ -32,6 +32,11 @@ REQUIRED = (
     "adapters/claude-code.md", "adapters/codex.md", "adapters/openbot.md",
     "references/32-contrato-universal-multiplataforma.md",
     "references/33-julgamento-executivo-competencias-e-aprendizado.md",
+    "references/35-decidir-e-executar-com-repertorio.md",
+    "research/LIVROS-E-ENGENHARIA-DE-SKILLS-2026-11-13.md",
+    "scripts/package_skill.py", "scripts/score_skill_routing.py",
+    "tests/skill-trigger-evals.jsonl", "tests/test_package_skill.py",
+    "tests/test_skill_routing.py", "tests/SKILL-ROUTING-TEST-PLAN.md",
     "research/REVIEW-UNIVERSAL-2026-11-12.md",
     "references/30-mercado-primeiro-execucao-comercial.md",
     "references/31-consciencia-situacional-e-autonomia-executiva.md",
@@ -141,6 +146,40 @@ def check_smoke_cases(path: Path) -> list[str]:
     return errors
 
 
+def check_trigger_cases(path: Path) -> list[str]:
+    """Validate routing fixtures without pretending to invoke a host."""
+    if not path.is_file():
+        return [f"Missing skill-routing scenarios: {path}"]
+    errors = []
+    seen = set()
+    positives = negatives = 0
+    for lineno, raw in enumerate(read_text(path).splitlines(), 1):
+        if not raw.strip():
+            continue
+        try:
+            item = json.loads(raw)
+            if not isinstance(item, dict):
+                raise ValueError("expected an object")
+            ident = item.get("id")
+            if not isinstance(ident, str) or not re.fullmatch(r"T\\d{2}", ident) or ident in seen:
+                raise ValueError("invalid or duplicate routing ID")
+            seen.add(ident)
+            for key in ("request", "why", "expected_behavior"):
+                if not isinstance(item.get(key), str) or not item[key].strip():
+                    raise ValueError(f"invalid {key}")
+            if not isinstance(item.get("should_activate"), bool):
+                raise ValueError("should_activate must be boolean")
+            if item["should_activate"]:
+                positives += 1
+            else:
+                negatives += 1
+        except (ValueError, TypeError) as exc:
+            errors.append(f"{path.name}:{lineno}: {exc}")
+    if positives < 4 or negatives < 4:
+        errors.append(f"{path.name}: insufficient positive and negative trigger scenarios")
+    return errors
+
+
 def check_local_links(root: Path) -> list[str]:
     errors: list[str] = []
     for path in root.rglob("*.md"):
@@ -200,7 +239,12 @@ def validate(root: Path = ROOT) -> list[str]:
             if example and len(example.group(1)) > 1000:
                 errors.append("SKILL.md: example-prompt ultrapassa limite do formato de skills")
         if len(skill.splitlines()) > 500:
-            errors.append("SKILL.md: núcleo enorme; considerar progressão por referências")
+            errors.append("SKILL.md: acima de 500 linhas")
+        # Approximate context-budget guard, not a tokenizer or measured model cost.
+        if len(skill) > 15000:
+            errors.append("SKILL.md: acima do orçamento conservador de 15000 caracteres")
+        if "Não acione" not in skill[:1500]:
+            errors.append("SKILL.md: faltam limites de acionamento na descrição")
         if "POLICY.md" not in skill or "references/21-organizacao-autonoma.md" not in skill:
             errors.append("SKILL.md: política ou governança organizacional não referenciada")
         for ref in set(REQUIRED_PATH.findall(skill)):
@@ -239,6 +283,7 @@ def validate(root: Path = ROOT) -> list[str]:
     except ImportError as exc:
         errors.append(f"Cannot verify evaluator scenario coverage: {exc}")
     errors += check_local_links(root)
+    errors += check_trigger_cases(root / "tests/skill-trigger-evals.jsonl")
     errors += check_smoke_cases(root / "tests/test_cases.jsonl")
     errors += check_jsonl(
         root / "tests/all-30-scenarios.jsonl",

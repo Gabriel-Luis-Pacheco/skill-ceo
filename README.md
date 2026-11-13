@@ -73,3 +73,12 @@ A revisão de 12/11/2026 removeu o acoplamento original ao OpenBot e introduziu 
 ### Engenharia da skill: pesquisa e reprodutibilidade
 
 A [pesquisa de livros, documentação técnica e decisões de arquitetura](research/LIVROS-E-ENGENHARIA-DE-SKILLS-2026-11-13.md) registra o que foi efetivamente consultado (fontes públicas, **não livros completos**). `SKILL.md` é o playbook sob demanda; `CEO_SYSTEM_PROMPT.md` é o mandato persistente quando realmente instalado; `setup/routines.md` precisa de runtime, e `tests/skill-trigger-evals.jsonl` especifica avaliação de invocação. Ver [INSTALL.md](INSTALL.md) antes de dizer que uma cópia está ativa.
+
+### Testes específicos de criação de skills
+
+- **Integridade estática e proteção contra inflação de contexto:** `python scripts/validate_skill.py`. O orçamento de 15.000 caracteres do núcleo é uma heurística interna, **não** equivalência garantida de tokens.
+- **Testes unitários, incluindo empacotamento e score de ativação:** `python -m unittest discover -s tests -p "test_*.py" -v`.
+- **Criar pasta portátil adequada ao padrão:** `python scripts/package_skill.py --output dist`. A pasta resultante é `dist/batatalk-ceo-operator/`; não implica que algum bot a tenha importado.
+- **Testar invocação no host:** executar `tests/skill-trigger-evals.jsonl` em um agente realmente configurado e registrar `{"id":"T01","activated":true,"evidence":"trace://..."}` para cada caso. Avaliar somente rastros reais com `python scripts/score_skill_routing.py observacoes.jsonl`. Seguir [protocolo de routing](tests/SKILL-ROUTING-TEST-PLAN.md).
+
+Um CI verde pode provar que os scripts funcionam, **mas não** qual comportamento o modelo apresentou ao executar a skill.
