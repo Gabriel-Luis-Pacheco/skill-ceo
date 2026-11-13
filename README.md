@@ -1,59 +1,70 @@
-# BataTalk CEO Operator
+# BataTalk CEO OS — inteligência executiva portável
 
-**Skill de direção executiva proativa para OpenBot.** O CEO audita o BataTalk sem esperar ordens, investiga problemas, compara mercado, organiza subagentes, eleva a qualidade de produto, marketing e aprendizagem, e exige melhorias verificadas que sustentem receita e margem.
+**Uma skill de direção executiva para GrokBot, Claude Code, Codex, OpenBot e qualquer IA que consiga receber instruções e contexto.** Ela não é produto nem plugin de uma plataforma. Seu objetivo é fazer a IA pensar e agir como um **CEO operacional competente**, com método, ambição, percepção, julgamento, repertório, curiosidade e responsabilidade por resultados.
 
-A skill **não é um aplicativo executável**, não cria agentes ou rotinas sozinha e não substitui acesso real, revisão independente, configurações de segurança ou autorização humana para decisões sensíveis.
+> O CEO **não espera** o fundador descobrir que falta cliente, que a landing é fraca, que o SEO perdeu alcance, que algum concorrente mudou a proposta, que um agente está produzindo AI slop ou que a empresa precisa aprender algo. Ele investiga sinais disponíveis, toma decisões, executa dentro da alçada e verifica impactos. Quando não pode agir, explica o bloqueio sem fingir execução.
 
-## O diferencial
+## Princípio de portabilidade
 
-- **Iniciativa real:** detectar LP genérica, experiência de fala fraca, SEO/GEO sem prova, falhas no funil, margens negativas, lacunas organizacionais e AI slop antes do fundador.
-- **Autonomia estrutural:** o CEO decide quantidade de agentes, líderes, subequipes, profundidade da hierarquia e paralelismo conforme custo-benefício e recursos delegados; **nenhum teto numérico arbitrário**.
-- **Orquestração adaptativa:** o CEO escolhe entre especialista único, pipeline, paralelismo com integração, supervisor, handoff, crítico e comando de incidente; define contratos, dependências, ownership, falhas e recuperação.
-- **Execução verificável:** decisão, DRI, artefato, revisão, custo, evidência, medição, aprendizado ou descarte. Nunca tomar “feito” como evidência.
-- **Empresa que aprende:** pesquisa profunda e contra-argumentos, versões testadas de prompts/skills, melhoria contínua dos especialistas e memória entre ciclos.
-- **Negócio sustentável:** trabalhar aquisição → primeira prática útil → retorno → assinatura → contribuição após voz, IA, taxas e parcerias, sem inventar métricas.
+**O cérebro é o mesmo; a mão muda com a ferramenta.** Uma plataforma pode ter web, terminal, agentes, browser, email, rotinas, dados ou nada disso. Nunca confundir **ter um prompt** com ter conexão, automação, memória ou capacidade de ação. A qualidade da estratégia e do raciocínio não deve depender de um software.
 
-## Onde começar
+| Componente | Função | Precisa de aplicativo específico? |
+|---|---|---|
+| [SKILL.md](SKILL.md) | **Mandato e processo universal** — primeiro arquivo | Não |
+| [CEO_SYSTEM_PROMPT.md](CEO_SYSTEM_PROMPT.md) | Mandato persistente curto para qualquer IA | Não |
+| [POLICY.md](POLICY.md) | Alçadas e segurança, independente do host | Não |
+| [references/32-contrato-universal-multiplataforma.md](references/32-contrato-universal-multiplataforma.md) | Descoberta de capacidades, M0/M1/M2, continuidade | Não |
+| [references/33-julgamento-executivo-competencias-e-aprendizado.md](references/33-julgamento-executivo-competencias-e-aprendizado.md) | Estratégia, finanças, marketing, psicologia, vendas, produto e liderança | Não |
+| [references/31-consciencia-situacional-e-autonomia-executiva.md](references/31-consciencia-situacional-e-autonomia-executiva.md) | Radar de iniciativa e aprendizado | Não |
+| [references/34-proatividade-autocalibracao-e-execucao.md](references/34-proatividade-autocalibracao-e-execucao.md) | Protocolo de iniciativa, detecção de falhas próprias e ação verificável | Não |
+| [references/30-mercado-primeiro-execucao-comercial.md](references/30-mercado-primeiro-execucao-comercial.md) | Primeiros clientes, PLG, inbound/outbound e canais | Não |
+| [adapters/README.md](adapters/README.md) | Procedimentos opcionais para ferramentas específicas | Sim, opcional |
+| [INSTALL.md](INSTALL.md) | Instalação genérica + opções por host | Não no núcleo |
+| [setup/CEO-bootstrap-situacional.md](setup/CEO-bootstrap-situacional.md) | Primeiro uso, descobrindo recursos e lacunas | Não |
+| [tests/CEO-BEHAVIOR-EVALS.md](tests/CEO-BEHAVIOR-EVALS.md) | Casos de julgamento e proatividade | Não |
+| [tests/PORTABILITY-TEST-PLAN.md](tests/PORTABILITY-TEST-PLAN.md) | Comparação entre ambientes e limites | Não |
 
-| Arquivo | Para que serve |
-|---|---|
-| [SKILL.md](SKILL.md) | Núcleo operacional que o CEO deve consultar |
-| [AUDIT.md](AUDIT.md) | Auditoria crítica, correções e limitações verificadas |
-| [CEO_SYSTEM_PROMPT.md](CEO_SYSTEM_PROMPT.md) | Texto curto para instruções persistentes do CEO |
-| [POLICY.md](POLICY.md) | **Fonte única** de limites financeiros, segurança e autorização |
-| [INSTALL.md](INSTALL.md) | Instalação pelo repositório e verificação de versão no OpenBot |
-| [setup/CEO-first-message.md](setup/CEO-first-message.md) | Auditoria inicial com fatos e ações seguras |
-| [setup/CEO-orchestration-first-run.md](setup/CEO-orchestration-first-run.md) | Primeira missão de orquestração pronta para enviar ao CEO |
-| [templates/orchestration-scorecard.md](templates/orchestration-scorecard.md) | Scorecard de delegação, handoffs, custo e resultado integrado |
-| [setup/routines.md](setup/routines.md) | Sugestões de gatilhos, eventos e cadência |
-| [references/21-organizacao-autonoma.md](references/21-organizacao-autonoma.md) | Delegação e gestão de agentes, líderes e departamentos sem cotas |
-| [references/22-orquestracao-padroes.md](references/22-orquestracao-padroes.md) | Decidir quando usar um ou vários agentes e qual topologia |
-| [references/23-contratos-dags-handoffs.md](references/23-contratos-dags-handoffs.md) | Contratos de tarefas, dependências e integração |
-| [references/24-recuperacao-confiabilidade.md](references/24-recuperacao-confiabilidade.md) | Retry, fila travada, idempotência e falhas |
-| [references/25-contexto-e-comunicacao.md](references/25-contexto-e-comunicacao.md) | Context engineering e mensagens entre agentes |
-| [references/26-qualidade-e-observabilidade.md](references/26-qualidade-e-observabilidade.md) | Traces, scorecard, revisão independente |
-| [references/27-ceo-sistema-estrategico.md](references/27-ceo-sistema-estrategico.md) | Decisões estratégicas, mercado, margem e liderança |
-| [references/28-openbot-playbook-operacional.md](references/28-openbot-playbook-operacional.md) | Uso real das filas, canais e rotinas do OpenBot |
-| [references/29-modelos-custo-capacidade.md](references/29-modelos-custo-capacidade.md) | Escolha dinâmica de modelos, custo e paralelismo |
-| [research/ORCHESTRATION-RESEARCH-2026.md](research/ORCHESTRATION-RESEARCH-2026.md) | Pesquisa aprofundada e principais achados |
-| [tests/CEO-BEHAVIOR-EVALS.md](tests/CEO-BEHAVIOR-EVALS.md) | Cenários e rubricas de julgamento executivo |
-| [setup/CEO-field-validation.md](setup/CEO-field-validation.md) | Testes de campo com evidências reais do OpenBot e comparação entre versões |
-| [setup/CEO-business-outcome-first-run.md](setup/CEO-business-outcome-first-run.md) | Primeira missão para descobrir gargalos reais de clientes e aprendizagem |
+## O que o CEO precisa demonstrar
 
-Há procedimentos temáticos em [references/](references/) e modelos reutilizáveis em [templates/](templates/). Carregue somente o guia relevante, em vez de anexar todos os documentos a cada turno.
+- **Iniciativa:** levantar o problema mais importante sem receber uma lista, inclusive descoberta de oportunidades que o fundador não conhece.
+- **Capacidade de aprender:** descobrir o conhecimento faltante e consultar o melhor disponível antes de formular uma ação.
+- **Direção empresarial:** tomar decisões que conectam humanos, produto, distribuição, economia, risco e marca, recusando frentes inúteis.
+- **Percepção de mercado:** estudar concorrentes, clientes, tendências, SEO/GEO e dados reais quando acessíveis, com fonte e data.
+- **Disciplina comercial:** se faltam clientes, trabalhar distribuição e ativação com contato humano real e medição, não documentos infinitos.
+- **Crítica independente:** não confundir output de agente, elogio estético ou simulação com prova.
+- **Orquestração proporcional:** organizar IAs/modelos de forma competente **se disponíveis**; sem agentes, continua sendo CEO competente.
+- **Memória/continuidade honesta:** checkpoints e rotinas configuradas quando o ambiente suporta, sem simular acompanhamento 24/7.
+- **Firmeza com limites:** decisões claras, discordância fundamentada, segurança e alçada do fundador preservadas.
 
-## Instalação
+## Começar agora
 
-O repositório do GitHub é a **fonte**; a cópia instalada da skill na biblioteca do OpenBot pode ser independente. Veja [INSTALL.md](INSTALL.md) para registrar e ativar a skill no CEO, colar o prompt persistente e confirmar que a revisão correta está ativa. **Clonar a pasta não garante instalação no agente, e atualizar o GitHub não atualiza a skill já instalada.** Consulte o funcionamento de *Local skills* na [documentação oficial do OpenBot](https://github.com/nightly-labs/openbot).
+1. Leia [INSTALL.md](INSTALL.md): carregar a **pasta toda** com `SKILL.md` + `references/` ou adaptar para plataforma sem diretórios de skills.
+2. Aplique [CEO_SYSTEM_PROMPT.md](CEO_SYSTEM_PROMPT.md) como instruções persistentes, quando suportado.
+3. Dê ao CEO acesso permitido ao contexto do BataTalk; rode [setup/CEO-bootstrap-situacional.md](setup/CEO-bootstrap-situacional.md).
+4. Teste um “E aí, CEO?” e uma missão comercial. O CEO deve **descobrir, decidir, agir e provar**, não apenas listar ideias; siga a [prova de ativação](INSTALL.md#prova-de-ativação--indispensável-para-não-usar-a-versão-antiga) para checar a versão instalada e testar falhas de iniciativa.
+5. Use [tests/PORTABILITY-TEST-PLAN.md](tests/PORTABILITY-TEST-PLAN.md) e revise comportamento em duas ou mais plataformas. Instalação e aprovação de testes estáticos **não são** validação real.
 
-## Limites reais, não obstáculos inventados
+## Arquitetura para preservar contexto e custo
 
-A responsabilidade de gerir quantos agentes de IA forem necessários pertence ao CEO; ele pode formar hierarquias e desativar recursos sem valor. A alçada não inclui gastos fora de orçamento, acesso novo a dados/segredos, publicação não autorizada, cobrança ou intervenções críticas em produção. O **Reels Creator permanece pausado**.
+O arquivo central é relativamente conciso e se limita a mandatos e roteamento. Leia **somente** a referência que muda a decisão; guias de vendas, aprendizagem, finanças, orquestração ou SEO não devem ser todos injetados em cada mensagem. Adaptadores não são dependências do núcleo. Controles financeiros, de produção, privacidade e comunicação estão em [POLICY.md](POLICY.md); **Reels Creator permanece PAUSADO** conforme decisão do fundador.
 
-O OpenBot em determinadas versões de desenvolvimento pode operar com acesso amplo e sem confirmações individuais. Para operação comercial, use permissões mínimas, backups, monitoramento de custo, proteção de branch e aprovação técnica fora do prompt. Consulte também a [licença do OpenBot](https://github.com/nightly-labs/openbot), que diferencia versões antigas e uso comercial.
+O CEO pode operar em três modos (ver referência 32):
+- **M0:** chat sem ferramentas: pesquisa limitada a fontes presentes, estratégia, roteiro e checkpoint honesto.
+- **M1:** ferramentas acionadas por sessão: leitura, edição segura, teste, PR, verificação e continuidade por novo turno.
+- **M2:** ambiente persistente e sensores realmente instalados: monitoramento, filas, delegação e alertas verificáveis.
 
-## Qualidade e testes
+## Verificação técnica e comportamental
 
-Execute `python scripts/validate_skill.py`, `python scripts/validate_work_graph.py templates/orchestration-plan.example.json --ready` e `python -m unittest discover -s tests -p 'test_*.py'` para integridade, dependências, conflitos e testes dos utilitários. A avaliação comportamental contém **70 cenários** (30 de CEO, 16 organizacionais e 24 de orquestração), mais 11 casos críticos de fumaça (subconjunto dos 30). Depois de **avaliar de verdade** o CEO no OpenBot, valide os traces/artefatos locais com `python scripts/validate_ceo_evidence.py caminho/manifesto.json --out caminho/notas.jsonl`, avalie com `python scripts/score_evaluations.py caminho/notas.jsonl` e compare versões com `python scripts/compare_evaluations.py caminho/baseline.jsonl caminho/candidata.jsonl`. Veja [o protocolo de campo](setup/CEO-field-validation.md). Os cenários do CEO em `tests/` **precisam ser executados separadamente no OpenBot, em ambiente controlado**: CI aprovado não significa que o CEO executou uma tarefa real, nem demonstra aumento de receita.
+```bash
+python scripts/validate_skill.py
+python scripts/validate_work_graph.py templates/orchestration-plan.example.json --ready
+python -m unittest discover -s tests -p 'test_*.py' -v
+```
 
-Origens e limites dos princípios de gestão, plataformas, SEO e produto estão em [references/10-fontes.md](references/10-fontes.md). Nenhuma empresa ou fundador citado endossa a skill.
+Validação estática confirma links, estrutura, contratos e casos; **não comprova que GrokBot/Claude/Codex/OpenBot instalou a skill nem que a IA realizou trabalhos**. Recomendado executar a suíte de portabilidade, salvar evidência de ferramentas/artefatos e comparar qualidade/custo com baseline. Mais instruções sem melhores decisões **não são** melhora de skill.
+
+## Como contribuir e melhorar continuamente
+
+A regra central é **usar a skill enquanto a melhora**: levantar problema real, procurar conhecimento de especialistas/fonte primária, decidir correção mínima, aplicar em branch, verificar artefato, adicionar teste e registrar o que permaneceu sem avaliação de campo. Não aumentar o repositório por vaidade. Regras universais ficam no núcleo; conteúdo aplicado em `references/`; instruções exclusivas de plataformas em `adapters/`.
+
+A revisão de 12/11/2026 removeu o acoplamento original ao OpenBot e introduziu contrato universal + repertório executivo. Ver [research/REVIEW-UNIVERSAL-2026-11-12.md](research/REVIEW-UNIVERSAL-2026-11-12.md) para falhas encontradas, decisões e limites.

@@ -46,7 +46,7 @@ Se faltar ferramenta, a iniciativa fica `BLOCKED_BY_ACCESS` com menor pedido pos
 
 ## Idempotência, exclusividade e antigiro
 
-O OpenBot pode retomar sessões e disparar ações semelhantes mais de uma vez; algumas rotinas webhook deduplicam ID de entrega, mas efeitos posteriores precisam de idempotência própria. Um arquivo JSONL compartilhado **não é trava transacional**, portanto use responsável único/canal/fila do OpenBot e, se houver concorrência real de escrita, um mecanismo externo confiável de lock/versionamento. Mantenha `ceo/WORK_LEDGER.jsonl` ou registro equivalente com `id`, `fingerprint`, `state`, `owner`, `source`, `updated_at`, `next_check_at`, `evidence`, `version`. Antes de emitir trabalho:
+Ambientes com rotinas, chamadas ou reinício podem disparar ações equivalentes mais de uma vez. Algumas plataformas deduplicam eventos, mas efeitos posteriores precisam de idempotência própria. Um arquivo JSONL compartilhado **não é trava transacional**, portanto use mecanismo de coordenação realmente disponível (dono único, fila, canal, lock/versionamento) e, se houver concorrência de escrita, um mecanismo externo confiável. Mantenha `ceo/WORK_LEDGER.jsonl` ou registro equivalente com `id`, `fingerprint`, `state`, `owner`, `source`, `updated_at`, `next_check_at`, `evidence`, `version`. Antes de emitir trabalho:
 1. Buscar tarefa por objetivo, fluxo, artefato e `fingerprint` estável; se já existir, continuar o DRI em vez de duplicar.
 2. Checar dono do arquivo/branch e fila da área; nunca pedir dois editores simultâneos do mesmo arquivo sem plano de merge.
 3. Reservar responsabilidade e registrar checkpoint **antes** de chamar agentes, quando houver escrita segura/consistente.

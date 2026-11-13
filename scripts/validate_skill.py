@@ -14,15 +14,27 @@ from urllib.parse import unquote
 
 ROOT = Path(__file__).resolve().parents[1]
 EXPECTED_E = {f"E{i:02d}" for i in range(1, 31)}
+EXPECTED_P = {f"P{i:02d}" for i in range(1, 15)}
+EXPECTED_U = {f"U{i:02d}" for i in range(1, 25)}
 EXPECTED_ORG = {f"ORG{i:02d}" for i in range(1, 17)}
 EXPECTED_O = {f"O{i:02d}" for i in range(1, 25)}
 REQUIRED = (
     "README.md", "INSTALL.md", "AGENTS.md", "SKILL.md",
     "CEO_SYSTEM_PROMPT.md", "POLICY.md", "config/policy.example.yaml",
     "setup/CEO-first-message.md", "setup/routines.md",
+    "references/32-contrato-universal-multiplataforma.md",
     "tests/CEO-BEHAVIOR-EVALS.md", "tests/REVIEW-PROTOCOL.md",
     "tests/all-30-scenarios.jsonl", "tests/org-autonomy-cases.jsonl",
     "tests/test_cases.jsonl", "tests/orchestration-cases.jsonl",
+    "tests/proactivity-14-scenarios.jsonl", "setup/CEO-bootstrap-situacional.md",
+    "tests/portability-24-scenarios.jsonl", "tests/PORTABILITY-TEST-PLAN.md",
+    "adapters/README.md", "adapters/generic.md", "adapters/grokbot.md",
+    "adapters/claude-code.md", "adapters/codex.md", "adapters/openbot.md",
+    "references/32-contrato-universal-multiplataforma.md",
+    "references/33-julgamento-executivo-competencias-e-aprendizado.md",
+    "research/REVIEW-UNIVERSAL-2026-11-12.md",
+    "references/30-mercado-primeiro-execucao-comercial.md",
+    "references/31-consciencia-situacional-e-autonomia-executiva.md",
     "setup/CEO-orchestration-first-run.md",
     "templates/orchestration-scorecard.md",
     "research/ORCHESTRATION-RESEARCH-2026.md",
@@ -47,7 +59,7 @@ REQUIRED = (
 )
 LOCAL_LINK = re.compile(r"(?<!!)\[[^\]]+\]\(([^)]+)\)")
 REQUIRED_PATH = re.compile(
-    r"(?<![A-Za-z0-9_.-])(?:references|templates|setup|tests|config)/[A-Za-z0-9_./-]+"
+    r"(?<![A-Za-z0-9_.-])(?:references|templates|setup|tests|config|adapters)/[A-Za-z0-9_./-]+"
 )
 QUOTA = re.compile(
     r"(?i)\b(?:no\s+m[aá]ximo|at[eé]|limite\s+de|teto\s+de)\s+"
@@ -186,7 +198,7 @@ def validate(root: Path = ROOT) -> list[str]:
                 errors.append("SKILL.md: description ausente ou muito longa")
             example = re.search(r"(?m)^example-prompt:\s*(.+)$", header)
             if example and len(example.group(1)) > 1000:
-                errors.append("SKILL.md: example-prompt ultrapassa limite OpenBot")
+                errors.append("SKILL.md: example-prompt ultrapassa limite do formato de skills")
         if len(skill.splitlines()) > 500:
             errors.append("SKILL.md: núcleo enorme; considerar progressão por referências")
         if "POLICY.md" not in skill or "references/21-organizacao-autonoma.md" not in skill:
@@ -206,6 +218,8 @@ def validate(root: Path = ROOT) -> list[str]:
 
     if skill_path.is_file():
         skill = read_text(skill_path)
+        if "references/34-proatividade-autocalibracao-e-execucao.md" not in skill:
+            errors.append("SKILL.md: missing behavioral proactivity and self-calibration contract")
         if "Reels Creator" not in skill or "PAUSADO" not in skill:
             errors.append("SKILL.md: decisão de pausa do Reels Creator ausente")
         if "não há teto" not in skill.lower() and "não existem cotas" not in skill.lower():
@@ -216,11 +230,27 @@ def validate(root: Path = ROOT) -> list[str]:
         if path.is_file():
             errors += check_quotas(read_text(path), rel)
 
+    # Contract: all structured scenarios must be accepted by the score aggregator.
+    try:
+        from score_evaluations import KNOWN
+        expected = EXPECTED_E | EXPECTED_P | EXPECTED_U | EXPECTED_ORG | EXPECTED_O
+        if KNOWN != expected:
+            errors.append(f"Evaluator scenario coverage drift: missing={sorted(expected - KNOWN)} extra={sorted(KNOWN - expected)}")
+    except ImportError as exc:
+        errors.append(f"Cannot verify evaluator scenario coverage: {exc}")
     errors += check_local_links(root)
     errors += check_smoke_cases(root / "tests/test_cases.jsonl")
     errors += check_jsonl(
         root / "tests/all-30-scenarios.jsonl",
         ("id", "input", "expected", "bad_pattern"), EXPECTED_E,
+    )
+    errors += check_jsonl(
+        root / "tests/proactivity-14-scenarios.jsonl",
+        ("id", "input", "expected", "bad_pattern"), EXPECTED_P,
+    )
+    errors += check_jsonl(
+        root / "tests/portability-24-scenarios.jsonl",
+        ("id", "environment", "scenario", "expected", "forbidden", "evidence_type"), EXPECTED_U,
     )
     errors += check_jsonl(
         root / "tests/org-autonomy-cases.jsonl",
@@ -245,6 +275,23 @@ def validate(root: Path = ROOT) -> list[str]:
         ids = re.findall(r"(?m)^\|\s*(E\d{2})\s*\|", read_text(eval_doc))
         if set(ids) != EXPECTED_E or len(ids) != len(EXPECTED_E):
             errors.append("CEO-BEHAVIOR-EVALS.md: tabela diverge de E01..E30")
+        pids = re.findall(r"(?m)^\|\s*(P\d{2})\s*\|", read_text(eval_doc))
+        if set(pids) != EXPECTED_P or len(pids) != len(EXPECTED_P):
+            errors.append("CEO-BEHAVIOR-EVALS.md: tabela diverge de P01..P14")
+
+    # Runtime neutrality: the core cannot require a specific host to operate.
+    for rel in ("SKILL.md", "CEO_SYSTEM_PROMPT.md"):
+        doc = root / rel
+        if doc.is_file():
+            value = read_text(doc)
+            for forbidden in ("Você dirige os agentes OpenBot", "para OpenBot de openbot.run", "use filas/canais e mecanismos do OpenBot"):
+                if forbidden in value:
+                    errors.append(f"{rel}: núcleo depende de plataforma: {forbidden}")
+    if (root / "tests/PORTABILITY-TEST-PLAN.md").is_file():
+        test_plan = read_text(root / "tests/PORTABILITY-TEST-PLAN.md")
+        for required in ("baseline", "candidate", "M0", "M1", "M2"):
+            if required not in test_plan:
+                errors.append(f"PORTABILITY-TEST-PLAN.md: falta conceito {required}")
     return errors
 
 
@@ -254,7 +301,7 @@ def main() -> int:
         for message in errors:
             print("FAIL:", message, file=sys.stderr)
         return 1
-    print("PASS: integridade da skill, contratos, DAG offline, política e 70 cenários estruturados.")
+    print("PASS: integridade da skill, contratos, DAG offline, política e 108 cenários estruturados.")
     print("OBS: não executa agentes, não valida decisões reais e não autoriza ações.")
     return 0
 

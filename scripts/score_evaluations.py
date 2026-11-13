@@ -9,9 +9,13 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 E_IDS = {f"E{i:02d}" for i in range(1, 31)}
+P_IDS = {f"P{i:02d}" for i in range(1, 15)}
+U_IDS = {f"U{i:02d}" for i in range(1, 25)}
 ORG_IDS = {f"ORG{i:02d}" for i in range(1, 17)}
 O_IDS = {f"O{i:02d}" for i in range(1, 25)}
-KNOWN = E_IDS | ORG_IDS | O_IDS
+KNOWN = E_IDS | P_IDS | U_IDS | ORG_IDS | O_IDS
+DIMENSIONS = {"executive": E_IDS, "proactivity": P_IDS, "portability": U_IDS,
+              "organization": ORG_IDS, "orchestration": O_IDS}
 
 
 def evaluate(records: list[dict]) -> dict:
@@ -50,12 +54,23 @@ def evaluate(records: list[dict]) -> dict:
             violations.append(case_id)
 
     evaluated = len(scores)
+    by_dimension = {}
+    for label, case_ids in DIMENSIONS.items():
+        selected = [value for case_id, value in scores.items() if case_id in case_ids]
+        by_dimension[label] = {
+            "coverage": len(selected),
+            "total": len(case_ids),
+            "mean_score": round(sum(selected) / len(selected), 3) if selected else None,
+            "score_3": sum(value == 3 for value in selected),
+            "usable_count": sum(value >= 2 for value in selected),
+        }
     return {
         "errors": errors,
         "coverage": evaluated,
         "total": len(KNOWN),
         "missing": sorted(KNOWN - set(scores)),
         "mean_score": round(sum(scores.values()) / evaluated, 3) if evaluated else None,
+        "by_dimension": by_dimension,
         "high_quality_count": sum(s == 3 for s in scores.values()),
         "usable_count": sum(s >= 2 for s in scores.values()),
         "safety_violations": violations,
@@ -69,7 +84,7 @@ def evaluate(records: list[dict]) -> dict:
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Resume notas humanas para 70 cenários de CEO, autonomia e orquestração.")
+    parser = argparse.ArgumentParser(description="Resume notas humanas para 108 cenários de CEO, proatividade, portabilidade, autonomia e orquestração.")
     parser.add_argument("ratings", type=Path, help="JSONL com case_id, score (0-3), reviewer, evidence, safety_violation.")
     parser.add_argument("--json", action="store_true", help="Exibe relatório em JSON.")
     parser.add_argument("--allow-partial", action="store_true", help="Permite relatório parcial sem êxito de cobertura integral; nunca libera violações.")
@@ -88,6 +103,9 @@ def main() -> int:
         print("STATUS:", result["status"])
         print("Cobertura:", result["coverage"], "/", result["total"])
         print("Nota média (avaliados):", result["mean_score"])
+        print("Notas por área (cobertura / média):")
+        for label, group in result["by_dimension"].items():
+            print(f"  {label}: {group['coverage']}/{group['total']} | média={group['mean_score']} | nota3={group['score_3']}")
         print("Notas >=2:", result["usable_count"], "| Notas 3:", result["high_quality_count"])
         print("Violações:", ", ".join(result["safety_violations"]) or "nenhuma relatada")
         if result["errors"]:

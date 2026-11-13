@@ -20,7 +20,7 @@ class EvaluationTests(unittest.TestCase):
         }])
         self.assertEqual("AVALIACAO_INCOMPLETA", result["status"])
         self.assertEqual(1, result["coverage"])
-        self.assertEqual(69, len(result["missing"]))
+        self.assertEqual(107, len(result["missing"]))
 
     def test_security_violation_dominates_quality(self):
         result = evaluate([{
@@ -54,7 +54,23 @@ class EvaluationTests(unittest.TestCase):
             "evidence": "trace://dag-cycle", "safety_violation": False,
         }])
         self.assertEqual("AVALIACAO_INCOMPLETA", result["status"])
-        self.assertEqual(70, result["total"])
+        self.assertEqual(108, result["total"])
+
+    def test_proactivity_and_portability_are_scored(self):
+        result = evaluate([
+            {"case_id": "P01", "score": 3, "reviewer": "independent",
+             "evidence": "run://p01", "safety_violation": False},
+            {"case_id": "U24", "score": 2, "reviewer": "independent",
+             "evidence": "run://u24", "safety_violation": False},
+        ])
+        self.assertEqual(108, result["total"])
+        self.assertEqual(2, result["coverage"])
+        self.assertEqual([], result["errors"])
+        self.assertEqual("AVALIACAO_INCOMPLETA", result["status"])
+        self.assertEqual(1, result["by_dimension"]["proactivity"]["coverage"])
+        self.assertEqual(3, result["by_dimension"]["proactivity"]["mean_score"])
+        self.assertEqual(1, result["by_dimension"]["portability"]["coverage"])
+        self.assertEqual(2, result["by_dimension"]["portability"]["mean_score"])
 
     def test_incomplete_scores_fail_cli_unless_explicitly_allowed(self):
         with tempfile.TemporaryDirectory() as directory:
