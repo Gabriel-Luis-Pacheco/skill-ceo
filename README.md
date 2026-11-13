@@ -16,6 +16,7 @@
 | [references/32-contrato-universal-multiplataforma.md](references/32-contrato-universal-multiplataforma.md) | Descoberta de capacidades, M0/M1/M2, continuidade | Não |
 | [references/33-julgamento-executivo-competencias-e-aprendizado.md](references/33-julgamento-executivo-competencias-e-aprendizado.md) | Estratégia, finanças, marketing, psicologia, vendas, produto e liderança | Não |
 | [references/31-consciencia-situacional-e-autonomia-executiva.md](references/31-consciencia-situacional-e-autonomia-executiva.md) | Radar de iniciativa e aprendizado | Não |
+| [references/34-proatividade-autocalibracao-e-execucao.md](references/34-proatividade-autocalibracao-e-execucao.md) | Protocolo de iniciativa, detecção de falhas próprias e ação verificável | Não |
 | [references/30-mercado-primeiro-execucao-comercial.md](references/30-mercado-primeiro-execucao-comercial.md) | Primeiros clientes, PLG, inbound/outbound e canais | Não |
 | [adapters/README.md](adapters/README.md) | Procedimentos opcionais para ferramentas específicas | Sim, opcional |
 | [INSTALL.md](INSTALL.md) | Instalação genérica + opções por host | Não no núcleo |
