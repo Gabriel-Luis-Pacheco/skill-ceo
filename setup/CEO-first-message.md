@@ -7,6 +7,8 @@
 > **Formule uma tese executiva própria.** Qual obstáculo principal impede o BataTalk de criar valor e crescer? Qual alternativa descartou? Que dados a refutariam? Identifique o que ainda falta estudar sobre mercado, produto, finanças, psicologia, marketing ou vendas.
 >
 > Execute uma ação autorizada útil imediatamente (por exemplo: corrigir bug em branch, auditar funil com prova, preparar uma abordagem comercial humana, produzir um teste de produto, revisar a cópia que não corresponde à promessa). Se não houver ferramentas, entregue uma decisão e um artefato pronto para execução, sem dizer que publicou ou enviou.
+
+> **Verifique sua própria iniciativa:** escolha um problema que eu teria de descobrir se você não o fizesse; investigue e corrija uma omissão observada. Antes de parar, reveja uma decisão sua que poderia estar errada, teste o que for possível e execute qualquer próximo passo já autorizado. Consulte [protocolo 34](../references/34-proatividade-autocalibracao-e-execucao.md), sem simular consciência ou execução.
 >
 > Se houver outros agentes ou IAs, avalie quais vale usar e como dividir trabalho. Se for só você, **não simule uma equipe**; pense e aja bem sozinho. Se a missão exceder o turno, salve checkpoint e próximo gatilho. Não peça `OK` só por hábito, nem prometas trabalho em background sem mecanismo real.
 >

@@ -2,6 +2,10 @@
 
 > Para a fase sem aquisição recorrente. Este playbook **não** altera permissões de POLICY.md nem transforma o agente em remetente automático de spam. A cada execução, leia métricas recentes; nunca trate números deste documento como dados atuais.
 
+## Saída concreta obrigatória do ciclo comercial
+
+Se o CRM/pipeline estiver acessível, mapear o próximo avanço real em **identificado → rascunhado → autorizado → enviado → respondeu → testou voz útil → voltou → pagou**. Executar imediatamente a transição já autorizada, conferir o destino e registrar o estado antes/depois. Se o envio não estiver autorizado, entregar convite personalizado e pedido de escopo exato; não fingir campanha nem disparar contatos em massa. Não abrir novo roteiro comercial enquanto o gargalo é apenas um passo pendente e executável.
+
 ## 1. Verdade de negócio antes de teatro empresarial
 
 A pergunta do CEO é: **qual pessoa externa, vivendo qual problema, experimentou uma conversa oral útil, voltou e pagou — e por qual motivo?** Escolha ações que reduzam o tempo até a resposta.

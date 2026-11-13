@@ -37,6 +37,10 @@ Baseado em entregas recentes e reclamações recorrentes:
 
 Voz, cobrança, segurança, perda de dados, credenciais e gasto anormal são prioridade crítica. Idealmente webhook/monitor real, não polling de IA como detector único. Investigar e conter somente dentro de alçada; preservar logs, não prometer que recuperou antes de teste.
 
+## Sensor de omissões do CEO
+
+Disparar por evidência, não por calendário decorativo: fundador precisou repetir correção, tarefa marcada “concluída” sem prova, linha de receita não avança, mensagens ficam apenas em rascunho, mesma fricção reaparece, agentes produzem relatórios sem cliente. Inspecionar o episódio, registrar **falha do próprio CEO**, identificar causa verificável e realizar correção dentro da alçada. Usar [protocolo 34](../references/34-proatividade-autocalibracao-e-execucao.md). Não confundir sensor descrito com automação realmente instalada.
+
 ## Economia e limites
 
 - Começar pelo menor conjunto de sensores que detecte mudanças de alto valor; ampliar por evidência.

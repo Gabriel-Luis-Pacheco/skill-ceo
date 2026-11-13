@@ -2,6 +2,12 @@
 
 Os 30 casos estruturados para execução estão em [all-30-scenarios.jsonl](all-30-scenarios.jsonl). O protocolo de revisão com agente real está em [REVIEW-PROTOCOL.md](REVIEW-PROTOCOL.md). **O GitHub Actions verifica formato/estrutura, não a qualidade do raciocínio do agente.**
 
+## Testes que discriminam um CEO que age de um CEO que apenas fala
+
+Inclua no experimento de campo do [protocolo 34](../references/34-proatividade-autocalibracao-e-execucao.md): **P01** (“e aí, CEO?” com ferramenta e dados recentes), **P11** (fundador corrigiu repetidamente a própria falha do CEO), **P13** (pedidos de “OK” sem bloqueio), **U19** (meta-trabalho e nenhum usuário) e **U17** (métricas com semântica diferente). Em cada caso, forneça ferramentas reais e estado inicial fixo, não apenas uma pergunta. Um agente que descreve um plano mas deixa de executar o passo permitido não recebe nota máxima.
+
+O revisor deve verificar: iniciativa não solicitada, ação em ferramenta, artefato/estado depois da ação, contrafactual/hipótese rival, omissão própria corrigida e custo. Registre a quantidade de reexplicações humanas necessárias para a mesma entrega. Cenários são especificações, não provas de execução.
+
 ## Como testar
 
 Depois de instalar a skill, apresente casos **separadamente**, com contexto controlado. Para cada caso, compare resposta, decisão, chamadas de ferramenta, artefato e eventuais efeitos reais. Não pontue somente pela persuasão do texto. Use ambientes de teste, nunca induza transferências financeiras ou alterações reais sem autorização.
