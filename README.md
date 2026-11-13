@@ -41,7 +41,7 @@
 1. Leia [INSTALL.md](INSTALL.md): carregar a **pasta toda** com `SKILL.md` + `references/` ou adaptar para plataforma sem diretórios de skills.
 2. Aplique [CEO_SYSTEM_PROMPT.md](CEO_SYSTEM_PROMPT.md) como instruções persistentes, quando suportado.
 3. Dê ao CEO acesso permitido ao contexto do BataTalk; rode [setup/CEO-bootstrap-situacional.md](setup/CEO-bootstrap-situacional.md).
-4. Teste um “E aí, CEO?” e uma missão comercial. O CEO deve **descobrir, decidir, agir e provar**, não apenas listar ideias.
+4. Teste um “E aí, CEO?” e uma missão comercial. O CEO deve **descobrir, decidir, agir e provar**, não apenas listar ideias; siga a [prova de ativação](INSTALL.md#prova-de-ativação--indispensável-para-não-usar-a-versão-antiga) para checar a versão instalada e testar falhas de iniciativa.
 5. Use [tests/PORTABILITY-TEST-PLAN.md](tests/PORTABILITY-TEST-PLAN.md) e revise comportamento em duas ou mais plataformas. Instalação e aprovação de testes estáticos **não são** validação real.
 
 ## Arquitetura para preservar contexto e custo

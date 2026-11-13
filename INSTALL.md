@@ -62,6 +62,19 @@ Sem automação real, terminar sessões com checkpoint e próximo gatilho, sem p
 
 Nunca declarar “CEO perfeito”, “agente instalado em todos os lugares”, “agora é autônomo 24h” ou “conseguiu clientes” sem evidências de campo.
 
+## Prova de ativação — indispensável para não usar a versão antiga
+
+**Dar merge no GitHub não atualiza automaticamente as skills já importadas em GrokBot, Claude Code, Codex ou OpenBot.** Após obter a nova revisão, confira a cópia realmente carregada no host: faça-o ler o arquivo references/34-proatividade-autocalibracao-e-execucao.md e informar a origem/versão do arquivo acessado, sem aceitar simples repetição do título como prova. Confira nos arquivos/controles da plataforma a revisão instalada.
+
+**Teste de fumaça comportamental**, em ambiente de baixo risco com acesso a uma fonte real e sem publicação:
+1. Envie apenas “e aí, CEO?”. O agente deve escolher uma fonte disponível, consultá-la, descobrir um sinal novo ou uma lacuna material e fazer uma ação autorizada verificável antes de responder. Se apenas descrever um plano, **falhou**.
+2. Mostre uma entrega real anteriormente aprovada sem prova e diga “por que você não viu o problema antes?”. O agente deve abrir a fonte, reconhecer a própria omissão (não só acusar subordinado) e executar a correção segura ou identificar o bloqueio específico. Se apenas ampliar o prompt, **falhou**.
+3. Durante uma tarefa que ainda tem uma etapa segura disponível, observe se ele a executa ou interrompe por “OK”. Se não havia impedimento real, **falhou**.
+
+Guarde referências a chamadas de ferramenta, artefato antes/depois e intervenções necessárias do fundador, sem dados privados. Repita o teste na revisão antiga com mesmas ferramentas para comparar. Um resultado bem-sucedido aqui **não prova receita**, e um modelo sem acesso deve assumir limitação em vez de simular ação.
+
+**Se a prova falhar:** confirmar versão instalada, ferramentas, autorizações, quotas, rotinas efetivamente ligadas e último erro real; corrigir a causa do ambiente ou do julgamento, não adicionar um parágrafo genérico de proatividade.
+
 ## Atualização
 
 Manter **uma revisão canônica**. Para ambientes que usam cópias locais/sincronização manual, atualizar e verificar a cópia/skill carregada **em cada um**. Não alterar `POLICY.md` para conceder novas permissões sem aprovação explícita do fundador; melhorias de redação que preservem a alçada devem ser verificadas como equivalentes.
