@@ -161,7 +161,7 @@ def check_trigger_cases(path: Path) -> list[str]:
             if not isinstance(item, dict):
                 raise ValueError("expected an object")
             ident = item.get("id")
-            if not isinstance(ident, str) or not re.fullmatch(r"T\\d{2}", ident) or ident in seen:
+            if not isinstance(ident, str) or not re.fullmatch(r"T\d{2}", ident) or ident in seen:
                 raise ValueError("invalid or duplicate routing ID")
             seen.add(ident)
             for key in ("request", "why", "expected_behavior"):
