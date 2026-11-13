@@ -17,6 +17,7 @@
 | [references/33-julgamento-executivo-competencias-e-aprendizado.md](references/33-julgamento-executivo-competencias-e-aprendizado.md) | Estratégia, finanças, marketing, psicologia, vendas, produto e liderança | Não |
 | [references/31-consciencia-situacional-e-autonomia-executiva.md](references/31-consciencia-situacional-e-autonomia-executiva.md) | Radar de iniciativa e aprendizado | Não |
 | [references/34-proatividade-autocalibracao-e-execucao.md](references/34-proatividade-autocalibracao-e-execucao.md) | Protocolo de iniciativa, detecção de falhas próprias e ação verificável | Não |
+| [references/35-decidir-e-executar-com-repertorio.md](references/35-decidir-e-executar-com-repertorio.md) | Métodos dos livros convertidos em decisão, ação e evidência | Não |
 | [references/30-mercado-primeiro-execucao-comercial.md](references/30-mercado-primeiro-execucao-comercial.md) | Primeiros clientes, PLG, inbound/outbound e canais | Não |
 | [adapters/README.md](adapters/README.md) | Procedimentos opcionais para ferramentas específicas | Sim, opcional |
 | [INSTALL.md](INSTALL.md) | Instalação genérica + opções por host | Não no núcleo |
@@ -68,3 +69,16 @@ Validação estática confirma links, estrutura, contratos e casos; **não compr
 A regra central é **usar a skill enquanto a melhora**: levantar problema real, procurar conhecimento de especialistas/fonte primária, decidir correção mínima, aplicar em branch, verificar artefato, adicionar teste e registrar o que permaneceu sem avaliação de campo. Não aumentar o repositório por vaidade. Regras universais ficam no núcleo; conteúdo aplicado em `references/`; instruções exclusivas de plataformas em `adapters/`.
 
 A revisão de 12/11/2026 removeu o acoplamento original ao OpenBot e introduziu contrato universal + repertório executivo. Ver [research/REVIEW-UNIVERSAL-2026-11-12.md](research/REVIEW-UNIVERSAL-2026-11-12.md) para falhas encontradas, decisões e limites.
+
+### Engenharia da skill: pesquisa e reprodutibilidade
+
+A [pesquisa de livros, documentação técnica e decisões de arquitetura](research/LIVROS-E-ENGENHARIA-DE-SKILLS-2026-11-13.md) registra o que foi efetivamente consultado (fontes públicas, **não livros completos**). `SKILL.md` é o playbook sob demanda; `CEO_SYSTEM_PROMPT.md` é o mandato persistente quando realmente instalado; `setup/routines.md` precisa de runtime, e `tests/skill-trigger-evals.jsonl` especifica avaliação de invocação. Ver [INSTALL.md](INSTALL.md) antes de dizer que uma cópia está ativa.
+
+### Testes específicos de criação de skills
+
+- **Integridade estática e proteção contra inflação de contexto:** `python scripts/validate_skill.py`. O orçamento de 15.000 caracteres do núcleo é uma heurística interna, **não** equivalência garantida de tokens.
+- **Testes unitários, incluindo empacotamento e score de ativação:** `python -m unittest discover -s tests -p "test_*.py" -v`.
+- **Criar pasta portátil adequada ao padrão:** `python scripts/package_skill.py --output dist`. A pasta resultante é `dist/batatalk-ceo-operator/`; não implica que algum bot a tenha importado.
+- **Testar invocação no host:** executar `tests/skill-trigger-evals.jsonl` em um agente realmente configurado e registrar `{"id":"T01","activated":true,"evidence":"trace://..."}` para cada caso. Avaliar somente rastros reais com `python scripts/score_skill_routing.py observacoes.jsonl`. Seguir [protocolo de routing](tests/SKILL-ROUTING-TEST-PLAN.md).
+
+Um CI verde pode provar que os scripts funcionam, **mas não** qual comportamento o modelo apresentou ao executar a skill.

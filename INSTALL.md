@@ -2,11 +2,26 @@
 
 **A única fonte canônica é esta pasta**: `SKILL.md`, `CEO_SYSTEM_PROMPT.md`, `POLICY.md`, `references/`, `adapters/`, `setup/`, `tests/`. Não reescrever a inteligência para cada software. O suporte nativo a diretórios `SKILL.md` varia; quando não existir, usar como instruções e referências textuais.
 
+## Arquitetura que impede falsos CEOs sempre ativos
+
+**Três camadas, três testes:**
+- **Persistência:** `CEO_SYSTEM_PROMPT.md` em system/project instructions quando suportado. Se não estiver carregado, a skill pode não ativar em "e aí, CEO?" e não pode atuar sozinha em novos turnos.
+- **Skill sob demanda:** `SKILL.md` é descoberta por `name/description` e as referências são abertas conforme necessidade. Uma cópia do repo chamada `skill-ceo` **não** satisfaz necessariamente a regra do diretório `batatalk-ceo-operator`. Reempacote com `scripts/package_skill.py` ou copie a árvore para a pasta correta, conferindo conteúdo.
+- **Execução recorrente:** `setup/routines.md` documenta sensores; só cron/workflows/webhooks efetivos com permissões e logs criam uma rotina. Não anunciar monitoramento ativo sem a primeira execução.
+
+`AGENTS.md` na raiz **instrui o mantenedor deste repositório**; não equivale a instalar mandato persistente de CEO no projeto de produto. Em Claude Code, a camada persistente do projeto pode ser `CLAUDE.md`; no Codex, `AGENTS.md` no projeto. O conteúdo deve ser aplicado à pasta do projeto BataTalk e revisado para não sobrepor instruções legítimas já existentes. Documentação oficial e modos de carregamento podem mudar.
+
 ## Passo 1 — Obtenha a versão canônica
 
 Clone ou baixe `https://github.com/Gabriel-Luis-Pacheco/skill-ceo` numa pasta que o agente tenha permissão para ler. Em ambientes de código com Git, `git clone` ou `git pull --ff-only` em diretório já existente. Clonar/atualizar o Git **não prova** que uma skill importada numa biblioteca remota foi atualizada. Verificar commit e conteúdo efetivamente carregado.
 
 **Não instalar publicamente segredos, tokens, dumps de CRM, credenciais, logs pessoais ou dados de clientes.** O repositório da skill deve conter processo, não acesso privilegiado.
+
+## Empacotamento reprodutível do diretório de skill
+
+Com Python 3.11+, execute `python scripts/package_skill.py --output dist`. O resultado é `dist/batatalk-ceo-operator/` (nome compatível com o frontmatter), contendo as referências e scripts do projeto, um manifesto com SHA-256 do `SKILL.md` e uma verificação de links relativos. Para reconstruir um bundle gerado, use `--replace`. O comando se recusa a substituir diretórios não reconhecidos e **não instala a skill nem configura a rotina**.
+
+Instale esse diretório inteiro no local correto **do host**; não basta apontar para o README ou clonar o repo como `skill-ceo`. Verifique por leitura do arquivo carregado e, se possível, do manifesto, depois rode o [teste de ativação positiva/negativa](tests/SKILL-ROUTING-TEST-PLAN.md). Scripts de empacotamento são recursos do desenvolvedor: executá-los exige ambiente local confiável.
 
 ## Passo 2 — Escolha o modo de uso
 

@@ -56,6 +56,13 @@ class ValidatorTests(unittest.TestCase):
             self.assertTrue(any("duplicado" in e for e in errors))
             self.assertTrue(any("faltando" in e for e in errors))
 
+    def test_routing_cases_require_real_positive_and_negative_examples(self):
+        with tempfile.TemporaryDirectory() as temp:
+            file = Path(temp) / "routing.jsonl"
+            file.write_text('{"id":"T01","request":"hello","why":"test","expected_behavior":"test","should_activate":true}\n',
+                            encoding="utf-8")
+            self.assertTrue(skill_validator.check_trigger_cases(file))
+
     def test_invalid_schema(self):
         with tempfile.TemporaryDirectory() as temp:
             file = Path(temp) / "cases.jsonl"

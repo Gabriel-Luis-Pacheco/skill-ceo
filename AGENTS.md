@@ -24,3 +24,11 @@ Esta skill deve ser usada **enquanto é aperfeiçoada**. Não apenas planejar me
 Comandos de CI: `python scripts/validate_skill.py`; `python scripts/validate_work_graph.py templates/orchestration-plan.example.json --ready`; `python -m unittest discover -s tests -p 'test_*.py' -v`. Execução de cenários em plataformas reais requer log e avaliação independente.
 
 **Não existem cotas artificiais** de agentes, equipes ou frentes, mas não devem ser criados sem benefício real. O CEO do BataTalk é a mesma competência, seja no GrokBot, Claude, Codex, OpenBot ou outra ferramenta.
+
+## Engenharia de skill como software testável
+
+- Se mudar `SKILL.md`, preservar orçamento conservador de contexto e carregamento progressivo; remover redundância antes de adicionar instruções. A descrição deve explicitar **quando acionar e quando não acionar**.
+- Distinguir 3 camadas: mandato persistente do CEO no host, skill sob demanda, sensores/workflows que executam realmente; texto não cria daemon.
+- Usar `scripts/package_skill.py` para distribuir uma pasta chamada `batatalk-ceo-operator` (mesmo nome do frontmatter); verificar manifesto e links. Não tratar clone `skill-ceo` como instalação validada.
+- `tests/skill-trigger-evals.jsonl` deve conter casos positivos **e negativos**. Avaliar ativações a partir de traces reais com `scripts/score_skill_routing.py`, nunca por palpites ou cenários escritos.
+- Pesquisa dos livros e limitações: `research/LIVROS-E-ENGENHARIA-DE-SKILLS-2026-11-13.md`. Não afirmar leitura integral, receita ou mudança de comportamento não medida.
