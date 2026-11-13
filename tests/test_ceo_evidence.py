@@ -45,6 +45,23 @@ class EvidenceBundleTests(unittest.TestCase):
         self.assertEqual("E01", records[0]["case_id"])
         self.assertIn("RUN-001", records[0]["evidence"])
 
+    def test_new_multiplatform_manifest_accepts_platform_version(self):
+        run = sample_run()
+        run["platform_version"] = "grokbot-release"
+        del run["openbot_version"]
+        run["case_id"] = "P01"
+        self.save([run])
+        errors, records = validate_bundle(self.bundle)
+        self.assertEqual([], errors)
+        self.assertEqual("P01", records[0]["case_id"])
+
+    def test_conflicting_platform_fields_rejected(self):
+        run = sample_run()
+        run["platform_version"] = "codex-version"
+        self.save([run])
+        errors, _ = validate_bundle(self.bundle)
+        self.assertTrue(any("conflicting platform_version" in error for error in errors))
+
     def test_missing_trace_is_rejected(self):
         run = sample_run()
         run["trace_file"] = "logs/missing.jsonl"

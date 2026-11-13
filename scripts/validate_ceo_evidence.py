@@ -15,7 +15,7 @@ from score_evaluations import KNOWN, evaluate
 
 REQUIRED_TEXT = (
     "case_id", "run_id", "agent_id", "skill_commit", "model",
-    "openbot_version", "environment", "reviewer", "trace_file",
+    "environment", "reviewer", "trace_file",
     "review_notes",
 )
 
@@ -58,6 +58,22 @@ def validate_bundle(bundle_path: Path) -> tuple[list[str], list[dict]]:
             if not isinstance(run.get(key), str) or not run[key].strip():
                 errors.append(f"{prefix}: missing {key}")
                 valid = False
+        # Multi-host evidence: accept platform_version, while preserving the
+        # old OpenBot manifest field for backwards compatibility.
+        platform_version = run.get("platform_version")
+        legacy_version = run.get("openbot_version")
+        if not any(isinstance(x, str) and x.strip() for x in (platform_version, legacy_version)):
+            errors.append(f"{prefix}: missing platform_version (or legacy openbot_version)")
+            valid = False
+        if platform_version is not None and (not isinstance(platform_version, str) or not platform_version.strip()):
+            errors.append(f"{prefix}: invalid platform_version")
+            valid = False
+        if legacy_version is not None and (not isinstance(legacy_version, str) or not legacy_version.strip()):
+            errors.append(f"{prefix}: invalid openbot_version")
+            valid = False
+        if isinstance(platform_version, str) and isinstance(legacy_version, str) and platform_version.strip() != legacy_version.strip():
+            errors.append(f"{prefix}: conflicting platform_version and openbot_version")
+            valid = False
         case_id = run.get("case_id")
         if not isinstance(case_id, str) or case_id not in KNOWN:
             errors.append(f"{prefix}: unknown case_id {case_id!r}")

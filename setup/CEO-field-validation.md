@@ -36,7 +36,7 @@ Cada manifesto é de **uma** revisão da skill. Caminhos de trace e artefato sã
 }
 ```
 
-O exemplo mostra **formato**, não prova execução. O verificador constata a presença dos arquivos, mas **não autentica seu conteúdo** ou a identidade do revisor; revisão independente do trace original continua obrigatória.
+O exemplo mostra **formato**, não prova execução. O verificador aceita `platform_version` (universal) ou `openbot_version` (legado), nunca duas versões conflitantes. Os 108 cenários E/P/U/ORG/O são aceitos pelo mesmo agregador, mas casos descritos não são avaliações executadas. O verificador constata a presença dos arquivos, mas **não autentica seu conteúdo** ou a identidade do revisor; revisão independente do trace original continua obrigatória.
 
 ## Comandos
 
