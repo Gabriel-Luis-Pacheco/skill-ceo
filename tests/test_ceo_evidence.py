@@ -119,6 +119,7 @@ class ComparisonTests(unittest.TestCase):
         self.assertEqual(["E01"], result["improved"])
         self.assertEqual(["E02"], result["regressed"])
         self.assertEqual(0.5, result["delta_mean_common"])
+        self.assertEqual(0.5, result["by_dimension"]["executive"]["delta_mean"])
 
     def test_safety_regression_blocks_adoption(self):
         result = compare_records([rating("E01", 3)], [rating("E01", 3, True)])

@@ -218,6 +218,8 @@ def validate(root: Path = ROOT) -> list[str]:
 
     if skill_path.is_file():
         skill = read_text(skill_path)
+        if "references/34-proatividade-autocalibracao-e-execucao.md" not in skill:
+            errors.append("SKILL.md: missing behavioral proactivity and self-calibration contract")
         if "Reels Creator" not in skill or "PAUSADO" not in skill:
             errors.append("SKILL.md: decisão de pausa do Reels Creator ausente")
         if "não há teto" not in skill.lower() and "não existem cotas" not in skill.lower():
@@ -228,6 +230,14 @@ def validate(root: Path = ROOT) -> list[str]:
         if path.is_file():
             errors += check_quotas(read_text(path), rel)
 
+    # Contract: all structured scenarios must be accepted by the score aggregator.
+    try:
+        from score_evaluations import KNOWN
+        expected = EXPECTED_E | EXPECTED_P | EXPECTED_U | EXPECTED_ORG | EXPECTED_O
+        if KNOWN != expected:
+            errors.append(f"Evaluator scenario coverage drift: missing={sorted(expected - KNOWN)} extra={sorted(KNOWN - expected)}")
+    except ImportError as exc:
+        errors.append(f"Cannot verify evaluator scenario coverage: {exc}")
     errors += check_local_links(root)
     errors += check_smoke_cases(root / "tests/test_cases.jsonl")
     errors += check_jsonl(

@@ -67,6 +67,10 @@ class EvaluationTests(unittest.TestCase):
         self.assertEqual(2, result["coverage"])
         self.assertEqual([], result["errors"])
         self.assertEqual("AVALIACAO_INCOMPLETA", result["status"])
+        self.assertEqual(1, result["by_dimension"]["proactivity"]["coverage"])
+        self.assertEqual(3, result["by_dimension"]["proactivity"]["mean_score"])
+        self.assertEqual(1, result["by_dimension"]["portability"]["coverage"])
+        self.assertEqual(2, result["by_dimension"]["portability"]["mean_score"])
 
     def test_incomplete_scores_fail_cli_unless_explicitly_allowed(self):
         with tempfile.TemporaryDirectory() as directory:

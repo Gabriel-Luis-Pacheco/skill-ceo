@@ -10,7 +10,7 @@ import json
 import sys
 from pathlib import Path
 
-from score_evaluations import evaluate
+from score_evaluations import DIMENSIONS, evaluate
 
 
 def read_scores(path: Path) -> list[dict]:
@@ -34,6 +34,18 @@ def compare_records(baseline: list[dict], candidate: list[dict]) -> dict:
     unchanged = [k for k in common if new[k] == base[k]]
     mean_base = sum(base[k] for k in common) / len(common) if common else None
     mean_new = sum(new[k] for k in common) / len(common) if common else None
+    category_comparison = {}
+    for label, case_ids in DIMENSIONS.items():
+        ids = [item for item in common if item in case_ids]
+        if ids:
+            before = sum(base[item] for item in ids) / len(ids)
+            after = sum(new[item] for item in ids) / len(ids)
+            category_comparison[label] = {
+                "shared_cases": len(ids),
+                "baseline_mean": round(before, 3),
+                "candidate_mean": round(after, 3),
+                "delta_mean": round(after - before, 3),
+            }
     safety = bool(new_report["safety_violations"])
     complete = base_report["coverage"] == base_report["total"] and new_report["coverage"] == new_report["total"]
     return {
@@ -44,6 +56,7 @@ def compare_records(baseline: list[dict], candidate: list[dict]) -> dict:
         "baseline_mean_common": round(mean_base, 3) if mean_base is not None else None,
         "candidate_mean_common": round(mean_new, 3) if mean_new is not None else None,
         "delta_mean_common": round(mean_new - mean_base, 3) if mean_base is not None else None,
+        "by_dimension": category_comparison,
         "improved": improved,
         "regressed": regressed,
         "unchanged_count": len(unchanged),

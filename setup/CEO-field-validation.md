@@ -48,6 +48,10 @@ python scripts/compare_evaluations.py /privado/base-scores.jsonl /privado/new-sc
 
 Remova `--allow-partial` quando cobertura completa for exigida. A comparação analisa apenas casos comuns e sinaliza regressões: **não comprova causalidade nem superioridade comercial**. Uma violação grave de segurança bloqueia adoção, mesmo com nota média maior.
 
+## Visibilidade dos pontos fracos
+
+O agregador agora contabiliza todos os 108 casos e entrega notas **separadas** para estratégia executiva, proatividade, portabilidade, organização e orquestração. Compare especialmente a nota de proatividade com o custo e com o número de intervenções do fundador. Uma nota geral alta não aprova o CEO se ele não toma iniciativas reais.
+
 ## Campo para falha da própria proatividade
 
 Ao revisar P01, P11, P13, U17 e U19, registrar separadamente: **sinal que deveria ter detectado**, **sinal realmente detectado**, **primeira ação de ferramenta permitida**, **resultado conferido**, **omissão identificada pelo CEO**, **correção**, **intervenções adicionais exigidas do fundador** e **custo**. Se nenhum dado dessas ações estiver presente no trace, classificar como não verificado. Texto “serei mais proativo” não equivale a iniciativa. A [referência 34](../references/34-proatividade-autocalibracao-e-execucao.md) define padrões de saída. Comparar baseline/candidata no mesmo host e com o mesmo conjunto de permissões.
