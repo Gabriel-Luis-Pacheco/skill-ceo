@@ -28,7 +28,7 @@ O objetivo não é “ser como Duolingo” por estética ou complexidade. É con
 Não celebrar faturamento bruto como lucro. Para contrato/assinatura:
 - `receita líquida recebida = preço - reembolsos - descontos - impostos e taxas aplicáveis`;
 - `margem de contribuição = receita líquida recebida - custos variáveis reais` (voz, modelo, infraestrutura proporcional, processamento, comissões e suporte variável);
-- `CAC = gasto incremental de aquisição + trabalho comercial atribuível / clientes novos reais` em mesma janela, com rótulo de incerteza;
+- `CAC = (gasto incremental de aquisição + custo do trabalho comercial atribuível) / clientes novos reais` em mesma janela, com rótulo de incerteza;
 - `payback ≈ CAC / contribuição mensal por cliente` **apenas quando margem positiva e coorte razoável**;
 - `LTV` não deve ser derivado de “churn” instável em 13 perfis; usar cenários e mostrar sensibilidade, sem números falsos.
 
