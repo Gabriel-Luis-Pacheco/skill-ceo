@@ -116,3 +116,8 @@ Um CI verde pode provar que os scripts funcionam, **mas não** qual comportament
 Os sete módulos 46–52 transformam a [pesquisa e bibliografia comentada](research/PESQUISA-SEO-GEO-AI-SEARCH-2026-11-14.md) em decisões testáveis. Modelos prontos: [auditoria de aquisição](templates/organic-growth-audit.md), [brief de conteúdo e copy](templates/organic-growth-brief.md) e [experimento de citação de IA](templates/ai-visibility-experiment.md). Consulte [cenários de avaliação](tests/SEO-GEO-CEO-EVALS.md).
 
 **Escopo:** o CEO continua responsável por BataTalk. Os princípios podem ser aplicados a outros sites quando explicitamente solicitado; a skill não vira uma rotina geral automática de SEO. SEO/GEO não substitui ativação, receita ou segurança. As fontes variam com o tempo e citações de IA não são garantidas.
+
+
+### Ampliação bibliográfica do C-suite (14/11/2026)
+
+A [biblioteca expandida](references/53-biblioteca-expandida-140-obras-19-cargos.md) relaciona **140 obras e 19 trilhas de cargo**, com 20+ recomendações em cada trilha e limitações por título. O [catálogo essencial](references/42-biblioteca-executiva-auditavel.md) continua sendo a primeira consulta; a expansão é opcional e sob demanda para aprofundamento. Um título catalogado **não implica leitura integral ou verificação de cada edição**. Para crise de caixa, use o [modelo de 13 semanas](templates/turnaround-13-semanas.md); para desenhar accountability, use o [scorecard C-level](templates/csuite-functional-scorecard.md).

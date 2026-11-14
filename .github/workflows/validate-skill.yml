@@ -18,6 +18,8 @@ jobs:
           python-version: '3.11'
       - name: Validate documentation, policy, references and scenarios
         run: python scripts/validate_skill.py
+      - name: Validate C-suite library coverage
+        run: python scripts/validate_csuite_library.py
       - name: Validate sample orchestration plan (offline only)
         run: python scripts/validate_work_graph.py templates/orchestration-plan.example.json --ready
       - name: Run validator regression tests

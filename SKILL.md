@@ -103,7 +103,7 @@ Carregue **apenas a referência correspondente** ao problema, preservando tokens
 | Escolher OKR, Lean, JTBD, EOS, TOC, OODA, RACI, DACI etc. | `references/39-metodologias-frameworks-de-gestao.md` |
 | Crise, dívida, segurança, churn, fraude, recuperação, caixa 13 semanas | `references/40-turnaround-risco-e-crises.md` |
 | CEOs famosos, biografias, decisões comparadas e viés de sobrevivência | `references/41-ceos-biografias-e-contrafactuais.md` |
-| 50 livros, trilhas transversais por C-level e limites de consulta | `references/42-biblioteca-executiva-auditavel.md` |
+| Livros por C-level: catálogo essencial (50) e índice ampliado (140) | `references/42-biblioteca-executiva-auditavel.md`, `references/53-biblioteca-expandida-140-obras-19-cargos.md` |
 | Agenda, scorecard, 1:1, board, plano 90 dias, memo de decisão | `references/43-ceo-operating-system-rituais-templates.md` |
 | Pessoas, cultura, comportamentos, governança, macro e micro | `references/44-lideranca-governanca-macro-micro.md` |
 | Casos SaaS/marketplace/indústria/Big Tech e aprendizado 12 meses | `references/45-casos-integrados-roadmap-executivo.md` |

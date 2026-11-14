@@ -87,3 +87,7 @@ Fichamento de 1 página por obra: **problema que explica → modelo e condiçõe
 Livro de CEO pode ser memória seletiva; consultoria pode ter viés de seleção; pesquisa acadêmica pode ter limite causal; auditorias e normas podem ser específicas de um país. Não afirmar “estudei 20 livros de cada área” a partir desta lista. Para 20 fontes biográficas, ver [41](41-ceos-biografias-e-contrafactuais.md).
 
 Fontes públicas: [Harvard Business Review — seleção](https://store.hbr.org/top-40-business-books/), [CEO Excellence — editora](https://www.simonandschuster.com/books/CEO-Excellence/Carolyn-Dewar/9781982179694), [Stanford — estratégia dos CEOs](https://www.gsb.stanford.edu/faculty-research/publications/how-do-chief-executive-officers-make-strategy), [NBER — CEO behavior](https://www.nber.org/papers/w23248), [YC Library](https://www.ycombinator.com/library).
+
+## Extensão de profundidade por função
+
+Quando esta seleção de 50 livros for insuficiente, consulte [a biblioteca ampliada de 140 títulos para 19 funções](53-biblioteca-expandida-140-obras-19-cargos.md), com **pelo menos 20 indicações por cargo** e sobreposições explicitadas. Não ler todos os títulos por padrão. Este índice é uma curadoria de repertório, não comprovação de consulta integral, nem substitui validação por fontes primárias e decisões reais.
