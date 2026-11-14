@@ -19,6 +19,13 @@
 | [references/34-proatividade-autocalibracao-e-execucao.md](references/34-proatividade-autocalibracao-e-execucao.md) | Protocolo de iniciativa, detecção de falhas próprias e ação verificável | Não |
 | [references/35-decidir-e-executar-com-repertorio.md](references/35-decidir-e-executar-com-repertorio.md) | Métodos dos livros convertidos em decisão, ação e evidência | Não |
 | [references/30-mercado-primeiro-execucao-comercial.md](references/30-mercado-primeiro-execucao-comercial.md) | Primeiros clientes, PLG, inbound/outbound e canais | Não |
+| [references/46-seo-tecnico-indexacao-semantic-search.md](references/46-seo-tecnico-indexacao-semantic-search.md) | Crawling, indexação, arquitetura, local, internacional, e-commerce e multimodal | Não |
+| [references/47-geo-aeo-ai-search-plataformas.md](references/47-geo-aeo-ai-search-plataformas.md) | Google AI Search, ChatGPT, Bing, Perplexity, Claude, Gemini, crawler e métricas de IA | Não |
+| [references/48-demanda-topical-conteudo-e-autoridade.md](references/48-demanda-topical-conteudo-e-autoridade.md) | Demanda, clusters, originalidade, programmatic SEO e digital PR | Não |
+| [references/49-copywriting-cro-distribuicao-e-marca.md](references/49-copywriting-cro-distribuicao-e-marca.md) | Posicionamento, copy, landing pages, conversão e reputação | Não |
+| [references/50-mensuracao-experimentos-organicos.md](references/50-mensuracao-experimentos-organicos.md) | Métricas, testes, atribuição, dashboards e AI visibility | Não |
+| [references/51-playbooks-organicos-por-negocio.md](references/51-playbooks-organicos-por-negocio.md) | Playbooks por segmento e caso BataTalk | Não |
+| [references/52-operacao-seo-geo-roadmap-e-governanca.md](references/52-operacao-seo-geo-roadmap-e-governanca.md) | Plano de 30/60/90 dias, governança e critérios de aceite | Não |
 | [adapters/README.md](adapters/README.md) | Procedimentos opcionais para ferramentas específicas | Sim, opcional |
 | [INSTALL.md](INSTALL.md) | Instalação genérica + opções por host | Não no núcleo |
 | [setup/CEO-bootstrap-situacional.md](setup/CEO-bootstrap-situacional.md) | Primeiro uso, descobrindo recursos e lacunas | Não |
@@ -102,3 +109,10 @@ A [pesquisa de livros, documentação técnica e decisões de arquitetura](resea
 - **Testar invocação no host:** executar `tests/skill-trigger-evals.jsonl` em um agente realmente configurado e registrar `{"id":"T01","activated":true,"evidence":"trace://..."}` para cada caso. Avaliar somente rastros reais com `python scripts/score_skill_routing.py observacoes.jsonl`. Seguir [protocolo de routing](tests/SKILL-ROUTING-TEST-PLAN.md).
 
 Um CI verde pode provar que os scripts funcionam, **mas não** qual comportamento o modelo apresentou ao executar a skill.
+
+
+## Expansão de pesquisa SEO/GEO/AI Search (14/11/2026)
+
+Os sete módulos 46–52 transformam a [pesquisa e bibliografia comentada](research/PESQUISA-SEO-GEO-AI-SEARCH-2026-11-14.md) em decisões testáveis. Modelos prontos: [auditoria de aquisição](templates/organic-growth-audit.md), [brief de conteúdo e copy](templates/organic-growth-brief.md) e [experimento de citação de IA](templates/ai-visibility-experiment.md). Consulte [cenários de avaliação](tests/SEO-GEO-CEO-EVALS.md).
+
+**Escopo:** o CEO continua responsável por BataTalk. Os princípios podem ser aplicados a outros sites quando explicitamente solicitado; a skill não vira uma rotina geral automática de SEO. SEO/GEO não substitui ativação, receita ou segurança. As fontes variam com o tempo e citações de IA não são garantidas.

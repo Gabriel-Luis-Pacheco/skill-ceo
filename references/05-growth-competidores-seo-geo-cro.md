@@ -61,3 +61,18 @@ Avaliar comissão frente à margem real de assinaturas, política de transparên
 ## Marca e Tato
 
 A marca deve parecer própria: humor e mascote como convite, não distração. Evitar repetir o Tato em toda seção, exagerar emojis ou usar um avatar sem função pedagógica. Tom acessível ao brasileiro, produto concreto no centro, imagética original e referências licenciadas. Acompanhar consistência entre landing, prática, e-mails, social e onboarding.
+
+
+## Referências aprofundadas de aquisição orgânica (2026)
+
+Este arquivo é o **roteador executivo rápido**; antes de trabalho substantivo escolher só o módulo que atende à restrição:
+
+- [46 — SEO técnico e indexação](46-seo-tecnico-indexacao-semantic-search.md): HTTP, crawling, JS, canônicas, arquitetura, local/internacional/e-commerce.
+- [47 — GEO/AEO e busca por IA](47-geo-aeo-ai-search-plataformas.md): mecanismos, bots, comparação de plataformas, menções/citações e mitos.
+- [48 — Demanda e conteúdo](48-demanda-topical-conteudo-e-autoridade.md): pesquisa humana, clusters, conteúdo próprio, programmatic SEO e PR.
+- [49 — Copy, CRO e marca](49-copywriting-cro-distribuicao-e-marca.md): oferta, LP, prova, escrita humana, conversão e reputação.
+- [50 — Mensuração](50-mensuracao-experimentos-organicos.md): baseline, AI visibility, métricas, atribuição e experimentos.
+- [51 — Modelos de negócio](51-playbooks-organicos-por-negocio.md): SaaS, serviços locais, e-commerce, marketplace, publishers, startup e BataTalk.
+- [52 — Roadmap](52-operacao-seo-geo-roadmap-e-governanca.md): 30/60/90 dias, execução, owner, portões e revisão.
+
+Fundamentação e links: [dossiê de 14/11/2026](../research/PESQUISA-SEO-GEO-AI-SEARCH-2026-11-14.md). Templates: [auditoria](../templates/organic-growth-audit.md), [brief](../templates/organic-growth-brief.md) e [experimento AI Search](../templates/ai-visibility-experiment.md). Não carregar todos os guias na mesma mensagem. Nunca alegar acesso a Search Console, bots ou conversões sem fonte.
