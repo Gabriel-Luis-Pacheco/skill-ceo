@@ -37,6 +37,26 @@
 - **Memória/continuidade honesta:** checkpoints e rotinas configuradas quando o ambiente suporta, sem simular acompanhamento 24/7.
 - **Firmeza com limites:** decisões claras, discordância fundamentada, segurança e alçada do fundador preservadas.
 
+
+## Manual executivo completo — integração de 14/11/2026
+
+A biblioteca evoluiu para cobrir **o CEO e os principais C-levels da startup à Big Tech**, sem transformar `SKILL.md` em enciclopédia de tokens. A pesquisa e sua rastreabilidade estão em [integração e fontes](research/CEO-CSUITE-PESQUISA-E-FONTES-2026-11-14.md).
+
+| O que estudar e aplicar | Guia |
+|---|---|
+| Mandato, conduta, estratégia e estágios do CEO | [36](references/36-ceo-mandato-estagios-estrategia.md) |
+| C-levels, responsabilidades, 30/60/90 e RACI/DACI | [37](references/37-csuite-cargos-charters.md) |
+| Startup, captação, unit economics, glossário PT–EN | [38](references/38-startups-financas-e-glossario.md) |
+| Mais de 30 metodologias e quando não usar | [39](references/39-metodologias-frameworks-de-gestao.md) |
+| Turnaround: 24h/7d/30d/90d e crises | [40](references/40-turnaround-risco-e-crises.md) |
+| Estudo crítico de 20 CEOs e 20+ fontes biográficas | [41](references/41-ceos-biografias-e-contrafactuais.md) |
+| Biblioteca de 50 obras e trilhas cruzadas por C-level | [42](references/42-biblioteca-executiva-auditavel.md) |
+| Rituais, scorecards, board packs, planos 90 dias | [43](references/43-ceo-operating-system-rituais-templates.md) |
+| Cultura, macroeconomia, governança, pessoas | [44](references/44-lideranca-governanca-macro-micro.md) |
+| Casos e roadmap de aprendizado de 12 meses | [45](references/45-casos-integrados-roadmap-executivo.md) |
+
+A biblioteca é **sob demanda e orientada a decisões**. Consulte [template de decisão](templates/CEO-executive-decision.md) e [testes de competência](tests/CEO-CSUITE-COMPETENCY-EVALS.md). Listar livros não significa tê-los lido integralmente; teste de CI não prova resultado comercial. A versão hospedada no GitHub não atualiza automaticamente cópias locais: siga [INSTALL.md](INSTALL.md).
+
 ## Começar agora
 
 1. Leia [INSTALL.md](INSTALL.md): carregar a **pasta toda** com `SKILL.md` + `references/` ou adaptar para plataforma sem diretórios de skills.
