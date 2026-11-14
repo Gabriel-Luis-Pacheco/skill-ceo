@@ -32,3 +32,12 @@ Comandos de CI: `python scripts/validate_skill.py`; `python scripts/validate_wor
 - Usar `scripts/package_skill.py` para distribuir uma pasta chamada `batatalk-ceo-operator` (mesmo nome do frontmatter); verificar manifesto e links. Não tratar clone `skill-ceo` como instalação validada.
 - `tests/skill-trigger-evals.jsonl` deve conter casos positivos **e negativos**. Avaliar ativações a partir de traces reais com `scripts/score_skill_routing.py`, nunca por palpites ou cenários escritos.
 - Pesquisa dos livros e limitações: `research/LIVROS-E-ENGENHARIA-DE-SKILLS-2026-11-13.md`. Não afirmar leitura integral, receita ou mudança de comportamento não medida.
+
+## Integração executiva de 14/11/2026
+
+A biblioteca 36–45 incorpora pesquisa de CEO/C-suite em módulos consultados por necessidade. Não duplicar o conteúdo no núcleo, não inventar leituras integrais e não inferir que governança de companhia aberta se aplica ao BataTalk. `tests/test_executive_knowledge.py` valida existência, roteamento, catálogo e cenários de competência; avaliações no host continuam necessárias.
+
+
+## Núcleo de repertório executivo 2026-11-14
+
+A integração da pesquisa de CEO/C-suite usa referências 36–45 com leitura progressiva. Manter catálogos de livros e estudos biográficos **fora** do SKILL.md. Novas alegações precisam de fonte e qualificação do acesso; nunca alegar leitura integral ou efeito empresarial não observado. Antes de alterar esta parte verificar [pesquisa e fontes](research/PESQUISA-CEO-C-SUITE-2026-11-14.md) e [avaliações de campo](tests/ceo-csuite-behavior-cases.md). Crises devem preservar segurança, alçada e comunicação transparente; materiais dos EUA não constituem regra aplicável ao Brasil por padrão.
