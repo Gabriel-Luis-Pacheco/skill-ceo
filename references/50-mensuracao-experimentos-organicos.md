@@ -1,4 +1,4 @@
-# 40 — Mensuração de SEO/GEO, experimentos, atribuição e painel executivo
+# 50 — Mensuração de SEO/GEO, experimentos, atribuição e painel executivo
 
 **Quando ler:** CEO precisa provar se a descoberta orgânica está trazendo compradores, identificar gargalos, avaliar GEO, criar dashboard ou decidir orçamento. Não confundir ser citado por IA com geração de receita.
 

@@ -4,13 +4,13 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 DOCS = [
-    "references/36-seo-tecnico-indexacao-semantic-search.md",
-    "references/37-geo-aeo-ai-search-plataformas.md",
-    "references/38-demanda-topical-conteudo-e-autoridade.md",
-    "references/39-copywriting-cro-distribuicao-e-marca.md",
-    "references/40-mensuracao-experimentos-organicos.md",
-    "references/41-playbooks-organicos-por-negocio.md",
-    "references/42-operacao-seo-geo-roadmap-e-governanca.md",
+    "references/46-seo-tecnico-indexacao-semantic-search.md",
+    "references/47-geo-aeo-ai-search-plataformas.md",
+    "references/48-demanda-topical-conteudo-e-autoridade.md",
+    "references/49-copywriting-cro-distribuicao-e-marca.md",
+    "references/50-mensuracao-experimentos-organicos.md",
+    "references/51-playbooks-organicos-por-negocio.md",
+    "references/52-operacao-seo-geo-roadmap-e-governanca.md",
     "research/PESQUISA-SEO-GEO-AI-SEARCH-2026-11-14.md",
     "templates/organic-growth-audit.md",
     "templates/organic-growth-brief.md",

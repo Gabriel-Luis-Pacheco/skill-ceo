@@ -1,6 +1,6 @@
 # Dossiê de pesquisa: SEO, GEO, AEO, AI Search e crescimento orgânico — 14/11/2026
 
-**Origem:** síntese operacional original do relatório de Pesquisa Aprofundada solicitado em 14/11/2026. Este documento NÃO representa leitura integral de todos os sites, papers e livros mencionados, nem auditoria do tráfego real do BataTalk. Nas referências 36–42 o material está convertido em decisões, provas e checklists.
+**Origem:** síntese operacional original do relatório de Pesquisa Aprofundada solicitado em 14/11/2026. Este documento NÃO representa leitura integral de todos os sites, papers e livros mencionados, nem auditoria do tráfego real do BataTalk. Nas referências 46–52 o material está convertido em decisões, provas e checklists.
 
 ## Pergunta de pesquisa
 
@@ -74,4 +74,4 @@ Essas respostas não estão no relatório universal. Exigem dados do negócio; n
 
 **Primárias e atualizáveis:** Google Search Central (docs e updates), Bing Webmaster, OpenAI bots/ChatGPT Search, Anthropic crawlers, Google Business Profile, Web Vitals. **Acadêmica:** GEO KDD 2024, pesquisas de 2026 marcadas preprint. **Observacional:** Pew, Ahrefs, Seer, Semrush, McKinsey, Reuters Institute e NN/g. Sempre ler metodologia antes de citar número.
 
-Rever este dossiê quando houver mudança de plataforma, produto, regras de crawling, padrões de métricas ou evidência conflitante. Nenhum novo artigo deve virar regra mandatória sem revisão de qualidade, custo, benefício e risco. Referências operacionais: 36 SEO técnico; 37 IA/Search; 38 demanda/conteúdo; 39 copy/CRO; 40 medição; 41 tipos de negócio; 42 execução.
+Rever este dossiê quando houver mudança de plataforma, produto, regras de crawling, padrões de métricas ou evidência conflitante. Nenhum novo artigo deve virar regra mandatória sem revisão de qualidade, custo, benefício e risco. Referências operacionais: 46 SEO técnico; 47 IA/Search; 48 demanda/conteúdo; 49 copy/CRO; 50 medição; 51 tipos de negócio; 52 execução.

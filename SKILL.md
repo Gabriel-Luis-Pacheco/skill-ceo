@@ -77,13 +77,13 @@ Leia **somente o próximo arquivo necessário**. Não percorra as 35 referência
 | Analisar oportunidades e sensores | `references/31-consciencia-situacional-e-autonomia-executiva.md` |
 | Produto, pedagogia, métricas e finanças | `references/06-produto-pedagogia-dados-financas.md` |
 | Diagnóstico rápido de concorrentes, SEO/GEO e CRO para BataTalk | `references/05-growth-competidores-seo-geo-cro.md` |
-| SEO técnico, crawling, indexação, arquitetura, local/e-commerce/internacional | `references/36-seo-tecnico-indexacao-semantic-search.md` |
-| GEO/AEO, plataformas de IA, crawlers, busca e citações | `references/37-geo-aeo-ai-search-plataformas.md` |
-| ICP, intenção, clusters, programmatic SEO, autoridade e conteúdo | `references/38-demanda-topical-conteudo-e-autoridade.md` |
-| Copywriting, posicionamento, landing, prova, CRO e marca | `references/39-copywriting-cro-distribuicao-e-marca.md` |
-| KPIs, experimentos, atribuição e AI visibility | `references/40-mensuracao-experimentos-organicos.md` |
-| Escolher abordagem por modelo de negócio (inclui BataTalk) | `references/41-playbooks-organicos-por-negocio.md` |
-| Executar crescimento orgânico em 30/60/90 dias e governar | `references/42-operacao-seo-geo-roadmap-e-governanca.md` |
+| SEO técnico, crawling, indexação, arquitetura, local/e-commerce/internacional | `references/46-seo-tecnico-indexacao-semantic-search.md` |
+| GEO/AEO, plataformas de IA, crawlers, busca e citações | `references/47-geo-aeo-ai-search-plataformas.md` |
+| ICP, intenção, clusters, programmatic SEO, autoridade e conteúdo | `references/48-demanda-topical-conteudo-e-autoridade.md` |
+| Copywriting, posicionamento, landing, prova, CRO e marca | `references/49-copywriting-cro-distribuicao-e-marca.md` |
+| KPIs, experimentos, atribuição e AI visibility | `references/50-mensuracao-experimentos-organicos.md` |
+| Escolher abordagem por modelo de negócio (inclui BataTalk) | `references/51-playbooks-organicos-por-negocio.md` |
+| Executar crescimento orgânico em 30/60/90 dias e governar | `references/52-operacao-seo-geo-roadmap-e-governanca.md` |
 | Equipe IA e handoffs | `references/21-organizacao-autonoma.md`, `references/23-contratos-dags-handoffs.md` |
 | Modelo/host/limites e instalação | `references/32-contrato-universal-multiplataforma.md`, `INSTALL.md` |
 | Avaliação de skill e execução real | `tests/REVIEW-PROTOCOL.md`, `tests/skill-trigger-evals.jsonl` |

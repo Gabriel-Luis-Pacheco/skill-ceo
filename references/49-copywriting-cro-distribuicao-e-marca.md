@@ -1,4 +1,4 @@
-# 39 — Copywriting, CRO, posicionamento, oferta e reputação
+# 49 — Copywriting, CRO, posicionamento, oferta e reputação
 
 **Quando ler:** tráfego não converte, landing page não explica valor, campanha parece texto de IA, marca é pouco lembrada, leads não avançam ou há disputa por atenção. CEO não deve tratar CRO como decoração de interface.
 

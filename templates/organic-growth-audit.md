@@ -32,4 +32,4 @@ Prompts reais, cluster, plataformas, idioma, localização, data, modo, citaçõ
 |---|---|---|---|---|---|---|---|---|
 
 Estado de ação: IDEIA / RASCUNHO / APROVADO / IMPLEMENTADO / PUBLICADO / OBSERVADO / RESULTADO.
-**Não preencher resultado antes de medir.** Validar alçada em POLICY.md. Módulos: references/36 até 42.
+**Não preencher resultado antes de medir.** Validar alçada em POLICY.md. Módulos: references/46 até 52.

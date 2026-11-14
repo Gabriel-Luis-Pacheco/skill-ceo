@@ -1,4 +1,4 @@
-# 41 — Estratégias SEO/GEO por modelo de negócio: escolha adaptativa
+# 51 — Estratégias SEO/GEO por modelo de negócio: escolha adaptativa
 
 **Quando ler:** CEO precisa escolher uma estratégia orgânica para marca nova, SaaS, serviço local, e-commerce, marketplace, publisher ou produto institucional. O modelo de negócio e a jornada mandam; não copiar playbook SaaS para restaurante ou loja.
 

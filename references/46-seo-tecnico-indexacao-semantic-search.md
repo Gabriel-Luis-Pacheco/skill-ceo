@@ -1,4 +1,4 @@
-# 36 — SEO técnico, descoberta, indexação e arquitetura: manual de diagnóstico
+# 46 — SEO técnico, descoberta, indexação e arquitetura: manual de diagnóstico
 
 **Quando ler:** site não aparece, perdeu tráfego, páginas não indexam, plataforma usa JavaScript, migração, e-commerce, SEO local/internacional ou auditoria técnica. Complementa a referência 05. **Não executar correções cegas.** Verificar versão publicada, ambiente, autorização e impacto comercial.
 

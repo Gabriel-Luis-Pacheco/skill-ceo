@@ -19,13 +19,13 @@
 | [references/34-proatividade-autocalibracao-e-execucao.md](references/34-proatividade-autocalibracao-e-execucao.md) | Protocolo de iniciativa, detecção de falhas próprias e ação verificável | Não |
 | [references/35-decidir-e-executar-com-repertorio.md](references/35-decidir-e-executar-com-repertorio.md) | Métodos dos livros convertidos em decisão, ação e evidência | Não |
 | [references/30-mercado-primeiro-execucao-comercial.md](references/30-mercado-primeiro-execucao-comercial.md) | Primeiros clientes, PLG, inbound/outbound e canais | Não |
-| [references/36-seo-tecnico-indexacao-semantic-search.md](references/36-seo-tecnico-indexacao-semantic-search.md) | Crawling, indexação, arquitetura, local, internacional, e-commerce e multimodal | Não |
-| [references/37-geo-aeo-ai-search-plataformas.md](references/37-geo-aeo-ai-search-plataformas.md) | Google AI Search, ChatGPT, Bing, Perplexity, Claude, Gemini, crawler e métricas de IA | Não |
-| [references/38-demanda-topical-conteudo-e-autoridade.md](references/38-demanda-topical-conteudo-e-autoridade.md) | Demanda, clusters, originalidade, programmatic SEO e digital PR | Não |
-| [references/39-copywriting-cro-distribuicao-e-marca.md](references/39-copywriting-cro-distribuicao-e-marca.md) | Posicionamento, copy, landing pages, conversão e reputação | Não |
-| [references/40-mensuracao-experimentos-organicos.md](references/40-mensuracao-experimentos-organicos.md) | Métricas, testes, atribuição, dashboards e AI visibility | Não |
-| [references/41-playbooks-organicos-por-negocio.md](references/41-playbooks-organicos-por-negocio.md) | Playbooks por segmento e caso BataTalk | Não |
-| [references/42-operacao-seo-geo-roadmap-e-governanca.md](references/42-operacao-seo-geo-roadmap-e-governanca.md) | Plano de 30/60/90 dias, governança e critérios de aceite | Não |
+| [references/46-seo-tecnico-indexacao-semantic-search.md](references/46-seo-tecnico-indexacao-semantic-search.md) | Crawling, indexação, arquitetura, local, internacional, e-commerce e multimodal | Não |
+| [references/47-geo-aeo-ai-search-plataformas.md](references/47-geo-aeo-ai-search-plataformas.md) | Google AI Search, ChatGPT, Bing, Perplexity, Claude, Gemini, crawler e métricas de IA | Não |
+| [references/48-demanda-topical-conteudo-e-autoridade.md](references/48-demanda-topical-conteudo-e-autoridade.md) | Demanda, clusters, originalidade, programmatic SEO e digital PR | Não |
+| [references/49-copywriting-cro-distribuicao-e-marca.md](references/49-copywriting-cro-distribuicao-e-marca.md) | Posicionamento, copy, landing pages, conversão e reputação | Não |
+| [references/50-mensuracao-experimentos-organicos.md](references/50-mensuracao-experimentos-organicos.md) | Métricas, testes, atribuição, dashboards e AI visibility | Não |
+| [references/51-playbooks-organicos-por-negocio.md](references/51-playbooks-organicos-por-negocio.md) | Playbooks por segmento e caso BataTalk | Não |
+| [references/52-operacao-seo-geo-roadmap-e-governanca.md](references/52-operacao-seo-geo-roadmap-e-governanca.md) | Plano de 30/60/90 dias, governança e critérios de aceite | Não |
 | [adapters/README.md](adapters/README.md) | Procedimentos opcionais para ferramentas específicas | Sim, opcional |
 | [INSTALL.md](INSTALL.md) | Instalação genérica + opções por host | Não no núcleo |
 | [setup/CEO-bootstrap-situacional.md](setup/CEO-bootstrap-situacional.md) | Primeiro uso, descobrindo recursos e lacunas | Não |
@@ -93,6 +93,6 @@ Um CI verde pode provar que os scripts funcionam, **mas não** qual comportament
 
 ## Expansão de pesquisa SEO/GEO/AI Search (14/11/2026)
 
-Os sete módulos 36–42 transformam a [pesquisa e bibliografia comentada](research/PESQUISA-SEO-GEO-AI-SEARCH-2026-11-14.md) em decisões testáveis. Modelos prontos: [auditoria de aquisição](templates/organic-growth-audit.md), [brief de conteúdo e copy](templates/organic-growth-brief.md) e [experimento de citação de IA](templates/ai-visibility-experiment.md). Consulte [cenários de avaliação](tests/SEO-GEO-CEO-EVALS.md).
+Os sete módulos 46–52 transformam a [pesquisa e bibliografia comentada](research/PESQUISA-SEO-GEO-AI-SEARCH-2026-11-14.md) em decisões testáveis. Modelos prontos: [auditoria de aquisição](templates/organic-growth-audit.md), [brief de conteúdo e copy](templates/organic-growth-brief.md) e [experimento de citação de IA](templates/ai-visibility-experiment.md). Consulte [cenários de avaliação](tests/SEO-GEO-CEO-EVALS.md).
 
 **Escopo:** o CEO continua responsável por BataTalk. Os princípios podem ser aplicados a outros sites quando explicitamente solicitado; a skill não vira uma rotina geral automática de SEO. SEO/GEO não substitui ativação, receita ou segurança. As fontes variam com o tempo e citações de IA não são garantidas.

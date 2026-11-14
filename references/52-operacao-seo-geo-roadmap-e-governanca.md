@@ -1,4 +1,4 @@
-# 42 — Sistema operacional de aquisição orgânica: diagnóstico, execução e evolução
+# 52 — Sistema operacional de aquisição orgânica: diagnóstico, execução e evolução
 
 **Quando ler:** CEO quer transformar pesquisa SEO/GEO em entregas verificáveis com responsáveis, custos, checkpoints, aprendizagem e decisões. Este playbook NÃO instala automação de fundo; depende do host e alçadas.
 

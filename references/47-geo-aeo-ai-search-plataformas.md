@@ -1,4 +1,4 @@
-# 37 — GEO, AEO, LLMO e busca por IA: o que fazer e o que não sabemos
+# 47 — GEO, AEO, LLMO e busca por IA: o que fazer e o que não sabemos
 
 **Quando ler:** objetivo de aparecer em ChatGPT, Gemini, Google AI Overviews/AI Mode, Copilot, Claude, Perplexity ou outro mecanismo de respostas. Tratar como extensão de descoberta e reputação, não como promessa de manipular um LLM.
 

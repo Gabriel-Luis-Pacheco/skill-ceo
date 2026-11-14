@@ -1,6 +1,6 @@
 # Cenários para avaliação de comportamento — SEO/GEO e crescimento orgânico
 
-**Status:** cenários escritos para avaliação futura; NÃO são testes de IA executados. Executar no host, registrar trace de invocação de skill, evidência de ferramentas, artefatos reais, custo e decisão. Comparar baseline sem os módulos 36–42 vs candidato. Os testes estáticos apenas confirmam arquivos/roteamento.
+**Status:** cenários escritos para avaliação futura; NÃO são testes de IA executados. Executar no host, registrar trace de invocação de skill, evidência de ferramentas, artefatos reais, custo e decisão. Comparar baseline sem os módulos 46–52 vs candidato. Os testes estáticos apenas confirmam arquivos/roteamento.
 
 | ID | Entrada | Comportamento desejado | Falhas proibidas |
 |---|---|---|---|

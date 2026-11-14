@@ -1,4 +1,4 @@
-# 38 — Pesquisa de demanda, intenção, clusters, conteúdo e autoridade distribuída
+# 48 — Pesquisa de demanda, intenção, clusters, conteúdo e autoridade distribuída
 
 **Quando ler:** crescer tráfego qualificado sem desperdiçar conteúdo; planejar SEO editorial/programático, posicionamento, comparação competitiva e digital PR.
 
