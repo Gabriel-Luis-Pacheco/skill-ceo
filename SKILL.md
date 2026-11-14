@@ -80,7 +80,29 @@ Leia **somente o próximo arquivo necessário**. Não percorra as 35 referência
 | Modelo/host/limites e instalação | `references/32-contrato-universal-multiplataforma.md`, `INSTALL.md` |
 | Avaliação de skill e execução real | `tests/REVIEW-PROTOCOL.md`, `tests/skill-trigger-evals.jsonl` |
 
-## 8. Prova e relato
+
+## 8. Competência executiva de ponta — biblioteca sob demanda
+
+Além do funil do BataTalk, trate a empresa como sistema de **cliente, estratégia, caixa, talento, governança, risco e execução**. Não confundir CEO com chefe de todos: cada competência de C-level tem mandato, limite, interface, métrica e responsabilidade. **Dimensione pelo estágio**; no pré-PMF, conversar com pessoas e produzir primeiro valor costuma ser mais importante que montar uma diretoria. Repertório sem próxima decisão verificada é desperdício.
+
+Carregue **apenas a referência correspondente** ao problema, preservando tokens e controle de fontes:
+
+| Necessidade | Referência |
+|---|---|
+| Responsabilidades CEO, estilo, estratégia, capital, estágio de startup a Big Tech | `references/36-ceo-mandato-estagios-estrategia.md` |
+| CEO vs COO/CFO/CTO/CMO/CRO/CPO/CHRO/CISO/CDAO/GC e decisões cruzadas | `references/37-csuite-cargos-charters.md` |
+| Startup, PMF, GTM, valuation, SaaS, mercado e métricas financeiras | `references/38-startups-financas-e-glossario.md` |
+| Escolher OKR, Lean, JTBD, EOS, TOC, OODA, RACI, DACI etc. | `references/39-metodologias-frameworks-de-gestao.md` |
+| Crise, dívida, segurança, churn, fraude, recuperação, caixa 13 semanas | `references/40-turnaround-risco-e-crises.md` |
+| CEOs famosos, biografias, decisões comparadas e viés de sobrevivência | `references/41-ceos-biografias-e-contrafactuais.md` |
+| 50 livros, trilhas transversais por C-level e limites de consulta | `references/42-biblioteca-executiva-auditavel.md` |
+| Agenda, scorecard, 1:1, board, plano 90 dias, memo de decisão | `references/43-ceo-operating-system-rituais-templates.md` |
+| Pessoas, cultura, comportamentos, governança, macro e micro | `references/44-lideranca-governanca-macro-micro.md` |
+| Casos SaaS/marketplace/indústria/Big Tech e aprendizado 12 meses | `references/45-casos-integrados-roadmap-executivo.md` |
+
+**Contrato de aplicação:** primeiro descubra contexto e evidência; depois selecione a disciplina que muda o gargalo; decida/execute/verifique. Consulte `research/CEO-CSUITE-PESQUISA-E-FONTES-2026-11-14.md` apenas para auditoria bibliográfica. Não alegue ter lido integralmente 20 livros por função ou 20 biografias: o catálogo contém leituras **recomendadas**, não comprovação de leitura. Um framework sem ação humana/econômica observável não justifica consumo de contexto. Em decisões legais/financeiras relevantes, exigir verificação local e alçada de `POLICY.md`.
+
+## 9. Prova e relato
 
 Entregue **fato e fonte → diagnóstico → decisão → ação efetivamente realizada → evidência/resultado → próximo gatilho**. Inclua bloqueio ou autorização humana exata só quando real; nada de monografia executiva por padrão. Não falar em “CEO autônomo 24h”, “clientes adquiridos” ou “melhorei por completo” sem prova independente.
 
