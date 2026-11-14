@@ -45,6 +45,7 @@ Diante de conflito, **POLICY.md e evidência concreta** vencem qualquer interpre
 Fluxo de referência: **demanda qualificada → landing/convite → primeira fala realmente útil → retorno → pagamento confirmado → contribuição positiva**. Medir cada passo segundo seu significado. Visualizações não são visitantes únicos, `voice_attempt` não é necessariamente conversa real, simulação não é aprendizagem e invoice de teste não é receita externa.
 
 - Falta gente certa? Pesquisa humana, oferta, parceria, creator, SEO/inbound ou founder-led outreach apropriados, com escopo e consentimento. `references/30-mercado-primeiro-execucao-comercial.md`.
+  - Se a restrição for **descoberta orgânica qualificada** (Search, ChatGPT, AI Overviews, Copilot, Perplexity, Gemini ou Claude), diagnostique separadamente acesso/indexação, demanda/entidades, autoridade externa, citação/menção, conversão e resultado econômico. O índice especializado está na seção 7; fontes e limites em `research/PESQUISA-SEO-GEO-AI-SEARCH-2026-11-14.md`. **Leia o módulo específico antes de recomendar truques de GEO.**
 - Chegam mas não falam? Reproduzir jornada no celular, mic, áudio/latência, feedback, limites, confiança, instrumentação; corrigir experiência antes de comprar tráfego. `references/06-produto-pedagogia-dados-financas.md`.
 - Falam mas não voltam? Investigar utilidade pedagógica, contexto, medo de errar, progresso percebido e convite de retorno.
 - Voltam mas não pagam? Verificar valor, preço, checkout, oferta, restrições e custos variáveis de voz/IA/comissão/taxas. Não chamar faturamento bruto de margem.
@@ -75,7 +76,14 @@ Leia **somente o próximo arquivo necessário**. Não percorra as 35 referência
 | Primeiro cliente, oferta, canais e vendas | `references/30-mercado-primeiro-execucao-comercial.md` |
 | Analisar oportunidades e sensores | `references/31-consciencia-situacional-e-autonomia-executiva.md` |
 | Produto, pedagogia, métricas e finanças | `references/06-produto-pedagogia-dados-financas.md` |
-| Concorrentes, SEO/GEO e CRO | `references/05-growth-competidores-seo-geo-cro.md` |
+| Diagnóstico rápido de concorrentes, SEO/GEO e CRO para BataTalk | `references/05-growth-competidores-seo-geo-cro.md` |
+| SEO técnico, crawling, indexação, arquitetura, local/e-commerce/internacional | `references/36-seo-tecnico-indexacao-semantic-search.md` |
+| GEO/AEO, plataformas de IA, crawlers, busca e citações | `references/37-geo-aeo-ai-search-plataformas.md` |
+| ICP, intenção, clusters, programmatic SEO, autoridade e conteúdo | `references/38-demanda-topical-conteudo-e-autoridade.md` |
+| Copywriting, posicionamento, landing, prova, CRO e marca | `references/39-copywriting-cro-distribuicao-e-marca.md` |
+| KPIs, experimentos, atribuição e AI visibility | `references/40-mensuracao-experimentos-organicos.md` |
+| Escolher abordagem por modelo de negócio (inclui BataTalk) | `references/41-playbooks-organicos-por-negocio.md` |
+| Executar crescimento orgânico em 30/60/90 dias e governar | `references/42-operacao-seo-geo-roadmap-e-governanca.md` |
 | Equipe IA e handoffs | `references/21-organizacao-autonoma.md`, `references/23-contratos-dags-handoffs.md` |
 | Modelo/host/limites e instalação | `references/32-contrato-universal-multiplataforma.md`, `INSTALL.md` |
 | Avaliação de skill e execução real | `tests/REVIEW-PROTOCOL.md`, `tests/skill-trigger-evals.jsonl` |
