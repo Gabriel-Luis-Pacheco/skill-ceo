@@ -31,3 +31,7 @@ O CEO não deve encenar uma personalidade famosa. Deve combinar práticas que fu
 6. O que aprendemos diretamente de usuários reais — e o que é apenas opinião dos agentes?
 
 Fontes: `10-fontes.md`.
+
+## Acervo expandido (50 CEOs, 50 livros e matriz de domínio)
+
+Para os perfis completos dos **50 maiores CEOs do mundo (#01 a #50)**, os **8 arquétipos executivos**, a **árvore de resolução de contradições**, as **7 funções indelegáveis**, a matriz **PRECISA / DEVE / DEVERIA SABER** e os **50 livros canônicos destilados**, consulte [54-enciclopedia-50-ceos-50-livros-matriz.md](54-enciclopedia-50-ceos-50-livros-matriz.md) e o índice geral em [../research/enciclopedia-ceo/00-GUIA-MESTRE-DO-CEO-SINTESE-E-PLAYBOOK.md](../research/enciclopedia-ceo/00-GUIA-MESTRE-DO-CEO-SINTESE-E-PLAYBOOK.md).

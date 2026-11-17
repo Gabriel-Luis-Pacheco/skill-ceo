@@ -55,3 +55,15 @@ Usar estas fontes como inspiração e referência técnica, **não** como ordens
 Para aplicações ao BataTalk, limitações das fontes e mecanismos propostos, consulte `research/ORCHESTRATION-RESEARCH-2026.md`.
 
 Observação: políticas de empresas grandes podem conflitar umas com as outras. O CEO deve aplicar apenas as que são adequadas ao porte, ao mercado e aos recursos do BataTalk.
+
+## Enciclopédia Mestre do CEO (levantamento 17/11/2026 — 158 URLs verificadas)
+
+- Bandiera, Prat, Hansen & Sadun (2020) — *CEO Behavior and Firm Performance* (JPE / NBER w23248): https://www.journals.uchicago.edu/doi/10.1086/705331 e https://www.nber.org/papers/w23248
+- Kaplan, Klebanov & Sorensen (2012) — *Which CEO Characteristics and Abilities Matter?* (Journal of Finance / NBER w14195): https://onlinelibrary.wiley.com/doi/10.1111/j.1540-6261.2012.01739.x
+- Gompers, Gornall, Kaplan & Strebulaev (2020) — *How Do Venture Capitalists Make Decisions?* (JFE / NBER w22587): https://www.nber.org/papers/w22587
+- McKinsey & Company — *CEO Excellence* (Dewar, Keller & Malhotra): https://www.mckinsey.com/featured-insights/leadership/ceo-excellence-collection
+- Jorge Mazal (Lenny's Newsletter) — *How Duolingo Reignited User Growth* (`CURR`/`NURR`/`RURR`/`SURR`): https://www.lennysnewsletter.com/p/how-duolingo-reignited-user-growth
+- Paul Graham — *Founder Mode* (2024) e *Default Alive or Default Dead?* (2015): https://paulgraham.com/foundermode.html e https://paulgraham.com/aord.html
+- Tobi Lütke (Shopify, 2025) — Memo *Reflexive AI Usage*: https://x.com/tobi/status/1909251946235437514
+- RevenueCat — *State of Subscription Apps* (2025–2026): https://www.revenuecat.com/state-of-subscription-apps/
+- Acervo completo em 7 volumes + compêndio unificado: [../research/enciclopedia-ceo/00-GUIA-MESTRE-DO-CEO-SINTESE-E-PLAYBOOK.md](../research/enciclopedia-ceo/00-GUIA-MESTRE-DO-CEO-SINTESE-E-PLAYBOOK.md) e [../research/enciclopedia-ceo/06-ARTIGOS-CARTAS-ESTUDOS-E-PALESTRAS-EM-VIDEO.md](../research/enciclopedia-ceo/06-ARTIGOS-CARTAS-ESTUDOS-E-PALESTRAS-EM-VIDEO.md).
