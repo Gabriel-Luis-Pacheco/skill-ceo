@@ -258,7 +258,10 @@ def validate(root: Path = ROOT) -> list[str]:
             errors.append("SKILL.md: faltam limites de acionamento na descrição")
         if "POLICY.md" not in skill or "references/21-organizacao-autonoma.md" not in skill:
             errors.append("SKILL.md: política ou governança organizacional não referenciada")
-        for ref in set(REQUIRED_PATH.findall(skill)):
+        # A path written as prose can end in punctuation: "references/foo.md."
+        # Do not treat the sentence-ending dot as part of the filename.
+        for raw_ref in set(REQUIRED_PATH.findall(skill)):
+            ref = raw_ref.rstrip(".,;:!?")
             if not (root / ref).exists():
                 errors.append(f"SKILL.md: referência inexistente: {ref}")
 
