@@ -1,0 +1,41 @@
+{
+  "_note": "EXEMPLO FICTÍCIO, apenas para testar formato. Não prova cliente, execução, aprovação, medição ou acesso.",
+  "episode_id": "EXEMPLO-CEO-001",
+  "observed_at": "2026-11-20T20:00:00-03:00",
+  "mode": "M0",
+  "issue": "A empresa quer investigar a falta de primeira conversa oral válida",
+  "owner": "CEO",
+  "observations": [
+    {
+      "claim": "O fundador relata dificuldade de aquisição; não há dados auditados nesta amostra",
+      "status": "RELATADO",
+      "source": "Exemplo fictício de pedido do fundador"
+    },
+    {
+      "claim": "A taxa real de primeira fala ainda não foi obtida",
+      "status": "SEM_DADOS",
+      "source": ""
+    }
+  ],
+  "hypothesis": {
+    "main": "A mensagem da landing não deixa claro o benefício da primeira conversa",
+    "rival": "A mensagem é clara, mas há fricção técnica no microfone/onboarding",
+    "discriminator": "Observar visitantes consentidos na jornada e medir a primeira fala com instrumentação validada"
+  },
+  "decision": {
+    "action": "Preparar roteiro de teste da primeira fala para aprovação",
+    "not_do": "Não aumentar mídia nem redesenhar tudo sem diagnóstico",
+    "reason": "Uma inspeção do fluxo distingue problema de proposta de valor de falha técnica"
+  },
+  "effect": {
+    "status": "PREPARADO",
+    "risk": "internal",
+    "target": "templates/CEO-executive-decision.md",
+    "evidence": "",
+    "approval_reference": ""
+  },
+  "impact": {
+    "status": "NAO_MEDIDO"
+  },
+  "next_trigger": "Conseguir leitura ou teste autorizado da jornada real e registrar a primeira fala com definição válida"
+}
