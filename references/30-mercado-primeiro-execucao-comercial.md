@@ -6,6 +6,21 @@
 
 Se o CRM/pipeline estiver acessível, mapear o próximo avanço real em **identificado → rascunhado → autorizado → enviado → respondeu → testou voz útil → voltou → pagou**. Executar imediatamente a transição já autorizada, conferir o destino e registrar o estado antes/depois. Se o envio não estiver autorizado, entregar convite personalizado e pedido de escopo exato; não fingir campanha nem disparar contatos em massa. Não abrir novo roteiro comercial enquanto o gargalo é apenas um passo pendente e executável.
 
+## Execução: teste de conteúdo liderado pelo fundador (não uma previsão de viralização)
+
+**Quando usar:** há pouca demanda qualificada, o fundador possui audiência própria e deseja testar Reels/Shorts. A audiência do fundador não é automaticamente audiência compradora de inglês. Compare visitantes **que realmente praticam** com views, curtidas e seguidores.
+
+1. **Escolha um público e uma situação.** Ex.: jovem que trava para pedir algo em inglês; alternativa atual (aula, app ou IA genérica); objeção real. Pesquisa com relatos passados é melhor do que inventar uma persona.
+2. **Produza demonstração verdadeira, não promessa.** Mostre uma troca de fala real do produto, áudio compreensível, o que o aluno tentou dizer e o feedback. Se for simulação, identifique-a; não invente aluno/resultado. Gancho deve comunicar uma tensão concreta com linguagem natural do público, não jargão de marketing.
+3. **Teste variação isolável.** Se publicar várias peças, varie uma dimensão principal por vez (gancho, situação ou CTA), registrando plataforma, perfil, horário, formato e origem do tráfego. Reels de teste têm distribuição variável; não proclame causalidade com amostra pequena.
+4. **Uma CTA verificável.** Diga exatamente o que acontecerá ao clicar e garanta que o destino do link na bio corresponda à promessa. Quando houver links múltiplos, escolha explicitamente a prioridade ou página intermediária simples. Use UTM distinta por canal/criativo quando possível, sem coletar PII desnecessária.
+5. **Registre o funil honesto.** Impressões e reproduções → cliques identificáveis → visitantes → primeira conversa oral válida → retorno → pagamento conciliado. Diferencie clique de usuário único e exclua testes internos. Métricas indisponíveis ficam SEM DADOS.
+6. **Revisão pós-publicação.** Compare a retenção do vídeo e, acima de tudo, visitas qualificadas e primeira fala. Se o gancho atrai pessoas erradas, mude ICP/mensagem; se há clique mas ninguém fala, inspecione promessa e onboarding; se há uso e não retorno, ataque valor pedagógico. Não produzir mais cinco vídeos iguais para fugir da causa.
+
+**Governança:** preparar roteiro e protótipo é diferente de publicar. Publicações, campanhas e contato externo exigem alçada válida sob POLICY.md. A pausa do **agente Reels Creator** não equivale a proibir o fundador de produzir conteúdo manualmente; também não autoriza reativar aquele agente. Evite spam, afirmações de fluência não comprovadas e depoimentos falsos.
+
+---
+
 ## 1. Verdade de negócio antes de teatro empresarial
 
 A pergunta do CEO é: **qual pessoa externa, vivendo qual problema, experimentou uma conversa oral útil, voltou e pagou — e por qual motivo?** Escolha ações que reduzam o tempo até a resposta.
@@ -24,7 +39,7 @@ Não diga que o canal funciona quando há apenas rascunhos, indexação, visuali
 
 Três perguntas, com validação real, não slogans:
 1. **Compreensão:** cinco pessoas do ICP, sem coaching, entendem em cinco segundos o que é e por que serve? Conseguem chegar a uma primeira fala com tempo razoável, em celular real? Cinco minutos não provam tudo: testar também fricção, confiança, resultado e retenção.
-2. **Economia:** `LTV de contribuição esperado - CAC - suporte/vendas - custo de voz` é positivo? Ticket mensal de dezenas de reais quase nunca paga time humano de SDR→demo→closer para cada assinatura individual. **R$ 500 não é corte universal**: depende de ACV, segmento, margem, conversão e custos de venda.
+2. **Economia:** a contribuição acumulada estimada por cliente cobre CAC e custos comerciais **ainda não incluídos** na contribuição? Não subtraia voz/suporte duas vezes: se LTV já é de contribuição, esses custos variáveis já foram considerados. Ticket mensal de dezenas de reais quase nunca paga time humano de SDR→demo→closer para cada assinatura individual. **R$ 500 não é corte universal**: depende de ACV, segmento, margem, conversão e custos de venda.
 3. **Demanda:** o público já expressa o problema e busca soluções, ou precisa descobrir que existe uma alternativa? Isso decide peso de SEO/conteúdo de intenção versus educação e prospecção.
 
 **BataTalk B2C, hipótese inicial:** experiência gratuita que entrega valor antes do cadastro, conteúdo demonstrando situações reais, distribuição em comunidades pertinentes com permissão, e founder-led outreach para criadores, professores e primeiras pessoas do ICP. Os canais se complementam. PLG sem distribuição é um produto isolado; inbound com zero procura não resolve aquisição; outbound massivo para ticket baixo é antieconômico.
