@@ -21,9 +21,38 @@ class PackageSkillTests(unittest.TestCase):
             self.assertTrue((package / "references/35-decidir-e-executar-com-repertorio.md").exists())
             manifest = json.loads((package / MANIFEST).read_text())
             self.assertEqual(SKILL_NAME, manifest["skill"])
+            self.assertEqual(2, manifest["schema_version"])
+            self.assertIn("POLICY.md", manifest["files"])
+            self.assertEqual(manifest["files"]["SKILL.md"], manifest["skill_sha256"])
             with self.assertRaises(FileExistsError):
                 package_skill(Path(tmp))
             self.assertEqual(package, package_skill(Path(tmp), replace=True))
+
+    def test_replace_rejects_untracked_files(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            package = package_skill(Path(tmp))
+            (package / "local-notes.txt").write_text("Keep my private notes", encoding="utf-8")
+            with self.assertRaisesRegex(ValueError, "Bundle changed"):
+                package_skill(Path(tmp), replace=True)
+            self.assertTrue((package / "local-notes.txt").is_file())
+
+    def test_replace_rejects_modified_bundled_file(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            package = package_skill(Path(tmp))
+            policy = package / "POLICY.md"
+            policy.write_text(policy.read_text(encoding="utf-8") + "\nlocal change\n", encoding="utf-8")
+            with self.assertRaisesRegex(ValueError, "Bundle changed"):
+                package_skill(Path(tmp), replace=True)
+            self.assertIn("local change", policy.read_text(encoding="utf-8"))
+
+    def test_legacy_manifest_cannot_silently_delete_files(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            package = package_skill(Path(tmp))
+            manifest = package / MANIFEST
+            manifest.write_text(json.dumps({"skill": SKILL_NAME}), encoding="utf-8")
+            with self.assertRaisesRegex(ValueError, "Old/unverifiable"):
+                package_skill(Path(tmp), replace=True)
+            self.assertTrue((package / "SKILL.md").is_file())
 
     def test_cannot_overwrite_unrelated_folder(self):
         with tempfile.TemporaryDirectory() as tmp:

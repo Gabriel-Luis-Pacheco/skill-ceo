@@ -25,6 +25,24 @@ FOLDERS = (
 MANIFEST = ".skill-bundle-manifest.json"
 
 
+def _file_inventory(directory: Path) -> dict[str, str]:
+    """Hash every bundled file and reject symlinks.
+
+    Detects unrecorded local edits, but is NOT publisher authentication.
+    """
+    hashes: dict[str, str] = {}
+    for path in sorted(directory.rglob("*")):
+        if path.is_symlink():
+            raise ValueError(f"Refusing symlink inside generated bundle: {path}")
+        if not path.is_file():
+            continue
+        relative = path.relative_to(directory).as_posix()
+        if relative == MANIFEST:
+            continue
+        hashes[relative] = hashlib.sha256(path.read_bytes()).hexdigest()
+    return hashes
+
+
 def package_skill(output_root: Path, source_root: Path = SOURCE_ROOT, *, replace: bool = False) -> Path:
     source_root = source_root.resolve()
     output_root = output_root.resolve()
@@ -39,6 +57,13 @@ def package_skill(output_root: Path, source_root: Path = SOURCE_ROOT, *, replace
         existing = json.loads((dest / MANIFEST).read_text(encoding="utf-8"))
         if existing.get("skill") != SKILL_NAME:
             raise ValueError("Refusing to replace a bundle with a different identity")
+        # Legacy manifests lack an inventory. Never delete unverified content.
+        expected = existing.get("files")
+        if existing.get("schema_version") != 2 or not isinstance(expected, dict) or not expected:
+            raise ValueError("Old/unverifiable bundle: back up or inspect it and remove it manually before rebuilding")
+        actual = _file_inventory(dest)
+        if expected != actual:
+            raise ValueError("Bundle changed since generation; refusing --replace to protect local edits")
         shutil.rmtree(dest)
     output_root.mkdir(parents=True, exist_ok=True)
     dest.mkdir()
@@ -62,10 +87,13 @@ def package_skill(output_root: Path, source_root: Path = SOURCE_ROOT, *, replace
     broken = check_local_links(dest)
     if broken:
         raise ValueError("Generated bundle contains broken relative links: " + "; ".join(broken[:5]))
+    inventory = _file_inventory(dest)
     (dest / MANIFEST).write_text(json.dumps({
+        "schema_version": 2,
         "skill": SKILL_NAME,
-        "skill_sha256": hashlib.sha256((dest / "SKILL.md").read_bytes()).hexdigest(),
-        "purpose": "Generated skill bundle; not proof of installation or runtime activity",
+        "skill_sha256": inventory["SKILL.md"],
+        "files": inventory,
+        "purpose": "Local integrity inventory only; not proof of installation or publisher authenticity",
     }, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     return dest
 

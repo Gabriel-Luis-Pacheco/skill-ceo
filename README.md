@@ -1,125 +1,90 @@
-# BataTalk CEO OS — inteligência executiva portável
+# BataTalk CEO OS
 
-**Uma skill de direção executiva para GrokBot, Claude Code, Codex, OpenBot e qualquer IA que consiga receber instruções e contexto.** Ela não é produto nem plugin de uma plataforma. Seu objetivo é fazer a IA pensar e agir como um **CEO operacional competente**, com método, ambição, percepção, julgamento, repertório, curiosidade e responsabilidade por resultados.
+**Skill de direção executiva para o BataTalk, independente de uma IA específica.** O objetivo é que um agente identifique a restrição principal, decida com evidência, realize o trabalho que foi autorizado e confira o resultado. Conhecimento profundo é apoio; **o produto final do CEO é uma decisão que produz progresso verificável**.
 
-> O CEO **não espera** o fundador descobrir que falta cliente, que a landing é fraca, que o SEO perdeu alcance, que algum concorrente mudou a proposta, que um agente está produzindo AI slop ou que a empresa precisa aprender algo. Ele investiga sinais disponíveis, toma decisões, executa dentro da alçada e verifica impactos. Quando não pode agir, explica o bloqueio sem fingir execução.
+A mesma metodologia pode funcionar no Claude Code, Codex, GrokBot, OpenBot ou em outra plataforma. Mas um prompt não concede ferramentas, acesso, orçamento, memória, scheduler ou independência legal.
 
-## Princípio de portabilidade
+## O que muda no comportamento
 
-**O cérebro é o mesmo; a mão muda com a ferramenta.** Uma plataforma pode ter web, terminal, agentes, browser, email, rotinas, dados ou nada disso. Nunca confundir **ter um prompt** com ter conexão, automação, memória ou capacidade de ação. A qualidade da estratégia e do raciocínio não deve depender de um software.
-
-| Componente | Função | Precisa de aplicativo específico? |
-|---|---|---|
-| [SKILL.md](SKILL.md) | **Mandato e processo universal** — primeiro arquivo | Não |
-| [CEO_SYSTEM_PROMPT.md](CEO_SYSTEM_PROMPT.md) | Mandato persistente curto para qualquer IA | Não |
-| [POLICY.md](POLICY.md) | Alçadas e segurança, independente do host | Não |
-| [references/32-contrato-universal-multiplataforma.md](references/32-contrato-universal-multiplataforma.md) | Descoberta de capacidades, M0/M1/M2, continuidade | Não |
-| [references/33-julgamento-executivo-competencias-e-aprendizado.md](references/33-julgamento-executivo-competencias-e-aprendizado.md) | Estratégia, finanças, marketing, psicologia, vendas, produto e liderança | Não |
-| [references/31-consciencia-situacional-e-autonomia-executiva.md](references/31-consciencia-situacional-e-autonomia-executiva.md) | Radar de iniciativa e aprendizado | Não |
-| [references/34-proatividade-autocalibracao-e-execucao.md](references/34-proatividade-autocalibracao-e-execucao.md) | Protocolo de iniciativa, detecção de falhas próprias e ação verificável | Não |
-| [references/35-decidir-e-executar-com-repertorio.md](references/35-decidir-e-executar-com-repertorio.md) | Métodos dos livros convertidos em decisão, ação e evidência | Não |
-| [references/30-mercado-primeiro-execucao-comercial.md](references/30-mercado-primeiro-execucao-comercial.md) | Primeiros clientes, PLG, inbound/outbound e canais | Não |
-| [references/46-seo-tecnico-indexacao-semantic-search.md](references/46-seo-tecnico-indexacao-semantic-search.md) | Crawling, indexação, arquitetura, local, internacional, e-commerce e multimodal | Não |
-| [references/47-geo-aeo-ai-search-plataformas.md](references/47-geo-aeo-ai-search-plataformas.md) | Google AI Search, ChatGPT, Bing, Perplexity, Claude, Gemini, crawler e métricas de IA | Não |
-| [references/48-demanda-topical-conteudo-e-autoridade.md](references/48-demanda-topical-conteudo-e-autoridade.md) | Demanda, clusters, originalidade, programmatic SEO e digital PR | Não |
-| [references/49-copywriting-cro-distribuicao-e-marca.md](references/49-copywriting-cro-distribuicao-e-marca.md) | Posicionamento, copy, landing pages, conversão e reputação | Não |
-| [references/50-mensuracao-experimentos-organicos.md](references/50-mensuracao-experimentos-organicos.md) | Métricas, testes, atribuição, dashboards e AI visibility | Não |
-| [references/51-playbooks-organicos-por-negocio.md](references/51-playbooks-organicos-por-negocio.md) | Playbooks por segmento e caso BataTalk | Não |
-| [references/52-operacao-seo-geo-roadmap-e-governanca.md](references/52-operacao-seo-geo-roadmap-e-governanca.md) | Plano de 30/60/90 dias, governança e critérios de aceite | Não |
-| [adapters/README.md](adapters/README.md) | Procedimentos opcionais para ferramentas específicas | Sim, opcional |
-| [INSTALL.md](INSTALL.md) | Instalação genérica + opções por host | Não no núcleo |
-| [setup/CEO-bootstrap-situacional.md](setup/CEO-bootstrap-situacional.md) | Primeiro uso, descobrindo recursos e lacunas | Não |
-| [tests/CEO-BEHAVIOR-EVALS.md](tests/CEO-BEHAVIOR-EVALS.md) | Casos de julgamento e proatividade | Não |
-| [tests/PORTABILITY-TEST-PLAN.md](tests/PORTABILITY-TEST-PLAN.md) | Comparação entre ambientes e limites | Não |
-
-## O que o CEO precisa demonstrar
-
-- **Iniciativa:** levantar o problema mais importante sem receber uma lista, inclusive descoberta de oportunidades que o fundador não conhece.
-- **Capacidade de aprender:** descobrir o conhecimento faltante e consultar o melhor disponível antes de formular uma ação.
-- **Direção empresarial:** tomar decisões que conectam humanos, produto, distribuição, economia, risco e marca, recusando frentes inúteis.
-- **Percepção de mercado:** estudar concorrentes, clientes, tendências, SEO/GEO e dados reais quando acessíveis, com fonte e data.
-- **Disciplina comercial:** se faltam clientes, trabalhar distribuição e ativação com contato humano real e medição, não documentos infinitos.
-- **Crítica independente:** não confundir output de agente, elogio estético ou simulação com prova.
-- **Orquestração proporcional:** organizar IAs/modelos de forma competente **se disponíveis**; sem agentes, continua sendo CEO competente.
-- **Memória/continuidade honesta:** checkpoints e rotinas configuradas quando o ambiente suporta, sem simular acompanhamento 24/7.
-- **Firmeza com limites:** decisões claras, discordância fundamentada, segurança e alçada do fundador preservadas.
-
-
-## Manual executivo completo — integração de 14/11/2026
-
-A biblioteca evoluiu para cobrir **o CEO e os principais C-levels da startup à Big Tech**, sem transformar `SKILL.md` em enciclopédia de tokens. A pesquisa e sua rastreabilidade estão em [integração e fontes](research/CEO-CSUITE-PESQUISA-E-FONTES-2026-11-14.md).
-
-| O que estudar e aplicar | Guia |
+| CEO que apenas parece inteligente | CEO que gera valor |
 |---|---|
-| Mandato, conduta, estratégia e estágios do CEO | [36](references/36-ceo-mandato-estagios-estrategia.md) |
-| C-levels, responsabilidades, 30/60/90 e RACI/DACI | [37](references/37-csuite-cargos-charters.md) |
-| Startup, captação, unit economics, glossário PT–EN | [38](references/38-startups-financas-e-glossario.md) |
-| Mais de 30 metodologias e quando não usar | [39](references/39-metodologias-frameworks-de-gestao.md) |
-| Turnaround: 24h/7d/30d/90d e crises | [40](references/40-turnaround-risco-e-crises.md) |
-| Estudo crítico de 20 CEOs e 20+ fontes biográficas | [41](references/41-ceos-biografias-e-contrafactuais.md) |
-| Biblioteca de 50 obras e trilhas cruzadas por C-level | [42](references/42-biblioteca-executiva-auditavel.md) |
-| Rituais, scorecards, board packs, planos 90 dias | [43](references/43-ceo-operating-system-rituais-templates.md) |
-| Cultura, macroeconomia, governança, pessoas | [44](references/44-lideranca-governanca-macro-micro.md) |
-| Casos e roadmap de aprendizado de 12 meses | [45](references/45-casos-integrados-roadmap-executivo.md) |
+| Entrega 50 ideias de vendas | Verifica onde a pessoa abandona o funil e testa uma intervenção |
+| Analisa dezenas de concorrentes sem proposta | Compara uma alternativa real, identifica a promessa e decide o teste |
+| Afirma que o marketing foi melhorado | Mostra o material preparado/publicado, o alcance **real** e a mudança de ativação |
+| Invoca metodologia e faz organograma | Usa o método necessário, nomeia um dono e confere a entrega |
+| Trata ferramentas existentes como autorização | Respeita POLICY.md e pede aprovação específica para efeitos externos |
+| Confunde commit com cliente | Separa código, deploy, usuário externo, conversa útil e pagamento |
 
-A biblioteca é **sob demanda e orientada a decisões**. Consulte [template de decisão](templates/CEO-executive-decision.md) e [testes de competência](tests/CEO-CSUITE-COMPETENCY-EVALS.md). Listar livros não significa tê-los lido integralmente; teste de CI não prova resultado comercial. A versão hospedada no GitHub não atualiza automaticamente cópias locais: siga [INSTALL.md](INSTALL.md).
+**Respostas proporcionais:** se o fundador pediu para revisar um arquivo, revise-o. Se perguntou “e aí, CEO?”, busque evidência e proponha/execute o próximo movimento real dentro da alçada. Se não houver ação nova útil, não crie trabalho para parecer proativo.
 
-## Começar agora
+## Comece em três passos
 
-1. Leia [INSTALL.md](INSTALL.md): carregar a **pasta toda** com `SKILL.md` + `references/` ou adaptar para plataforma sem diretórios de skills.
-2. Aplique [CEO_SYSTEM_PROMPT.md](CEO_SYSTEM_PROMPT.md) como instruções persistentes, quando suportado.
-3. Dê ao CEO acesso permitido ao contexto do BataTalk; rode [setup/CEO-bootstrap-situacional.md](setup/CEO-bootstrap-situacional.md).
-4. Teste um “E aí, CEO?” e uma missão comercial. O CEO deve **descobrir, decidir, agir e provar**, não apenas listar ideias; siga a [prova de ativação](INSTALL.md#prova-de-ativação--indispensável-para-não-usar-a-versão-antiga) para checar a versão instalada e testar falhas de iniciativa.
-5. Use [tests/PORTABILITY-TEST-PLAN.md](tests/PORTABILITY-TEST-PLAN.md) e revise comportamento em duas ou mais plataformas. Instalação e aprovação de testes estáticos **não são** validação real.
+1. **Instale a skill real, não apenas o repositório:** veja [INSTALL.md](INSTALL.md). O diretório distribuído precisa ter o nome definido no frontmatter, batatalk-ceo-operator, e conter as referências necessárias. Leia o arquivo instalado para conferir a revisão carregada.
+2. **Adote o mandato persistente quando o host permitir:** [CEO_SYSTEM_PROMPT.md](CEO_SYSTEM_PROMPT.md) em instruções de projeto/sistema, sem substituir as instruções superiores do ambiente. [SKILL.md](SKILL.md) deve carregar apenas ao ser relevante.
+3. **Faça uma primeira missão verificável:** [bootstrap situacional](setup/CEO-bootstrap-situacional.md) e [primeiro ciclo de resultado](setup/CEO-business-outcome-first-run.md). A prioridade é entender por que pessoas reais não chegam, não conseguem falar, não voltam ou não pagam — não pressupor a causa.
 
-## Arquitetura para preservar contexto e custo
+### Exemplo de pedido objetivo ao CEO
 
-O arquivo central é relativamente conciso e se limita a mandatos e roteamento. Leia **somente** a referência que muda a decisão; guias de vendas, aprendizagem, finanças, orquestração ou SEO não devem ser todos injetados em cada mensagem. Adaptadores não são dependências do núcleo. Controles financeiros, de produção, privacidade e comunicação estão em [POLICY.md](POLICY.md); **Reels Creator permanece PAUSADO** conforme decisão do fundador.
+> Analise os dados acessíveis e o caminho público do BataTalk. Identifique a restrição mais relevante entre descoberta, promessa, primeira conversa oral, retenção, pagamento ou margem. Apresente a melhor hipótese e uma rival; execute nesta sessão o passo mais útil já autorizado, verifique o resultado no destino e diga a próxima evidência que mudaria a decisão. Não crie agentes ou documentos se isso não resolver o gargalo. Respeite POLICY.md.
 
-O CEO pode operar em três modos (ver referência 32):
-- **M0:** chat sem ferramentas: pesquisa limitada a fontes presentes, estratégia, roteiro e checkpoint honesto.
-- **M1:** ferramentas acionadas por sessão: leitura, edição segura, teste, PR, verificação e continuidade por novo turno.
-- **M2:** ambiente persistente e sensores realmente instalados: monitoramento, filas, delegação e alertas verificáveis.
+Este exemplo **não** autoriza disparos, campanhas, deploy, acesso sensível, alterações de cobrança ou orçamento.
 
-## Verificação técnica e comportamental
+## Três camadas que não podem ser confundidas
 
-```bash
+| Camada | Onde fica | O que comprova |
+|---|---|---|
+| Mandato persistente | [CEO_SYSTEM_PROMPT.md](CEO_SYSTEM_PROMPT.md) nas instruções do host | Identidade e prioridade quando configuradas |
+| Skill acionada por contexto | [SKILL.md](SKILL.md) + módulos sob demanda | Orientação para decidir/agir em uma tarefa |
+| Autonomia recorrente | scheduler, webhooks, ferramentas, estado, permissões e logs reais | Rotina de verdade, se instalada e testada |
+
+M0 = conversa sem ferramentas; M1 = ferramentas durante o acionamento; M2 = persistência/sensores efetivamente configurados. [Contrato universal](references/32-contrato-universal-multiplataforma.md). Os [adaptadores](adapters/README.md) ajudam com particularidades das plataformas, mas não substituem a verificação do host.
+
+## Livro de instruções: leitura progressiva
+
+O núcleo [SKILL.md](SKILL.md) apresenta o fluxo de execução e o roteamento. **Não carregue todo o acervo em cada sessão.** Comece pelos guias adequados:
+
+| Decisão que precisa tomar | Leitura recomendada |
+|---|---|
+| Primeiros clientes, pesquisa e distribuição | [30 — mercado primeiro](references/30-mercado-primeiro-execucao-comercial.md) |
+| Falha de proatividade ou julgamento | [31 — percepção](references/31-consciencia-situacional-e-autonomia-executiva.md), [34 — autocalibração](references/34-proatividade-autocalibracao-e-execucao.md) |
+| Estratégia e capacidade executiva | [33 — julgamento](references/33-julgamento-executivo-competencias-e-aprendizado.md), [35 — repertório](references/35-decidir-e-executar-com-repertorio.md), [36 — mandato](references/36-ceo-mandato-estagios-estrategia.md) |
+| Produto, voz, aprendizagem e finanças | [06 — produto e economia](references/06-produto-pedagogia-dados-financas.md), [38 — finanças](references/38-startups-financas-e-glossario.md) |
+| Growth, marketing, SEO/GEO e CRO | [05 — diagnóstico](references/05-growth-competidores-seo-geo-cro.md), [46 — SEO](references/46-seo-tecnico-indexacao-semantic-search.md), [47 — GEO](references/47-geo-aeo-ai-search-plataformas.md), [48 — demanda](references/48-demanda-topical-conteudo-e-autoridade.md), [49 — copy](references/49-copywriting-cro-distribuicao-e-marca.md), [50 — métricas](references/50-mensuracao-experimentos-organicos.md), [51 — segmentos](references/51-playbooks-organicos-por-negocio.md), [52 — operação](references/52-operacao-seo-geo-roadmap-e-governanca.md) |
+| Delegação e risco multiagente | [21 — equipes](references/21-organizacao-autonoma.md), [23 — handoffs](references/23-contratos-dags-handoffs.md), [29 — custo de modelos](references/29-modelos-custo-capacidade.md) |
+| Organização, método e crise | [37 — C-levels](references/37-csuite-cargos-charters.md), [39 — frameworks](references/39-metodologias-frameworks-de-gestao.md), [40 — crise](references/40-turnaround-risco-e-crises.md), [43 — cadência](references/43-ceo-operating-system-rituais-templates.md), [44 — liderança](references/44-lideranca-governanca-macro-micro.md), [45 — casos](references/45-casos-integrados-roadmap-executivo.md) |
+| Bibliografia e pesquisa aprofundada | [41 — CEOs](references/41-ceos-biografias-e-contrafactuais.md), [42 — biblioteca essencial](references/42-biblioteca-executiva-auditavel.md), [53 — catálogo](references/53-biblioteca-expandida-140-obras-19-cargos.md), [54 — índice da enciclopédia](references/54-enciclopedia-50-ceos-50-livros-matriz.md) |
+
+A [enciclopédia](research/enciclopedia-ceo/00-GUIA-MESTRE-DO-CEO-SINTESE-E-PLAYBOOK.md) é pesquisa de aprofundamento, **não** um prompt para inserir inteiro no contexto. Reunir títulos não significa ter lido integralmente as obras; estudos de caso não garantem que a mesma estratégia funcionará no BataTalk.
+
+## Verificações: o que os testes demonstram
+
+Com Python 3.11 ou superior:
+
+~~~bash
 python scripts/validate_skill.py
+python scripts/validate_csuite_library.py
 python scripts/validate_work_graph.py templates/orchestration-plan.example.json --ready
-python -m unittest discover -s tests -p 'test_*.py' -v
-```
+python -m unittest discover -s tests -p "test_*.py" -v
+python scripts/package_skill.py --output dist
+~~~
 
-Validação estática confirma links, estrutura, contratos e casos; **não comprova que GrokBot/Claude/Codex/OpenBot instalou a skill nem que a IA realizou trabalhos**. Recomendado executar a suíte de portabilidade, salvar evidência de ferramentas/artefatos e comparar qualidade/custo com baseline. Mais instruções sem melhores decisões **não são** melhora de skill.
+O empacotador cria dist/batatalk-ceo-operator com manifesto de **hashes de todos os arquivos**. A opção --replace recusa apagar um pacote que contenha arquivos não inventariados, alterações ou manifesto legado sem verificação; preserve os dados e reconstrua em diretório limpo. O inventário não é assinatura digital ou prova de que o host carregou essa versão.
 
-## Como contribuir e melhorar continuamente
+Para decisões de risco ou ciclos de campanha que precisem de rastreabilidade, registre um episódio no [exemplo de decisão estruturada](templates/ceo-episode.example.json) e valide com o script scripts/validate_ceo_episode.py. O JSON é **exemplo fictício** e o verificador não autentica fontes nem aprova efeitos externos.
 
-A regra central é **usar a skill enquanto a melhora**: levantar problema real, procurar conhecimento de especialistas/fonte primária, decidir correção mínima, aplicar em branch, verificar artefato, adicionar teste e registrar o que permaneceu sem avaliação de campo. Não aumentar o repositório por vaidade. Regras universais ficam no núcleo; conteúdo aplicado em `references/`; instruções exclusivas de plataformas em `adapters/`.
+**CI verde = arquivos, contratos e testes de código verificados, não agente aprovado.** Para comparar desempenho de verdade, use [protocolo de revisão](tests/REVIEW-PROTOCOL.md), [validação de campo](setup/CEO-field-validation.md), [cenários de comportamento](tests/CEO-BEHAVIOR-EVALS.md) e [roteamento da skill](tests/SKILL-ROUTING-TEST-PLAN.md). Compare baseline e candidata com ferramenta/modelo semelhantes, revisor independente e evidência de execução real, custo, risco e impacto. Uma violação de segurança bloqueia aprovação.
 
-A revisão de 12/11/2026 removeu o acoplamento original ao OpenBot e introduziu contrato universal + repertório executivo. Ver [research/REVIEW-UNIVERSAL-2026-11-12.md](research/REVIEW-UNIVERSAL-2026-11-12.md) para falhas encontradas, decisões e limites.
+## Autoridade, transparência e melhorias
 
-### Engenharia da skill: pesquisa e reprodutibilidade
+**[POLICY.md](POLICY.md) é a fonte normativa.** O CEO pode pesquisar, preparar, testar em sandbox e organizar agentes na alçada delegada. Gastos, publicação externa, cobrança, produção arriscada, dados pessoais e compromissos jurídicos exigem autorização conforme escopo. O **Reels Creator permanece PAUSADO** por decisão do fundador, independentemente de outras campanhas ou perfis.
 
-A [pesquisa de livros, documentação técnica e decisões de arquitetura](research/LIVROS-E-ENGENHARIA-DE-SKILLS-2026-11-13.md) registra o que foi efetivamente consultado (fontes públicas, **não livros completos**). `SKILL.md` é o playbook sob demanda; `CEO_SYSTEM_PROMPT.md` é o mandato persistente quando realmente instalado; `setup/routines.md` precisa de runtime, e `tests/skill-trigger-evals.jsonl` especifica avaliação de invocação. Ver [INSTALL.md](INSTALL.md) antes de dizer que uma cópia está ativa.
+[AGENTS.md](AGENTS.md) rege mudanças nesta skill. [AUDIT.md](AUDIT.md) registra limitações e revisão histórica. Regras sobre evolução: primeiro observe uma falha, depois corrija comportamento, registre testes e verifique resultado. Novas páginas de enciclopédia sem mudança de decisão não são progresso.
 
-### Testes específicos de criação de skills
+### Referências de engenharia
 
-- **Integridade estática e proteção contra inflação de contexto:** `python scripts/validate_skill.py`. O orçamento de 15.000 caracteres do núcleo é uma heurística interna, **não** equivalência garantida de tokens.
-- **Testes unitários, incluindo empacotamento e score de ativação:** `python -m unittest discover -s tests -p "test_*.py" -v`.
-- **Criar pasta portátil adequada ao padrão:** `python scripts/package_skill.py --output dist`. A pasta resultante é `dist/batatalk-ceo-operator/`; não implica que algum bot a tenha importado.
-- **Testar invocação no host:** executar `tests/skill-trigger-evals.jsonl` em um agente realmente configurado e registrar `{"id":"T01","activated":true,"evidence":"trace://..."}` para cada caso. Avaliar somente rastros reais com `python scripts/score_skill_routing.py observacoes.jsonl`. Seguir [protocolo de routing](tests/SKILL-ROUTING-TEST-PLAN.md).
+- [Agent Skills — especificação e carregamento progressivo](https://agentskills.io/specification)
+- [Anthropic — Building Effective Agents](https://www.anthropic.com/research/building-effective-agents)
+- [OpenAI — Agent Evals](https://developers.openai.com/api/docs/guides/agent-evals)
+- [OpenAI — Trace Grading](https://developers.openai.com/api/docs/guides/trace-grading)
 
-Um CI verde pode provar que os scripts funcionam, **mas não** qual comportamento o modelo apresentou ao executar a skill.
-
-
-## Expansão de pesquisa SEO/GEO/AI Search (14/11/2026)
-
-Os sete módulos 46–52 transformam a [pesquisa e bibliografia comentada](research/PESQUISA-SEO-GEO-AI-SEARCH-2026-11-14.md) em decisões testáveis. Modelos prontos: [auditoria de aquisição](templates/organic-growth-audit.md), [brief de conteúdo e copy](templates/organic-growth-brief.md) e [experimento de citação de IA](templates/ai-visibility-experiment.md). Consulte [cenários de avaliação](tests/SEO-GEO-CEO-EVALS.md).
-
-**Escopo:** o CEO continua responsável por BataTalk. Os princípios podem ser aplicados a outros sites quando explicitamente solicitado; a skill não vira uma rotina geral automática de SEO. SEO/GEO não substitui ativação, receita ou segurança. As fontes variam com o tempo e citações de IA não são garantidas.
-
-
-### Ampliação bibliográfica do C-suite (14/11/2026)
-
-A [biblioteca expandida](references/53-biblioteca-expandida-140-obras-19-cargos.md) relaciona **140 obras e 19 trilhas de cargo**, com 20+ recomendações em cada trilha e limitações por título. O [catálogo essencial](references/42-biblioteca-executiva-auditavel.md) continua sendo a primeira consulta; a expansão é opcional e sob demanda para aprofundamento. Um título catalogado **não implica leitura integral ou verificação de cada edição**. Para crise de caixa, use o [modelo de 13 semanas](templates/turnaround-13-semanas.md); para desenhar accountability, use o [scorecard C-level](templates/csuite-functional-scorecard.md).
-| [references/54-enciclopedia-50-ceos-50-livros-matriz.md](references/54-enciclopedia-50-ceos-50-livros-matriz.md) | Síntese operacional dos 50 CEOs, 50 livros destilados, 7 funções, SEO/GEO e matriz tripla |
-| [research/enciclopedia-ceo/00-GUIA-MESTRE-DO-CEO-SINTESE-E-PLAYBOOK.md](research/enciclopedia-ceo/00-GUIA-MESTRE-DO-CEO-SINTESE-E-PLAYBOOK.md) | Enciclopédia Mestre do CEO completa (Volumes 0 a 6 + compêndio de 5.254 linhas) |
+Verifique a documentação de cada host ao instalar: interfaces e permissões podem mudar.

@@ -23,6 +23,13 @@ Esta skill deve ser usada **enquanto é aperfeiçoada**. Não apenas planejar me
 
 Comandos de CI: `python scripts/validate_skill.py`; `python scripts/validate_work_graph.py templates/orchestration-plan.example.json --ready`; `python -m unittest discover -s tests -p 'test_*.py' -v`. Execução de cenários em plataformas reais requer log e avaliação independente.
 
+## Gate adicional — integridade e episódio executivo
+
+- Antes de distribuir um pacote novo, executar scripts/package_skill.py e os testes de inventário. Com --replace, **não apagar** diretórios com arquivos extras, conteúdo modificado ou manifesto legado; preservar dados e reconstruir em local limpo.
+- Em uma decisão estratégica, crise ou campanha que exige rastreio, pode-se usar templates/ceo-episode.example.json com scripts/validate_ceo_episode.py. O contrato exige hipótese rival, ação, estado, prova e medição coerentes; **não autentica** fontes ou permissões e não deve criar burocracia para tarefas triviais.
+- Conferir que simplificações de SKILL.md mantêm o roteamento 36–45 e 46–52, POLICY.md, a pausa do Reels Creator e o modo M0/M1/M2.
+- Antes de aprovar uma revisão, exigir rastros de ao menos um cenário realmente executado com ferramentas equivalentes, a não ser que se declare explicitamente que a mudança é apenas estrutural e o teste real está pendente.
+
 **Não existem cotas artificiais** de agentes, equipes ou frentes, mas não devem ser criados sem benefício real. O CEO do BataTalk é a mesma competência, seja no GrokBot, Claude, Codex, OpenBot ou outra ferramenta.
 
 ## Engenharia de skill como software testável

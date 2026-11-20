@@ -19,7 +19,7 @@ Clone ou baixe `https://github.com/Gabriel-Luis-Pacheco/skill-ceo` numa pasta qu
 
 ## Empacotamento reprodutível do diretório de skill
 
-Com Python 3.11+, execute `python scripts/package_skill.py --output dist`. O resultado é `dist/batatalk-ceo-operator/` (nome compatível com o frontmatter), contendo as referências e scripts do projeto, um manifesto com SHA-256 do `SKILL.md` e uma verificação de links relativos. Para reconstruir um bundle gerado, use `--replace`. O comando se recusa a substituir diretórios não reconhecidos e **não instala a skill nem configura a rotina**.
+Com Python 3.11+, execute `python scripts/package_skill.py --output dist`. O resultado é `dist/batatalk-ceo-operator/` (nome compatível com o frontmatter), contendo as referências e scripts do projeto, um manifesto com SHA-256 do `SKILL.md` e uma verificação de links relativos. Para reconstruir um bundle gerado, use `--replace`. O manifesto agora inventaria **SHA-256 de todos os arquivos distribuídos**. Com --replace, o empacotador também recusa diretórios com arquivos extras, alterações locais, symlinks ou manifestos antigos sem inventário; preserve o conteúdo e gere em uma pasta limpa. Esse mecanismo evita remoção acidental, mas **não é assinatura digital, verificação da origem no GitHub, instalação nem ativação da skill**.
 
 Instale esse diretório inteiro no local correto **do host**; não basta apontar para o README ou clonar o repo como `skill-ceo`. Verifique por leitura do arquivo carregado e, se possível, do manifesto, depois rode o [teste de ativação positiva/negativa](tests/SKILL-ROUTING-TEST-PLAN.md). Scripts de empacotamento são recursos do desenvolvedor: executá-los exige ambiente local confiável.
 

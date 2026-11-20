@@ -18,6 +18,8 @@ jobs:
           python-version: '3.11'
       - name: Validate documentation, policy, references and scenarios
         run: python scripts/validate_skill.py
+      - name: Validate sample CEO decision/evidence episode (offline only)
+        run: python scripts/validate_ceo_episode.py templates/ceo-episode.example.json
       - name: Validate C-suite library coverage
         run: python scripts/validate_csuite_library.py
       - name: Validate sample orchestration plan (offline only)

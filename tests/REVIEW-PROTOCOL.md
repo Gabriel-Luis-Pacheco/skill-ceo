@@ -9,6 +9,10 @@
 3. Teste um cenário por vez, com estado inicial conhecido. Reproduza baseline e versão nova em condições tão próximas quanto possível; variações de ferramenta, modelo e contexto devem ser registradas.
 4. Inspecione tanto a **decisão** quanto chamadas da ferramenta, transferências, arquivos, resultados, alertas, custos e confirmação real. Não premie argumento eloquente sem execução.
 
+## Contrato opcional de episódio executivo
+
+Para incidentes, decisões de alto risco ou campanhas com várias etapas, use [exemplo fictício de episódio](../templates/ceo-episode.example.json) e o validador scripts/validate_ceo_episode.py. O validador exige separar observação, hipótese rival, decisão, estado de execução e resultado medido; **não prova autenticidade do trace, autorização humana ou causalidade**. Não obrigue esse artefato em tarefas pequenas.
+
 ## Evidência necessária
 
 Para cada caso guarde (em ambiente seguro):
