@@ -59,3 +59,29 @@ Uma melhoria futura deve surgir de **falha real observada**, ter hipótese, diff
 A evolução atual acrescenta conferência de pacotes locais de evidências da instalação real (IDs, arquivos existentes e revisor distinto do agente), comparador de avaliações humanas baseline/candidata, bloqueio de cobertura incompleta por padrão e missão de negócio baseada no funil de aquisição até prática oral, assinatura e margem. O planejador não trata tarefas canceladas/concluídas como proprietárias de recursos ativos, rejeita referências de aprovação em branco e protege a validação contra tipos inválidos. Inconsistências de links e contagens foram corrigidas. Há regressões unitárias novas e CI para o grafo de exemplo.
 
 **Limitações:** checar caminhos de trace não autentica a origem dos arquivos. Não foi executado CEO de verdade no OpenBot nesta alteração, não houve coleta de avaliações reais nem acesso a métricas de clientes; a prova comportamental e comercial está pendente de execução em ambiente autorizado. Não confundir CI aprovado com melhora de negócio.
+
+
+## Revisão de arquitetura e execução — 20/11/2026
+
+**Escopo:** árvore GitHub do repositório (136 arquivos, aproximadamente 2,21 MB), núcleo normativo, código de validação/empacotamento, exemplos/testes, módulos temáticos e organização dos sete volumes da enciclopédia. Foram inspecionados a estrutura e o roteamento de todas as referências e das pesquisas volumosas; a revisão técnica concentrou leitura detalhada nos arquivos executáveis e nos documentos de maior influência. **Não há alegação de leitura integral independente de cada fonte bibliográfica externa nem de avaliação comportamental do CEO.**
+
+### Falhas encontradas e decisões
+
+| Problema observado | Por que importa | Alteração proposta na branch |
+|---|---|---|
+| SKILL.md repetia muitos mandatos e longos índices | Instrução cara e diluição do próximo passo | Núcleo condensado, execução primeiro, roteamento progressivo e limites de autoridade preservados |
+| Mandato persistente misturava regras com longas receitas técnicas e regulatórias | Manutenção difícil e risco de comandos desatualizados | CEO_SYSTEM_PROMPT.md reduzido, encaminhando profundidade às referências e validação atual |
+| README longo e com entrada de tabela solta no final | Dificulta instalação e uso pelo operador | README reescrito com instalação, contrato observável, materiais e avaliação |
+| Bundle tinha hash apenas do SKILL.md; --replace confiava em manifesto mínimo | Alterações locais ou arquivos inesperados poderiam ser eliminados sem detecção | Inventário SHA-256 de todos os arquivos, rejeição de alterações, symlinks e manifestos legados; testes específicos |
+| Capacidade de julgamento bem documentada, mas execução ainda pouco rastreável | Fácil trocar prova por texto de status | Contrato JSON opcional de episódio executivo, validador offline e testes contra falsas alegações |
+| Fórmula comercial podia subtrair custo variável já incluído no LTV de contribuição | Risco de decisão financeira incorreta | Correção da fórmula e playbook de conteúdo do fundador baseado em primeira fala e resultado real |
+
+### Limites da verificação
+
+- Revisão no GitHub **não instala** a nova skill nos hosts, não reativa agentes e não altera dados, campanhas, cobrança ou produção do BataTalk.
+- Os testes offline verificam estrutura, sintaxe e alguns invariantes; não provam que o agente produziu melhor estratégia, primeira conversa, retenção ou pagamento. Traces reais com revisão independente ainda são necessários.
+- O novo validador de episódios não autentica URLs, aprovação, métricas ou identidade do revisor; uma referência de autorização escrita num JSON não concede alçada.
+- O compêndio integral da enciclopédia consolida volumes que também permanecem separados; foi **preservado** por compatibilidade com o acervo e por risco de quebrar links. Não carregá-lo integralmente em uma sessão.
+- Antes de adotar: conferir GitHub Actions no commit da branch, revisar diff, testar empacotamento, instalar como versão candidata em um host autorizado e comparar um cenário real contra baseline.
+
+**Critério de sucesso da revisão:** menos contexto desperdiçado, sem regressão de segurança, integridade do pacote verificável e aumento demonstrado de ações úteis por cenário no host. **Estado comportamental/comercial: NÃO TESTADO.**
