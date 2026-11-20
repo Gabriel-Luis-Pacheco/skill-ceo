@@ -70,6 +70,8 @@ python scripts/package_skill.py --output dist
 
 O empacotador cria dist/batatalk-ceo-operator com manifesto de **hashes de todos os arquivos**. A opção --replace recusa apagar um pacote que contenha arquivos não inventariados, alterações ou manifesto legado sem verificação; preserve os dados e reconstrua em diretório limpo. O inventário não é assinatura digital ou prova de que o host carregou essa versão.
 
+Para decisões de risco ou ciclos de campanha que precisem de rastreabilidade, registre um episódio no [exemplo de decisão estruturada](templates/ceo-episode.example.json) e valide com o script scripts/validate_ceo_episode.py. O JSON é **exemplo fictício** e o verificador não autentica fontes nem aprova efeitos externos.
+
 **CI verde = arquivos, contratos e testes de código verificados, não agente aprovado.** Para comparar desempenho de verdade, use [protocolo de revisão](tests/REVIEW-PROTOCOL.md), [validação de campo](setup/CEO-field-validation.md), [cenários de comportamento](tests/CEO-BEHAVIOR-EVALS.md) e [roteamento da skill](tests/SKILL-ROUTING-TEST-PLAN.md). Compare baseline e candidata com ferramenta/modelo semelhantes, revisor independente e evidência de execução real, custo, risco e impacto. Uma violação de segurança bloqueia aprovação.
 
 ## Autoridade, transparência e melhorias
