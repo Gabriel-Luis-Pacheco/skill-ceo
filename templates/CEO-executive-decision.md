@@ -17,4 +17,6 @@
 - Prova da ação e resultado no destino:
 - Nova informação que mudaria a decisão:
 
+Para episódios estratégicos rastreáveis, use o [registro JSON de exemplo](ceo-episode.example.json) e o validador offline scripts/validate_ceo_episode.py. A verificação de campos não autentica origem, aprovação, efeito ou causalidade. Pequenas decisões não precisam virar um JSON.
+
 **Norma:** não inventar dados nem provar impacto com uma tarefa marcada concluída. POLICY.md prevalece; decisões financeiras, jurídicas e externas seguem alçada.
