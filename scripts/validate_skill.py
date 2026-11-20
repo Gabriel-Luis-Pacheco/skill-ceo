@@ -20,6 +20,8 @@ EXPECTED_ORG = {f"ORG{i:02d}" for i in range(1, 17)}
 EXPECTED_O = {f"O{i:02d}" for i in range(1, 25)}
 REQUIRED = (
     "README.md", "INSTALL.md", "AGENTS.md", "SKILL.md",
+    "scripts/validate_ceo_episode.py", "templates/ceo-episode.example.json",
+    "tests/test_ceo_episode.py",
     "CEO_SYSTEM_PROMPT.md", "POLICY.md", "config/policy.example.yaml",
     "setup/CEO-first-message.md", "setup/routines.md",
     "references/32-contrato-universal-multiplataforma.md",
@@ -315,6 +317,14 @@ def validate(root: Path = ROOT) -> list[str]:
         root / "tests/orchestration-cases.jsonl",
         ("id", "scenario", "expected", "forbidden"), EXPECTED_O,
     )
+
+    # Executive episodes are structurally checked, never accepted as real proof.
+    try:
+        from validate_ceo_episode import validate_episode
+        fixture = json.loads(read_text(root / "templates/ceo-episode.example.json"))
+        errors += [f"CEO episode example: {err}" for err in validate_episode(fixture)]
+    except (OSError, ValueError, ImportError) as exc:
+        errors.append(f"CEO episode example invalid: {exc}")
 
     # Planning test checks the example with the same validator used by operators.
     try:
